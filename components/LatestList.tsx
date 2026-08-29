@@ -11,7 +11,7 @@ export default function LatestList({ posts }: { posts: Post[] }) {
         radius={80}
         fromFontVariationSettings="'wght' 400"
         toFontVariationSettings="'wght' 800"
-        className="mb-4 block text-[10px] tracking-[2px] text-text-muted"
+        className="mb-4 block text-[10px] uppercase tracking-[2.8px] text-text-muted"
       >
         ÚLTIMAS
       </VariableFontCursorProximity>
@@ -26,10 +26,10 @@ export default function LatestList({ posts }: { posts: Post[] }) {
               <span className="text-[11px] font-medium text-text-muted">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-[14px] font-medium leading-[1.35] text-text-primary">
+              <span className="font-serif text-[22px] font-normal leading-[1.35] text-text-primary">
                 {post.title}
               </span>
-              <span className="whitespace-nowrap text-right text-[11px] tracking-[2px] text-text-label">
+              <span className="whitespace-nowrap text-right text-[11px] uppercase tracking-[2.8px] text-text-label">
                 {CATEGORY_LABELS[post.category]}
               </span>
               <span className="whitespace-nowrap text-[11px] text-text-muted">

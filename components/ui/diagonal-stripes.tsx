@@ -1,7 +1,7 @@
 import { useId } from "react";
 
 // Subtle diagonal stripe texture referencing the club's black-and-white
-// jersey pattern. Deliberately low-contrast: #0f0f0f stripes on #090909.
+// jersey pattern. Deliberately low-contrast: #151515 stripes on #0d0d0d.
 export function DiagonalStripes({ className }: { className?: string }) {
   const id = useId();
   const patternId = `vasco-stripes-${id}`;
@@ -22,8 +22,8 @@ export function DiagonalStripes({ className }: { className?: string }) {
           patternTransform="rotate(45)"
           patternUnits="userSpaceOnUse"
         >
-          <rect width="40" height="40" fill="#090909" />
-          <rect width="20" height="40" fill="#0f0f0f" />
+          <rect width="40" height="40" fill="#0d0d0d" />
+          <rect width="20" height="40" fill="#151515" />
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill={`url(#${patternId})`} />

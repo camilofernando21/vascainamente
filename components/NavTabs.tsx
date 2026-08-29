@@ -16,7 +16,7 @@ export default function NavTabs() {
             key={tab.category}
             onClick={() => setActive(i)}
             className={`shrink-0 border-b-2 pb-[11px] pt-3 text-[11px] tracking-[0.3px] transition-colors ${
-              isActive ? "border-red text-[#eee]" : "border-transparent text-text-muted"
+              isActive ? "border-red text-text-hero" : "border-transparent text-text-muted"
             }`}
           >
             <TextRoll>{tab.label}</TextRoll>

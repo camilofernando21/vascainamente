@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import ArticleBody from "@/components/ArticleBody";
+import ReadingProgress from "@/components/ReadingProgress";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 
 export const revalidate = 60;
@@ -35,6 +36,7 @@ export default async function ArticlePage({
 
   return (
     <main className="min-h-screen">
+      <ReadingProgress />
       <Header />
       <div className="mx-auto max-w-[760px]">
         <ArticleBody post={post} contentHtml={contentHtml} />

@@ -26,14 +26,14 @@ export default function EditorialGrid({
 function AnalysisCard({ post }: { post: Post }) {
   return (
     <Link href={`/${post.slug}`} className="block hover:opacity-70">
-      <p className="mb-3 text-[11px] tracking-[2px] text-text-label">
+      <p className="mb-3 text-[11px] uppercase tracking-[2.8px] text-text-label">
         {CATEGORY_LABELS[post.category]}
       </p>
-      <h2 className="text-[20px] font-medium leading-[1.3] tracking-[-0.2px] text-text-primary">
+      <h2 className="text-[22px] font-normal leading-[1.3] text-text-primary">
         {post.title}
       </h2>
       <p className="mt-3 text-[13px] leading-[1.7] text-text-secondary">{post.excerpt}</p>
-      <p className="mt-4 text-[11px] text-text-meta">
+      <p className="mt-4 text-[12px] text-text-meta">
         {post.source} · {timeAgoWords(post.date)}
       </p>
     </Link>
@@ -46,60 +46,71 @@ function ResultCard({ post }: { post: Post }) {
   const homeWins = (post.homeScore ?? 0) >= (post.awayScore ?? 0);
 
   return (
-    <Link href={`/${post.slug}`} className="block hover:opacity-70">
-      <p className="mb-3 text-[11px] tracking-[2px] text-text-label">
-        {CATEGORY_LABELS[post.category]}
-        {post.competition ? ` · ${post.competition}` : ""}
-      </p>
-
-      {hasScore ? (
-        <div>
-          <div className="flex items-center justify-between py-2">
-            <span
-              className={`text-[15px] font-medium ${
-                homeWins ? "text-[#f5f5f5]" : "text-text-secondary"
-              }`}
-            >
-              {post.homeTeam}
-            </span>
-            <NumberTicker
-              value={post.homeScore ?? 0}
-              className={`text-[40px] font-medium ${
-                homeWins ? "text-[#f5f5f5]" : "text-text-secondary"
-              }`}
-            />
-          </div>
-          <div className="border-t border-border" />
-          <div className="flex items-center justify-between py-2">
-            <span
-              className={`text-[15px] font-medium ${
-                !homeWins ? "text-[#f5f5f5]" : "text-text-secondary"
-              }`}
-            >
-              {post.awayTeam}
-            </span>
-            <NumberTicker
-              value={post.awayScore ?? 0}
-              className={`text-[40px] font-medium ${
-                !homeWins ? "text-[#f5f5f5]" : "text-text-secondary"
-              }`}
-            />
-          </div>
-          <p className="mt-4 text-[11px] text-text-meta">
-            {post.venue ? `${post.venue} · ` : ""}
-            {timeAgoWords(post.date)}
-          </p>
-        </div>
-      ) : (
-        <div>
-          <h2 className="text-[20px] font-medium leading-[1.3] tracking-[-0.2px] text-text-primary">
-            {post.title}
-          </h2>
-          <p className="mt-4 text-[11px] text-text-meta">
-            {post.source} · {timeAgoWords(post.date)}
-          </p>
-        </div>
+    <Link href={`/${post.slug}`} className="relative block hover:opacity-70">
+      {hasScore && (
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0 flex items-center justify-center font-serif text-[280px] leading-none text-white opacity-[0.04]"
+        >
+          {homeWins ? post.homeScore : post.awayScore}
+        </span>
       )}
+
+      <div className="relative z-10">
+        <p className="mb-3 text-[11px] uppercase tracking-[2.8px] text-text-label">
+          {CATEGORY_LABELS[post.category]}
+          {post.competition ? ` · ${post.competition}` : ""}
+        </p>
+
+        {hasScore ? (
+          <div>
+            <div className="flex items-center justify-between py-2">
+              <span
+                className={`text-[15px] font-medium ${
+                  homeWins ? "text-text-hero" : "text-text-secondary"
+                }`}
+              >
+                {post.homeTeam}
+              </span>
+              <NumberTicker
+                value={post.homeScore ?? 0}
+                className={`font-serif text-[64px] font-normal tracking-[-2px] ${
+                  homeWins ? "text-text-hero" : "text-text-secondary"
+                }`}
+              />
+            </div>
+            <div className="border-t border-border" />
+            <div className="flex items-center justify-between py-2">
+              <span
+                className={`text-[15px] font-medium ${
+                  !homeWins ? "text-text-hero" : "text-text-secondary"
+                }`}
+              >
+                {post.awayTeam}
+              </span>
+              <NumberTicker
+                value={post.awayScore ?? 0}
+                className={`font-serif text-[64px] font-normal tracking-[-2px] ${
+                  !homeWins ? "text-text-hero" : "text-text-secondary"
+                }`}
+              />
+            </div>
+            <p className="mt-4 text-[12px] text-text-meta">
+              {post.venue ? `${post.venue} · ` : ""}
+              {timeAgoWords(post.date)}
+            </p>
+          </div>
+        ) : (
+          <div>
+            <h2 className="text-[22px] font-normal leading-[1.3] text-text-primary">
+              {post.title}
+            </h2>
+            <p className="mt-4 text-[12px] text-text-meta">
+              {post.source} · {timeAgoWords(post.date)}
+            </p>
+          </div>
+        )}
+      </div>
     </Link>
   );
 }

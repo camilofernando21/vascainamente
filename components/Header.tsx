@@ -14,7 +14,7 @@ export default function Header() {
           <CruzMalta size={14} color="#C00000" />
           <TextRoll
             center
-            className="text-[13px] font-medium tracking-[2px] text-[#fff]"
+            className="text-[13px] font-medium tracking-[2px] text-text-hero"
           >
             VASCAINAMENTE
           </TextRoll>

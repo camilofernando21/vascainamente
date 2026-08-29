@@ -13,15 +13,15 @@ export default function ArticleBody({
 }) {
   return (
     <article className="px-6 py-8">
-      <p className="mb-4 text-[11px] tracking-[2px] text-text-label">
+      <p className="mb-4 text-[11px] uppercase tracking-[2.8px] text-text-label">
         VASCAINAMENTE · {CATEGORY_LABELS[post.category]}
       </p>
 
-      <h1 className="text-[32px] font-medium leading-[1.15] tracking-[-0.5px] text-text-hero">
+      <h1 className="text-[clamp(32px,6vw,60px)] font-normal leading-[1.15] tracking-[-1px] text-text-hero">
         {post.title}
       </h1>
 
-      <p className="mt-4 text-[11px] text-text-meta">
+      <p className="mt-4 text-[12px] text-text-meta">
         {post.source} · {formatDateShort(post.date)} · {readingTime(post.content)} min de leitura
       </p>
 

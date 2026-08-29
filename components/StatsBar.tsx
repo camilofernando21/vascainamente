@@ -22,9 +22,9 @@ export default function StatsBar({
 
   return (
     <div className="grid grid-cols-3 border-b border-border">
-      <Stat value={<AnimatedNumber value={totalPosts} format={(n) => Math.round(n).toLocaleString("pt-BR")} className="text-[34px] font-medium text-text-hero" />} label="NOTÍCIAS PUBLICADAS" />
-      <Stat value={<AnimatedNumber value={postsToday} format={(n) => Math.round(n).toLocaleString("pt-BR")} className="text-[34px] font-medium text-text-hero" />} label="PUBLICADAS HOJE" border />
-      <Stat value={<NumberTicker value={readingNow} format={(n) => n.toLocaleString("pt-BR")} className="text-[34px] font-medium text-text-hero" />} label="LENDO AGORA" border />
+      <Stat value={<AnimatedNumber value={totalPosts} format={(n) => Math.round(n).toLocaleString("pt-BR")} className="font-serif text-[34px] font-normal text-text-hero" />} label="NOTÍCIAS PUBLICADAS" />
+      <Stat value={<AnimatedNumber value={postsToday} format={(n) => Math.round(n).toLocaleString("pt-BR")} className="font-serif text-[34px] font-normal text-text-hero" />} label="PUBLICADAS HOJE" border />
+      <Stat value={<NumberTicker value={readingNow} format={(n) => n.toLocaleString("pt-BR")} className="font-serif text-[34px] font-normal text-text-hero" />} label="LENDO AGORA" border />
     </div>
   );
 }
