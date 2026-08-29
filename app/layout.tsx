@@ -46,7 +46,7 @@ export default function RootLayout({
             height: "100%",
             pointerEvents: "none",
             zIndex: 9999,
-            opacity: 0.035,
+            opacity: 0.02,
           }}
         />
         <script
@@ -66,7 +66,7 @@ export default function RootLayout({
       }
       resize();
       window.addEventListener('resize',resize);
-      setInterval(grain,50);
+      setInterval(grain,160);
     `,
           }}
         />
