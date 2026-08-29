@@ -6,7 +6,7 @@ export default function HeroSection({ post }: { post: Post }) {
   return (
     <Link
       href={`/${post.slug}`}
-      className="relative block min-h-[420px] w-full overflow-hidden bg-bg hover:opacity-95 md:min-h-[520px]"
+      className="relative block min-h-screen w-full overflow-hidden bg-bg hover:opacity-95"
     >
       {/* giant background number, split 18/98, concentrated behind the fan photos like Bam83's giant score watermark */}
       <div
@@ -17,8 +17,8 @@ export default function HeroSection({ post }: { post: Post }) {
         <span className="text-[26vw]">98</span>
       </div>
 
-      {/* founding-year stat, bottom-left — opposite side from the fan photo */}
-      <div className="absolute bottom-6 left-6 z-10 hidden text-left md:block lg:left-12">
+      {/* founding-year stat, same side as the fans but behind them — the photo overlaps it from the top-right corner */}
+      <div className="absolute right-6 top-6 z-0 hidden text-right md:block lg:right-12">
         <div className="font-serif text-[clamp(24px,3.2vw,40px)] font-normal leading-none text-text-hero">
           1898
         </div>
