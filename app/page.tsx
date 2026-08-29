@@ -18,7 +18,10 @@ export default function Home() {
   const rest = posts.slice(1);
 
   const analysisPost = rest.find((p) => p.category === "clube") ?? rest[0] ?? null;
-  const resultPost = rest.find((p) => p.category === "resultado") ?? null;
+  const resultPost =
+    rest.find((p) => p.category === "resultado" && p.homeScore != null) ??
+    rest.find((p) => p.category === "resultado") ??
+    null;
 
   const usedSlugs = new Set(
     [featured?.slug, analysisPost?.slug, resultPost?.slug].filter(Boolean)

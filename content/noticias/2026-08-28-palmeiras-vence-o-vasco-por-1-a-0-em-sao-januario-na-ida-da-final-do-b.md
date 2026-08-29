@@ -9,6 +9,12 @@ imageUrl: ""
 excerpt: "O Palmeiras saiu de São Januário com a vantagem na final do Campeonato Brasileiro Sub-20 após vencer o Vasco por 1 a 0. O gol de Erick Bele definiu o placar no primeiro jogo da decisão. O clube paulista retornou a São Paulo em voo fretado pela presidente Leila Pereira."
 seoTitle: "Palmeiras bate Vasco por 1 a 0 na final do Sub-20"
 seoDescription: "Palmeiras vence o Vasco por 1 a 0 em São Januário na ida da final do Brasileirão Sub-20. Gol de Erick Bele define vantagem para o clube paulista."
+competition: "Brasileirão Sub-20"
+homeTeam: "VASCO"
+awayTeam: "PALMEIRAS"
+homeScore: 0
+awayScore: 1
+venue: "São Januário"
 ---
 
 O Vasco saiu de campo com uma derrota amarga em São Januário. Na tarde desta quinta-feira, o Palmeiras venceu o Cruz-maltino por 1 a 0 no primeiro jogo da final do Campeonato Brasileiro Sub-20, com gol marcado por Erick Bele. O resultado coloca o Verdão em vantagem na decisão, e o time vascaíno precisará reverter o placar no jogo de volta para conquistar o título.
