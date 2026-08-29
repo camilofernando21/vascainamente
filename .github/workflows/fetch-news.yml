@@ -1,0 +1,42 @@
+name: Fetch Vasco News
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # a cada 15 minutos
+  workflow_dispatch:           # permite disparo manual
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Fetch and publish news
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/fetch-news.py
+
+      - name: Commit new articles
+        run: |
+          git config user.name  "vascainamente-bot"
+          git config user.email "bot@vascainamente.com.br"
+          git add content/noticias/ .news_cache.json
+          git diff --staged --quiet || \
+            git commit -m "feat(news): $(date +'%d/%m %H:%M') — novas notícias do Vasco" && \
+            git push
