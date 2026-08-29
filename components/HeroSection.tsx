@@ -17,21 +17,21 @@ export default function HeroSection({ post }: { post: Post }) {
         <span className="text-[26vw]">98</span>
       </div>
 
-      {/* founding-year stat, same side as the fans but behind them — the photo overlaps it from the top-right corner */}
-      <div className="absolute right-6 top-6 z-0 hidden text-right md:block lg:right-12">
-        <div className="font-serif text-[clamp(24px,3.2vw,40px)] font-normal leading-none text-text-hero">
-          1898
+      {/* fan photo + founding-year stat, side by side bottom-right — same composition as the Bam83 reference */}
+      <div className="pointer-events-none absolute inset-y-0 right-6 z-[1] hidden items-end gap-6 md:flex lg:right-12">
+        <HeroPlayerImage
+          intervalMs={6000}
+          className="animate-float h-[92%] w-[340px] lg:w-[420px]"
+        />
+        <div className="mb-[18vh] text-right">
+          <div className="font-serif text-[clamp(24px,3.2vw,40px)] font-normal leading-none text-text-hero">
+            1898
+          </div>
+          <p className="mt-2 text-[9px] uppercase leading-[1.4] tracking-[1.8px] text-text-muted">
+            Fundado em · São Cristóvão
+          </p>
         </div>
-        <p className="mt-2 text-[9px] uppercase leading-[1.4] tracking-[1.8px] text-text-muted">
-          Fundado em · São Cristóvão
-        </p>
       </div>
-
-      {/* fan photo, bottom-right */}
-      <HeroPlayerImage
-        intervalMs={6000}
-        className="animate-float pointer-events-none absolute bottom-0 right-6 z-[1] hidden h-[92%] w-[340px] md:block lg:right-12 lg:w-[420px]"
-      />
     </Link>
   );
 }
