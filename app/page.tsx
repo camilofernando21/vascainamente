@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen">
-      <NavTabs className="absolute inset-x-0 top-20 z-30" />
+      <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />
       {featured && <HeroSection post={featured} />}
     </main>
   );
