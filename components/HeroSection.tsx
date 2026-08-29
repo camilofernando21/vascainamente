@@ -2,8 +2,6 @@ import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import { CATEGORY_LABELS } from "@/lib/categories";
 import { timeAgoWords } from "@/lib/time";
-import { CruzMalta } from "@/components/ui/cruz-malta";
-import { DiagonalStripes } from "@/components/ui/diagonal-stripes";
 
 export default function HeroSection({ post }: { post: Post }) {
   const isUrgent = post.category === "urgente";
@@ -13,11 +11,6 @@ export default function HeroSection({ post }: { post: Post }) {
       href={`/${post.slug}`}
       className="relative block min-h-[420px] w-full overflow-hidden bg-bg hover:opacity-95 md:min-h-[520px]"
     >
-      <DiagonalStripes className="absolute inset-0" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <CruzMalta size={160} color="rgb(240,235,225)" opacity={0.04} />
-      </div>
-
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/jogador-vasco.png"
