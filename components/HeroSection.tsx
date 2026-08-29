@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import { CATEGORY_LABELS } from "@/lib/categories";
 import { timeAgoWords } from "@/lib/time";
+import HeroPlayerImage from "@/components/HeroPlayerImage";
 
 export default function HeroSection({ post }: { post: Post }) {
   const isUrgent = post.category === "urgente";
@@ -11,11 +12,9 @@ export default function HeroSection({ post }: { post: Post }) {
       href={`/${post.slug}`}
       className="relative block min-h-[420px] w-full overflow-hidden bg-bg hover:opacity-95 md:min-h-[520px]"
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/jogador-vasco.png"
-        alt=""
-        className="animate-float pointer-events-none absolute bottom-0 right-6 hidden h-[92%] w-auto object-contain object-bottom md:block lg:right-12"
+      <HeroPlayerImage
+        intervalMs={6000}
+        className="animate-float pointer-events-none absolute bottom-0 right-6 hidden h-[92%] w-[340px] md:block lg:right-12 lg:w-[420px]"
       />
 
       <div className="relative z-10 flex h-full flex-col justify-end gap-3 px-6 py-8 md:max-w-[58%] md:py-12">
