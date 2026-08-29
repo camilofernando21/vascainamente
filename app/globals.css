@@ -176,6 +176,13 @@ a {
     transparent 3px
   );
   animation: glitch-scanlines 0.8s steps(1, end) both;
+  /* clip the scanlines to the photo's own silhouette instead of its full box */
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: bottom center;
+  -webkit-mask-position: bottom center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
 }
 
 @media (prefers-reduced-motion: reduce) {

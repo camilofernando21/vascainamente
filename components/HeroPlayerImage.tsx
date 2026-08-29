@@ -39,7 +39,14 @@ export default function HeroPlayerImage({
         alt=""
         className="glitch-in absolute inset-0 h-full w-full object-contain object-bottom"
       />
-      <div key={`scan-${index}`} className="glitch-scanlines pointer-events-none absolute inset-0" />
+      <div
+        key={`scan-${index}`}
+        className="glitch-scanlines pointer-events-none absolute inset-0"
+        style={{
+          WebkitMaskImage: `url(${IMAGES[index]})`,
+          maskImage: `url(${IMAGES[index]})`,
+        }}
+      />
     </div>
   );
 }
