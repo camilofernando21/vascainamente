@@ -8,6 +8,14 @@ export default function HeroSection({ post }: { post: Post }) {
       href={`/${post.slug}`}
       className="relative block min-h-screen w-full overflow-hidden bg-bg hover:opacity-95"
     >
+      {/* site logo mark, top-right — identifies the site regardless of what article is featured */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/images/logo-vasco.png"
+        alt="Vasco da Gama"
+        className="pointer-events-none absolute right-6 top-6 z-20 h-9 w-auto lg:right-12 lg:h-11"
+      />
+
       {/* giant background number, split 18/98, concentrated behind the fan photos like Bam83's giant score watermark */}
       <div
         aria-hidden="true"
