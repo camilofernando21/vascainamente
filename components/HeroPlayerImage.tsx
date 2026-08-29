@@ -32,7 +32,7 @@ export default function HeroPlayerImage({
   }, [intervalMs]);
 
   return (
-    <div className={cn("overflow-hidden", className)}>
+    <div className={cn("relative overflow-hidden", className)}>
       <AnimatePresence initial={false}>
         <motion.img
           key={index}
