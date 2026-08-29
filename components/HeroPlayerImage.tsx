@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 const IMAGES = [
@@ -33,18 +32,14 @@ export default function HeroPlayerImage({
 
   return (
     <div className={cn("relative overflow-hidden", className)}>
-      <AnimatePresence initial={false}>
-        <motion.img
-          key={index}
-          src={IMAGES[index]}
-          alt=""
-          initial={{ y: "100%" }}
-          animate={{ y: "0%" }}
-          exit={{ y: "-100%" }}
-          transition={{ ease: "easeInOut", duration: 0.6 }}
-          className="absolute inset-0 h-full w-full object-contain object-bottom"
-        />
-      </AnimatePresence>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        key={index}
+        src={IMAGES[index]}
+        alt=""
+        className="glitch-in absolute inset-0 h-full w-full object-contain object-bottom"
+      />
+      <div key={`scan-${index}`} className="glitch-scanlines pointer-events-none absolute inset-0" />
     </div>
   );
 }
