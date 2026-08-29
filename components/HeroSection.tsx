@@ -22,7 +22,7 @@ export default function HeroSection({ post }: { post: Post }) {
       <img
         src="/images/jogador-vasco.png"
         alt=""
-        className="pointer-events-none absolute inset-y-0 right-0 hidden w-[40%] object-cover object-top grayscale md:block"
+        className="pointer-events-none absolute bottom-0 right-6 hidden h-[92%] w-auto object-contain object-bottom md:block lg:right-12"
       />
 
       <div className="relative z-10 flex h-full flex-col justify-end gap-3 px-6 py-8 md:max-w-[58%] md:py-12">
