@@ -40,3 +40,4 @@ jobs:
           git diff --staged --quiet || \
             git commit -m "feat(news): $(date +'%d/%m %H:%M') — novas notícias do Vasco" && \
             git push
+
