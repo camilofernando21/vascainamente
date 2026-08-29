@@ -61,3 +61,10 @@ a {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+body {
+  background-image: url('/images/vasco-bg.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}

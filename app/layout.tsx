@@ -24,7 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <div className="relative min-h-screen">
+          <div className="fixed inset-0 bg-black/75 z-0" />
+          <div className="relative z-10">{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
