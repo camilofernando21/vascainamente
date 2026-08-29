@@ -46,7 +46,7 @@ export default function RootLayout({
             height: "100%",
             pointerEvents: "none",
             zIndex: 9999,
-            opacity: 0.02,
+            opacity: 0.08,
           }}
         />
         <script
@@ -54,8 +54,9 @@ export default function RootLayout({
             __html: `
       const c=document.getElementById('grain-canvas');
       const ctx=c.getContext('2d');
-      function resize(){c.width=window.innerWidth;c.height=window.innerHeight;}
       function grain(){
+        c.width=window.innerWidth;
+        c.height=window.innerHeight;
         const img=ctx.createImageData(c.width,c.height);
         const d=img.data;
         for(let i=0;i<d.length;i+=4){
@@ -64,9 +65,8 @@ export default function RootLayout({
         }
         ctx.putImageData(img,0,0);
       }
-      resize();
-      window.addEventListener('resize',resize);
-      setInterval(grain,160);
+      grain();
+      window.addEventListener('resize',grain);
     `,
           }}
         />
