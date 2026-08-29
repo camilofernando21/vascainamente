@@ -22,10 +22,12 @@ export default function HeroSection({ post }: { post: Post }) {
       </div>
 
       {/* fan photo + founding-year stat, bottom-aligned side by side on the right */}
-      <div className="pointer-events-none absolute inset-y-0 right-6 z-[1] hidden items-end gap-6 md:flex lg:right-12">
-        <div className="mb-6 text-right">
-          <div className="font-serif text-[7vw] font-normal leading-none text-text-hero">1898</div>
-          <p className="mt-2 text-[10px] uppercase tracking-[2.8px] text-text-muted">
+      <div className="pointer-events-none absolute inset-y-0 right-6 z-[1] hidden items-end gap-3 md:flex lg:right-12 lg:gap-4">
+        <div className="mb-6 max-w-[110px] text-left">
+          <div className="font-serif text-[clamp(24px,3.2vw,40px)] font-normal leading-none text-text-hero">
+            1898
+          </div>
+          <p className="mt-2 text-[9px] uppercase leading-[1.4] tracking-[1.8px] text-text-muted">
             Fundado em · São Cristóvão
           </p>
         </div>
