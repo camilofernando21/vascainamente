@@ -38,8 +38,36 @@ CATEGORY_MAP = {
 }
 
 def is_vasco(title: str, desc: str = "") -> bool:
-    text = (title + " " + desc).lower()
-    return any(kw in text for kw in VASCO_KEYWORDS)
+    title_lower = title.lower()
+    desc_lower = desc.lower()
+
+    VASCO_TERMS = [
+        "vasco", "crvg", "cruz maltina", "são januário",
+        "vasco da gama", "vascaíno", "gigante da colina"
+    ]
+
+    # A palavra "vasco" TEM que estar no TÍTULO
+    # Não basta estar só na descrição
+    title_has_vasco = any(term in title_lower for term in VASCO_TERMS)
+    if not title_has_vasco:
+        return False
+
+    # Blacklist: se o título menciona rivais em destaque, rejeitar
+    RIVALS = [
+        "flamengo", "fluminense", "botafogo", "palmeiras",
+        "corinthians", "são paulo", "santos", "atletico",
+        "grêmio", "internacional", "cruzeiro", "bahia"
+    ]
+
+    # Se o título começa com rival ou rival aparece antes de "vasco", rejeitar
+    for rival in RIVALS:
+        if rival in title_lower:
+            rival_pos = title_lower.find(rival)
+            vasco_pos = min([title_lower.find(t) for t in VASCO_TERMS if t in title_lower], default=999)
+            if rival_pos < vasco_pos:
+                return False
+
+    return True
 
 def classify(title: str, desc: str = "") -> str:
     text = (title + " " + desc).lower()
