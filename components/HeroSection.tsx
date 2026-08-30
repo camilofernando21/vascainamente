@@ -34,7 +34,7 @@ export default function HeroSection({ post }: { post: Post }) {
       />
 
       {/* site tagline — one line ending near the right edge, above the fans' heads */}
-      <p className="pointer-events-none absolute left-[31%] top-[19%] z-10 hidden whitespace-nowrap font-serif text-[5.1vw] italic leading-none text-text-hero md:block">
+      <p className="pointer-events-none absolute left-[68%] top-[10%] z-10 hidden whitespace-nowrap font-serif text-[2.4vw] italic leading-none text-text-hero md:block">
         <span className="text-red">&ldquo;</span>Vascaíno não se escolhe. Se nasce.
       </p>
 
