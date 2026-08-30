@@ -26,10 +26,10 @@ export default function HeroSection({ post }: { post: Post }) {
         <span className="text-[26vw]">98</span>
       </div>
 
-      {/* historic crests, flipping in the empty middle-left space */}
+      {/* historic crests, flipping in the empty space below the logo and above the menu */}
       <CrestShowcase
         intervalMs={5000}
-        className="absolute left-6 top-1/2 z-10 hidden h-[150px] w-[150px] -translate-y-1/2 md:block lg:left-12 lg:h-[190px] lg:w-[190px]"
+        className="absolute left-[20%] top-[16%] z-10 hidden h-[190px] w-[190px] md:block lg:h-[230px] lg:w-[230px]"
       />
 
       {/* fan photo + founding-year stat, side by side bottom-right — same composition as the Bam83 reference */}
