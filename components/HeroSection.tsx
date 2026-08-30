@@ -33,6 +33,13 @@ export default function HeroSection({ post }: { post: Post }) {
         className="absolute left-[20%] top-[16%] z-10 hidden h-[190px] w-[190px] md:block lg:h-[230px] lg:w-[230px]"
       />
 
+      {/* site tagline — the identity statement, in the gap between the crests and the menu */}
+      <p className="pointer-events-none absolute left-6 top-[46%] z-10 hidden max-w-[240px] font-serif text-[21px] italic leading-[1.35] text-text-hero md:block lg:left-12 lg:max-w-[280px] lg:text-[25px]">
+        Vascaíno não se escolhe.
+        <br />
+        Se nasce.
+      </p>
+
       {/* fan photo + founding-year stat, side by side bottom-right — same composition as the Bam83 reference */}
       <div className="pointer-events-none absolute inset-y-0 right-6 z-[1] hidden items-end gap-6 md:flex lg:right-12">
         <HeroPlayerImage
