@@ -67,6 +67,7 @@ export default function RootLayout({
       }
       grain();
       window.addEventListener('resize',grain);
+      setInterval(grain,300);
     `,
           }}
         />
