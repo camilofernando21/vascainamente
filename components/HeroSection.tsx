@@ -9,13 +9,14 @@ export default function HeroSection({ post }: { post: Post }) {
       href={`/${post.slug}`}
       className="relative block min-h-screen w-full overflow-hidden bg-bg hover:opacity-95"
     >
-      {/* site logo mark, top-left — identifies the site regardless of what article is featured */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/logo-vasco.png"
-        alt="Vasco da Gama"
-        className="pointer-events-none absolute left-6 top-6 z-20 h-9 w-auto lg:left-12 lg:h-11"
-      />
+      {/* site logo lockup, top-left — identifies the site regardless of what article is featured */}
+      <div className="pointer-events-none absolute left-6 top-6 z-20 flex items-center gap-3 lg:left-12">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/logo-vasco.png" alt="" className="h-9 w-auto lg:h-11" />
+        <span className="text-[13px] uppercase tracking-[2.5px] text-text-hero lg:text-[15px]">
+          Vascainamente
+        </span>
+      </div>
 
       {/* giant background number, split 18/98, concentrated behind the fan photos like Bam83's giant score watermark */}
       <div
