@@ -30,7 +30,7 @@ export default function HeroSection({ post }: { post: Post }) {
       {/* historic crests, flipping in the empty space below the logo and above the menu */}
       <CrestShowcase
         intervalMs={5000}
-        className="absolute left-[20%] top-[16%] z-10 hidden h-[190px] w-[190px] md:block lg:h-[230px] lg:w-[230px]"
+        className="absolute left-[27%] top-[22%] z-10 hidden h-[250px] w-[250px] md:block lg:h-[300px] lg:w-[300px]"
       />
 
       {/* site tagline — one line ending near the right edge, above the fans' heads */}
