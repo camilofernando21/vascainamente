@@ -33,9 +33,9 @@ export default function HeroSection({ post }: { post: Post }) {
         className="absolute left-[20%] top-[16%] z-10 hidden h-[190px] w-[190px] md:block lg:h-[230px] lg:w-[230px]"
       />
 
-      {/* site tagline — one giant line bleeding off the right edge, above the fans' heads */}
-      <p className="pointer-events-none absolute left-[40%] top-[15%] z-10 hidden whitespace-nowrap font-serif text-[5.6vw] italic leading-none text-text-hero md:block">
-        &ldquo;Vascaíno não se escolhe. Se nasce.
+      {/* site tagline — one line ending near the right edge, above the fans' heads */}
+      <p className="pointer-events-none absolute left-[36%] top-[15%] z-10 hidden whitespace-nowrap font-serif text-[4.2vw] italic leading-none text-text-hero md:block">
+        <span className="text-red">&ldquo;</span>Vascaíno não se escolhe. Se nasce.
       </p>
 
       {/* fan photo + founding-year stat, side by side bottom-right — same composition as the Bam83 reference */}
