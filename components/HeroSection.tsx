@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Post } from "@/lib/posts";
 import HeroPlayerImage from "@/components/HeroPlayerImage";
+import CrestShowcase from "@/components/CrestShowcase";
 
 export default function HeroSection({ post }: { post: Post }) {
   return (
@@ -24,6 +25,12 @@ export default function HeroSection({ post }: { post: Post }) {
         <span className="text-[26vw]">18</span>
         <span className="text-[26vw]">98</span>
       </div>
+
+      {/* historic crests, flipping in the empty middle-left space */}
+      <CrestShowcase
+        intervalMs={5000}
+        className="absolute left-6 top-1/2 z-10 hidden h-[150px] w-[150px] -translate-y-1/2 md:block lg:left-12 lg:h-[190px] lg:w-[190px]"
+      />
 
       {/* fan photo + founding-year stat, side by side bottom-right — same composition as the Bam83 reference */}
       <div className="pointer-events-none absolute inset-y-0 right-6 z-[1] hidden items-end gap-6 md:flex lg:right-12">
