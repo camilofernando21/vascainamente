@@ -1,0 +1,14 @@
+---
+title: "Vasco vence o Cruzeiro por 3 a 1 e sai da zona de rebaixamento no Brasileirão"
+slug: "2026-08-30-vasco-vence-o-cruzeiro-por-3-a-1-e-sai-da-zona-de-rebaixamento-no-bras"
+date: "2026-08-30T06:25:37-03:00"
+category: "urgente"
+source: "GE.Globo"
+sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/30/analise-vasco-transforma-evolucao-em-vitoria-e-respira-contra-a-zona-de-rebaixamento.ghtml"
+imageUrl: "https://s2-ge.glbimg.com/-BW8Bory-mHfY_b17HA-YR7V94U=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/u/8/OB4LliTTmTfM0A09OD8Q/55495540232-17cc696abb-o.jpg"
+excerpt: "Pedro Emanuel conquistou sua primeira vitória no Brasileirão com o Vasco, superando o Cruzeiro por 3 a 1 em São Januário. Tchê Tchê, Lucas Freitas e David marcaram os gols de uma atuação coletiva sólida e dominante. O resultado tira o Cruz-Maltino da zona de rebaixamento e confirma a evolução do trabalho do técnico português."
+seoTitle: "Vasco vence Cruzeiro por 3 a 1 e sai do Z4"
+seoDescription: "Com gols de Tchê Tchê, Lucas Freitas e David, Vasco bate o Cruzeiro por 3 a 1 em São Januário e sai da zona de rebaixamento no Brasileirão."
+---
+
+O Vasco que Pedro Emanuel vinha construindo finalmente se traduziu em vitória no Campeonato Brasileiro. Diante de um São Januário lotado e em festa, o Cruz-Maltino dominou o Cruzeiro do início ao fim e venceu por 3 a 1, com gols de Tchê Tchê, Lucas Freitas e David. O time mineiro, escalado com reservas, sofreu para encontrar qualquer espaço no bloqueio vascaíno e só descontou nos minutos finais, com Felipe Morais, quando o jogo já estava encaminhado. Pedro Emanuel tinha tudo para sair com a vitória antes — o volume de jogo existia contra Bahia, Santos e Palmeiras — mas faltava a eficácia. Contra o Cruzeiro, não faltou. O gol de Tchê Tchê ainda no primeiro tempo foi simbólico: o volante não marcava há quase cinco meses e vivia sob pressão da torcida. Mais do que o gol em si, o momento desbloqueou o time inteiro. O Vasco já era melhor antes de balançar as redes, construiu chances claras e controlou o ritmo sem ansiedade. O cenário foi esse o jogo todo. No segundo tempo, Thiago Mendes, Tchê Tchê e Sosa dominaram o meio-campo. A zaga cortou as tentativas de bolas em profundidade sem sustos. O Cruzeiro só equilibrou o jogo após as substituições de Artur Jorge, com Matheus Pereira ganhando espaço, mas sem criar perigo real para Léo Jardim. O Vasco ainda sentiu o cansaço acumulado dos quase 80 minutos com um jogador a menos contra o Vitória, na quarta pela Copa do Brasil, mas segurou o resultado com maturidade. A vitória tem peso além dos três pontos. O Vasco dorme fora da zona de rebaixamento e entra nesta reta final do Brasileirão com um padrão de jogo reconhecível, uma identidade em construção e a confiança que só uma vitória convincente em casa pode dar. Agora é manter o nível.
