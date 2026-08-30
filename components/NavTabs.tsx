@@ -5,16 +5,15 @@ import TextRoll from "@/components/ui/text-roll";
 import { NAV_TABS } from "@/lib/categories";
 import { cn } from "@/lib/utils";
 
+const TABS = NAV_TABS.filter((tab) => tab.category !== "todos");
+
 export default function NavTabs({ className }: { className?: string }) {
   const [active, setActive] = useState(0);
 
   return (
     <nav className={cn("w-[240px] md:w-[280px]", className)}>
-      <p className="mb-3 border-b border-border pb-3 text-[10px] uppercase tracking-[1.8px] text-text-muted">
-        Vascainamente · Navegação
-      </p>
       <ol>
-        {NAV_TABS.map((tab, i) => {
+        {TABS.map((tab, i) => {
           const isActive = active === i;
           return (
             <li key={tab.category} className="border-b border-border last:border-b-0">
