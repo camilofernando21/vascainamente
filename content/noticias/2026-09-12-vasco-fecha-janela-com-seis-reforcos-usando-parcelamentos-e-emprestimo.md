@@ -1,0 +1,20 @@
+---
+title: "Vasco fecha janela com seis reforços usando parcelamentos e empréstimos para driblar limitações financeiras"
+slug: "2026-09-12-vasco-fecha-janela-com-seis-reforcos-usando-parcelamentos-e-emprestimo"
+date: "2026-09-12T10:30:56-03:00"
+category: "urgente"
+source: "GE.Globo"
+sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/pagamentos-futuros-e-atletas-emprestados-vasco-reforca-elenco-na-janela-mesmo-sem-venda-da-saf.ghtml"
+imageUrl: "https://s2-ge.glbimg.com/e34hCs2NxqILzjnREvOBi8Ins4U=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/N/t/uvN1AJQ82OLzTJdAOA0Q/hr37brkbmaakwgn.jpg"
+excerpt: "Mesmo sem concluir a venda da SAF, o Vasco anunciou seis reforços na segunda janela de 2026: Paulinho, Gabriel Pereira, Santiago Sosa, Alan Lescano, Colidio e Bruno Duarte. O clube apostou em compras parceladas, empréstimos com opção de compra e a influência direta do futuro investidor Marcos Lamacchia para viabilizar as contratações. Richarlison foi cogitado até o último dia, mas recusou proposta de três anos e meio e o acerto foi descartado."
+seoTitle: "Vasco fecha janela com 6 reforços apesar das limitações"
+seoDescription: "Vasco anuncia seis reforços na janela de 2026 com parcelamentos e empréstimos. Entenda como o clube viabilizou as contratações sem vender a SAF."
+---
+
+O Vasco encerrou a segunda janela de transferências de 2026 com seis reforços confirmados para o elenco de Pedro Emanuel. Admar Lopes apresentou Paulinho, Gabriel Pereira, Santiago Sosa, Alan Lescano, Colidio e Bruno Duarte — nomes que chegaram por caminhos diferentes, mas com um denominador comum: criatividade financeira para não comprometer ainda mais o caixa do clube a curto prazo. O sonho com Richarlison, do Tottenham, durou até o fim da janela, mas o atacante recusou o contrato oferecido e o Vasco encerrou as negociações sem insistir.
+
+A estratégia central passou por três modelos de negócio. Sosa, Colidio e Lescano foram adquiridos em definitivo, porém com entrada reduzida e o restante do valor parcelado a partir de 2027, já contando com os aportes previstos no acordo com Lamacchia. O caso de Sosa foi o mais tenso: o Racing só liberou o volante argentino após receber todas as garantias bancárias exigidas para os pagamentos futuros. Bruno Duarte foi comprado por 2 milhões de dólares junto ao Estrela Vermelha, da Sérvia, com quitação prevista ainda para o fim deste ano. Gabriel Pereira chegou por empréstimo do Copenhagen, com opção de compra que pode virar obrigação por metas — modelo pensado justamente para aliviar o impacto imediato. O Vasco desembolsa 1,5 milhão de euros pelo período do empréstimo. Paulinho, por sua vez, não custou nada: o lateral-esquerdo havia assinado pré-contrato em janeiro e chegou de graça.
+
+A figura de Marcos Lamacchia foi decisiva nos bastidores. O empresário, que aguarda a formalização da compra de 90% da SAF vascaína, deu as garantias necessárias para que parceiros comerciais e clubes vendedores confiassem nos pagamentos futuros. Sem essa segurança, dificilmente negociações como a de Sosa sairiam do papel. A Justiça também cumpriu seu papel ao autorizar um novo empréstimo de até R$ 150 milhões para reforçar o caixa e marcar para 25 de setembro a abertura do processo competitivo para a venda da SAF — com a proposta de Lamacchia servindo como piso base, num modelo conhecido como stalking horse.
+
+O processo competitivo abre espaço para novos interessados, mas quem quiser participar precisará apresentar garantias bancárias que cubram todo o passivo sujeito à recuperação judicial — uma barreira alta que protege o Vasco de propostas fora da realidade. A oferta de Lamacchia prevê R$ 500 milhões exclusivamente para o futebol, além das obrigações da recuperação judicial, numa negociação que gira em torno de R$ 3 bilhões. Com janela fechada e venda da SAF se aproximando do ato final, o Cruz-Maltino entra na reta decisiva da temporada com elenco reforçado e futuro mais definido do que há alguns meses.
