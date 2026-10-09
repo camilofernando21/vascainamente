@@ -1814,3 +1814,310 @@ html.vm-cursor body:not(.is-touch) *::after {
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Phase 2: hero menu, inner page chrome, category pages
+   ========================================================================== */
+
+/* hero menu: cream text + thin red line on the left, same for hover and keyboard focus */
+.vm-nav-link {
+  position: relative;
+  display: block;
+  padding: 10px 0;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  outline: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.vm-nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.vm-nav-link:hover,
+.vm-nav-link:focus-visible {
+  color: var(--text);
+  padding-left: 22px;
+}
+
+.vm-nav-link:hover::before,
+.vm-nav-link:focus-visible::before {
+  width: 12px;
+}
+
+/* keyboard focus keeps the same language, plus a thin red underline so it's unmistakable */
+.vm-nav-link:focus-visible {
+  box-shadow: inset 0 -1px 0 var(--red);
+}
+
+/* inner pages: top bar */
+.vm-topbar {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.vm-topbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 13px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+@media (min-width: 1024px) {
+  .vm-topbar {
+    padding: 1.5rem 3rem;
+  }
+  .vm-topbar-brand {
+    font-size: 15px;
+  }
+}
+
+/* category hero: label + giant serif name, ghost count behind (like the quarters panels) */
+.vm-cat-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 5vw 4rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.vm-cat-ghost {
+  position: absolute;
+  right: 3vw;
+  bottom: -5vw;
+  font-family: var(--font-serif), serif;
+  font-size: 30vw;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(240, 235, 225, 0.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.vm-cat-eyebrow {
+  position: relative;
+  color: rgba(240, 235, 225, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.vm-cat-title {
+  position: relative;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(4rem, 13vw, 12rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.vm-cat-list {
+  padding: 0 5vw;
+}
+
+.vm-cat-empty {
+  padding: 6rem 5vw;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: rgba(240, 235, 225, 0.45);
+}
+
+/* news rows */
+.vm-news-list {
+  list-style: none;
+}
+
+.vm-news-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.vm-news-row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 2rem;
+  align-items: baseline;
+  padding: 2.25rem 0;
+}
+
+.vm-news-index {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: rgba(240, 235, 225, 0.25);
+}
+
+.vm-news-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.vm-news-cat {
+  font-size: 0.7rem;
+  color: rgba(240, 235, 225, 0.35);
+}
+
+.vm-news-cat.is-red {
+  color: var(--red);
+}
+
+.vm-news-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.vm-news-row:hover .vm-news-title,
+.vm-news-row:focus-visible .vm-news-title {
+  color: rgba(240, 235, 225, 0.65);
+}
+
+.vm-news-row:focus-visible {
+  outline: none;
+  box-shadow: inset 2px 0 0 var(--red);
+}
+
+.vm-news-excerpt {
+  max-width: 70ch;
+  font-size: 0.85rem;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  color: rgba(240, 235, 225, 0.45);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.vm-news-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.3);
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .vm-cat-hero {
+    padding: 5rem 1.5rem 3rem;
+  }
+  .vm-cat-ghost {
+    font-size: 55vw;
+    right: 0;
+    bottom: -8vw;
+  }
+  .vm-cat-title {
+    font-size: clamp(3.2rem, 15vw, 5rem);
+  }
+  .vm-cat-list {
+    padding: 0 1.5rem;
+  }
+  .vm-news-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 1.75rem 0;
+  }
+  .vm-news-index {
+    display: none;
+  }
+  .vm-news-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* pagination */
+.vm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 4rem 5vw;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.vm-pagination ol {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.vm-page-num,
+.vm-page-step {
+  color: rgba(240, 235, 225, 0.3);
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.vm-page-num:hover,
+.vm-page-step:hover,
+.vm-page-num:focus-visible,
+.vm-page-step:focus-visible {
+  color: var(--text);
+}
+
+.vm-page-num:focus-visible,
+.vm-page-step:focus-visible {
+  box-shadow: inset 0 -1px 0 var(--red);
+}
+
+.vm-page-num[aria-current="page"] {
+  color: var(--text);
+  box-shadow: inset 0 -1px 0 var(--red);
+}
+
+.vm-page-step.is-disabled {
+  color: rgba(240, 235, 225, 0.1);
+}
+
+@media (max-width: 767px) {
+  .vm-pagination {
+    gap: 1rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+  .vm-pagination ol {
+    gap: 0.75rem;
+  }
+}
+
+/* footer links */
+.vm-footer-cats a {
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.vm-footer-cats a:hover,
+.vm-footer-cats a:focus-visible {
+  color: var(--text);
+}
+
+.vm-footer-cats a:focus-visible,
+.vm-footer-brand:focus-visible {
+  outline: none;
+  box-shadow: inset 0 -1px 0 var(--red);
+}

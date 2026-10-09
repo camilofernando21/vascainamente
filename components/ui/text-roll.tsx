@@ -19,7 +19,8 @@ export default function TextRoll({
       initial="initial"
       whileHover="hovered"
       className={cn("relative block overflow-hidden cursor-pointer", className)}
-      style={{ lineHeight: 0.85 }}
+      // 1.2, not tighter: uppercase accents (Ê, Ó, Ç) sit above the cap height and get clipped otherwise
+      style={{ lineHeight: 1.2 }}
     >
       <div>
         {children.split("").map((l, i) => {
