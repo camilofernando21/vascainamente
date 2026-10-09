@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
 import { PlayMark } from "@/components/ui/play-mark";
+import { CruzMalta } from "@/components/ui/cruz-malta";
 
 // Positions and tilts copied from Bam83's #quotes field.
 const SLOTS: { style: React.CSSProperties; rot: number }[] = [
@@ -19,12 +20,24 @@ const SLOTS: { style: React.CSSProperties; rot: number }[] = [
   { style: { top: "72%", left: "35%" }, rot: -1 },
 ];
 
-export default function TodayCards({ items, isToday }: { items: HomeItem[]; isToday: boolean }) {
+export type HistoryCard = { year: number; title: string; day: string };
+
+export default function TodayCards({
+  items,
+  isToday,
+  history = null,
+}: {
+  items: HomeItem[];
+  isToday: boolean;
+  // "Hoje na história": only when today's date exists in content/historia.json; takes the first slot
+  history?: HistoryCard | null;
+}) {
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const fieldRef = useRef<HTMLDivElement>(null);
   const punchRef = useRef<HTMLDivElement>(null);
-  const cards = items.slice(0, SLOTS.length);
+  const offset = history ? 1 : 0;
+  const cards = items.slice(0, SLOTS.length - offset);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -112,8 +125,30 @@ export default function TodayCards({ items, isToday }: { items: HomeItem[]; isTo
         </div>
 
         <div id="vm-today-field" ref={fieldRef}>
+          {history && (
+            <Link
+              href="/historia"
+              className="quote-card is-history"
+              style={
+                { ...SLOTS[0].style, "--rot": `${SLOTS[0].rot}deg`, "--tot": `${SLOTS[0].rot}deg` } as React.CSSProperties
+              }
+            >
+              <div className="quote-card-header">
+                <div className="quote-avatar is-red">
+                  <CruzMalta size={14} color="#F0EBE1" />
+                </div>
+                <div className="quote-meta">
+                  <span className="quote-name">Hoje na história</span>
+                  <span className="quote-handle">
+                    {history.day} de {history.year}
+                  </span>
+                </div>
+              </div>
+              <p className="quote-text">{history.title}</p>
+            </Link>
+          )}
           {cards.map((item, i) => {
-            const slot = SLOTS[i];
+            const slot = SLOTS[i + offset];
             return (
               <Link
                 key={item.slug}

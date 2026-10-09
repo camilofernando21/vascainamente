@@ -1,0 +1,24 @@
+{
+  "datas": [
+    { "dia": "21-08", "ano": 1898, "titulo": "Nasce o Club de Regatas Vasco da Gama", "texto": "Fundado por remadores no Rio de Janeiro, o clube leva o nome do navegador português." },
+    { "dia": "07-04", "ano": 1924, "titulo": "A Resposta Histórica", "texto": "O presidente José Augusto Prestes recusa excluir jogadores negros e operários para o Vasco entrar na nova liga." },
+    { "dia": "21-04", "ano": 1927, "titulo": "Inauguração de São Januário", "texto": "O estádio construído com dinheiro da torcida vira o maior do Brasil na época." },
+    { "dia": "14-03", "ano": 1948, "titulo": "Campeão Sul-Americano de Campeões", "texto": "O Expresso da Vitória empata com o River Plate em Santiago e conquista o primeiro grande título continental de um clube brasileiro." },
+    { "dia": "01-08", "ano": 1974, "titulo": "Primeiro título brasileiro", "texto": "Vasco 2 x 1 Cruzeiro no Maracanã, com Roberto Dinamite artilheiro do campeonato." },
+    { "dia": "16-12", "ano": 1989, "titulo": "Bicampeão brasileiro", "texto": "Vasco 1 x 0 São Paulo no Morumbi, gol de Sorato." },
+    { "dia": "21-12", "ano": 1997, "titulo": "Tricampeão brasileiro", "texto": "Empate com o Palmeiras no Maracanã garante o título do time de Edmundo, artilheiro com 29 gols." },
+    { "dia": "26-08", "ano": 1998, "titulo": "Campeão da Libertadores", "texto": "Vasco 2 x 1 Barcelona em Guayaquil, no ano do centenário." },
+    { "dia": "20-12", "ano": 2000, "titulo": "A virada da Mercosul", "texto": "Perdendo por 3 x 0 para o Palmeiras no Palestra Itália, o Vasco vira para 4 x 3 e é campeão." },
+    { "dia": "18-01", "ano": 2001, "titulo": "Tetracampeão brasileiro", "texto": "Vasco 3 x 1 São Caetano na final da Copa João Havelange." },
+    { "dia": "20-05", "ano": 2007, "titulo": "O milésimo gol de Romário", "texto": "De pênalti, contra o Sport, em São Januário." },
+    { "dia": "08-06", "ano": 2011, "titulo": "Campeão da Copa do Brasil", "texto": "Mesmo perdendo por 3 x 2 para o Coritiba, o Vasco leva a taça pelos gols marcados fora." },
+    { "dia": "08-01", "ano": 2023, "titulo": "Adeus a Roberto Dinamite", "texto": "Morre o maior ídolo e maior artilheiro da história do clube." }
+  ],
+  "titulos": [
+    { "nome": "Campeonato Sul-Americano de Campeões", "anos": [1948] },
+    { "nome": "Copa Libertadores", "anos": [1998] },
+    { "nome": "Copa Mercosul", "anos": [2000] },
+    { "nome": "Campeonato Brasileiro", "anos": [1974, 1989, 1997, 2000] },
+    { "nome": "Copa do Brasil", "anos": [2011] }
+  ]
+}

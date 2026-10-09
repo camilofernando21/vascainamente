@@ -40,7 +40,6 @@ export const MAIN_CATEGORIES: Category[] = [
   "elenco",
   "base",
   "feminino",
-  "historico",
 ];
 export const OPTIONAL_CATEGORIES: Category[] = ["urgente", "clube"];
 
@@ -48,6 +47,10 @@ export function isCategory(value: string): value is Category {
   return value in CATEGORY_NAMES;
 }
 
+// "Histórico" is a special page built from content/historia.json, not a news list.
+export const HISTORY_HREF = "/historia";
+
 export function categoryHref(category: Category, page = 1): string {
+  if (category === "historico") return HISTORY_HREF;
   return page > 1 ? `/categoria/${category}/${page}` : `/categoria/${category}`;
 }

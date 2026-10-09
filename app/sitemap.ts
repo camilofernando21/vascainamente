@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getPostsByCategory } from "@/lib/posts";
 import { MAIN_CATEGORIES, OPTIONAL_CATEGORIES, categoryHref } from "@/lib/categories";
+import { HISTORY_HREF } from "@/lib/categories";
 import { absoluteUrl } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -15,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: absoluteUrl("/"), lastModified: latest, changeFrequency: "hourly", priority: 1 },
+    { url: absoluteUrl(HISTORY_HREF), lastModified: latest, changeFrequency: "daily", priority: 0.7 },
     ...categories.map((c) => {
       const newest = getPostsByCategory(c)[0];
       return {

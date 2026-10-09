@@ -2666,3 +2666,333 @@ html.vm-cursor body:not(.is-touch) *::after {
     margin: 1rem 1.5rem 0;
   }
 }
+
+/* ==========================================================================
+   Phase 2B: Histórico (/historia)
+   ========================================================================== */
+
+.vm-hist-eyebrow {
+  color: rgba(240, 235, 225, 0.3);
+  margin-bottom: 2rem;
+}
+
+/* today in history */
+.vm-hist-today {
+  padding: 7rem 5vw 6rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.vm-hist-fact {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: end;
+  gap: 4vw;
+}
+
+.vm-hist-fact + .vm-hist-fact {
+  margin-top: 4rem;
+}
+
+.vm-hist-year {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(7rem, 22vw, 20rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--red);
+}
+
+.vm-hist-when {
+  color: rgba(240, 235, 225, 0.5);
+  margin-bottom: 1.25rem;
+}
+
+.vm-hist-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.4rem, 5vw, 4.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  max-width: 18ch;
+}
+
+.vm-hist-text {
+  margin-top: 1.5rem;
+  max-width: 52ch;
+  font-size: 0.95rem;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: rgba(240, 235, 225, 0.6);
+}
+
+/* timeline: pinned, horizontal */
+.vm-tl {
+  position: relative;
+}
+
+.vm-tl-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.vm-tl-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--red);
+  transition: width 0.1s linear;
+}
+
+.vm-tl-eyebrow {
+  position: absolute;
+  top: 3rem;
+  left: 5vw;
+  color: rgba(240, 235, 225, 0.3);
+}
+
+.vm-tl-track {
+  list-style: none;
+  display: flex;
+  width: max-content;
+  padding: 0 5vw;
+  will-change: transform;
+}
+
+.vm-tl-item {
+  flex: 0 0 auto;
+  width: clamp(320px, 42vw, 620px);
+  padding-right: 5vw;
+  border-left: 1px solid var(--line);
+  padding-left: 2.5rem;
+}
+
+.vm-tl-year {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(6rem, 14vw, 13rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+
+.vm-tl-day {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  color: rgba(240, 235, 225, 0.45);
+}
+
+.vm-tl-title {
+  margin-top: 1rem;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.vm-tl-text {
+  margin-top: 1rem;
+  max-width: 44ch;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: rgba(240, 235, 225, 0.55);
+}
+
+/* titles and idols blocks */
+.vm-hist-block {
+  padding: 7rem 5vw;
+  border-top: 1px solid var(--line);
+}
+
+.vm-hist-block-head {
+  margin-bottom: 3.5rem;
+}
+
+.vm-hist-block-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.vm-hist-block-title em {
+  font-style: italic;
+  color: rgba(240, 235, 225, 0.45);
+}
+
+.vm-titles {
+  list-style: none;
+}
+
+.vm-title-row {
+  display: grid;
+  grid-template-columns: 6rem 1fr auto;
+  align-items: baseline;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.vm-title-count {
+  font-family: var(--font-serif), serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--red);
+}
+
+.vm-title-name {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.vm-title-years {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: rgba(240, 235, 225, 0.5);
+  white-space: nowrap;
+}
+
+.vm-hist-idols {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.vm-hist-idol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(240, 235, 225, 0.1);
+}
+
+.vm-hist-idol-rank {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.65rem;
+  color: rgba(240, 235, 225, 0.4);
+}
+
+.vm-hist-idol-name {
+  font-family: var(--font-serif), serif;
+  font-size: 2.4rem;
+  line-height: 1;
+  color: var(--text);
+}
+
+.vm-hist-idol-value {
+  font-family: var(--font-serif), serif;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--text);
+}
+
+.vm-hist-idol-value span {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.35);
+}
+
+.vm-hist-idol-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(240, 235, 225, 0.07);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.4);
+}
+
+.vm-hist-cta {
+  margin-top: 3rem;
+}
+
+@media (max-width: 767px) {
+  .vm-hist-today {
+    padding: 4.5rem 1.5rem 4rem;
+  }
+  .vm-hist-fact {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .vm-hist-year {
+    font-size: clamp(6rem, 34vw, 9rem);
+  }
+  .vm-tl-eyebrow {
+    left: 1.5rem;
+    top: 2rem;
+  }
+  .vm-tl-track {
+    padding: 0 1.5rem;
+  }
+  .vm-tl-item {
+    width: 82vw;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .vm-tl-year {
+    font-size: 6.5rem;
+  }
+  .vm-hist-block {
+    padding: 4.5rem 1.5rem;
+  }
+  .vm-title-row {
+    grid-template-columns: 3rem 1fr;
+    gap: 0.5rem 1rem;
+  }
+  .vm-title-count {
+    font-size: 2.4rem;
+  }
+  .vm-title-years {
+    grid-column: 2;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-tl-sticky {
+    position: relative;
+    height: auto;
+    padding: 6rem 0 4rem;
+  }
+  .vm-tl-eyebrow {
+    position: static;
+    padding: 0 5vw;
+    margin-bottom: 2rem;
+  }
+  .vm-tl-track {
+    flex-direction: column;
+    width: auto;
+    gap: 3rem;
+  }
+  .vm-tl-item {
+    width: auto;
+  }
+}
+
+/* home: "hoje na história" card among the news cards */
+.quote-card.is-history {
+  border-color: rgba(200, 0, 60, 0.45);
+}
