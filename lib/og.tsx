@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
+import sharp from "sharp";
 import { CROSS_PATH } from "@/components/ui/cruz-malta";
 
 // Shared renderer for every generated image (link previews, Instagram card).
@@ -16,7 +17,10 @@ const RED = "#C8003C";
 const read = (rel: string) => fs.readFileSync(path.join(process.cwd(), rel));
 
 type Fonts = Parameters<typeof satori>[1]["fonts"];
-let cache: { fonts: Fonts; grain: string } | null = null;
+let cache: { fonts: Fonts; grain: Record<string, string> } | null = null;
+
+// Grain: a sparse 1-bit texture at the exact output size (light to embed, never resampled).
+const GRAIN_SIZES = ["1200x630", "1080x1350"];
 
 function assets() {
   if (!cache) {
@@ -27,7 +31,12 @@ function assets() {
         { name: "DM Mono", data: read("assets/fonts/DMMono-Regular.ttf"), weight: 400, style: "normal" },
         { name: "DM Mono", data: read("assets/fonts/DMMono-Medium.ttf"), weight: 500, style: "normal" },
       ],
-      grain: `data:image/png;base64,${read("assets/og-grain.png").toString("base64")}`,
+      grain: Object.fromEntries(
+        GRAIN_SIZES.map((size) => [
+          size,
+          `data:image/png;base64,${read(`assets/og-grain-${size}.png`).toString("base64")}`,
+        ])
+      ),
     };
   }
   return cache;
@@ -61,11 +70,12 @@ function Frame({
   padding: number;
   children: React.ReactNode;
 }) {
-  const { grain } = assets();
+  const { grain: grains } = assets();
+  const grain = grains[`${width}x${height}`] ?? grains[GRAIN_SIZES[0]];
   return (
     <div style={{ width, height, display: "flex", position: "relative", background: BG, color: CREAM }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={grain} width={width} height={height} alt="" style={{ position: "absolute", inset: 0, opacity: 0.09 }} />
+      <img src={grain} width={width} height={height} alt="" style={{ position: "absolute", inset: 0, opacity: 0.07 }} />
       <div
         style={{
           position: "relative",
@@ -86,9 +96,11 @@ function Frame({
 async function render(element: React.ReactNode, width: number, height: number): Promise<Response> {
   const svg = await satori(element, { width, height, fonts: assets().fonts });
   const png = new Resvg(svg, { fitTo: { mode: "width", value: width } }).render().asPng();
-  return new Response(new Uint8Array(png), {
+  // JPEG, not PNG: the grain makes PNGs ~300-600 KB, and WhatsApp drops heavy preview images
+  const jpeg = await sharp(png).jpeg({ quality: 82, mozjpeg: true }).toBuffer();
+  return new Response(new Uint8Array(jpeg), {
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": "image/jpeg",
       "Cache-Control": "public, max-age=0, s-maxage=86400, stale-while-revalidate=604800",
     },
   });

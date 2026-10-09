@@ -20,7 +20,7 @@ export async function GET(_req: Request, { params }: { params: { slug: string } 
     1080,
     1350
   );
-  image.headers.set("Content-Disposition", `inline; filename="vascainamente-${post.slug}.png"`);
+  image.headers.set("Content-Disposition", `inline; filename="vascainamente-${post.slug}.jpg"`);
   image.headers.set("X-Robots-Tag", "noindex");
   return image;
 }

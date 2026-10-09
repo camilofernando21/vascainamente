@@ -4,8 +4,8 @@ const nextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
   experimental: {
-    // native PNG encoder for the generated images: loaded from node_modules, not bundled
-    serverComponentsExternalPackages: ["@resvg/resvg-js"],
+    // native image encoders for the generated images: loaded from node_modules, not bundled
+    serverComponentsExternalPackages: ["@resvg/resvg-js", "sharp"],
     // generated images and on-demand pages read these from disk at request time
     outputFileTracingIncludes: {
       "/**": ["./content/**", "./assets/**"],
