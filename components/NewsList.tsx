@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
+import { PlayMark } from "@/components/ui/play-mark";
 
 // List rows in the language of the home's "últimas" panels: label, serif title, mono summary, stat line.
 export default function NewsList({
@@ -21,8 +22,18 @@ export default function NewsList({
               {String(startIndex + i + 1).padStart(2, "0")}
             </span>
             <span className="vm-news-main">
-              {showCategory && (
-                <span className={cn("vm-label vm-news-cat", item.urgent && "is-red")}>{item.category}</span>
+              {showCategory ? (
+                <span className={cn("vm-label vm-news-cat", item.urgent && "is-red")}>
+                  {item.category}
+                  {item.hasVideo && <PlayMark />}
+                </span>
+              ) : (
+                item.hasVideo && (
+                  <span className="vm-label vm-news-cat">
+                    Vídeo
+                    <PlayMark />
+                  </span>
+                )
               )}
               <span className="vm-news-title">{item.title}</span>
               {item.excerpt && <span className="vm-news-excerpt">{item.excerpt}</span>}

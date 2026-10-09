@@ -16,6 +16,7 @@ export interface HomeItem {
   ago: string;
   agoCompact: string;
   dateFull: string;
+  hasVideo: boolean;
 }
 
 const SOURCE_SHORT: Record<string, string> = {
@@ -55,6 +56,7 @@ export function toHomeItem(post: Post): HomeItem {
     ago: timeAgoWords(post.date),
     agoCompact: timeAgoCompact(post.date),
     dateFull: formatDateFull(post.date),
+    hasVideo: !!post.videoId,
   };
 }
 

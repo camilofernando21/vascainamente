@@ -7,6 +7,8 @@ import hashlib
 import re
 import os
 import sys
+import calendar
+import time
 from datetime import datetime
 from pathlib import Path
 import anthropic
@@ -113,6 +115,43 @@ def slugify(text: str) -> str:
     text = re.sub(r"\s+", "-", text.strip())
     return text[:70]
 
+# Official Vasco TV channel (public feed). Its recent videos are offered to the AI so a news item
+# can carry the matching video (press conference, goals, behind the scenes).
+VASCO_TV_FEED = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZD5qcen7lbLPFTjfvdLFcw"
+VIDEO_WINDOW_HOURS = 48
+
+def fetch_recent_videos() -> list:
+    """Videos from the last 48h. Any failure returns [] so news keep being published without video."""
+    try:
+        feed = feedparser.parse(VASCO_TV_FEED)
+        if getattr(feed, "bozo", False) and not feed.entries:
+            raise ValueError(feed.get("bozo_exception"))
+        cutoff = time.time() - VIDEO_WINDOW_HOURS * 3600
+        videos = []
+        for entry in feed.entries:
+            vid = entry.get("yt_videoid", "")
+            published = entry.get("published_parsed")
+            if not vid or not published or calendar.timegm(published) < cutoff:
+                continue
+            videos.append({"id": vid, "title": entry.get("title", "").strip()})
+        print(f"Vasco TV: {len(videos)} video(s) nas ultimas {VIDEO_WINDOW_HOURS}h")
+        return videos
+    except Exception as e:
+        print(f"  AVISO: feed da Vasco TV indisponivel, seguindo sem video: {e}")
+        return []
+
+def video_prompt(videos: list) -> str:
+    if not videos:
+        return ""
+    lines = "\n".join(f"- {v['id']}: {v['title']}" for v in videos)
+    return f"\nVídeos publicados nas últimas 48 horas no canal oficial Vasco TV (ID: título):\n{lines}\n"
+
+VIDEO_FIELD = (
+    "\n- \"videoId\": o ID de UM vídeo da lista acima que trate exatamente do mesmo assunto da notícia "
+    "(mesmo jogo, mesma coletiva, mesmos bastidores, mesma pessoa e mesmo fato), ou null. "
+    "Na dúvida, responda null: é melhor sem vídeo do que com vídeo errado."
+)
+
 # Matches a dash used as punctuation. Dashes between digits (placar 2–1, 2023–2024)
 # become a hyphen so the meaning survives; everything else becomes a comma.
 DIGIT_DASH = re.compile(r"(?<=\d)\s*[—–]\s*(?=\d)")
@@ -138,7 +177,8 @@ def is_fatal_api_error(e: Exception) -> bool:
         return "credit balance" in msg or "billing" in msg
     return False
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str) -> dict:
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list) -> dict:
+    video_field = VIDEO_FIELD if videos else ""
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1200,
@@ -152,13 +192,13 @@ Artigo original:
 Título: {title}
 Trecho: {desc}
 Fonte: {source}
-
+{video_prompt(videos)}
 Retorne SOMENTE um JSON (sem markdown) com:
 - "title": título reescrito: direto, preciso, sem sensacionalismo
 - "excerpt": 2-3 frases naturais de resumo
 - "body": 3-4 parágrafos desenvolvendo a notícia
 - "seoTitle": título SEO (máx 60 chars)
-- "seoDescription": meta description (máx 155 chars)"""
+- "seoDescription": meta description (máx 155 chars){video_field}"""
         }]
     )
     text = response.content[0].text.strip()
@@ -169,10 +209,17 @@ Retorne SOMENTE um JSON (sem markdown) com:
     for key in ("title", "excerpt", "body", "seoTitle", "seoDescription"):
         if isinstance(article.get(key), str):
             article[key] = strip_dashes(article[key])
+    # only accept an ID that was actually offered: never trust a made-up one
+    valid_ids = {v["id"] for v in videos}
+    vid = article.get("videoId")
+    article["videoId"] = vid if isinstance(vid, str) and vid in valid_ids else None
     return article
 
 def publish(article: dict, category: str, source: str, url: str, image_url: str = ""):
     now = datetime.now()
+    video_frontmatter = (
+        f'videoId: "{article["videoId"]}"\nvideoSource: "Vasco TV"\n' if article.get("videoId") else ""
+    )
     slug = f"{now.strftime('%Y-%m-%d')}-{slugify(article['title'])}"
     date = now.strftime("%Y-%m-%dT%H:%M:%S-03:00")
 
@@ -187,7 +234,7 @@ imageUrl: "{image_url}"
 excerpt: "{article['excerpt'].replace('"', "'")}"
 seoTitle: "{article.get('seoTitle', article['title']).replace('"', "'")}"
 seoDescription: "{article.get('seoDescription', '').replace('"', "'")}"
----
+{video_frontmatter}---
 
 {article['body']}
 """
@@ -200,6 +247,7 @@ def main():
     cache_file = ".news_cache.json"
     cache = load_cache(cache_file)
     published = 0
+    videos = None  # fetched once, only when there is news to process
 
     if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
         print("ERRO FATAL: ANTHROPIC_API_KEY ausente ou vazia.")
@@ -229,7 +277,9 @@ def main():
                 cat = classify(title, desc)
 
                 try:
-                    article = process_with_ai(client, title, desc, src["name"])
+                    if videos is None:
+                        videos = fetch_recent_videos()
+                    article = process_with_ai(client, title, desc, src["name"], videos)
                     publish(article, cat, src["name"], link, image_url)
                     cache.add(fp)
                     published += 1

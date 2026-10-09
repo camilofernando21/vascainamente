@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { CROSS_PATH } from "@/components/ui/cruz-malta";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
+import { PlayMark } from "@/components/ui/play-mark";
 
 const LINE = "rgba(240,235,225,0.08)";
 const LINE_MID = "rgba(240,235,225,0.15)";
@@ -149,7 +150,10 @@ export default function LatestHorizontal({ items }: { items: HomeItem[] }) {
               </div>
 
               <div className="q-editorial">
-                <p className={cn("vm-label q-panel-eyebrow", item.urgent && "is-red")}>{item.category}</p>
+                <p className={cn("vm-label q-panel-eyebrow", item.urgent && "is-red")}>
+                  {item.category}
+                  {item.hasVideo && <PlayMark size={11} />}
+                </p>
                 <h3 className="q-panel-title">
                   <Link href={`/${item.slug}`}>{item.title}</Link>
                 </h3>

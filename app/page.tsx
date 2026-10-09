@@ -6,11 +6,13 @@ import GoalSection from "@/components/home/GoalSection";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
 import HistoricQuote from "@/components/home/HistoricQuote";
+import VascoTv from "@/components/home/VascoTv";
 import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
 import { pickTodayPosts, toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
+import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import type { Metadata } from "next";
 
 export const revalidate = 60;
@@ -27,8 +29,9 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: "Vascainamente", description: SITE_DESCRIPTION },
 };
 
-export default function Home() {
+export default async function Home() {
   const posts = getAllPosts();
+  const channelVideos = await getVascoTvVideos(6);
   const featured = posts[0] ?? null;
   const today = pickTodayPosts(posts);
 
@@ -49,6 +52,7 @@ export default function Home() {
       <GoalSection item={featured ? toHomeItem(featured) : null} />
       <LatestHorizontal items={posts.slice(1, 5).map(toHomeItem)} />
       <TodayCards items={today.items.map(toHomeItem)} isToday={today.isToday} />
+      <VascoTv videos={channelVideos} channelUrl={VASCO_TV_CHANNEL_URL} />
       <HistoricQuote />
       <Idols />
       <SiteFooter />

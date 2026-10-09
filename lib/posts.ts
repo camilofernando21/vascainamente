@@ -33,6 +33,9 @@ export interface PostMeta {
   homeScore?: number;
   awayScore?: number;
   venue?: string;
+  // YouTube video picked by the news robot (official channel only)
+  videoId?: string;
+  videoSource?: string;
 }
 
 export interface Post extends PostMeta {
@@ -69,6 +72,8 @@ function readPostFile(slug: string): Post {
     homeScore: data.homeScore,
     awayScore: data.awayScore,
     venue: data.venue,
+    videoId: typeof data.videoId === "string" && data.videoId ? data.videoId : undefined,
+    videoSource: typeof data.videoSource === "string" && data.videoSource ? data.videoSource : undefined,
     content,
   };
 }

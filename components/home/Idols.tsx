@@ -13,12 +13,29 @@ import {
 } from "@/lib/youtube";
 import { cn } from "@/lib/utils";
 
+// Official channels only (Vasco TV, ge tv), all checked for embedding.
+const VASCO_TV = "Vasco TV";
+const GE = "ge.globo";
+
+type IdolVideo = { id: string; credit: string };
+
 // Texts supplied by the editor; do not change numbers or wording without checking with them.
-const IDOLS = [
+const IDOLS: {
+  name: string;
+  videos: IdolVideo[];
+  rank: string;
+  value: string;
+  unit: string;
+  lines: string[];
+}[] = [
   {
     name: "Roberto Dinamite",
-    videoId: "RpTCqNPEq-g",
-    videoCredit: "Vasco TV",
+    videos: [
+      { id: "RpTCqNPEq-g", credit: VASCO_TV },
+      { id: "Cf0EsQDY4iI", credit: GE },
+      { id: "-COqah3cdZw", credit: GE },
+      { id: "nIbv85ePNvU", credit: GE },
+    ],
     rank: "Maior artilheiro da história",
     value: "708",
     unit: "gols",
@@ -26,9 +43,11 @@ const IDOLS = [
   },
   {
     name: "Romário",
-    // milésimo gol, Vasco 3 x 1 Sport, 2007 (ge tv channel)
-    videoId: "FGur3GPvfmw",
-    videoCredit: "ge.globo",
+    videos: [
+      { id: "FGur3GPvfmw", credit: GE }, // milésimo gol, Vasco 3 x 1 Sport, 2007
+      { id: "rSy14ftksyg", credit: GE },
+      { id: "IWiM_ktgua0", credit: GE },
+    ],
     rank: "2º maior artilheiro do clube",
     value: "313",
     unit: "gols",
@@ -36,8 +55,11 @@ const IDOLS = [
   },
   {
     name: "Edmundo",
-    videoId: "8iMIV_v6T-Y",
-    videoCredit: "Vasco TV",
+    videos: [
+      { id: "8iMIV_v6T-Y", credit: VASCO_TV },
+      { id: "BveUu9158t8", credit: GE },
+      { id: "FiOzHG5k0yA", credit: VASCO_TV },
+    ],
     rank: "Brasileirão de 1997",
     value: "29",
     unit: "gols",
@@ -45,8 +67,11 @@ const IDOLS = [
   },
   {
     name: "Juninho",
-    videoId: "ETlflPNEvJ4",
-    videoCredit: "Vasco TV",
+    videos: [
+      { id: "ETlflPNEvJ4", credit: VASCO_TV },
+      { id: "Xf1q1YYWNTU", credit: VASCO_TV },
+      { id: "rSy14ftksyg", credit: GE },
+    ],
     rank: "O gol do Monumental",
     value: "1998",
     unit: "Libertadores",
@@ -54,10 +79,27 @@ const IDOLS = [
   },
 ];
 
-// YouTube embeds (Vasco TV, plus ge tv for Romário). One iframe for the whole section, created near the viewport,
-// loaded paused. The chosen idol's video plays behind the names and stays until another name is
-// chosen or the section leaves the screen (then it pauses and the sound goes back to muted).
-const FIRST_VIDEO = IDOLS.find((idol) => idol.videoId)?.videoId ?? "";
+// One iframe for the whole section, created near the viewport, loaded paused. Each time an idol is
+// chosen the next video of their list plays (position kept in sessionStorage); when a video ends the
+// following one starts. It stays until another name is chosen or the section leaves the screen
+// (then it pauses and the sound goes back to muted).
+const FIRST_VIDEO = IDOLS[0].videos[0].id;
+const STORAGE_KEY = (idol: number) => `vm-idol-video-${idol}`;
+
+function readNext(idol: number): number {
+  try {
+    const n = Number(sessionStorage.getItem(STORAGE_KEY(idol)));
+    return Number.isInteger(n) && n >= 0 ? n % IDOLS[idol].videos.length : 0;
+  } catch {
+    return 0;
+  }
+}
+
+function storeNext(idol: number, playingIndex: number) {
+  try {
+    sessionStorage.setItem(STORAGE_KEY(idol), String((playingIndex + 1) % IDOLS[idol].videos.length));
+  } catch {}
+}
 const EMBED_SRC = ytEmbedUrl(FIRST_VIDEO, {
   autoplay: 0,
   mute: 1,
@@ -73,11 +115,17 @@ export default function Idols() {
   const namesRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const loadedVideo = useRef(FIRST_VIDEO);
+  const endedVideo = useRef<string | null>(null);
   const near = useNearViewport(sectionRef);
   const inView = useInViewport(sectionRef, near);
   const { ready, onLoad } = useYouTubeReady(iframeRef, near);
   const [active, setActive] = useState<number | null>(null);
-  const [lastVideo, setLastVideo] = useState<string | null>(null);
+  const [videoIndex, setVideoIndex] = useState(0);
+  const [lastVideo, setLastVideo] = useState<IdolVideo | null>(null);
+  const activeRef = useRef<number | null>(null);
+  const videoIndexRef = useRef(0);
+  activeRef.current = active;
+  videoIndexRef.current = videoIndex;
   const [muted, setMuted] = useState(true);
   const mutedRef = useRef(muted);
   mutedRef.current = muted;
@@ -123,7 +171,8 @@ export default function Idols() {
     return () => ro.disconnect();
   }, []);
 
-  const activeVideo = active !== null ? IDOLS[active].videoId : null;
+  const activeEntry = active !== null ? IDOLS[active].videos[videoIndex] ?? null : null;
+  const activeVideo = activeEntry?.id ?? null;
   const playing = !!activeVideo && ready && inView;
 
   // leaving the section clears the choice and the sound
@@ -146,11 +195,13 @@ export default function Idols() {
     if (loadedVideo.current !== activeVideo) {
       ytCommand(iframe, "loadVideoById", [activeVideo]);
       loadedVideo.current = activeVideo;
+      endedVideo.current = null;
     } else {
       ytCommand(iframe, "playVideo");
     }
     ytCommand(iframe, mutedRef.current ? "mute" : "unMute");
-    setLastVideo(activeVideo);
+    setLastVideo(activeEntry);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- activeEntry follows activeVideo
   }, [ready, activeVideo, inView]);
 
   useEffect(() => {
@@ -165,16 +216,31 @@ export default function Idols() {
     setMuted(!muted);
   };
 
-  // loop: loadVideoById plays once, so restart it when it ends while still active
+  // a video ended: move on to the idol's next one (a one-video list just restarts)
   useEffect(() => {
     if (!ready) return;
     const onMessage = (e: MessageEvent) => {
       if (e.source !== iframeRef.current?.contentWindow) return;
       try {
         const data = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
-        if (data?.event === "onStateChange" && data.info === 0) {
+        // the postMessage API reports state inside "infoDelivery" (onStateChange only for subscribers)
+        const ended =
+          (data?.event === "infoDelivery" && data.info?.playerState === 0) ||
+          (data?.event === "onStateChange" && data.info === 0);
+        // infoDelivery repeats: advance once per loaded video
+        if (!ended || endedVideo.current === loadedVideo.current) return;
+        endedVideo.current = loadedVideo.current;
+        const idol = activeRef.current;
+        if (idol === null) return;
+        const list = IDOLS[idol].videos;
+        const next = (videoIndexRef.current + 1) % list.length;
+        storeNext(idol, next);
+        if (list[next].id === loadedVideo.current) {
+          endedVideo.current = null;
           ytCommand(iframeRef.current, "seekTo", [0, true]);
           ytCommand(iframeRef.current, "playVideo");
+        } else {
+          setVideoIndex(next);
         }
       } catch {}
     };
@@ -182,7 +248,14 @@ export default function Idols() {
     return () => window.removeEventListener("message", onMessage);
   }, [ready]);
 
-  const choose = (i: number) => setActive(i);
+  // choosing a different idol starts their next video; re-entering the current one changes nothing
+  const choose = (i: number) => {
+    if (activeRef.current === i) return;
+    const index = readNext(i);
+    storeNext(i, index);
+    setVideoIndex(index);
+    setActive(i);
+  };
 
   return (
     <section id="idolos" ref={sectionRef} aria-label="Ídolos">
@@ -250,11 +323,11 @@ export default function Idols() {
       {lastVideo && (
         <a
           className={cn("vm-video-credit", !playing && "is-dim")}
-          href={ytWatchUrl(lastVideo)}
+          href={ytWatchUrl(lastVideo.id)}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Vídeo: {IDOLS.find((idol) => idol.videoId === lastVideo)?.videoCredit}
+          Vídeo: {lastVideo.credit}
         </a>
       )}
     </section>

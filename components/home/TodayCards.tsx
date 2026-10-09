@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
+import { PlayMark } from "@/components/ui/play-mark";
 
 // Positions and tilts copied from Bam83's #quotes field.
 const SLOTS: { style: React.CSSProperties; rot: number }[] = [
@@ -129,7 +130,10 @@ export default function TodayCards({ items, isToday }: { items: HomeItem[]; isTo
                 <div className="quote-card-header">
                   <div className={cn("quote-avatar", item.urgent && "is-red")}>{item.sourceShort}</div>
                   <div className="quote-meta">
-                    <span className="quote-name">{item.source || "Vascainamente"}</span>
+                    <span className="quote-name">
+                      {item.source || "Vascainamente"}
+                      {item.hasVideo && <PlayMark size={8} />}
+                    </span>
                     <span className="quote-handle">{item.ago}</span>
                   </div>
                 </div>

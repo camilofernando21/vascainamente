@@ -5,6 +5,8 @@ import ReadingProgress from "@/components/ReadingProgress";
 import SiteTopBar from "@/components/SiteTopBar";
 import NewsCards from "@/components/NewsCards";
 import ShareLinks from "@/components/article/ShareLinks";
+import LiteYouTube from "@/components/LiteYouTube";
+import { ytWatchUrl } from "@/lib/youtube-url";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 import { CATEGORY_NAMES, categoryHref } from "@/lib/categories";
@@ -130,6 +132,22 @@ export default async function ArticlePage({
               {readingTime(post.content)} min de leitura
             </p>
           </header>
+
+          {post.videoId && (
+            <figure className="vm-article-video">
+              <LiteYouTube id={post.videoId} title={post.title} />
+              <figcaption>
+                <a
+                  className="vm-lite-credit"
+                  href={ytWatchUrl(post.videoId)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Vídeo: {post.videoSource || "Vasco TV"}
+                </a>
+              </figcaption>
+            </figure>
+          )}
 
           <div
             className="vm-article-body"
