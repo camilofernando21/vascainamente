@@ -1350,7 +1350,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   }
 }
 
-#vm-presser-sound {
+.vm-sound-toggle {
   position: absolute;
   bottom: 3rem;
   left: 50%;
@@ -1372,17 +1372,31 @@ html.vm-cursor body:not(.is-touch) *::after {
   animation: soundPulse 3s ease-in-out infinite;
 }
 
-#vm-presser-sound:hover {
+.vm-sound-toggle:hover {
   color: rgba(240, 235, 225, 0.5);
 }
 
-#vm-presser-sound svg {
+.vm-sound-toggle svg {
   opacity: 0.4;
 }
 
 @keyframes soundPulse {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.9; }
+}
+
+/* idols: sits above the "passe o mouse" hint, never on top of it */
+.vm-sound-toggle.is-idols {
+  bottom: 6.5rem;
+  z-index: 2;
+}
+
+/* the idol whose video is playing in full cream, the others dimmed */
+.final-names.has-active .final-name {
+  color: rgba(240, 235, 225, 0.35);
+}
+.final-names.has-active .final-name-wrap.is-active .final-name {
+  color: var(--text);
 }
 
 .vm-video-credit {
@@ -1407,10 +1421,13 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 @media (max-width: 767px) {
-  #vm-presser-sound {
+  .vm-sound-toggle {
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     bottom: 3.5rem;
+  }
+  .vm-sound-toggle.is-idols {
+    bottom: 6rem;
   }
   .vm-video-credit {
     right: 1rem;
@@ -1698,7 +1715,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   .badge-ring,
   .vm-marquee-track,
   #final-hint,
-  #vm-presser-sound,
+  .vm-sound-toggle,
   .glitch-layer-red.active,
   .glitch-layer-blue.active {
     animation: none;

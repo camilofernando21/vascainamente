@@ -86,9 +86,12 @@ export default function ScrollBadge({ stopAtId = "idolos" }: { stopAtId?: string
 
     if (!isTouch) document.addEventListener("mousemove", onMove, { passive: true });
     window.addEventListener("scroll", onScroll, { passive: true });
+    // the page can open already scrolled (reload / restored position): check once without a scroll event
+    const firstCheck = requestAnimationFrame(update);
     const firstShow = setTimeout(showBadge, 9000);
 
     return () => {
+      cancelAnimationFrame(firstCheck);
       clearTimeout(firstShow);
       clearTimeout(hideTimer);
       clearTimeout(followTimer);

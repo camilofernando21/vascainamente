@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, type RefObject } from "react";
+import { useCallback, useEffect, useRef, useState, type RefObject } from "react";
 
 // Official Vasco TV embeds only: never download or self-host the videos.
 export const YT_ORIGIN = "https://www.youtube-nocookie.com";
@@ -93,3 +93,23 @@ export function useInViewport(ref: RefObject<HTMLElement>, enabled: boolean): bo
   return inView;
 }
 
+
+// Only one section may have sound on at a time: unmuting broadcasts a claim, and every
+// other player that hears it mutes itself.
+const AUDIO_CLAIM = "vm-audio-claim";
+
+export function claimAudio(owner: string) {
+  window.dispatchEvent(new CustomEvent(AUDIO_CLAIM, { detail: owner }));
+}
+
+export function useAudioClaims(owner: string, onOtherClaim: () => void) {
+  const callback = useRef(onOtherClaim);
+  callback.current = onOtherClaim;
+  useEffect(() => {
+    const onClaim = (e: Event) => {
+      if ((e as CustomEvent<string>).detail !== owner) callback.current();
+    };
+    window.addEventListener(AUDIO_CLAIM, onClaim);
+    return () => window.removeEventListener(AUDIO_CLAIM, onClaim);
+  }, [owner]);
+}

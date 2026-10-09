@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
+  claimAudio,
+  useAudioClaims,
   useInViewport,
   useNearViewport,
   useYouTubeReady,
@@ -43,9 +45,16 @@ export default function HistoricQuote() {
 
   const toggleSound = () => {
     const next = !muted;
+    if (!next) claimAudio("presser");
     ytCommand(iframeRef.current, next ? "mute" : "unMute");
     setMuted(next);
   };
+
+  // the idols section turned its sound on: go quiet
+  useAudioClaims("presser", () => {
+    ytCommand(iframeRef.current, "mute");
+    setMuted(true);
+  });
 
   return (
     <section id="vm-presser" ref={sectionRef} aria-label="Resposta Histórica">
@@ -71,7 +80,7 @@ export default function HistoricQuote() {
 
       {near && (
         <>
-          <button type="button" id="vm-presser-sound" onClick={toggleSound} aria-pressed={!muted}>
+          <button type="button" id="vm-presser-sound" className="vm-sound-toggle" onClick={toggleSound} aria-pressed={!muted}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <polygon points="3,7 3,17 8,17 14,22 14,2 8,7" fill="#F0EBE1" />
               <path d="M17 9a4 4 0 0 1 0 6" stroke="#F0EBE1" strokeWidth="2" strokeLinecap="round" />
