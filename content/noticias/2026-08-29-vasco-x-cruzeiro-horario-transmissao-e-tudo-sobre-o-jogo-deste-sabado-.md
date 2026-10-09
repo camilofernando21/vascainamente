@@ -2,7 +2,7 @@
 title: "Vasco x Cruzeiro: horário, transmissão e tudo sobre o jogo deste sábado em São Januário"
 slug: "2026-08-29-vasco-x-cruzeiro-horario-transmissao-e-tudo-sobre-o-jogo-deste-sabado-"
 date: "2026-08-29T13:05:26-03:00"
-category: "clube"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/ultimas-noticias/2026/08/29/jogo-do-vasco-hoje-pelo-brasileirao-que-horas-comeca-e-onde-assistir.ghtm"
 imageUrl: ""

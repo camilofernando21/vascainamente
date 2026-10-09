@@ -2,7 +2,7 @@
 title: "De virada e com força mental: Vasco quebra tabu em Porto Alegre e respira no Brasileirão"
 slug: "2026-09-13-de-virada-e-com-forca-mental-vasco-quebra-tabu-em-porto-alegre-e-respi"
 date: "2026-09-13T06:14:15-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/13/analise-vasco-da-resposta-na-hora-certa-e-mostra-forca-mental-para-reagir-no-brasileirao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/etoTutENhPsHJymitMwKiicdRBk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/4/d/FFsfghQbAAUwkpjfpodQ/agif26091217425991.jpg"

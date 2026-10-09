@@ -2,7 +2,7 @@
 title: "Vasco fecha janela com seis reforços usando parcelamentos e empréstimos para driblar limitações financeiras"
 slug: "2026-09-12-vasco-fecha-janela-com-seis-reforcos-usando-parcelamentos-e-emprestimo"
 date: "2026-09-12T10:30:56-03:00"
-category: "urgente"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/pagamentos-futuros-e-atletas-emprestados-vasco-reforca-elenco-na-janela-mesmo-sem-venda-da-saf.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/e34hCs2NxqILzjnREvOBi8Ins4U=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/N/t/uvN1AJQ82OLzTJdAOA0Q/hr37brkbmaakwgn.jpg"

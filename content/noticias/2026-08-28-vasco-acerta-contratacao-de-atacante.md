@@ -2,7 +2,7 @@
 title: "Vasco acerta contratação de atacante e anúncio pode vir nas próximas horas"
 slug: "2026-08-28-vasco-acerta-contratacao-de-atacante"
 date: "2026-08-28T14:30:00-03:00"
-category: "urgente"
+category: "transferencia"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/"
 imageUrl: ""

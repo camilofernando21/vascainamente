@@ -2,7 +2,7 @@
 title: "Vasco x Rio Branco-ES: Sub-20 entra em campo pela Copa do Brasil 2026"
 slug: "2026-09-17-vasco-x-rio-branco-es-sub-20-entra-em-campo-pela-copa-do-brasil-2026"
 date: "2026-09-17T19:12:58-03:00"
-category: "resultado"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/es/futebol/copa-do-brasil-sub-20/jogo/17-09-2026/vasco-rio-branco-es-sub-20.ghtml"
 imageUrl: ""

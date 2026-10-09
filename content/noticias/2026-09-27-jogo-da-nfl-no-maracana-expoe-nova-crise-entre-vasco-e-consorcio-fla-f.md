@@ -2,7 +2,7 @@
 title: "Jogo da NFL no Maracanã expõe nova crise entre Vasco e consórcio Fla-Flu"
 slug: "2026-09-27-jogo-da-nfl-no-maracana-expoe-nova-crise-entre-vasco-e-consorcio-fla-f"
 date: "2026-09-27T12:24:01-03:00"
-category: "resultado"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/27/entenda-como-jogo-da-nfl-aumentou-desgaste-entre-vasco-e-consorcio-do-maracana.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/K2pCkLCdAIFBNkw36XDZdnRZt6E=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/9/n/V24tR1Tm2jZ422vaMRQg/55510485573-a569cddedb-o.jpg"

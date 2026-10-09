@@ -2,7 +2,7 @@
 title: "Léo Jardim valoriza trabalho de Pedro Emanuel e cobra sequência: 'Temos identidade e plano de jogo'"
 slug: "2026-08-30-leo-jardim-valoriza-trabalho-de-pedro-emanuel-e-cobra-sequencia-temos-"
 date: "2026-08-30T19:30:44-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/30/leo-jardim-exalta-evolucao-do-vasco-e-cita-luta-em-tres-competicoes-precisamos-de-todo-mundo.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/5ZXZn1GgSxLfe2qy00XEFfde-Wk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/u/k/vgCHx1TDanB5BEWacTZw/55496910815-57956db62f-o.jpg"

@@ -2,7 +2,7 @@
 title: "Vasco goleia Coritiba por 5 a 0 e sai do Z4 com show dos reforços"
 slug: "2026-09-20-vasco-goleia-coritiba-por-5-a-0-e-sai-do-z4-com-show-dos-reforcos"
 date: "2026-09-20T04:58:37-03:00"
-category: "transferencia"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/vasco-x-coritiba-brasileirao-19-09-2026/"
 imageUrl: ""

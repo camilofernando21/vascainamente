@@ -2,7 +2,7 @@
 title: "Técnica do Atlético-PI admite que precisa de milagre para reverter goleada do Vasco"
 slug: "2026-09-01-tecnica-do-atletico-pi-admite-que-precisa-de-milagre-para-reverter-gol"
 date: "2026-09-01T18:23:17-03:00"
-category: "resultado"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pi/futebol/times/atletico-pi/noticia/2026/09/01/apos-goleada-para-o-vasco-tecnica-admite-chances-remotas-mas-mantem-fe-pode-haver-milagre.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/k2tOpgS5XcxiQY_ZAzIhqf-n2aM=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/9/F/H8ASUnSfuCJguo6zOeGQ/snapinsta-ai-3957307147230146234-25997337866.jpg"

@@ -2,7 +2,7 @@
 title: "Vasco se prepara para enfrentar o Grêmio em Porto Alegre pela 27ª rodada do Brasileirão"
 slug: "2026-09-11-vasco-se-prepara-para-enfrentar-o-gremio-em-porto-alegre-pela-27-rodad"
 date: "2026-09-11T00:30:21-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/vasco-treina-forte-para-jogo-contra-o-gremio-em-porto-alegre/"
 imageUrl: ""

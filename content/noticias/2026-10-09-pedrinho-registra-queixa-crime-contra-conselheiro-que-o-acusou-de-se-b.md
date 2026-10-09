@@ -2,7 +2,7 @@
 title: "Pedrinho registra queixa-crime contra conselheiro que o acusou de se beneficiar financeiramente na operação da SAF"
 slug: "2026-10-09-pedrinho-registra-queixa-crime-contra-conselheiro-que-o-acusou-de-se-b"
 date: "2026-10-09T15:27:03-03:00"
-category: "resultado"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/09/pedrinho-faz-queixa-crime-por-calunia-contra-conselheiro-que-o-acusou-em-venda-da-saf.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/99sLg3m9hI_sRj2tAaz1avSt8Ng=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/A/E/tWpiodRtm2q0cmO2Whzw/agif26012919362586.jpg"

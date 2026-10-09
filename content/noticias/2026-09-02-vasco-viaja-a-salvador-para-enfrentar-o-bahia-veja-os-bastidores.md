@@ -2,7 +2,7 @@
 title: "Vasco viaja a Salvador para enfrentar o Bahia; veja os bastidores"
 slug: "2026-09-02-vasco-viaja-a-salvador-para-enfrentar-o-bahia-veja-os-bastidores"
 date: "2026-09-02T15:20:14-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/bastidores-da-viagem-do-vasco-a-salvador-confira/"
 imageUrl: ""

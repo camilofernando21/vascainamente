@@ -2,7 +2,7 @@
 title: "Vasco vence o Cruzeiro por 3 a 1 e sai da zona de rebaixamento no Brasileirão"
 slug: "2026-08-30-vasco-vence-o-cruzeiro-por-3-a-1-e-sai-da-zona-de-rebaixamento-no-bras"
 date: "2026-08-30T06:25:37-03:00"
-category: "urgente"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/30/analise-vasco-transforma-evolucao-em-vitoria-e-respira-contra-a-zona-de-rebaixamento.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/-BW8Bory-mHfY_b17HA-YR7V94U=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/u/8/OB4LliTTmTfM0A09OD8Q/55495540232-17cc696abb-o.jpg"

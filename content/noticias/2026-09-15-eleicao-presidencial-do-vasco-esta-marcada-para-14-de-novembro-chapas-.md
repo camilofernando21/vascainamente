@@ -2,7 +2,7 @@
 title: "Eleição presidencial do Vasco está marcada para 14 de novembro; chapas têm até 15 de outubro para se inscrever"
 slug: "2026-09-15-eleicao-presidencial-do-vasco-esta-marcada-para-14-de-novembro-chapas-"
 date: "2026-09-15T11:48:48-03:00"
-category: "transferencia"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/15/vasco-tem-eleicao-marcada-e-chapas-ja-podem-se-inscrever-veja-datas-e-cenario.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/ALJUO1l-Tz2lpVB4u3ZQufS0gQk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/Z/U/iKUTBxR3i6HzABv1nlLg/55429072979-ad9dc04b8f-h.jpg"

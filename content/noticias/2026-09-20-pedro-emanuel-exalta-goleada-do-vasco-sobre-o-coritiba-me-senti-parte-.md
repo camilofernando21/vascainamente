@@ -2,7 +2,7 @@
 title: "Pedro Emanuel exalta goleada do Vasco sobre o Coritiba: 'Me senti parte da torcida'"
 slug: "2026-09-20-pedro-emanuel-exalta-goleada-do-vasco-sobre-o-coritiba-me-senti-parte-"
 date: "2026-09-20T13:44:42-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/pedro-emanuel-celebra-controle-do-vasco-diante-do-coritiba-foi-um-prazer-me-senti-parte-da-torcida/"
 imageUrl: ""

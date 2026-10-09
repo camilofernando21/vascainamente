@@ -2,7 +2,7 @@
 title: "Vasco vence o Vitória por 2 a 0 no Barradão e está na semifinal da Copa do Brasil"
 slug: "2026-09-03-vasco-vence-o-vitoria-por-2-a-0-no-barradao-e-esta-na-semifinal-da-cop"
 date: "2026-09-03T06:27:49-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/03/jogadores-do-vasco-devolvem-provocacao-de-matheuzinho-no-barradao-e-dificil-2-a-0.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/xsKOYjLvUMyd_4hshN4wDQzXAqU=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/L/4/FUrPzySRKdWc9UpXHmeQ/agif26090223185790.jpg"

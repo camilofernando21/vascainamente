@@ -2,7 +2,7 @@
 title: "Pedro Emanuel quer Maracanã na semifinal da Sul-Americana: 'Temos direito a isso'"
 slug: "2026-09-16-pedro-emanuel-quer-maracana-na-semifinal-da-sul-americana-temos-direit"
 date: "2026-09-16T01:15:31-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/15/pedro-emanuel-destaca-vaga-em-semifinal-apos-15-anos-e-enaltece-relacao-com-a-torcida-do-vasco.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/B63VxpRD_COP5R55Y0ZnA3sc-sY=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/w/j/egc4bpRZyFlsX7Byjr2g/whatsapp-image-2026-09-15-at-21.20.25.jpeg"

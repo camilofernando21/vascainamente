@@ -2,7 +2,7 @@
 title: "Empresa de Lamacchia vence leilão e avança na compra de 90% da SAF do Vasco"
 slug: "2026-09-25-empresa-de-lamacchia-vence-leilao-e-avanca-na-compra-de-90-da-saf-do-v"
 date: "2026-09-25T20:43:39-03:00"
-category: "resultado"
+category: "clube"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/09/25/empresa-de-lamacchia-vence-leilao-e-se-aproxima-de-compra-da-saf-do-vasco.htm"
 imageUrl: ""

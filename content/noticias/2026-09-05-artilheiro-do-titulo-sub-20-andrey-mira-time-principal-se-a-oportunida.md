@@ -2,7 +2,7 @@
 title: "Artilheiro do título sub-20, Andrey mira time principal: 'Se a oportunidade vier, estou preparado'"
 slug: "2026-09-05-artilheiro-do-titulo-sub-20-andrey-mira-time-principal-se-a-oportunida"
 date: "2026-09-05T00:52:44-03:00"
-category: "resultado"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/04/destaque-do-vasco-no-titulo-brasileiro-sub-20-andrey-espera-chance-de-pedro-emanuel-estou-pronto.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/SmOy37TEwIbJ_c_88NWolBOq54o=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/B/t/D7DPA0QJSiFNeNdy12SQ/upscalemedia-transformed.jpeg"

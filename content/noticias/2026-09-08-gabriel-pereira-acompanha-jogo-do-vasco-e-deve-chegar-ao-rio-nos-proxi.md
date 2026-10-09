@@ -2,7 +2,7 @@
 title: "Gabriel Pereira acompanha jogo do Vasco e deve chegar ao Rio nos próximos dias"
 slug: "2026-09-08-gabriel-pereira-acompanha-jogo-do-vasco-e-deve-chegar-ao-rio-nos-proxi"
 date: "2026-09-08T23:26:39-03:00"
-category: "urgente"
+category: "transferencia"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/08/antes-de-ser-anunciado-pelo-vasco-gabriel-pereira-faz-post-na-torcida-contra-o-santa-fe.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/zHYh1HJ-T1KnroFk9ziNeF5LKyw=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/p/O/bQayB7Tmi0wcUA98pGGA/gy0h3wtwsaav9vn.png"

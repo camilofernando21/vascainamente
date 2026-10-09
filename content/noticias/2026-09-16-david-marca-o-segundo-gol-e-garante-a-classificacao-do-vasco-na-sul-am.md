@@ -2,7 +2,7 @@
 title: "David marca o segundo gol e garante a classificação do Vasco na Sul-Americana"
 slug: "2026-09-16-david-marca-o-segundo-gol-e-garante-a-classificacao-do-vasco-na-sul-am"
 date: "2026-09-16T11:41:30-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/david-marca-o-segundo-e-fecha-classificacao-do-vasco-na-sul-americana-veja-o-lance/"
 imageUrl: ""

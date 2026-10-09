@@ -2,7 +2,7 @@
 title: "Bruno Duarte marca primeiro gol pelo Vasco e destaca importância da classificação"
 slug: "2026-09-16-bruno-duarte-marca-primeiro-gol-pelo-vasco-e-destaca-importancia-da-cl"
 date: "2026-09-16T11:41:15-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/bruno-duarte-celebra-primeiro-gol-e-classificacao-muito-importante-do-vasco/"
 imageUrl: ""

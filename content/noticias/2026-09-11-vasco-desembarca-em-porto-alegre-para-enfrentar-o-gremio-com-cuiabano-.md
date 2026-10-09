@@ -2,7 +2,7 @@
 title: "Vasco desembarca em Porto Alegre para enfrentar o Grêmio com Cuiabano de volta ao time"
 slug: "2026-09-11-vasco-desembarca-em-porto-alegre-para-enfrentar-o-gremio-com-cuiabano-"
 date: "2026-09-11T20:50:10-03:00"
-category: "urgente"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/11/vasco-chega-a-porto-alegre-para-enfrentar-o-gremio-veja-a-provavel-escalacao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/86nBQCP-lARwlFlFkKum9qIDjC4=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/H/t/unayHERWKa9ptMADJmiw/55298035727-1be7a58cd3-o.jpg"

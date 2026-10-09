@@ -2,7 +2,7 @@
 title: "Raça, garra e a virada que São Januário não vai esquecer tão cedo"
 slug: "2026-08-27-analise-virada-sao-januario"
 date: "2026-08-27T23:00:00-03:00"
-category: "clube"
+category: "resultado"
 source: "ESPN"
 sourceUrl: "https://www.espnbrasil.com.br/"
 imageUrl: ""

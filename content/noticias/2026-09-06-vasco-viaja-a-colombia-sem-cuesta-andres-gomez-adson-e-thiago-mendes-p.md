@@ -2,7 +2,7 @@
 title: "Vasco viaja à Colômbia sem Cuesta, Andrés Gómez, Adson e Thiago Mendes para enfrentar o Santa Fe"
 slug: "2026-09-06-vasco-viaja-a-colombia-sem-cuesta-andres-gomez-adson-e-thiago-mendes-p"
 date: "2026-09-06T18:20:43-03:00"
-category: "resultado"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/06/vasco-viaja-para-a-colombia-sem-quatro-titulares-para-a-sul-americana-veja-relacionados.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/pXQVLMmVaFulKrsTAA_YxQSR3qw=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/w/M/7sjO0uRHAnxVb79liiAw/agif26031521253457.jpg"

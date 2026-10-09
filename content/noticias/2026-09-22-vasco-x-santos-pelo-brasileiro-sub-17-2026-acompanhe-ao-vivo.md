@@ -2,7 +2,7 @@
 title: "Vasco x Santos pelo Brasileiro Sub-17 2026: acompanhe ao vivo"
 slug: "2026-09-22-vasco-x-santos-pelo-brasileiro-sub-17-2026-acompanhe-ao-vivo"
 date: "2026-09-22T18:45:52-03:00"
-category: "resultado"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/ma/futebol/brasileirao-sub-17/jogo/22-09-2026/vasco-santos.ghtml"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Thiago Mendes vive melhor temporada da carreira e é peça central do Vasco em 2026"
 slug: "2026-09-13-thiago-mendes-vive-melhor-temporada-da-carreira-e-e-peca-central-do-va"
 date: "2026-09-13T16:22:03-03:00"
-category: "transferencia"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/13/como-thiago-mendes-se-consolidou-no-vasco-para-viver-temporada-mais-artilheira-da-carreira.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/etoTutENhPsHJymitMwKiicdRBk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/4/d/FFsfghQbAAUwkpjfpodQ/agif26091217425991.jpg"

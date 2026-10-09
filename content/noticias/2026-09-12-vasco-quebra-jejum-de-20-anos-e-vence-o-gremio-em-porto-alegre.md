@@ -2,7 +2,7 @@
 title: "Vasco quebra jejum de 20 anos e vence o Grêmio em Porto Alegre"
 slug: "2026-09-12-vasco-quebra-jejum-de-20-anos-e-vence-o-gremio-em-porto-alegre"
 date: "2026-09-12T21:22:09-03:00"
-category: "clube"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/colunas/juca-kfouri/2026/09/12/vasco-vira-e-joga-o-gremio-na-lama.htm"
 imageUrl: ""

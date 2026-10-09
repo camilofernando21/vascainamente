@@ -2,7 +2,7 @@
 title: "Pedrinho encaminha proposta de Lamacchia aos conselhos e pede convocação do Deliberativo para 6 de outubro"
 slug: "2026-09-26-pedrinho-encaminha-proposta-de-lamacchia-aos-conselhos-e-pede-convocac"
 date: "2026-09-26T02:03:14-03:00"
-category: "urgente"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/25/vasco-encaminha-proposta-de-lamacchia-aos-conselhos-e-solicita-convocacao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/FegNVBTS9QsrSK99XHsTI8ncmaI=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/C/A/wQ5nHYQrWZKPA5A8xt2g/54140149321-051ef50d34-h.jpg"

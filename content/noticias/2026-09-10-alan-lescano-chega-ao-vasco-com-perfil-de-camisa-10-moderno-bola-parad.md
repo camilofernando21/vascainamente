@@ -2,7 +2,7 @@
 title: "Alan Lescano chega ao Vasco com perfil de camisa 10 moderno, bola parada afinada e vocação para gol"
 slug: "2026-09-10-alan-lescano-chega-ao-vasco-com-perfil-de-camisa-10-moderno-bola-parad"
 date: "2026-09-10T09:13:25-03:00"
-category: "urgente"
+category: "transferencia"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/10/versatilidade-bola-parada-e-finalizacao-como-lescano-pode-ajudar-pedro-emanuel-no-vasco.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/kizhOFeyyhvpGOyr3m0tOpTl3fU=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/X/n/oprPQBTDmroYIQEwyE5Q/leeeee.jpg"

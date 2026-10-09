@@ -2,7 +2,7 @@
 title: "Vasco vence América-RN por 5 a 3 com golaço de bicicleta e lidera grupo na Taça Brasil de Futsal"
 slug: "2026-09-15-vasco-vence-america-rn-por-5-a-3-com-golaco-de-bicicleta-e-lidera-grup"
 date: "2026-09-15T22:49:26-03:00"
-category: "resultado"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/rn/noticia/2026/09/15/futsal-com-golaco-de-bicicleta-vasco-vence-america-rn-na-taca-brasil.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/Sb5hFv7ToPGWKr7bMZR1zNwpoPM=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/Y/f/eAPvH9Q7WMh2TfssCZxQ/vasco.jpeg"

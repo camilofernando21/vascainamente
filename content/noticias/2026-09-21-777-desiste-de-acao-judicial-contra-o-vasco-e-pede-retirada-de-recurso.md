@@ -2,7 +2,7 @@
 title: "777 desiste de ação judicial contra o Vasco e pede retirada de recurso do TJRJ"
 slug: "2026-09-21-777-desiste-de-acao-judicial-contra-o-vasco-e-pede-retirada-de-recurso"
 date: "2026-09-21T20:57:55-03:00"
-category: "transferencia"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/21/apos-acordo-com-o-vasco-777-desiste-de-acao-e-pede-retirada-de-recurso-da-pauta-do-tjrj.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/D8fwdpSJAoTrMT4qKWZFj_X_GPA=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/E/8/YoAKEYQYebWGtGb3jfAw/sao-januario.jpeg"

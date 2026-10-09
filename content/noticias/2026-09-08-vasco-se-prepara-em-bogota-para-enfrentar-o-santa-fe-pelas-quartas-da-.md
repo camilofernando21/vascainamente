@@ -2,7 +2,7 @@
 title: "Vasco se prepara em Bogotá para enfrentar o Santa Fe pelas quartas da Sul-Americana"
 slug: "2026-09-08-vasco-se-prepara-em-bogota-para-enfrentar-o-santa-fe-pelas-quartas-da-"
 date: "2026-09-08T00:44:35-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/dugout/vasco-treina-na-altitude-spinelli-e-rojas-projetam-jogo-contra-o-santa-fe/"
 imageUrl: ""

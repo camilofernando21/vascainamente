@@ -2,7 +2,7 @@
 title: "Vasco x Atlético-PI: horário, onde assistir e escalações da semifinal do Brasileiro Feminino A2"
 slug: "2026-09-07-vasco-x-atletico-pi-horario-onde-assistir-e-escalacoes-da-semifinal-do"
 date: "2026-09-07T10:23:01-03:00"
-category: "resultado"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pi/futebol/futebol-feminino/brasileiro-feminino-serie-a2/noticia/2026/09/07/vasco-x-atletico-pi-veja-onde-assistir-ao-vivo-horario-e-provaveis-escalacoes.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/3rqTRg9CrXzBVddPErFFvSpWVMY=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/y/Z/dUP3H7SSe9cAakuV3TJw/55494721522-35daaa71a9-k.jpg"

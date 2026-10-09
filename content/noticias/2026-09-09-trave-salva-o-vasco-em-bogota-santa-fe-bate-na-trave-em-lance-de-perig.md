@@ -2,7 +2,7 @@
 title: "Trave salva o Vasco em Bogotá: Santa Fe bate na trave em lance de perigo na Sul-Americana"
 slug: "2026-09-09-trave-salva-o-vasco-em-bogota-santa-fe-bate-na-trave-em-lance-de-perig"
 date: "2026-09-09T11:55:28-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/trave-salva-o-vasco-santa-fe-acerta-o-poste-e-quase-marca-em-bogota-veja-o-lance/"
 imageUrl: ""

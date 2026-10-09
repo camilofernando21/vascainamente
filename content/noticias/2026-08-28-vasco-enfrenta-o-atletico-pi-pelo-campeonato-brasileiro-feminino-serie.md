@@ -2,7 +2,7 @@
 title: "Vasco enfrenta o Atlético-PI pelo Campeonato Brasileiro Feminino Série A2 2026"
 slug: "2026-08-28-vasco-enfrenta-o-atletico-pi-pelo-campeonato-brasileiro-feminino-serie"
 date: "2026-08-28T23:29:08-03:00"
-category: "resultado"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pi/futebol/futebol-feminino/brasileiro-feminino-serie-a2/jogo/28-08-2026/atletico-pi-vasco.ghtml"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Bruno Duarte fala sobre seu papel no ataque do Vasco"
 slug: "2026-08-30-bruno-duarte-fala-sobre-seu-papel-no-ataque-do-vasco"
 date: "2026-08-30T06:27:25-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/bruno-duarte-diz-como-pode-contribuir-no-ataque-do-vasco/"
 imageUrl: ""

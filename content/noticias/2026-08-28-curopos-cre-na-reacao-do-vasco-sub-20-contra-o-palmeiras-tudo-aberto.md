@@ -2,7 +2,7 @@
 title: "Curopos crê na reação do Vasco sub-20 contra o Palmeiras: 'Tudo aberto'"
 slug: "2026-08-28-curopos-cre-na-reacao-do-vasco-sub-20-contra-o-palmeiras-tudo-aberto"
 date: "2026-08-28T23:29:36-03:00"
-category: "resultado"
+category: "base"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/28/tecnico-do-vasco-sub-20-confia-na-virada-contra-o-palmeiras-tudo-aberto.ghtm"
 imageUrl: ""

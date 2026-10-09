@@ -2,7 +2,7 @@
 title: "Vasco enfrenta Independiente Santa Fe na Colômbia pela Sul-Americana"
 slug: "2026-09-08-vasco-enfrenta-independiente-santa-fe-na-colombia-pela-sul-americana"
 date: "2026-09-08T00:44:20-03:00"
-category: "clube"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/09/07/vasco-vai-ate-a-colombia-para-superar-altitude-diante-do-independiente-santa-fe.htm"
 imageUrl: ""

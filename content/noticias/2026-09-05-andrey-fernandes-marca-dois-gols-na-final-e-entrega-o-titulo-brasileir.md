@@ -2,7 +2,7 @@
 title: "Andrey Fernandes marca dois gols na final e entrega o título brasileiro sub-20 ao Vasco"
 slug: "2026-09-05-andrey-fernandes-marca-dois-gols-na-final-e-entrega-o-titulo-brasileir"
 date: "2026-09-05T05:31:37-03:00"
-category: "resultado"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/05/artilheiro-das-decisoes-andrey-fernandes-repete-a-dose-e-mostra-que-e-a-proxima-joia-do-vasco.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/Bj9lCfeR3T53wJoBgmJsf9QuPQo=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/g/O/M4UHksTkGBix5QjhmUeQ/joao.jpeg"

@@ -2,7 +2,7 @@
 title: "Bruno Duarte estreia como titular no clássico contra o Fluminense no Maracanã"
 slug: "2026-09-05-bruno-duarte-estreia-como-titular-no-classico-contra-o-fluminense-no-m"
 date: "2026-09-05T23:58:55-03:00"
-category: "transferencia"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/fluminense/vasco-tera-novidade-no-ataque-contra-o-fluminense-veja-escalacoes/"
 imageUrl: ""

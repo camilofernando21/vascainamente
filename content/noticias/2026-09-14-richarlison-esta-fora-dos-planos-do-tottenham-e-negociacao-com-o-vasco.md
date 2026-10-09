@@ -2,7 +2,7 @@
 title: "Richarlison está fora dos planos do Tottenham e negociação com o Vasco não avançou"
 slug: "2026-09-14-richarlison-esta-fora-dos-planos-do-tottenham-e-negociacao-com-o-vasco"
 date: "2026-09-14T22:33:15-03:00"
-category: "clube"
+category: "transferencia"
 source: "Trivela"
 sourceUrl: "https://trivela.com.br/inglaterra/richarlison-planos-futuro-escanteado-tottenham-vasco-mercado/"
 imageUrl: "https://trivela.com.br/thumbor/tqgZ3pXxKqBR4GyjHTT9zJ7IqLo=/1920x1080/smart/filters:format(webp)/https%3A%2F%2Fmedia.trivela.com.br%2Fmain%2F2026%2F09%2FRicharlison-vive-situacao-incomoda-no-Tottenham.png"

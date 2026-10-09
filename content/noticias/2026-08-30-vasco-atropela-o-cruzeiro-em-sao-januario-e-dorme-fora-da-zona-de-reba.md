@@ -2,7 +2,7 @@
 title: "Vasco atropela o Cruzeiro em São Januário e dorme fora da zona de rebaixamento"
 slug: "2026-08-30-vasco-atropela-o-cruzeiro-em-sao-januario-e-dorme-fora-da-zona-de-reba"
 date: "2026-08-30T06:26:57-03:00"
-category: "clube"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/colunas/juca-kfouri/2026/08/29/vasco-faz-tudo-certo-e-dorme-fora-da-z4.htm"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Vasco vira sobre o Palmeiras, conquista título inédito do Brasileirão Sub-20"
 slug: "2026-09-05-vasco-vira-sobre-o-palmeiras-conquista-titulo-inedito-do-brasileirao-s"
 date: "2026-09-05T00:53:26-03:00"
-category: "resultado"
+category: "base"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/04/palmeiras-vasco-final-brasileirao-sub-20.ghtm"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Vasco mantém trabalho intenso na academia e no campo durante a pausa do campeonato"
 slug: "2026-09-25-vasco-mantem-trabalho-intenso-na-academia-e-no-campo-durante-a-pausa-d"
 date: "2026-09-25T23:37:37-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/vasco-treina-forte-na-academia-e-no-campo-durante-a-pausa/"
 imageUrl: ""

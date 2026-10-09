@@ -2,7 +2,7 @@
 title: "Pedro Emanuel prioriza Brasileirão após derrota no clássico e projeta jogo contra o Grêmio como decisivo"
 slug: "2026-09-06-pedro-emanuel-prioriza-brasileirao-apos-derrota-no-classico-e-projeta-"
 date: "2026-09-06T04:25:49-03:00"
-category: "urgente"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/05/pedro-emanuel-analisa-derrota-do-vasco-para-o-fluminense-no-brasileirao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/Uha_6FwpR9685GoyFQLKQhW9GQU=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/W/o/yNKAMBTWAHC73WWnUXAg/3.jpg"

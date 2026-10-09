@@ -2,7 +2,7 @@
 title: "Vasco vira sobre o Grêmio com dois gols em quatro minutos e respira na tabela"
 slug: "2026-09-12-vasco-vira-sobre-o-gremio-com-dois-gols-em-quatro-minutos-e-respira-na"
 date: "2026-09-12T21:21:57-03:00"
-category: "clube"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/rs/futebol/brasileirao-serie-a/jogo/12-09-2026/gremio-vasco.ghtml"
 imageUrl: ""

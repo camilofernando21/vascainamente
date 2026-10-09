@@ -2,7 +2,7 @@
 title: "Vasco vai com força máxima para o clássico contra o Fluminense no Maracanã"
 slug: "2026-09-05-vasco-vai-com-forca-maxima-para-o-classico-contra-o-fluminense-no-mara"
 date: "2026-09-05T23:58:30-03:00"
-category: "clube"
+category: "elenco"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/05/vasco-e-fluminense-vao-com-forca-maxima-para-classico-veja-escalacoes.ghtm"
 imageUrl: ""

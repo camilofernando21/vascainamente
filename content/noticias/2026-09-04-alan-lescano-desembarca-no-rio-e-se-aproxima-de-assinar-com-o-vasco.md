@@ -2,7 +2,7 @@
 title: "Alan Lescano desembarca no Rio e se aproxima de assinar com o Vasco"
 slug: "2026-09-04-alan-lescano-desembarca-no-rio-e-se-aproxima-de-assinar-com-o-vasco"
 date: "2026-09-04T15:08:55-03:00"
-category: "urgente"
+category: "transferencia"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/alan-lescano-chega-vasco/"
 imageUrl: ""

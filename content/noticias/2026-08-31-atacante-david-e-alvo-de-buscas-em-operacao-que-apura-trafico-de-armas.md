@@ -2,7 +2,7 @@
 title: "Atacante David é alvo de buscas em operação que apura tráfico de armas e drogas"
 slug: "2026-08-31-atacante-david-e-alvo-de-buscas-em-operacao-que-apura-trafico-de-armas"
 date: "2026-08-31T14:20:31-03:00"
-category: "resultado"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/quem-e-david-correa-atacante-do-vasco-investigado/"
 imageUrl: ""

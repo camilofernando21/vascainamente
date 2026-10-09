@@ -2,7 +2,7 @@
 title: "Hugo Moura marca pelo Al Fayha em empate no Campeonato Saudita"
 slug: "2026-09-03-hugo-moura-marca-pelo-al-fayha-em-empate-no-campeonato-saudita"
 date: "2026-09-03T18:45:44-03:00"
-category: "resultado"
+category: "clube"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/ex-vasco-hugo-moura-marca-e-al-fayha-no-empate-contra-o-al-kholood-veja-gol/"
 imageUrl: ""

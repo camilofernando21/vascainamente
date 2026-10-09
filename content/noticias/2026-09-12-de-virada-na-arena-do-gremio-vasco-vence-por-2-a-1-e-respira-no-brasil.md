@@ -2,7 +2,7 @@
 title: "De virada na Arena do Grêmio: Vasco vence por 2 a 1 e respira no Brasileirão"
 slug: "2026-09-12-de-virada-na-arena-do-gremio-vasco-vence-por-2-a-1-e-respira-no-brasil"
 date: "2026-09-12T21:22:37-03:00"
-category: "transferencia"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/campeonatos/brasileiro-serie-a/gremio-vasco-brasileirao-12-09-2026/"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Reforços, defesa sólida e confiança em Pedro Emanuel: os pilares da reação do Vasco no Brasileirão"
 slug: "2026-09-21-reforcos-defesa-solida-e-confianca-em-pedro-emanuel-os-pilares-da-reac"
 date: "2026-09-21T10:47:20-03:00"
-category: "urgente"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/21/veja-motivos-que-explicam-a-subida-de-rendimento-do-vasco-e-saida-do-z-4-do-brasileirao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/soct3uaUX04VoIs-KZtLgjiCvxA=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/A/w/P5EF6KTbmaGwATAfAIhw/colidio-durao.jpg"

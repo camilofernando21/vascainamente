@@ -2,7 +2,7 @@
 title: "Vasco domina o Coritiba em São Januário e sai da zona de rebaixamento"
 slug: "2026-09-20-vasco-domina-o-coritiba-em-sao-januario-e-sai-da-zona-de-rebaixamento"
 date: "2026-09-20T04:57:47-03:00"
-category: "clube"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/rj/futebol/brasileirao-serie-a/jogo/19-09-2026/vasco-coritiba.ghtml"
 imageUrl: ""

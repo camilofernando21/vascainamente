@@ -2,7 +2,7 @@
 title: "Vasco vence o Santa Fe pela Sul-Americana com time alternativo"
 slug: "2026-09-16-vasco-vence-o-santa-fe-pela-sul-americana-com-time-alternativo"
 date: "2026-09-16T01:16:14-03:00"
-category: "elenco"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/colunas/juca-kfouri/2026/09/15/vasco.htm"
 imageUrl: ""

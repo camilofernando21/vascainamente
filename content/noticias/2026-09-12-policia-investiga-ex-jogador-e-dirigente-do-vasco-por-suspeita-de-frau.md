@@ -2,7 +2,7 @@
 title: "Polícia investiga ex-jogador e dirigente do Vasco por suspeita de fraude na recuperação judicial"
 slug: "2026-09-12-policia-investiga-ex-jogador-e-dirigente-do-vasco-por-suspeita-de-frau"
 date: "2026-09-12T10:30:32-03:00"
-category: "transferencia"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/policia-investiga-ex-jogador-e-dirigente-do-vasco-por-suposta-tentativa-de-fraude-em-recuperacao-judicial.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/M85Mfssl67GoEZCJl6Y5Nsr6tEk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/v/H/40tCGQTeStrZ7J0LNJLA/20240122203120-6f5a3606.jpg"

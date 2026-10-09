@@ -2,7 +2,7 @@
 title: "Vasco enfrenta Itabirito pelo Campeonato Brasileiro Feminino Série A2 2026"
 slug: "2026-09-13-vasco-enfrenta-itabirito-pelo-campeonato-brasileiro-feminino-serie-a2-"
 date: "2026-09-13T01:07:29-03:00"
-category: "resultado"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pi/futebol/futebol-feminino/brasileiro-feminino-serie-a2/jogo/13-09-2026/itabirito-futebol-clube-mg-vasco.ghtml"
 imageUrl: ""

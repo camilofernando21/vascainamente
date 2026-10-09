@@ -2,7 +2,7 @@
 title: "Vasco finaliza preparação no Rio e embarca para Salvador visando vaga nas semifinais da Copa do Brasil"
 slug: "2026-09-01-vasco-finaliza-preparacao-no-rio-e-embarca-para-salvador-visando-vaga-"
 date: "2026-09-01T23:23:54-03:00"
-category: "resultado"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/vasco-realiza-ultimo-treino-antes-da-viagem-para-salvador/"
 imageUrl: ""

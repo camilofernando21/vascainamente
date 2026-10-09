@@ -2,7 +2,7 @@
 title: "Vasco x Santos pelo Brasileiro sub-17: onde assistir e detalhes do jogo"
 slug: "2026-09-22-vasco-x-santos-pelo-brasileiro-sub-17-onde-assistir-e-detalhes-do-jogo"
 date: "2026-09-22T00:01:37-03:00"
-category: "resultado"
+category: "base"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/santos/vasco-x-santos-sub-17-onde-assistir-brasileiro/"
 imageUrl: ""

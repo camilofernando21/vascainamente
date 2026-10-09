@@ -2,7 +2,7 @@
 title: "Vasco foca em jogadas ofensivas nos treinos visando disputas decisivas"
 slug: "2026-09-27-vasco-foca-em-jogadas-ofensivas-nos-treinos-visando-disputas-decisivas"
 date: "2026-09-27T00:56:10-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/vasco-treina-jogadas-ofensivas-para-disputas-decisivas-na-temporada/"
 imageUrl: ""

@@ -2,7 +2,7 @@
 title: "Vasco permanece no Z-4 após vitória do Flamengo: entenda os critérios"
 slug: "2026-09-03-vasco-permanece-no-z-4-apos-vitoria-do-flamengo-entenda-os-criterios"
 date: "2026-09-03T01:30:01-03:00"
-category: "resultado"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/02/entenda-por-que-o-vasco-segue-no-z-4-mesmo-com-vitoria-do-flamengo-sobre-o-mirassol.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/RtTXFet0DPmzQIaMcA_7SmY2bq8=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/2/c/m0vorNSXAIBe381kuf3Q/dur-2257-1-.jpg"

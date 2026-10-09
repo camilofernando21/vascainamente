@@ -2,7 +2,7 @@
 title: "Pedro Emanuel exalta crescimento do Vasco após vitória sobre o Cruzeiro: 'Faltava juntar as boas atuações com o resultado'"
 slug: "2026-08-30-pedro-emanuel-exalta-crescimento-do-vasco-apos-vitoria-sobre-o-cruzeir"
 date: "2026-08-30T06:26:16-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/30/pedro-emanuel-comemora-vitoria-do-vasco-no-brasileirao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/sxuTu-qwb8emQAxqQ7V6J6vEaUc=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/G/X/xNcyPaTOStBf4LHGx1PA/50-1-.jpg"

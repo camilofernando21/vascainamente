@@ -2,7 +2,7 @@
 title: "Vasco nas semifinais da Copa do Brasil: evolução em campo alimenta sonho e complica gestão da temporada"
 slug: "2026-09-03-vasco-nas-semifinais-da-copa-do-brasil-evolucao-em-campo-alimenta-sonh"
 date: "2026-09-03T06:27:33-03:00"
-category: "transferencia"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/03/analise-evolucao-do-vasco-alimenta-esperanca-de-titulo-e-amplia-dilema-na-temporada.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/iPzosMkfBfeqG8vInYKQ3OXjuRs=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/K/r/GsBLggQ4CcDthqOqm4Og/hrqrvxfxsaes0em.jpg"

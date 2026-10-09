@@ -2,7 +2,7 @@
 title: "Rayan marca de cabeça pelo Bournemouth em amistoso na Espanha"
 slug: "2026-09-18-rayan-marca-de-cabeca-pelo-bournemouth-em-amistoso-na-espanha"
 date: "2026-09-18T00:43:38-03:00"
-category: "resultado"
+category: "clube"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/ex-vasco-rayan-desvia-de-cabeca-e-marca-na-vitoria-do-bournemouth-na-espanha-veja-o-lance/"
 imageUrl: ""

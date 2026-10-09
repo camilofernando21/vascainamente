@@ -2,7 +2,7 @@
 title: "Sosa já é titular e referência no meio-campo de Pedro Emanuel com menos de um mês no Vasco"
 slug: "2026-09-03-sosa-ja-e-titular-e-referencia-no-meio-campo-de-pedro-emanuel-com-meno"
 date: "2026-09-03T11:39:33-03:00"
-category: "transferencia"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/03/como-sosa-virou-homem-de-confianca-em-plano-tatico-de-pedro-emanuel-com-menos-de-um-mes-no-vasco.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/iPzosMkfBfeqG8vInYKQ3OXjuRs=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/K/r/GsBLggQ4CcDthqOqm4Og/hrqrvxfxsaes0em.jpg"

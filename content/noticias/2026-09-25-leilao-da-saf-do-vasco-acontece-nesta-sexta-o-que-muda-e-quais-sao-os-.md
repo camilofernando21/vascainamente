@@ -2,7 +2,7 @@
 title: "Leilão da SAF do Vasco acontece nesta sexta: o que muda e quais são os próximos passos"
 slug: "2026-09-25-leilao-da-saf-do-vasco-acontece-nesta-sexta-o-que-muda-e-quais-sao-os-"
 date: "2026-09-25T06:41:06-03:00"
-category: "transferencia"
+category: "clube"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/25/leilao-da-saf-do-vasco-entenda-o-que-esta-em-jogo-nesta-sexta-e-os-proximos-passos-da-venda.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/HChYRPq74jbMNZErn1JIT1oAt68=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/S/0/3mn6jWQQ2RMCZ1wcO2TQ/agif26082922341430.jpg"

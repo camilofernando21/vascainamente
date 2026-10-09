@@ -2,7 +2,7 @@
 title: "Vasco vence o Santa Fe e está na semifinal da Copa Sul-Americana"
 slug: "2026-09-16-vasco-vence-o-santa-fe-e-esta-na-semifinal-da-copa-sul-americana"
 date: "2026-09-16T01:15:08-03:00"
-category: "clube"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/copa-sul-americana/jogo/15-09-2026/vasco-independiente-santa-fe.ghtml"
 imageUrl: ""

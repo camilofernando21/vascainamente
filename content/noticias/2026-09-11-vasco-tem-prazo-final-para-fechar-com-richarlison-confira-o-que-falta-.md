@@ -2,7 +2,7 @@
 title: "Vasco tem prazo final para fechar com Richarlison; confira o que falta para o acordo acontecer"
 slug: "2026-09-11-vasco-tem-prazo-final-para-fechar-com-richarlison-confira-o-que-falta-"
 date: "2026-09-11T05:11:03-03:00"
-category: "urgente"
+category: "transferencia"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/11/vasco-tem-dia-decisivo-em-negociacao-com-tottenham-e-richarlison-veja-o-que-esta-em-jogo.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/KMH4ep0T8axRzu9wGj7jmbCKZiQ=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/D/X/eCw5muTfCmwbhHBi8bkw/afp-20260815-c4qn4zn-v1-highres-776527833.jpg"

@@ -2,7 +2,7 @@
 title: "Vasco recebe o Santa Fe em São Januário por vaga na semifinal da Sul-Americana"
 slug: "2026-09-15-vasco-recebe-o-santa-fe-em-sao-januario-por-vaga-na-semifinal-da-sul-a"
 date: "2026-09-15T11:49:02-03:00"
-category: "clube"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/09/15/vasco-aposta-em-sao-januario-contra-santa-fe-para-avancar-a-semifinal-da-sul-americana.htm"
 imageUrl: ""

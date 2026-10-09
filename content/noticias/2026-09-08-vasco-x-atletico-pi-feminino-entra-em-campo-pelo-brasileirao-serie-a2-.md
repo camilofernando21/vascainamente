@@ -2,7 +2,7 @@
 title: "Vasco x Atlético-PI: Feminino entra em campo pelo Brasileirão Série A2 2026"
 slug: "2026-09-08-vasco-x-atletico-pi-feminino-entra-em-campo-pelo-brasileirao-serie-a2-"
 date: "2026-09-08T00:44:05-03:00"
-category: "resultado"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pi/futebol/futebol-feminino/brasileiro-feminino-serie-a2/jogo/07-09-2026/vasco-atletico-pi.ghtml"
 imageUrl: ""

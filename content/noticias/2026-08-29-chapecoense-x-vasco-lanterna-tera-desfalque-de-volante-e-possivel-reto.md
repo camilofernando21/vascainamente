@@ -2,7 +2,7 @@
 title: "Chapecoense x Vasco: lanterna terá desfalque de volante e possível retorno de lateral para duelo adiado"
 slug: "2026-08-29-chapecoense-x-vasco-lanterna-tera-desfalque-de-volante-e-possivel-reto"
 date: "2026-08-29T13:05:11-03:00"
-category: "transferencia"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/sc/futebol/times/chapecoense/noticia/2026/08/29/provavel-escalacao-da-chapecoense-ausencia-de-volante-titular-e-possivel-retorno-de-lateral.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/aSi0s0_gpiTLpPT85iOInRGRHDY=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/q/X/HI1JX2QxmjqAk4fe7zpQ/55144942869-3f6546c2b2-k.jpg"

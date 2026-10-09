@@ -2,7 +2,7 @@
 title: "Lescano é apresentado e está disponível para estrear contra o Grêmio"
 slug: "2026-09-11-lescano-e-apresentado-e-esta-disponivel-para-estrear-contra-o-gremio"
 date: "2026-09-11T00:30:32-03:00"
-category: "clube"
+category: "transferencia"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/lescano-detalha-caracteristicas-e-diz-que-ja-pode-estrear-pelo-vasco/"
 imageUrl: ""

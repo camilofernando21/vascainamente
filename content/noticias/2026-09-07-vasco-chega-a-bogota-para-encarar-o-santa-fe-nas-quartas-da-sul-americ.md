@@ -2,7 +2,7 @@
 title: "Vasco chega a Bogotá para encarar o Santa Fe nas quartas da Sul-Americana"
 slug: "2026-09-07-vasco-chega-a-bogota-para-encarar-o-santa-fe-nas-quartas-da-sul-americ"
 date: "2026-09-07T19:53:32-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/futebol/futebol-internacional/bastidores-da-viagem-do-vasco-para-bogota-confira/"
 imageUrl: ""

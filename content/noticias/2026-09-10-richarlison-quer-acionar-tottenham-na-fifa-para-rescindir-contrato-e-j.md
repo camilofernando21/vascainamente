@@ -2,7 +2,7 @@
 title: "Richarlison quer acionar Tottenham na Fifa para rescindir contrato e jogar no Vasco"
 slug: "2026-09-10-richarlison-quer-acionar-tottenham-na-fifa-para-rescindir-contrato-e-j"
 date: "2026-09-10T09:13:40-03:00"
-category: "clube"
+category: "transferencia"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/10/richarlison-quer-rescisao-para-vir-ao-vasco-entenda-por-que-e-possivel.htm"
 imageUrl: ""

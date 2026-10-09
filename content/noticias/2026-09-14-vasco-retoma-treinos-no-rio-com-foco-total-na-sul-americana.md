@@ -2,7 +2,7 @@
 title: "Vasco retoma treinos no Rio com foco total na Sul-Americana"
 slug: "2026-09-14-vasco-retoma-treinos-no-rio-com-foco-total-na-sul-americana"
 date: "2026-09-14T01:30:03-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/todas-as-noticias/vasco-retoma-trabalhos-no-rio-de-olho-em-jogo-decisivo-pela-sul-americana/"
 imageUrl: ""

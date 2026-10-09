@@ -2,7 +2,7 @@
 title: "Freytes se recupera de lesão e deve ser relacionado pelo Fluminense para o clássico contra o Vasco"
 slug: "2026-09-03-freytes-se-recupera-de-lesao-e-deve-ser-relacionado-pelo-fluminense-pa"
 date: "2026-09-03T18:45:30-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/fluminense/noticia/2026/09/03/recuperado-de-lesao-freytes-deve-voltar-ao-fluminese-contra-o-vasco.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/2EjcxFBHpqhr1Ef60DOnrBXVcto=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/W/8/gUlOgqTE6Jm603ZcBSeA/55502620200-b30682564e-k.jpg"

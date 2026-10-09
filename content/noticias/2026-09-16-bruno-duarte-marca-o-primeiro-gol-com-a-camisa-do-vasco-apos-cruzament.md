@@ -2,7 +2,7 @@
 title: "Bruno Duarte marca o primeiro gol com a camisa do Vasco após cruzamento de Saldivia"
 slug: "2026-09-16-bruno-duarte-marca-o-primeiro-gol-com-a-camisa-do-vasco-apos-cruzament"
 date: "2026-09-16T11:41:43-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/bruno-duarte-completa-cruzamento-de-saldivia-e-marca-seu-primeiro-gol-com-a-camisa-do-vasco-confira/"
 imageUrl: ""

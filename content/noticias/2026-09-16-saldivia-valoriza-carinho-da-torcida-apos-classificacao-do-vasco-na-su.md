@@ -2,7 +2,7 @@
 title: "Saldivia valoriza carinho da torcida após classificação do Vasco na Sul-Americana"
 slug: "2026-09-16-saldivia-valoriza-carinho-da-torcida-apos-classificacao-do-vasco-na-su"
 date: "2026-09-16T01:15:46-03:00"
-category: "transferencia"
+category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/15/vasco-saldivia-apos-vitoria-santa-fe.ghtm"
 imageUrl: ""

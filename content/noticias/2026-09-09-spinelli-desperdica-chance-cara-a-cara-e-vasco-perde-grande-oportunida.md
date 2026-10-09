@@ -2,7 +2,7 @@
 title: "Spinelli desperdiça chance cara a cara e Vasco perde grande oportunidade no jogo"
 slug: "2026-09-09-spinelli-desperdica-chance-cara-a-cara-e-vasco-perde-grande-oportunida"
 date: "2026-09-09T11:55:40-03:00"
-category: "clube"
+category: "resultado"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/que-chance-spinelli-sai-cara-a-cara-mas-desperdica-a-melhor-oportunidade-do-vasco-confira-o-lance/"
 imageUrl: ""

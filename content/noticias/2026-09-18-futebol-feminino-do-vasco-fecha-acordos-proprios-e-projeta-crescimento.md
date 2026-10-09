@@ -2,7 +2,7 @@
 title: "Futebol feminino do Vasco fecha acordos próprios e projeta crescimento comercial antes da Copa do Mundo"
 slug: "2026-09-18-futebol-feminino-do-vasco-fecha-acordos-proprios-e-projeta-crescimento"
 date: "2026-09-18T22:52:32-03:00"
-category: "urgente"
+category: "feminino"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/18/entenda-como-vasco-aproveita-crescimento-do-futebol-feminino-para-fechar-acordos-comerciais.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/uW5XG3IsIui1zC9oCUhRCdurdBc=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/U/U/WXhKLvQLAMkByCgAebjw/55486009165-03b73ce9ae-h.jpg.jpeg"

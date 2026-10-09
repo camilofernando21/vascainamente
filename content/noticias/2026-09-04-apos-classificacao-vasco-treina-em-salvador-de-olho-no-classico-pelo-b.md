@@ -2,7 +2,7 @@
 title: "Após classificação, Vasco treina em Salvador de olho no clássico pelo Brasileirão"
 slug: "2026-09-04-apos-classificacao-vasco-treina-em-salvador-de-olho-no-classico-pelo-b"
 date: "2026-09-04T15:08:44-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/vasco-treina-em-salvador-apos-classificacao-mirando-classico-pelo-brasileirao/"
 imageUrl: ""

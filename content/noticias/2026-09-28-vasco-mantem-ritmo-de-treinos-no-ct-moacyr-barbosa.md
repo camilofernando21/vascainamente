@@ -2,7 +2,7 @@
 title: "Vasco mantém ritmo de treinos no CT Moacyr Barbosa"
 slug: "2026-09-28-vasco-mantem-ritmo-de-treinos-no-ct-moacyr-barbosa"
 date: "2026-09-28T01:42:14-03:00"
-category: "clube"
+category: "elenco"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/vasco-segue-treinando-forte-no-ct-moacyr-barbosa/"
 imageUrl: ""

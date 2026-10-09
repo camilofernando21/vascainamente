@@ -2,7 +2,7 @@
 title: "Vasco anuncia reforço no ataque, Flamengo vende Plata e Martinelli deixa o Arsenal"
 slug: "2026-08-28-vasco-anuncia-reforco-no-ataque-flamengo-vende-plata-e-martinelli-deix"
 date: "2026-08-28T23:30:06-03:00"
-category: "transferencia"
+category: "urgente"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/28/mercado-plata-vendido-vasco-reforcado-e-martinelli-de-saida-do-arsenal.ghtm"
 imageUrl: ""

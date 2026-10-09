@@ -2,7 +2,7 @@
 title: "Colidio, Thiago Mendes e Pedro Emanuel se destacam na vitória do Vasco sobre o Grêmio"
 slug: "2026-09-12-colidio-thiago-mendes-e-pedro-emanuel-se-destacam-na-vitoria-do-vasco-"
 date: "2026-09-12T21:21:44-03:00"
-category: "clube"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/atuacoes-do-vasco-colidio-thiago-mendes-e-pedro-emanuel-sao-os-melhores-de-suas-notas.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/87qX9yMbqsFpADyf5YVatQcQXus=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/y/r/6BZkCRRUe5U56N47F3YQ/agif26091216062423.jpg"

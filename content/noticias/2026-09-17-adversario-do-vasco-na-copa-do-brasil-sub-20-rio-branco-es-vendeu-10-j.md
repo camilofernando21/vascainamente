@@ -2,7 +2,7 @@
 title: "Adversário do Vasco na Copa do Brasil Sub-20, Rio Branco-ES vendeu 10 jogadores da base em 2026"
 slug: "2026-09-17-adversario-do-vasco-na-copa-do-brasil-sub-20-rio-branco-es-vendeu-10-j"
 date: "2026-09-17T00:37:51-03:00"
-category: "transferencia"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/es/futebol/times/rio-branco-es/noticia/2026/09/16/adversario-do-vasco-na-copa-do-brasil-sub-20-rio-branco-es-negocia-10-jogadores-da-base-para-times-das-series-a-e-b.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/1xi1CBri86YC191_AbqlriMytRY=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/t/l/IkFRNLQYKW4HdzNwNh9A/whatsapp-image-2026-04-12-at-18.18.38.jpeg"

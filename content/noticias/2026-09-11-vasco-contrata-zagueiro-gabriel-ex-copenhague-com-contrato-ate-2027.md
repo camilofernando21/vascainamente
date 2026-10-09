@@ -2,7 +2,7 @@
 title: "Vasco contrata zagueiro Gabriel, ex-Copenhague, com contrato até 2027"
 slug: "2026-09-11-vasco-contrata-zagueiro-gabriel-ex-copenhague-com-contrato-ate-2027"
 date: "2026-09-11T20:50:24-03:00"
-category: "transferencia"
+category: "urgente"
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/vasco-anuncia-a-contratacao-do-zagueiro-gabriel/"
 imageUrl: ""

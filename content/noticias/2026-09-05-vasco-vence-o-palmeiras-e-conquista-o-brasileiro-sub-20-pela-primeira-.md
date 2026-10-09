@@ -2,7 +2,7 @@
 title: "Vasco vence o Palmeiras e conquista o Brasileiro Sub-20 pela primeira vez na história"
 slug: "2026-09-05-vasco-vence-o-palmeiras-e-conquista-o-brasileiro-sub-20-pela-primeira-"
 date: "2026-09-05T00:52:58-03:00"
-category: "resultado"
+category: "base"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/sp/campinas-e-regiao/futebol/brasileirao-sub-20/jogo/04-09-2026/palmeiras-vasco.ghtml"
 imageUrl: ""

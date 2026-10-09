@@ -2,7 +2,7 @@
 title: "Palmeiras vence o Vasco por 1 a 0 em São Januário na ida da final do Brasileirão Sub-20"
 slug: "2026-08-28-palmeiras-vence-o-vasco-por-1-a-0-em-sao-januario-na-ida-da-final-do-b"
 date: "2026-08-28T23:29:52-03:00"
-category: "resultado"
+category: "base"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/28/palmeiras-usa-aviao-de-leila-pereira-apos-vencer-o-vasco-no-sub-20.ghtm"
 imageUrl: ""

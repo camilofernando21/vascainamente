@@ -2,7 +2,7 @@
 title: "Seabra assume responsabilidade pela goleada do Coritiba em São Januário: 'A parcela principal é minha'"
 slug: "2026-09-20-seabra-assume-responsabilidade-pela-goleada-do-coritiba-em-sao-januari"
 date: "2026-09-20T04:57:34-03:00"
-category: "urgente"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/pr/futebol/times/coritiba/noticia/2026/09/20/seabra-chama-responsabilidade-no-coritiba-por-goleada-sofrida-para-o-vasco-jogo-atipico.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/W_KHsfB2m7XPCqRzcjdz9er48uc=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/T/N/etoZUSTzqBSY3f8xZP1w/agif26091920420531.jpg"

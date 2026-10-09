@@ -2,7 +2,7 @@
 title: "De herói a reserva: Barros reencontra o Cruzeiro em situação oposta à do primeiro turno"
 slug: "2026-08-29-de-heroi-a-reserva-barros-reencontra-o-cruzeiro-em-situacao-oposta-a-d"
 date: "2026-08-29T17:10:11-03:00"
-category: "transferencia"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/08/29/barros-vai-de-titular-a-criticado-no-vasco-um-turno-depois-de-jogo-maluco-contra-cruzeiro.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/aBispyZW2pTZvq08TWmRWMTvht8=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/O/u/cTuzc5QXiY6ZEfrpmhxA/agif26082621520559.jpg"

@@ -2,7 +2,7 @@
 title: "Investigação policial chegou a David do Vasco após apreensão de celular em tentativa de homicídio"
 slug: "2026-08-31-investigacao-policial-chegou-a-david-do-vasco-apos-apreensao-de-celula"
 date: "2026-08-31T20:18:35-03:00"
-category: "transferencia"
+category: "elenco"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/08/31/foi-apreendido-um-celular-em-2024-diz-vinicius-rangel-sobre-investigacao.ghtm"
 imageUrl: ""

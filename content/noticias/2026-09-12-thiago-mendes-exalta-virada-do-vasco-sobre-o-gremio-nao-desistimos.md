@@ -2,7 +2,7 @@
 title: "Thiago Mendes exalta virada do Vasco sobre o Grêmio: 'Não desistimos'"
 slug: "2026-09-12-thiago-mendes-exalta-virada-do-vasco-sobre-o-gremio-nao-desistimos"
 date: "2026-09-12T21:21:30-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/thiago-mendes-aprova-postura-do-vasco-na-virada-sobre-o-gremio-nao-desistimos.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/etoTutENhPsHJymitMwKiicdRBk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/4/d/FFsfghQbAAUwkpjfpodQ/agif26091217425991.jpg"

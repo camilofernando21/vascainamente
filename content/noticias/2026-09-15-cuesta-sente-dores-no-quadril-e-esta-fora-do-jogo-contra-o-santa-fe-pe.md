@@ -2,7 +2,7 @@
 title: "Cuesta sente dores no quadril e está fora do jogo contra o Santa Fe pela Sul-Americana"
 slug: "2026-09-15-cuesta-sente-dores-no-quadril-e-esta-fora-do-jogo-contra-o-santa-fe-pe"
 date: "2026-09-15T19:52:30-03:00"
-category: "resultado"
+category: "elenco"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/15/cuesta-relata-dores-no-quadril-e-desfalca-o-vasco-contra-o-santa-fe-pela-sul-americana.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/8H_xgKNQVPL1tViAJ0YeVl9Q7rI=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/I/k/rFWSj7SBiAsXg0uZuMxw/55523810052-5476b4518a-o.jpg"

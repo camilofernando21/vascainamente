@@ -2,7 +2,7 @@
 title: "Pedro Emanuel exalta mentalidade do Vasco no Barradão: 'Viemos para ganhar, não para segurar'"
 slug: "2026-09-03-pedro-emanuel-exalta-mentalidade-do-vasco-no-barradao-viemos-para-ganh"
 date: "2026-09-03T06:28:09-03:00"
-category: "transferencia"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/03/pedro-emanuel-destaca-postura-e-mentalidade-do-vasco-na-classificacao-viemos-para-ganhar.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/nusmKNjvQBctUxtP5hT4VZQzYqQ=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/J/M/q7jwiGTxWNWDw5QftWAA/agif26090222083690.jpg"

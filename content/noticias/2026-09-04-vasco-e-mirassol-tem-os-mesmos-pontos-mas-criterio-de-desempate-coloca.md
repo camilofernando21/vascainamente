@@ -2,7 +2,7 @@
 title: "Vasco e Mirassol têm os mesmos pontos, mas critério de desempate coloca o Cruz-Maltino na zona de rebaixamento"
 slug: "2026-09-04-vasco-e-mirassol-tem-os-mesmos-pontos-mas-criterio-de-desempate-coloca"
 date: "2026-09-04T06:27:33-03:00"
-category: "resultado"
+category: "clube"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/03/empatados-por-que-mirassol-esta-a-frente-do-vasco-na-tabela-do-brasileirao.ghtm"
 imageUrl: ""
