@@ -141,6 +141,7 @@ def slugify(text: str) -> str:
 # can carry the matching video (press conference, goals, behind the scenes).
 VASCO_TV_FEED = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZD5qcen7lbLPFTjfvdLFcw"
 VIDEO_WINDOW_HOURS = 48
+MATCH_BROADCAST = re.compile(r"^\s*ao vivo\b.*\S\s+x\s+\S", re.IGNORECASE)
 
 def fetch_recent_videos() -> list:
     """Videos from the last 48h. Any failure returns [] so news keep being published without video."""
@@ -154,6 +155,10 @@ def fetch_recent_videos() -> list:
             vid = entry.get("yt_videoid", "")
             published = entry.get("published_parsed")
             if not vid or not published or calendar.timegm(published) < cutoff:
+                continue
+            # full match broadcasts ("AO VIVO - VASCO x OLARIA ...") last hours: not a news video.
+            # Live press conferences ("AO VIVO | COLETIVA ...") stay.
+            if MATCH_BROADCAST.search(entry.get("title", "")):
                 continue
             videos.append({"id": vid, "title": entry.get("title", "").strip()})
         print(f"Vasco TV: {len(videos)} video(s) nas ultimas {VIDEO_WINDOW_HOURS}h")
@@ -169,9 +174,14 @@ def video_prompt(videos: list) -> str:
     return f"\nVídeos publicados nas últimas 48 horas no canal oficial Vasco TV (ID: título):\n{lines}\n"
 
 VIDEO_FIELD = (
-    "\n- \"videoId\": o ID de UM vídeo da lista acima que trate exatamente do mesmo assunto da notícia "
-    "(mesmo jogo, mesma coletiva, mesmos bastidores, mesma pessoa e mesmo fato), ou null. "
-    "Na dúvida, responda null: é melhor sem vídeo do que com vídeo errado."
+    "\n- \"videoId\": o ID de UM vídeo da lista acima SOMENTE se o vídeo mostrar o fato principal desta notícia: "
+    "a partida, quando a notícia é o próprio jogo (resultado, gols, análise da partida); "
+    "a coletiva, quando a notícia é sobre o que o técnico disse na coletiva; "
+    "a zona mista, quando a notícia traz falas de jogadores logo após o jogo; "
+    "o treino, quando a notícia é sobre aquele treino. "
+    "Não basta ser do mesmo jogo ou citar a mesma pessoa. Para episódio pontual (lesão, desmaio, mensagem em rede social, "
+    "polêmica, política, estádio, ingressos) ou se não estiver claro de onde veio a informação, responda null. "
+    "Na dúvida, null: é melhor sem vídeo do que com vídeo errado."
 )
 
 # Matches a dash used as punctuation. Dashes between digits (placar 2–1, 2023–2024)
