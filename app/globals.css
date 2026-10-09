@@ -1477,6 +1477,19 @@ html.vm-cursor body:not(.is-touch) *::after {
   padding-top: 0.9rem;
 }
 
+/* lower rows (measured in Idols.tsx) open the card below the name; phones use the fixed card instead */
+@media (min-width: 768px) {
+  .final-name-wrap.opens-down .final-stats {
+    bottom: auto;
+    top: calc(100% + 1.2rem);
+    transform: translateX(-50%) translateY(-8px);
+  }
+  .final-name-wrap.opens-down:hover .final-stats,
+  .final-name-wrap.opens-down:focus-visible .final-stats {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 #final-hint {
   position: absolute;
   bottom: 3rem;

@@ -40,6 +40,7 @@ export default function Idols() {
   const namesRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
+  const [opensDown, setOpensDown] = useState<boolean[]>([]);
 
   useEffect(() => {
     setIsTouch("ontouchstart" in window);
@@ -60,12 +61,31 @@ export default function Idols() {
     return () => observer.disconnect();
   }, []);
 
+  // Names below the first row open their card downwards, so it doesn't cover the row above.
+  // Measured from layout (not hardcoded names) so it follows whatever wrapping the width produces.
+  useEffect(() => {
+    const el = namesRef.current;
+    if (!el) return;
+    const update = () => {
+      const names = Array.from(el.querySelectorAll<HTMLElement>(".final-name-wrap"));
+      if (names.length === 0) return;
+      const firstTop = names[0].offsetTop;
+      const next = names.map((n) => n.offsetTop > firstTop + n.offsetHeight / 2);
+      setOpensDown((prev) => (prev.length === next.length && prev.every((v, i) => v === next[i]) ? prev : next));
+    };
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    document.fonts?.ready.then(update);
+    return () => ro.disconnect();
+  }, []);
+
   return (
     <section id="idolos" aria-label="Ídolos">
       <div ref={namesRef} className={cn("final-names", visible && "visible")}>
         {IDOLS.map((idol, i) => (
           <Fragment key={idol.name}>
-            <div className="final-name-wrap" tabIndex={0}>
+            <div className={cn("final-name-wrap", opensDown[i] && "opens-down")} tabIndex={0}>
               <span className="final-name">{idol.name}</span>
               <div className="final-stats">
                 <span className="final-stats-rank">{idol.rank}</span>
