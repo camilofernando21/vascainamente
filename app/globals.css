@@ -2121,3 +2121,321 @@ html.vm-cursor body:not(.is-touch) *::after {
   outline: none;
   box-shadow: inset 0 -1px 0 var(--red);
 }
+
+/* ==========================================================================
+   Phase 2: article page
+   ========================================================================== */
+
+.vm-article {
+  padding: 6rem 5vw 4rem;
+}
+
+/* head, body and share share one left edge; the body column is narrower for reading */
+.vm-article-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vm-article-kicker {
+  color: rgba(240, 235, 225, 0.35);
+  margin-bottom: 2rem;
+}
+
+.vm-article-cat {
+  color: var(--text);
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.vm-article-cat.is-red {
+  color: var(--red);
+}
+
+.vm-article-cat:hover,
+.vm-article-cat:focus-visible {
+  color: var(--red);
+}
+
+.vm-article-cat:focus-visible {
+  box-shadow: inset 0 -1px 0 var(--red);
+}
+
+.vm-article-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.6rem, 6vw, 5.75rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  max-width: 20ch;
+}
+
+.vm-article-dek {
+  margin-top: 2rem;
+  max-width: 44ch;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.35;
+  color: rgba(240, 235, 225, 0.5);
+}
+
+.vm-article-meta {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.35);
+}
+
+.vm-article-meta a {
+  color: rgba(240, 235, 225, 0.75);
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 235, 225, 0.25);
+  text-underline-offset: 4px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.vm-article-meta a:hover,
+.vm-article-meta a:focus-visible {
+  color: var(--text);
+  text-decoration-color: var(--red);
+  outline: none;
+}
+
+/* body: Instrument Serif, ~68 characters per line (52ch: the narrow serif fits more letters than "0"s), generous leading.
+   A proportional serif reads faster than a monospace in long paragraphs: word shapes are
+   easier to recognise and lines don't stretch out. DM Mono stays for labels and meta. */
+.vm-article-body {
+  max-width: 52ch;
+  margin: 4rem 0 0;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  line-height: 1.65;
+  color: rgba(240, 235, 225, 0.85);
+}
+
+.vm-article-body p + p {
+  margin-top: 1.4em;
+}
+
+.vm-article-body a {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 4px;
+}
+
+.vm-article-body strong {
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* share */
+.vm-share {
+  position: relative;
+}
+
+.vm-share ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+}
+
+.vm-share-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.35rem 0;
+  background: none;
+  border: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.55);
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.vm-share-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.vm-share-link:hover,
+.vm-share-link:focus-visible {
+  color: var(--text);
+}
+
+.vm-share-link:hover::after,
+.vm-share-link:focus-visible::after {
+  width: 100%;
+}
+
+.vm-share-toast {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  min-height: 1em;
+}
+
+.vm-share-toast.is-visible {
+  opacity: 1;
+}
+
+/* same font metrics as the body so 52ch lines up with the text column (children use rem sizes) */
+.vm-share.is-inline {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.3rem, 1.5vw, 1.5rem);
+  max-width: 52ch;
+  margin: 4rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.vm-share-title {
+  color: rgba(240, 235, 225, 0.3);
+  margin-bottom: 1rem;
+}
+
+.vm-share.is-inline .vm-share-toast {
+  margin-top: 0.75rem;
+}
+
+/* discreet rail on wide screens only (needs ~190px of free margin beside the 1000px column) */
+.vm-share.is-rail {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .vm-share.is-rail {
+    display: block;
+    position: fixed;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+  /* only while the article text is on screen, so it never sits on top of "leia também" or the footer */
+  .vm-share.is-rail.is-shown {
+    opacity: 0.55;
+    visibility: visible;
+  }
+  .vm-share.is-rail.is-shown:hover,
+  .vm-share.is-rail.is-shown:focus-within {
+    opacity: 1;
+  }
+  .vm-share.is-rail ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .vm-share.is-rail .vm-share-link {
+    font-size: 0.6rem;
+  }
+  .vm-share.is-rail .vm-share-toast {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 0.75rem;
+    white-space: nowrap;
+  }
+}
+
+/* related */
+.vm-related {
+  padding: 5rem 5vw 6rem;
+  border-top: 1px solid var(--line);
+}
+
+.vm-related-title {
+  color: rgba(240, 235, 225, 0.3);
+  margin-bottom: 2.5rem;
+}
+
+.vm-cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.vm-cards li {
+  transform: rotate(var(--rot, 0deg));
+}
+
+.vm-card {
+  display: block;
+  height: 100%;
+  background: rgba(13, 13, 13, 0.95);
+  border: 1px solid rgba(240, 235, 225, 0.12);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  outline: none;
+  transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.vm-card:hover,
+.vm-card:focus-visible {
+  border-color: rgba(240, 235, 225, 0.35);
+  transform: translateY(-4px);
+}
+
+.vm-card:focus-visible {
+  box-shadow: inset 2px 0 0 var(--red);
+}
+
+.vm-card-title {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  color: rgba(240, 235, 225, 0.7);
+}
+
+@media (max-width: 767px) {
+  .vm-article {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+  .vm-article-body {
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  .vm-share.is-inline {
+    margin-top: 3rem;
+  }
+  .vm-share ul {
+    gap: 0.5rem 1.5rem;
+  }
+  .vm-related {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+  .vm-cards li {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-cards li,
+  .vm-card:hover,
+  .vm-card:focus-visible {
+    transform: none;
+  }
+}
