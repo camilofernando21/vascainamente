@@ -8,6 +8,8 @@ import { HISTORY_DATES, TITLES, dayLabel, factsForToday, nextFact } from "@/lib/
 import { IDOLS } from "@/lib/idols";
 import { OG_DEFAULTS } from "@/lib/site";
 import { HISTORY_HREF } from "@/lib/categories";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 // "Hoje na história" depends on the date: re-render every hour.
 export const revalidate = 3600;
@@ -32,6 +34,7 @@ export default function HistoryPage() {
 
   return (
     <main className="relative min-h-screen">
+      <JsonLd data={breadcrumbSchema([{ name: "Histórico", path: HISTORY_HREF }])} />
       <SiteTopBar />
 
       {/* today in history, or the next date in the calendar */}

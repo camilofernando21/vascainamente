@@ -14,6 +14,8 @@ import { pickTodayPosts, toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import { dayLabel, factsForToday } from "@/lib/historia";
+import JsonLd from "@/components/JsonLd";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 
 export const revalidate = 60;
@@ -39,6 +41,7 @@ export default async function Home() {
 
   return (
     <main className="relative min-h-screen">
+      <JsonLd data={[organizationSchema(), websiteSchema()]} />
       {/* hero keeps its own box so the menu stays pinned to the hero, not to the bottom of the page */}
       <div className="relative">
         <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />

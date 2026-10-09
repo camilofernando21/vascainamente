@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), lastModified: latest, changeFrequency: "hourly", priority: 1 },
     { url: absoluteUrl(HISTORY_HREF), lastModified: latest, changeFrequency: "daily", priority: 0.7 },
+    { url: absoluteUrl("/privacidade"), changeFrequency: "yearly", priority: 0.2 },
+    { url: absoluteUrl("/termos"), changeFrequency: "yearly", priority: 0.2 },
     ...categories.map((c) => {
       const newest = getPostsByCategory(c)[0];
       return {

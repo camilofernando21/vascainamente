@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { CruzMalta } from "@/components/ui/cruz-malta";
+import NewsImage from "@/components/NewsImage";
 import type { HomeItem } from "@/lib/home";
 
 // Goal drawn in the same 160x120 box and stroke weights as Bam83's hoop.
@@ -217,8 +218,8 @@ export default function GoalSection({ item }: { item: HomeItem | null }) {
             <div className="video-corner video-corner-br" />
             {item.source && <span className="video-caption">{item.source}</span>}
             {item.imageUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={item.imageUrl} alt="" className="swish-image" />
+              // below the hero: lazy, never priority
+              <NewsImage src={item.imageUrl} sizes="(max-width: 767px) 88vw, 44vw" className="swish-image" />
             ) : (
               <div className="swish-placeholder">
                 <CruzMalta size="55%" opacity={0.06} />

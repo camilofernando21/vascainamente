@@ -14,6 +14,8 @@ import {
 import { getPostsByCategory, type Category } from "@/lib/posts";
 import { toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const revalidate = 60;
 export const dynamicParams = false;
@@ -75,6 +77,12 @@ export default function CategoryPage({ params }: { params: Params }) {
 
   return (
     <main className="relative min-h-screen">
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: CATEGORY_NAMES[category], path: categoryHref(category) },
+          ...(page > 1 ? [{ name: `Página ${page}`, path: categoryHref(category, page) }] : []),
+        ])}
+      />
       <SiteTopBar />
 
       <header className="vm-cat-hero">

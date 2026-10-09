@@ -7,6 +7,8 @@ import NewsCards from "@/components/NewsCards";
 import ShareLinks from "@/components/article/ShareLinks";
 import LiteYouTube from "@/components/LiteYouTube";
 import { ytWatchUrl } from "@/lib/youtube-url";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbSchema } from "@/lib/schema";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 import { CATEGORY_NAMES, categoryHref } from "@/lib/categories";
@@ -78,6 +80,7 @@ export default async function ArticlePage({
     author: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
     publisher: {
       "@type": "Organization",
+      "@id": absoluteUrl("/#organization"),
       name: SITE_NAME,
       logo: { "@type": "ImageObject", url: absoluteUrl("/images/logo-vasco.png") },
     },
@@ -86,10 +89,14 @@ export default async function ArticlePage({
 
   return (
     <main className="relative min-h-screen">
-      <script
-        type="application/ld+json"
-        // escape "<" so a headline can never close the script tag
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      <JsonLd
+        data={[
+          jsonLd,
+          breadcrumbSchema([
+            { name: CATEGORY_NAMES[post.category], path: categoryHref(post.category) },
+            { name: post.title, path: `/${post.slug}` },
+          ]),
+        ]}
       />
       <ReadingProgress />
       <SiteTopBar />
@@ -135,7 +142,7 @@ export default async function ArticlePage({
 
           {post.videoId && (
             <figure className="vm-article-video">
-              <LiteYouTube id={post.videoId} title={post.title} />
+              <LiteYouTube id={post.videoId} title={post.title} priority trackLocation="materia" />
               <figcaption>
                 <a
                   className="vm-lite-credit"

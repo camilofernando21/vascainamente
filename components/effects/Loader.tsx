@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { CruzMalta } from "@/components/ui/cruz-malta";
 
 // Ported from Bam83's #bam-loader: 1100ms per step, label fades in 0.3s, loader fades out in 0.8s.
@@ -13,15 +13,27 @@ const STEPS: { label: string; num?: string }[] = [
 
 const STORAGE_KEY = "vm-loader-seen";
 
+function shouldSkip(): boolean {
+  if (document.documentElement.classList.contains("vm-loader-off")) return true;
+  try {
+    if (sessionStorage.getItem(STORAGE_KEY)) return true;
+  } catch {}
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+// layout effect on the client (runs before paint), plain effect on the server (where it never runs)
+const useBeforePaint = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
 export default function Loader() {
   const [active, setActive] = useState(true);
   const [step, setStep] = useState(0);
   const [visible, setVisible] = useState(false);
   const [done, setDone] = useState(false);
 
-  useEffect(() => {
-    // the inline script in <head> already flagged repeat visits / reduced motion before paint
-    if (document.documentElement.classList.contains("vm-loader-off")) {
+  useBeforePaint(() => {
+    // The inline script at the top of <body> normally flags repeat visits / reduced motion before paint.
+    // Some pages (the dynamic 404) are rendered only on the client, so check here too, still before paint.
+    if (shouldSkip()) {
       setActive(false);
       return;
     }

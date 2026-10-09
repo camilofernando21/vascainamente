@@ -42,7 +42,12 @@ export default function VascoTv({ videos, channelUrl }: { videos: ChannelVideo[]
       <ul className="vm-vtv-track" ref={trackRef}>
         {videos.map((video) => (
           <li key={video.id}>
-            <LiteYouTube id={video.id} title={video.title} />
+            <LiteYouTube
+              id={video.id}
+              title={video.title}
+              sizes="(max-width: 767px) 78vw, 30vw"
+              trackLocation="vasco_tv"
+            />
             <p className="vm-vtv-video-title">{video.title}</p>
             <p className="vm-vtv-meta">
               {video.dateLabel && <time dateTime={video.published}>{video.dateLabel}</time>}

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { track } from "@/lib/analytics";
 
 // WhatsApp first: it's where Vasco news actually gets passed around.
 export default function ShareLinks({
@@ -31,7 +32,11 @@ export default function ShareLinks({
     return () => io.disconnect();
   }, [variant]);
 
+  const share = (method: "whatsapp" | "copiar_link" | "x") =>
+    track("share", { method, content_type: "article", item_id: url, placement: variant });
+
   const copy = async () => {
+    share("copiar_link");
     try {
       await navigator.clipboard.writeText(url);
     } catch {
@@ -56,7 +61,13 @@ export default function ShareLinks({
       {variant === "inline" && <p className="vm-label vm-share-title">Compartilhar</p>}
       <ul>
         <li>
-          <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="vm-share-link">
+          <a
+            href={whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="vm-share-link"
+            onClick={() => share("whatsapp")}
+          >
             Enviar no WhatsApp
           </a>
         </li>
@@ -66,7 +77,7 @@ export default function ShareLinks({
           </button>
         </li>
         <li>
-          <a href={x} target="_blank" rel="noopener noreferrer" className="vm-share-link">
+          <a href={x} target="_blank" rel="noopener noreferrer" className="vm-share-link" onClick={() => share("x")}>
             X / Twitter
           </a>
         </li>

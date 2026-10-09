@@ -17,3 +17,5 @@ export const OG_DEFAULTS = {
   siteName: SITE_NAME,
   locale: "pt_BR",
 } as const;
+
+export const CONTACT_EMAIL = "contato@vascainamente.com.br";

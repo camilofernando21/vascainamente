@@ -1,7 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "**" }],
+    // only the hosts that actually appear in content/noticias and the YouTube thumbnails
+    // (components/NewsImage.tsx serves any other host unoptimized instead of failing)
+    remotePatterns: [
+      { protocol: "https", hostname: "**.glbimg.com" },
+      { protocol: "https", hostname: "trivela.com.br" },
+      { protocol: "https", hostname: "i.ytimg.com" },
+    ],
   },
   async redirects() {
     // Histórico moved from a news list to its own page

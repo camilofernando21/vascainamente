@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { ytEmbedUrl } from "@/lib/youtube-url";
 import { cn } from "@/lib/utils";
+import NewsImage from "@/components/NewsImage";
+import { track } from "@/lib/analytics";
 
 // Lite embed: only the thumbnail until the click, then the real (nocookie) player with autoplay.
 // Nothing from YouTube's player loads for people who never press play.
@@ -10,10 +12,17 @@ export default function LiteYouTube({
   id,
   title,
   className,
+  sizes = "(max-width: 767px) 92vw, 820px",
+  priority = false,
+  trackLocation,
 }: {
   id: string;
   title: string;
   className?: string;
+  sizes?: string;
+  priority?: boolean;
+  /** when set, a GA4 "video_play" event is sent on play (e.g. "materia") */
+  trackLocation?: string;
 }) {
   const [playing, setPlaying] = useState(false);
 
@@ -28,9 +37,16 @@ export default function LiteYouTube({
           allowFullScreen
         />
       ) : (
-        <button type="button" className="vm-lite-poster" onClick={() => setPlaying(true)} aria-label={`Assistir: ${title}`}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" />
+        <button
+          type="button"
+          className="vm-lite-poster"
+          onClick={() => {
+            setPlaying(true);
+            if (trackLocation) track("video_play", { video_id: id, video_title: title, location: trackLocation });
+          }}
+          aria-label={`Assistir: ${title}`}
+        >
+          <NewsImage src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} sizes={sizes} priority={priority} />
           <span className="vm-lite-play" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 10 10">
               <path d="M2.5 1.2 L8.8 5 L2.5 8.8 Z" fill="#F0EBE1" />
