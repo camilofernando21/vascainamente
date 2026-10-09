@@ -1,0 +1,53 @@
+name: Reclassify news (manual)
+
+# One-off: fixes the category of already published news with the same AI rules the robot now uses.
+# Run it from the Actions tab (or `gh workflow run reclassify.yml`), first with dry_run to check.
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Só mostrar as mudanças, sem gravar"
+        type: boolean
+        default: true
+
+jobs:
+  reclassify:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Reclassify
+        shell: bash  # explicit: enables pipefail, so a failing script fails the step despite tee
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/reclassify.py ${{ inputs.dry_run && '--dry-run' || '' }} | tee reclassify.log
+          { echo '```'; cat reclassify.log; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name  "vascainamente-bot"
+          git config user.email "bot@vascainamente.com.br"
+          git add content/noticias/
+          git diff --staged --quiet && exit 0
+          git commit -m "chore(news): reclassifica categorias das notícias com a IA"
+          # the news robot may have pushed in the meantime
+          git pull --rebase
+          git push

@@ -8,6 +8,7 @@ import re
 import os
 import sys
 import calendar
+import unicodedata
 import time
 from datetime import datetime
 from pathlib import Path
@@ -15,6 +16,8 @@ import anthropic
 
 RSS_SOURCES = [
     {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/"},
+    # Vasco-only ge feed (adds base and women's team news, tested 2026-10-09: 100 items)
+    {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/futebol/times/vasco/"},
     {"name": "ESPN Brasil",        "url": "https://www.espn.com.br/rss/news"},
     {"name": "UOL Esporte",        "url": "https://rss.uol.com.br/feed/esporte.xml"},
     {"name": "Trivela",            "url": "https://trivela.com.br/feed/"},
@@ -22,6 +25,7 @@ RSS_SOURCES = [
     # Lance! e Goal Brasil descontinuaram seus feeds RSS públicos (404/410
     # em todas as URLs conhecidas testadas em 2026-08-28). Reativar se/quando
     # publicarem um feed novamente.
+    # vasco.com.br não tem RSS (site em app JS; /feed, /rss e wp-json dão 404 em 2026-10-09).
 ]
 
 VASCO_KEYWORDS = [
@@ -29,16 +33,26 @@ VASCO_KEYWORDS = [
     "vasco da gama", "vascaíno", "vascaína",
 ]
 
-CATEGORY_MAP = {
-    "urgente":     ["urgente", "oficial", "confirmado", "anunciado", "breaking"],
-    "transferencia": ["contratou", "contratação", "reforço", "assinou", "acertou",
-                      "negociação", "transferência", "emprestado", "rescindiu", "saída"],
-    "resultado":   ["venceu", "perdeu", "empatou", "goleou", "placar",
-                    "vitória", "derrota", "empate", " x "],
-    "elenco":      ["escalação", "desfalque", "lesão", "recuperação", "titular"],
-    "base":        ["sub-17", "sub-20", "base", "categorias de base"],
-    "feminino":    ["feminino", "time feminino"],
-}
+# Categories the AI may choose, with the definitions it gets in the prompt (also used by reclassify.py).
+CATEGORIES = ["transferencia", "resultado", "elenco", "base", "feminino", "clube", "urgente"]
+CATEGORY_GUIDE = """Categorias (escolha UMA, pelo assunto principal da notícia):
+- transferencia: chegada ou saída de jogador ou técnico, negociações, propostas, empréstimos, rescisões.
+- resultado: jogo do time profissional masculino: prévia, onde assistir, placar, análise e repercussão da partida.
+- elenco: lesão, escalação, treino, técnico e comissão, renovação de contrato, situação de jogadores do elenco.
+- base: categorias de base (sub-15 a sub-20) e seus torneios.
+- feminino: qualquer time feminino do Vasco.
+- clube: diretoria, política, SAF, finanças, estádio, torcida, institucional e o que não couber acima.
+- urgente: SOMENTE quando o clube anunciou oficialmente, no dia, algo grande. Na dúvida, use outra categoria."""
+
+# Keyword fallback, used only when the AI answer is missing or invalid.
+# Order matters: the most specific teams first. No "urgente" here (that is the AI's call).
+CATEGORY_RULES = [
+    ("feminino", r"\bfeminin|\bmeninas da colina|\bgigantes da colina\b"),
+    ("base", r"\bsub-?\d{2}\b|categorias de base|\bda base\b|\bjunior(es)?\b"),
+    ("transferencia", r"contrat|\breforço|\bassin(a|ou)\b|\bacert(a|ou)\b|negocia|transferência|emprestad|empréstimo|rescind|\bsaída\b|\bproposta\b"),
+    ("elenco", r"escalaç|desfalque|\blesão\b|lesionad|\btreino\b|\brenova|departamento médico|\bdm\b"),
+    ("resultado", r"\bvenc(e|eu)\b|\bperd(e|eu)\b|\bempat(a|ou)\b|\bgole(ia|ou)\b|\bvitória\b|\bderrota\b|\d+\s*x\s*\d+|onde assistir|\bao vivo\b"),
+]
 
 def is_vasco(title: str, desc: str = "") -> bool:
     title_lower = title.lower()
@@ -73,11 +87,19 @@ def is_vasco(title: str, desc: str = "") -> bool:
     return True
 
 def classify(title: str, desc: str = "") -> str:
+    """Keyword fallback (word boundaries, so "com base em" is not "base")."""
     text = (title + " " + desc).lower()
-    for cat, keywords in CATEGORY_MAP.items():
-        if any(kw in text for kw in keywords):
+    for cat, pattern in CATEGORY_RULES:
+        if re.search(pattern, text):
             return cat
     return "clube"
+
+def valid_category(value) -> str | None:
+    """Accepts "Feminino", " transferência " etc.; anything outside the list is None."""
+    if not isinstance(value, str):
+        return None
+    norm = unicodedata.normalize("NFKD", value.strip().lower()).encode("ascii", "ignore").decode()
+    return norm if norm in CATEGORIES else None
 
 def extract_image(entry) -> str:
     media = entry.get("media_content")
@@ -193,12 +215,15 @@ Título: {title}
 Trecho: {desc}
 Fonte: {source}
 {video_prompt(videos)}
+{CATEGORY_GUIDE}
+
 Retorne SOMENTE um JSON (sem markdown) com:
 - "title": título reescrito: direto, preciso, sem sensacionalismo
 - "excerpt": 2-3 frases naturais de resumo
 - "body": 3-4 parágrafos desenvolvendo a notícia
 - "seoTitle": título SEO (máx 60 chars)
-- "seoDescription": meta description (máx 155 chars){video_field}"""
+- "seoDescription": meta description (máx 155 chars)
+- "category": uma das categorias acima, exatamente como escrita{video_field}"""
         }]
     )
     text = response.content[0].text.strip()
@@ -209,6 +234,7 @@ Retorne SOMENTE um JSON (sem markdown) com:
     for key in ("title", "excerpt", "body", "seoTitle", "seoDescription"):
         if isinstance(article.get(key), str):
             article[key] = strip_dashes(article[key])
+    article["category"] = valid_category(article.get("category"))
     # only accept an ID that was actually offered: never trust a made-up one
     valid_ids = {v["id"] for v in videos}
     vid = article.get("videoId")
@@ -274,12 +300,12 @@ def main():
                 if fp in cache:
                     continue
 
-                cat = classify(title, desc)
-
                 try:
                     if videos is None:
                         videos = fetch_recent_videos()
                     article = process_with_ai(client, title, desc, src["name"], videos)
+                    # AI category first; keyword rules only as a fallback
+                    cat = article["category"] or classify(title, desc)
                     publish(article, cat, src["name"], link, image_url)
                     cache.add(fp)
                     published += 1
