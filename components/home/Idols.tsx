@@ -16,6 +16,7 @@ const IDOLS = [
   {
     name: "Roberto Dinamite",
     videoId: "RpTCqNPEq-g",
+    videoCredit: "Vasco TV",
     rank: "Maior artilheiro da história",
     value: "708",
     unit: "gols",
@@ -23,8 +24,9 @@ const IDOLS = [
   },
   {
     name: "Romário",
-    // no goals video on the official channel yet: the background stays as is
-    videoId: null,
+    // milésimo gol, Vasco 3 x 1 Sport, 2007 (ge tv channel)
+    videoId: "FGur3GPvfmw",
+    videoCredit: "ge.globo",
     rank: "2º maior artilheiro do clube",
     value: "313",
     unit: "gols",
@@ -33,6 +35,7 @@ const IDOLS = [
   {
     name: "Edmundo",
     videoId: "8iMIV_v6T-Y",
+    videoCredit: "Vasco TV",
     rank: "Brasileirão de 1997",
     value: "29",
     unit: "gols",
@@ -41,6 +44,7 @@ const IDOLS = [
   {
     name: "Juninho",
     videoId: "ETlflPNEvJ4",
+    videoCredit: "Vasco TV",
     rank: "O gol do Monumental",
     value: "1998",
     unit: "Libertadores",
@@ -48,7 +52,7 @@ const IDOLS = [
   },
 ];
 
-// Official Vasco TV videos. One iframe for the whole section, created near the viewport,
+// YouTube embeds (Vasco TV, plus ge tv for Romário). One iframe for the whole section, created near the viewport,
 // loaded paused; the hovered (or tapped) idol's video plays muted behind the names.
 const FIRST_VIDEO = IDOLS.find((idol) => idol.videoId)?.videoId ?? "";
 const EMBED_SRC = ytEmbedUrl(FIRST_VIDEO, {
@@ -161,7 +165,7 @@ export default function Idols() {
           <iframe
             ref={iframeRef}
             src={EMBED_SRC}
-            title="Vídeos dos ídolos, Vasco TV"
+            title="Vídeos dos ídolos"
             onLoad={onLoad}
             tabIndex={-1}
             allow="autoplay; encrypted-media; picture-in-picture"
@@ -210,7 +214,7 @@ export default function Idols() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Vídeo: Vasco TV
+          Vídeo: {IDOLS.find((idol) => idol.videoId === lastVideo)?.videoCredit}
         </a>
       )}
     </section>
