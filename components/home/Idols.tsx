@@ -1,12 +1,21 @@
 "use client";
 
 import { Fragment, useEffect, useRef, useState } from "react";
+import {
+  useInViewport,
+  useNearViewport,
+  useYouTubeReady,
+  ytCommand,
+  ytEmbedUrl,
+  ytWatchUrl,
+} from "@/lib/youtube";
 import { cn } from "@/lib/utils";
 
 // Texts supplied by the editor; do not change numbers or wording without checking with them.
 const IDOLS = [
   {
     name: "Roberto Dinamite",
+    videoId: "RpTCqNPEq-g",
     rank: "Maior artilheiro da história",
     value: "708",
     unit: "gols",
@@ -14,6 +23,8 @@ const IDOLS = [
   },
   {
     name: "Romário",
+    // no goals video on the official channel yet: the background stays as is
+    videoId: null,
     rank: "2º maior artilheiro do clube",
     value: "313",
     unit: "gols",
@@ -21,6 +32,7 @@ const IDOLS = [
   },
   {
     name: "Edmundo",
+    videoId: "8iMIV_v6T-Y",
     rank: "Brasileirão de 1997",
     value: "29",
     unit: "gols",
@@ -28,6 +40,7 @@ const IDOLS = [
   },
   {
     name: "Juninho",
+    videoId: "ETlflPNEvJ4",
     rank: "O gol do Monumental",
     value: "1998",
     unit: "Libertadores",
@@ -35,9 +48,29 @@ const IDOLS = [
   },
 ];
 
+// Official Vasco TV videos. One iframe for the whole section, created near the viewport,
+// loaded paused; the hovered (or tapped) idol's video plays muted behind the names.
+const FIRST_VIDEO = IDOLS.find((idol) => idol.videoId)?.videoId ?? "";
+const EMBED_SRC = ytEmbedUrl(FIRST_VIDEO, {
+  autoplay: 0,
+  mute: 1,
+  controls: 0,
+  playsinline: 1,
+  rel: 0,
+  modestbranding: 1,
+});
+
 // Ported from Bam83's #final: giant names, hover card with stats, pulsing hint.
 export default function Idols() {
+  const sectionRef = useRef<HTMLElement>(null);
   const namesRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const loadedVideo = useRef(FIRST_VIDEO);
+  const near = useNearViewport(sectionRef);
+  const inView = useInViewport(sectionRef, near);
+  const { ready, onLoad } = useYouTubeReady(iframeRef, near);
+  const [active, setActive] = useState<number | null>(null);
+  const [lastVideo, setLastVideo] = useState<string | null>(null);
   const [visible, setVisible] = useState(false);
   const [isTouch, setIsTouch] = useState(false);
   const [opensDown, setOpensDown] = useState<boolean[]>([]);
@@ -80,12 +113,74 @@ export default function Idols() {
     return () => ro.disconnect();
   }, []);
 
+  const activeVideo = active !== null ? IDOLS[active].videoId : null;
+  const playing = !!activeVideo && ready && inView;
+
+  // swap / play / pause the single player
+  useEffect(() => {
+    if (!ready) return;
+    const iframe = iframeRef.current;
+    if (!activeVideo || !inView) {
+      ytCommand(iframe, "pauseVideo");
+      return;
+    }
+    if (loadedVideo.current !== activeVideo) {
+      ytCommand(iframe, "loadVideoById", [activeVideo]);
+      loadedVideo.current = activeVideo;
+    } else {
+      ytCommand(iframe, "playVideo");
+    }
+    ytCommand(iframe, "mute");
+    setLastVideo(activeVideo);
+  }, [ready, activeVideo, inView]);
+
+  // loop: loadVideoById plays once, so restart it when it ends while still active
+  useEffect(() => {
+    if (!ready) return;
+    const onMessage = (e: MessageEvent) => {
+      if (e.source !== iframeRef.current?.contentWindow) return;
+      try {
+        const data = typeof e.data === "string" ? JSON.parse(e.data) : e.data;
+        if (data?.event === "onStateChange" && data.info === 0) {
+          ytCommand(iframeRef.current, "seekTo", [0, true]);
+          ytCommand(iframeRef.current, "playVideo");
+        }
+      } catch {}
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [ready]);
+
+  const activate = (i: number) => setActive(i);
+  const deactivate = (i: number) => setActive((cur) => (cur === i ? null : cur));
+
   return (
-    <section id="idolos" aria-label="Ídolos">
+    <section id="idolos" ref={sectionRef} aria-label="Ídolos">
+      {near && (
+        <div id="vm-idol-video" className={cn(playing && "is-visible")} aria-hidden="true">
+          <iframe
+            ref={iframeRef}
+            src={EMBED_SRC}
+            title="Vídeos dos ídolos, Vasco TV"
+            onLoad={onLoad}
+            tabIndex={-1}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
+          <div className="vm-idol-video-overlay" />
+        </div>
+      )}
       <div ref={namesRef} className={cn("final-names", visible && "visible")}>
         {IDOLS.map((idol, i) => (
           <Fragment key={idol.name}>
-            <div className={cn("final-name-wrap", opensDown[i] && "opens-down")} tabIndex={0}>
+            <div
+              className={cn("final-name-wrap", opensDown[i] && "opens-down")}
+              tabIndex={0}
+              onMouseEnter={() => activate(i)}
+              onMouseLeave={() => deactivate(i)}
+              onFocus={() => activate(i)}
+              onBlur={() => deactivate(i)}
+            >
               <span className="final-name">{idol.name}</span>
               <div className="final-stats">
                 <span className="final-stats-rank">{idol.rank}</span>
@@ -107,6 +202,17 @@ export default function Idols() {
         ))}
       </div>
       <p id="final-hint">{isTouch ? "Toque em cada nome" : "Passe o mouse em cada nome"}</p>
+      {/* keeps pointing at the last video played, so it can still be clicked after the fade */}
+      {lastVideo && (
+        <a
+          className={cn("vm-video-credit", !playing && "is-dim")}
+          href={ytWatchUrl(lastVideo)}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Vídeo: Vasco TV
+        </a>
+      )}
     </section>
   );
 }

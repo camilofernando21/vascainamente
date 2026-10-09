@@ -1310,6 +1310,131 @@ html.vm-cursor body:not(.is-touch) *::after {
   filter: grayscale(1);
 }
 
+/* background video, created near the viewport; fades in over the texture once the player is ready */
+#vm-presser-video-wrap,
+#vm-idol-video {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#vm-presser-video-wrap {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#vm-presser-video-wrap.is-ready {
+  opacity: 1;
+}
+
+#vm-presser-video-wrap iframe,
+#vm-idol-video iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 56.25vw; /* 16:9 */
+  min-height: 100%;
+  min-width: 177.78vh;
+  border: none;
+  pointer-events: none;
+}
+
+@media (max-width: 767px) {
+  #vm-presser-video-wrap iframe {
+    left: 20%;
+    transform: translate(-20%, -50%);
+  }
+}
+
+#vm-presser-sound {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.3em;
+  color: rgba(240, 235, 225, 0.2);
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s;
+  animation: soundPulse 3s ease-in-out infinite;
+}
+
+#vm-presser-sound:hover {
+  color: rgba(240, 235, 225, 0.5);
+}
+
+#vm-presser-sound svg {
+  opacity: 0.4;
+}
+
+@keyframes soundPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.9; }
+}
+
+.vm-video-credit {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 5;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 225, 0.4);
+  transition: color 0.3s ease, opacity 0.6s ease;
+}
+
+.vm-video-credit:hover {
+  color: var(--text);
+}
+
+.vm-video-credit.is-dim {
+  opacity: 0.5;
+}
+
+@media (max-width: 767px) {
+  #vm-presser-sound {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    bottom: 3.5rem;
+  }
+  .vm-video-credit {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* idols: one muted video behind the names, shown while a name is hovered / tapped */
+#vm-idol-video {
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#vm-idol-video.is-visible {
+  opacity: 1;
+}
+
+.vm-idol-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 13, 13, 0.7);
+}
+
 #vm-presser::before,
 #vm-presser::after {
   content: "";
@@ -1367,6 +1492,8 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .final-names {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -1492,6 +1619,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 #final-hint {
   position: absolute;
+  z-index: 1;
   bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
@@ -1570,6 +1698,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   .badge-ring,
   .vm-marquee-track,
   #final-hint,
+  #vm-presser-sound,
   .glitch-layer-red.active,
   .glitch-layer-blue.active {
     animation: none;
