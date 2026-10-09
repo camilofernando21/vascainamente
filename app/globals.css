@@ -1378,7 +1378,8 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .final-names.visible {
   opacity: 1;
-  transform: translateY(0);
+  /* "none" (not translateY(0)) so the fixed stats card on phones is placed against the viewport */
+  transform: none;
 }
 
 .final-name-wrap {
@@ -1499,6 +1500,16 @@ html.vm-cursor body:not(.is-touch) *::after {
   .final-name,
   .final-dot {
     font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+  /* names wrap unpredictably on phones: show the card centered on screen so it never bleeds off the edge */
+  .final-stats {
+    position: fixed;
+    top: 14vh;
+    bottom: auto;
+    left: 50%;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    white-space: normal;
   }
   #final-hint {
     font-size: 0.7rem;

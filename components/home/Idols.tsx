@@ -3,8 +3,37 @@
 import { Fragment, useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-// Stats are placeholders on purpose: to be filled in by hand, never invented.
-const IDOLS = ["Roberto Dinamite", "Romário", "Edmundo", "Juninho"];
+// Texts supplied by the editor; do not change numbers or wording without checking with them.
+const IDOLS = [
+  {
+    name: "Roberto Dinamite",
+    rank: "Maior artilheiro da história",
+    value: "708",
+    unit: "gols",
+    lines: ["1.110 jogos, de 1971 a 1992", "190 gols no Brasileirão, recorde"],
+  },
+  {
+    name: "Romário",
+    rank: "2º maior artilheiro do clube",
+    value: "313",
+    unit: "gols",
+    lines: ["402 jogos em quatro passagens", "De 1985 a 2007"],
+  },
+  {
+    name: "Edmundo",
+    rank: "Brasileirão de 1997",
+    value: "29",
+    unit: "gols",
+    lines: ["Recorde da competição na época", "6 gols em um jogo contra o União São João"],
+  },
+  {
+    name: "Juninho",
+    rank: "O gol do Monumental",
+    value: "1998",
+    unit: "Libertadores",
+    lines: ["Falta contra o River Plate", "Semifinal, 22 de julho de 1998"],
+  },
+];
 
 // Ported from Bam83's #final: giant names, hover card with stats, pulsing hint.
 export default function Idols() {
@@ -34,19 +63,22 @@ export default function Idols() {
   return (
     <section id="idolos" aria-label="Ídolos">
       <div ref={namesRef} className={cn("final-names", visible && "visible")}>
-        {IDOLS.map((name, i) => (
-          <Fragment key={name}>
+        {IDOLS.map((idol, i) => (
+          <Fragment key={idol.name}>
             <div className="final-name-wrap" tabIndex={0}>
-              <span className="final-name">{name}</span>
+              <span className="final-name">{idol.name}</span>
               <div className="final-stats">
-                <span className="final-stats-rank">[confirmar]</span>
+                <span className="final-stats-rank">{idol.rank}</span>
                 <span className="final-stats-pts">
-                  [confirmar] <span>gols</span>
+                  {idol.value} <span>{idol.unit}</span>
                 </span>
                 <p className="final-stats-detail">
-                  [confirmar]
-                  <br />
-                  [confirmar]
+                  {idol.lines.map((line, j) => (
+                    <Fragment key={j}>
+                      {j > 0 && <br />}
+                      {line}
+                    </Fragment>
+                  ))}
                 </p>
               </div>
             </div>
