@@ -9,7 +9,7 @@ import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 import { CATEGORY_NAMES, categoryHref } from "@/lib/categories";
 import { toHomeItem } from "@/lib/home";
-import { absoluteUrl } from "@/lib/site";
+import { OG_DEFAULTS, SITE_NAME, absoluteUrl } from "@/lib/site";
 import { formatDateFull, readingTime } from "@/lib/time";
 import { cn } from "@/lib/utils";
 
@@ -26,9 +26,23 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
+  const title = post.seoTitle || post.title;
+  const description = post.seoDescription || post.excerpt;
+  const url = `/${post.slug}`;
   return {
-    title: post.seoTitle || post.title,
-    description: post.seoDescription || post.excerpt,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      ...OG_DEFAULTS,
+      type: "article",
+      url,
+      title,
+      description,
+      publishedTime: new Date(post.date).toISOString(),
+      section: CATEGORY_NAMES[post.category],
+    },
+    twitter: { card: "summary_large_image", title, description },
   };
 }
 
@@ -47,8 +61,34 @@ export default async function ArticlePage({
     .slice(0, 3)
     .map(toHomeItem);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: post.title,
+    description: post.seoDescription || post.excerpt,
+    datePublished: new Date(post.date).toISOString(),
+    dateModified: new Date(post.date).toISOString(),
+    articleSection: CATEGORY_NAMES[post.category],
+    inLanguage: "pt-BR",
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    image: [absoluteUrl(`/${post.slug}/opengraph-image`)],
+    author: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: { "@type": "ImageObject", url: absoluteUrl("/images/logo-vasco.png") },
+    },
+    ...(post.sourceUrl ? { isBasedOn: post.sourceUrl } : {}),
+  };
+
   return (
     <main className="relative min-h-screen">
+      <script
+        type="application/ld+json"
+        // escape "<" so a headline can never close the script tag
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <ReadingProgress />
       <SiteTopBar />
 

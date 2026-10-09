@@ -10,8 +10,22 @@ import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
 import { pickTodayPosts, toHomeItem } from "@/lib/home";
+import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
+import type { Metadata } from "next";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    ...OG_DEFAULTS,
+    type: "website",
+    url: "/",
+    title: "Vascainamente · Notícias do Vasco da Gama",
+    description: SITE_DESCRIPTION,
+  },
+  twitter: { card: "summary_large_image", title: "Vascainamente", description: SITE_DESCRIPTION },
+};
 
 export default function Home() {
   const posts = getAllPosts();

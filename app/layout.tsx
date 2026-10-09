@@ -4,6 +4,7 @@ import "./globals.css";
 import Loader, { LOADER_HEAD_SCRIPT } from "@/components/effects/Loader";
 import GrainCanvas from "@/components/effects/GrainCanvas";
 import CustomCursor from "@/components/effects/CustomCursor";
+import { OG_DEFAULTS, SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -21,12 +22,14 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Vascainamente · Notícias do Vasco da Gama",
     template: "%s · Vascainamente",
   },
-  description:
-    "Portal de notícias 100% dedicado ao Club de Regatas Vasco da Gama. Transferências, resultados, elenco e tudo sobre o Gigante da Colina.",
+  description: SITE_DESCRIPTION,
+  openGraph: { ...OG_DEFAULTS, type: "website" },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

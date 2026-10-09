@@ -13,6 +13,7 @@ import {
 } from "@/lib/categories";
 import { getPostsByCategory, type Category } from "@/lib/posts";
 import { toHomeItem } from "@/lib/home";
+import { OG_DEFAULTS } from "@/lib/site";
 
 export const revalidate = 60;
 export const dynamicParams = false;
@@ -53,9 +54,16 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   const data = resolve(params);
   if (!data) return {};
   const name = CATEGORY_NAMES[data.category];
+  const title = data.page > 1 ? `${name}, página ${data.page}` : name;
+  const description = `Notícias do Vasco da Gama na categoria ${name}.`;
+  const url = categoryHref(data.category, data.page);
+  const image = { url: `/og/categoria/${data.category}`, width: 1200, height: 630, alt: `${name} · Vascainamente` };
   return {
-    title: data.page > 1 ? `${name}, página ${data.page}` : name,
-    description: `Notícias do Vasco da Gama na categoria ${name}.`,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { ...OG_DEFAULTS, type: "website", url, title: `${title} · Vascainamente`, description, images: [image] },
+    twitter: { card: "summary_large_image", title: `${title} · Vascainamente`, description, images: [image.url] },
   };
 }
 

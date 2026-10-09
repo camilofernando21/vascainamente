@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
     "clsx": "^2.1.1",
     "date-fns": "^4.4.0",
     "gray-matter": "^4.0.3",
@@ -18,6 +19,7 @@
     "react-dom": "^18",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "satori": "^0.10.14",
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
