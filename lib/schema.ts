@@ -1,4 +1,4 @@
-import { SITE_DESCRIPTION, SITE_NAME, absoluteUrl } from "@/lib/site";
+import { PUBLISHER, SITE_DESCRIPTION, SITE_NAME, absoluteUrl } from "@/lib/site";
 
 // schema.org JSON-LD builders. Rendered with <JsonLd />.
 
@@ -10,6 +10,9 @@ export function organizationSchema() {
     name: SITE_NAME,
     url: absoluteUrl("/"),
     logo: { "@type": "ImageObject", url: absoluteUrl("/icons/icon-512.png"), width: 512, height: 512 },
+    // the company that runs the site (no CNPJ here: only on the privacy and terms pages)
+    parentOrganization: { "@type": "Organization", name: PUBLISHER.name, url: PUBLISHER.url },
+    publisher: { "@type": "Organization", name: PUBLISHER.name, url: PUBLISHER.url },
   };
 }
 

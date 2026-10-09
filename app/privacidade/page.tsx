@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import SiteTopBar from "@/components/SiteTopBar";
 import SiteFooter from "@/components/home/SiteFooter";
 import ReopenConsentButton from "@/components/consent/ReopenConsentButton";
-import { CONTACT_EMAIL, OG_DEFAULTS, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, OG_DEFAULTS, PUBLISHER, SITE_NAME } from "@/lib/site";
 import { ACTIVE_TRACKERS, GA_ID, CLARITY_ID, META_PIXEL_ID, listPt } from "@/lib/trackers";
 
 export const metadata: Metadata = {
@@ -28,9 +28,9 @@ export default function PrivacyPage() {
         <div className="vm-legal-body">
           <h2>Quem mantém o site</h2>
           <p>
-            O {SITE_NAME} é um site independente de notícias sobre o Club de Regatas Vasco da Gama, sem vínculo
-            oficial com o clube. Para qualquer assunto sobre dados ou conteúdo, escreva para{" "}
-            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+            O {SITE_NAME} é mantido por {PUBLISHER.legalName} ({PUBLISHER.name}), CNPJ {PUBLISHER.cnpj}. É um site
+            independente de notícias, sem vínculo oficial com o Club de Regatas Vasco da Gama. Para qualquer assunto
+            sobre dados ou conteúdo, escreva para <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
           </p>
 
           <h2>Que dados coletamos</h2>

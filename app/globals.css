@@ -3216,3 +3216,27 @@ html.vm-cursor body:not(.is-touch) *::after {
     padding: 4rem 1.5rem 4rem;
   }
 }
+
+/* footer credit: same muted tone as the other footer links */
+.vm-footer-credit {
+  width: 100%;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: rgba(240, 235, 225, 0.3);
+}
+
+.vm-footer-credit a {
+  color: rgba(240, 235, 225, 0.45);
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 235, 225, 0.2);
+  text-underline-offset: 3px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+  outline: none;
+}
+
+.vm-footer-credit a:hover,
+.vm-footer-credit a:focus-visible {
+  color: var(--text);
+  text-decoration-color: var(--red);
+}

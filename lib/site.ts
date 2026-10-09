@@ -18,4 +18,15 @@ export const OG_DEFAULTS = {
   locale: "pt_BR",
 } as const;
 
-export const CONTACT_EMAIL = "contato@vascainamente.com.br";
+// Who publishes the site. The CNPJ is shown only on /privacidade and /termos (not in the footer or schema).
+export const PUBLISHER = {
+  legalName: "Camilo Fernando Bomfim & Cia Ltda",
+  name: "CatetoaoCubo",
+  cnpj: "68.436.917/0001-77",
+  url: "https://catetoaocubo.com.br",
+  email: "contato@catetoaocubo.com.br",
+} as const;
+
+// Contact for LGPD and content removal requests. Switch back to "contato@vascainamente.com.br"
+// once the domain's e-mail exists.
+export const CONTACT_EMAIL = PUBLISHER.email;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteTopBar from "@/components/SiteTopBar";
 import SiteFooter from "@/components/home/SiteFooter";
-import { CONTACT_EMAIL, OG_DEFAULTS, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, OG_DEFAULTS, PUBLISHER, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Termos de uso",
@@ -24,8 +24,9 @@ export default function TermsPage() {
         <div className="vm-legal-body">
           <h2>O site</h2>
           <p>
-            O {SITE_NAME} é um site independente de notícias sobre o Club de Regatas Vasco da Gama. Não é um canal
-            oficial do clube e não fala em nome dele. O nome, o escudo e as marcas do Vasco pertencem ao clube.
+            O {SITE_NAME} é mantido por {PUBLISHER.legalName} ({PUBLISHER.name}), CNPJ {PUBLISHER.cnpj}. É um site
+            independente de notícias, sem vínculo oficial com o Club de Regatas Vasco da Gama: não é um canal oficial do
+            clube e não fala em nome dele. O nome, o escudo e as marcas do Vasco pertencem ao clube.
           </p>
 
           <h2>De onde vêm as notícias</h2>

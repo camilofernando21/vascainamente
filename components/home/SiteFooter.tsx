@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NAV_TABS, categoryHref } from "@/lib/categories";
 import type { Category } from "@/lib/posts";
 import LegalLinks from "@/components/consent/LegalLinks";
+import { PUBLISHER } from "@/lib/site";
 
 const CATEGORIES = NAV_TABS.filter(
   (tab): tab is { label: string; category: Category } => tab.category !== "todos"
@@ -24,6 +25,12 @@ export default function SiteFooter() {
       </ul>
       <p className="vm-footer-note">Notícias atualizadas automaticamente a cada 15 minutos.</p>
       <LegalLinks />
+      <p className="vm-footer-credit">
+        Site feito e mantido pela{" "}
+        <a href={PUBLISHER.url} target="_blank" rel="noopener">
+          {PUBLISHER.name}
+        </a>
+      </p>
     </footer>
   );
 }
