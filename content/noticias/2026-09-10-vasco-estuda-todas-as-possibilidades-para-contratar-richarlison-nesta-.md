@@ -15,6 +15,6 @@ O Vasco não desistiu de Richarlison. O diretor de futebol Admar Lopes confirmou
 
 A declaração reforça o interesse real e concreto da diretoria cruzmaltina no retorno do centroavante ao futebol brasileiro. Richarlison, revelado pelo próprio Vasco, vive momento de instabilidade na Europa e pode estar aberto a uma mudança. O clube segue monitorando a situação e trabalha nos bastidores para encontrar um modelo viável de negociação.
 
-O desafio é complexo. Os altos valores envolvidos — tanto no salário do jogador quanto em uma eventual taxa ao Tottenham — exigem criatividade na estrutura do acordo. Empréstimo, participação de patrocinadores ou divisão de custos são caminhos que o Vasco pode explorar para tornar a operação possível dentro do prazo.
+O desafio é complexo. Os altos valores envolvidos, tanto no salário do jogador quanto em uma eventual taxa ao Tottenham, exigem criatividade na estrutura do acordo. Empréstimo, participação de patrocinadores ou divisão de custos são caminhos que o Vasco pode explorar para tornar a operação possível dentro do prazo.
 
-Se concretizada, a chegada de Richarlison seria um dos maiores movimentos do futebol brasileiro nos últimos anos — e um símbolo poderoso para a retomada do projeto cruzmaltino. São Jorge, faz o seu trabalho.
+Se concretizada, a chegada de Richarlison seria um dos maiores movimentos do futebol brasileiro nos últimos anos, e um símbolo poderoso para a retomada do projeto cruzmaltino. São Jorge, faz o seu trabalho.

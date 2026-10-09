@@ -13,7 +13,7 @@ seoDescription: "Vasco da Gama enfrenta o Vitória pela Copa do Brasil 2026. Vej
 
 O Vasco da Gama mede forças com o Vitória em mais um desafio pela Copa do Brasil 2026. O confronto coloca frente a frente dois clubes tradicionais do futebol brasileiro, com o Cruz-Maltino determinado a mostrar seu valor e garantir a classificação para a próxima fase do torneio.
 
-A Copa do Brasil é uma das competições mais importantes do calendário nacional, e o Vasco sabe disso. Avançar nas fases eliminatórias significa não apenas prestígio, mas também premiação financeira relevante, que pode reforçar o planejamento do clube para a temporada. Cada jogo nessa competição vale muito — e o elenco vascaíno tem consciência do peso do momento.
+A Copa do Brasil é uma das competições mais importantes do calendário nacional, e o Vasco sabe disso. Avançar nas fases eliminatórias significa não apenas prestígio, mas também premiação financeira relevante, que pode reforçar o planejamento do clube para a temporada. Cada jogo nessa competição vale muito, e o elenco vascaíno tem consciência do peso do momento.
 
 O Vitória, mandante do confronto, representa um adversário perigoso e que não pode ser subestimado. O time baiano joga em casa com o apoio de sua torcida, o que exige do Vasco organização tática e concentração máxima durante os 90 minutos. A equipe de São Januário precisará estar bem postada para sair com o resultado positivo.
 

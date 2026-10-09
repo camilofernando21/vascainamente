@@ -9,7 +9,7 @@ export default function Header() {
       <div className="flex h-full items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-[6px]">
           <span className="text-red text-[13px] font-medium">✕</span>
-          <CruzMalta size={14} color="#C00000" />
+          <CruzMalta size={14} />
           <TextRoll
             center
             className="text-[13px] font-medium tracking-[2px] text-text-hero"

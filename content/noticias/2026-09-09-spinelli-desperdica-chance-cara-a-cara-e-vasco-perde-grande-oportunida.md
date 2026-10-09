@@ -13,8 +13,8 @@ seoDescription: "Spinelli saiu na cara do goleiro, mas desperdiçou a melhor opo
 
 Em um dos momentos mais importantes da partida, o atacante Spinelli recebeu a bola em condições ideais e saiu cara a cara com o goleiro adversário. A jogada concentrou toda a esperança da torcida vascaína, mas o desfecho foi de enorme frustração: o camisa do Cruz-Maltino desperdiçou a grande chance e mandou a bola para fora.
 
-O lance foi, sem sombra de dúvida, a melhor oportunidade criada pelo Vasco no jogo. Em situações assim, o torcedor já levanta do sofá antes mesmo do chute — e a queda é mais dura quando o gol não vem. Spinelli ficou na cara do gol e não aproveitou o momento que poderia ter mudado o rumo da partida.
+O lance foi, sem sombra de dúvida, a melhor oportunidade criada pelo Vasco no jogo. Em situações assim, o torcedor já levanta do sofá antes mesmo do chute, e a queda é mais dura quando o gol não vem. Spinelli ficou na cara do gol e não aproveitou o momento que poderia ter mudado o rumo da partida.
 
 Esse tipo de falha individual pesa no coletivo. O Vasco construiu a jogada, criou o espaço e colocou o atacante em posição privilegiada. Desperdiçar uma chance dessas cobra um preço alto, especialmente quando o placar está em aberto e cada oportunidade vale ouro.
 
-O episódio reforça a necessidade de maior eficiência ofensiva, um ponto que o elenco vascaíno precisa trabalhar para transformar chances claras em gols. Em jogos equilibrados, quem converte as oportunidades leva a melhor — e o Vasco sabe disso mais do que ninguém.
+O episódio reforça a necessidade de maior eficiência ofensiva, um ponto que o elenco vascaíno precisa trabalhar para transformar chances claras em gols. Em jogos equilibrados, quem converte as oportunidades leva a melhor, e o Vasco sabe disso mais do que ninguém.

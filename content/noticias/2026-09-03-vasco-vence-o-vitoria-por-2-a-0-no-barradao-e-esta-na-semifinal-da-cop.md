@@ -13,7 +13,7 @@ seoDescription: "Vasco elimina o Vitória com 3 a 0 no agregado e avança para a
 
 O Vasco foi ao Barradão, fez 2 a 0 e deu a resposta mais definitiva possível. Nesta quarta-feira, em Salvador, Andrés Gómez e Puma Rodríguez marcaram os gols que garantiram a classificação para a semifinal da Copa do Brasil. Com o 1 a 0 construído em São Januário na semana passada, o placar agregado chegou a 3 a 0 sobre o Vitória. A equipe de Pedro Emanuel segue viva na competição e agora vai cruzar o caminho do Palmeiras.
 
-O pano de fundo da classificação tinha uma camada extra de motivação. Após a derrota do Vitória por 1 a 0 no jogo de ida, o meia Matheuzinho deixou São Januário fazendo gestos provocativos em direção à torcida vascaína, insinuando que o confronto decisivo em Salvador seria outro cenário. A mensagem ficou no ar durante toda a semana — e o Vasco tratou de respondê-la dentro e fora de campo.
+O pano de fundo da classificação tinha uma camada extra de motivação. Após a derrota do Vitória por 1 a 0 no jogo de ida, o meia Matheuzinho deixou São Januário fazendo gestos provocativos em direção à torcida vascaína, insinuando que o confronto decisivo em Salvador seria outro cenário. A mensagem ficou no ar durante toda a semana, e o Vasco tratou de respondê-la dentro e fora de campo.
 
 Assim que o árbitro apitou o fim do jogo, Thiago Mendes foi direto ao ponto: reproduziu o mesmo gesto de Matheuzinho, agora com a classificação confirmada no bolso. Robert Renan também entrou na festa e resumiu o sentimento do grupo com a simplicidade de quem não precisa de muito para dizer tudo. 'Ah, lá no Barradão é difícil? 2 a 0', declarou o zagueiro, arrancando risos e ecoando o que todo vascaíno queria ouvir.
 

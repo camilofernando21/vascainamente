@@ -11,7 +11,7 @@ seoTitle: "Thiago Mendes lamenta derrota do Vasco no clássico"
 seoDescription: "Capitão do Vasco, Thiago Mendes valorizou a atuação da equipe, mas lamentou a derrota por 1 a 0 para o Fluminense no Maracanã."
 ---
 
-O Vasco perdeu para o Fluminense por 1 a 0 no Maracanã em mais um clássico que deixou a torcida com o coração apertado. Mas antes mesmo de o clima esfriar, o capitão Thiago Mendes foi a público para falar sobre o que viu dentro de campo — e o recado foi claro: a equipe deu tudo o que tinha.
+O Vasco perdeu para o Fluminense por 1 a 0 no Maracanã em mais um clássico que deixou a torcida com o coração apertado. Mas antes mesmo de o clima esfriar, o capitão Thiago Mendes foi a público para falar sobre o que viu dentro de campo, e o recado foi claro: a equipe deu tudo o que tinha.
 
 Thiago Mendes destacou a entrega coletiva do time, sinalizando que, apesar do resultado negativo, o Vasco esteve competitivo e brigou pelo empate até o apito final. Para o volante, que veste a braçadeira de capitão com responsabilidade, reconhecer os erros é importante, mas também é fundamental valorizar o que a equipe construiu durante a partida.
 

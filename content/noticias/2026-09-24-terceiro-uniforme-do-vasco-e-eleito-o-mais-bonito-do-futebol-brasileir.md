@@ -13,7 +13,7 @@ seoDescription: "Camisa alternativa amarela do Vasco venceu enquete do ge com 29
 
 O Vasco tem o terceiro uniforme mais bonito do futebol brasileiro em 2026. É o que aponta a enquete realizada pelo ge, na qual a camisa cruzmaltina recebeu 15.536 votos, correspondendo a 29,41% do total de 52.827 participações. A vantagem sobre o segundo colocado foi expressiva: o Flamengo ficou com apenas 12,95% dos votos (6.840), seguido pelo Fluminense, com 9,27% (4.900).
 
-A camisa é predominantemente amarela e carrega referências históricas profundas do clube. O design foi inspirado nas velas das embarcações ligadas à trajetória vascaína e traz ainda uma representação da caravela cruzmaltina, resgatando a identidade marítima que é parte essencial da alma do Vasco da Gama. O resultado estético agradou não apenas a torcida, mas ao público em geral — o que torna o reconhecimento ainda mais significativo.
+A camisa é predominantemente amarela e carrega referências históricas profundas do clube. O design foi inspirado nas velas das embarcações ligadas à trajetória vascaína e traz ainda uma representação da caravela cruzmaltina, resgatando a identidade marítima que é parte essencial da alma do Vasco da Gama. O resultado estético agradou não apenas a torcida, mas ao público em geral, o que torna o reconhecimento ainda mais significativo.
 
 Na sequência da classificação aparecem Palmeiras (7,44%), Atlético-MG (6,38%), Bragantino (5,50%), Botafogo (4,58%) e Santos (4,23%). Os demais clubes, como Cruzeiro, São Paulo, Corinthians e Bahia, ficaram abaixo dos 4% cada. O Vasco terminou com mais que o dobro de votos de qualquer outro clube da competição.
 

@@ -15,6 +15,6 @@ São Januário foi palco de uma noite histórica. O Vasco da Gama derrotou o San
 
 A equipe cruz-maltina foi eficiente e controlou o confronto em casa. O Santa Fe, time com tradição na Colômbia, pouco conseguiu incomodar a defesa vascaína, que manteve o zero e deu tranquilidade para o time construir o resultado necessário para avançar de fase. Bruno Duarte foi um dos nomes em destaque na partida, celebrando com a torcida o feito histórico.
 
-Este resultado tem peso além dos três pontos. Em 2011, o Vasco chegou às semifinais da Copa Libertadores — e desde então o clube não havia voltado a esse estágio em competições da CONMEBOL. Quinze anos depois, o Cruz-Maltino retoma o protagonismo continental e reacende a chama de um clube que nasceu para disputar grandes palcos.
+Este resultado tem peso além dos três pontos. Em 2011, o Vasco chegou às semifinais da Copa Libertadores, e desde então o clube não havia voltado a esse estágio em competições da CONMEBOL. Quinze anos depois, o Cruz-Maltino retoma o protagonismo continental e reacende a chama de um clube que nasceu para disputar grandes palcos.
 
 Agora o Vasco conhecerá seu adversário nas semifinais e seguirá em busca de algo ainda maior: uma final continental. A classificação é o reflexo de um trabalho que vem sendo construído ao longo da temporada, e São Januário já prova que tem fôlego para empurrar esse time até onde ele quiser chegar.

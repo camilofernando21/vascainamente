@@ -11,10 +11,10 @@ seoTitle: "Vasco vence Cruzeiro e sai da zona de rebaixamento"
 seoDescription: "Com gol de Tchê Tchê, o Vasco atropelou o Cruzeiro em São Januário e terminou a rodada fora da zona de rebaixamento no Brasileirão."
 ---
 
-O Vasco mostrou seriedade e competência em mais uma partida decisiva no Brasileirão. De terceiro uniforme amarelo — que já começa a trazer boas memórias para a torcida — o time entrou em campo com tudo contra o Cruzeiro e não deixou dúvidas sobre quem queria os três pontos em São Januário.
+O Vasco mostrou seriedade e competência em mais uma partida decisiva no Brasileirão. De terceiro uniforme amarelo, que já começa a trazer boas memórias para a torcida, o time entrou em campo com tudo contra o Cruzeiro e não deixou dúvidas sobre quem queria os três pontos em São Januário.
 
 Ao contrário do que se especulava sobre uma possível rotação de elenco pensando na Copa do Brasil, o Cruz-Maltino foi a campo com força máxima e correspondeu dentro das quatro linhas. A vitória foi construída com intensidade, organização e o apoio de um São Januário que empurrou o time durante os noventa minutos.
 
 Tchê Tchê foi um dos grandes nomes da noite. O volante, cada vez mais importante no meio-campo vascaíno, apareceu para marcar e colocou o estádio em festa. A atuação do jogador resume bem o espírito do time: raça, entrega e qualidade quando mais precisava.
 
-Com a vitória, o Vasco encerra a rodada fora da zona de rebaixamento — um alívio enorme para jogadores, comissão técnica e torcida. O trabalho ainda é longo, mas noites como essa mostram que este time tem capacidade de brigar e se manter na Série A. Agora é manter o nível e seguir em frente.
+Com a vitória, o Vasco encerra a rodada fora da zona de rebaixamento, um alívio enorme para jogadores, comissão técnica e torcida. O trabalho ainda é longo, mas noites como essa mostram que este time tem capacidade de brigar e se manter na Série A. Agora é manter o nível e seguir em frente.

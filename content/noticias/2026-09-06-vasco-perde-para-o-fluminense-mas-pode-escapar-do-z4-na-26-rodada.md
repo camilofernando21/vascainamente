@@ -11,7 +11,7 @@ seoTitle: "Vasco pode sair do Z4 após derrota para o Flu"
 seoDescription: "O Vasco perdeu para o Fluminense por 1 a 0 na 26ª rodada, mas ainda pode escapar da zona de rebaixamento se rivais tropeçarem."
 ---
 
-O Vasco voltou do Maracanã de mãos vazias. A derrota por 1 a 0 para o Fluminense, no clássico válido pela 26ª rodada do Campeonato Brasileiro, manteve o time de São Januário dentro da zona de rebaixamento — ao menos por enquanto. O gol que decidiu o derby carioca deixou Santiago Sosa e companhia na parte mais perigosa da tabela, mas o jogo ainda não acabou para o Cruz-Maltino neste fim de semana.
+O Vasco voltou do Maracanã de mãos vazias. A derrota por 1 a 0 para o Fluminense, no clássico válido pela 26ª rodada do Campeonato Brasileiro, manteve o time de São Januário dentro da zona de rebaixamento, ao menos por enquanto. O gol que decidiu o derby carioca deixou Santiago Sosa e companhia na parte mais perigosa da tabela, mas o jogo ainda não acabou para o Cruz-Maltino neste fim de semana.
 
 O clube ainda pode escapar do Z4 antes que a rodada seja encerrada. Para isso, o Vasco precisa que os rivais que estão logo acima na tabela tropecem em seus respectivos compromissos. São situações que fogem do controle do time, mas que seguem matematicamente possíveis e precisam ser acompanhadas de perto pela torcida e pela diretoria.
 

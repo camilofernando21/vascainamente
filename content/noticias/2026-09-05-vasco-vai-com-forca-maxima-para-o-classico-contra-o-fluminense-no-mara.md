@@ -11,7 +11,7 @@ seoTitle: "Vasco vai com força máxima no clássico contra Fluminense"
 seoDescription: "Vasco e Fluminense entram em campo com força máxima neste sábado (5), às 21h, no Maracanã, pela 26ª rodada do Brasileirão. Veja as escalações."
 ---
 
-O Cruzmaltino não vai poupar ninguém para o clássico contra o Fluminense. Neste sábado (5), a partir das 21h, o Maracanã recebe mais um capítulo da rivalidade entre os dois clubes, desta vez com peso total de Brasileirão — a partida é válida pela 26ª rodada da competição nacional.
+O Cruzmaltino não vai poupar ninguém para o clássico contra o Fluminense. Neste sábado (5), a partir das 21h, o Maracanã recebe mais um capítulo da rivalidade entre os dois clubes, desta vez com peso total de Brasileirão, a partida é válida pela 26ª rodada da competição nacional.
 
 A opção por escalar força máxima reflete a importância que a comissão técnica vascaína deposita no resultado. Em um campeonato onde cada ponto pode ser decisivo, encarar o rival com time completo é uma declaração de intenções clara: o Vasco quer os três pontos e não está disposto a negociar.
 

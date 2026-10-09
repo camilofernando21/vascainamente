@@ -7,7 +7,7 @@ source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/ultimas-noticias/2026/09/15/onde-vai-passar-vasco-x-santa-fe-pela-sul-americana-como-assistir-ao-vivo.ghtm"
 imageUrl: ""
 excerpt: "O Vasco recebe o Santa Fe nesta terça-feira (15), às 19h, em São Januário, pelo jogo de volta das quartas de final da Copa Sul-Americana. O Cruz-Maltino precisa confirmar a classificação diante de sua torcida. Saiba onde assistir ao vivo."
-seoTitle: "Vasco x Santa Fe: onde assistir ao vivo — Sul-Americana"
+seoTitle: "Vasco x Santa Fe: onde assistir ao vivo, Sul-Americana"
 seoDescription: "Vasco enfrenta o Santa Fe nesta terça (15), às 19h, em São Januário, pelas quartas da Sul-Americana. Saiba onde assistir ao vivo e tudo sobre o jogo."
 ---
 

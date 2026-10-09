@@ -47,6 +47,17 @@ export default function HeroPlayerImage({
           maskImage: `url(${IMAGES[index]})`,
         }}
       />
+      {/* Bam83 RGB split layers, remounted (and so re-fired) on every image swap */}
+      <div
+        key={`red-${index}`}
+        className="glitch-layer glitch-layer-red active"
+        style={{ backgroundImage: `url(${IMAGES[index]})` }}
+      />
+      <div
+        key={`blue-${index}`}
+        className="glitch-layer glitch-layer-blue active"
+        style={{ backgroundImage: `url(${IMAGES[index]})` }}
+      />
     </div>
   );
 }

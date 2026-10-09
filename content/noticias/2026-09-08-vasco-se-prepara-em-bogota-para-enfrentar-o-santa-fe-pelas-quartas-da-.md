@@ -11,7 +11,7 @@ seoTitle: "Vasco treina em Bogotá antes de enfrentar o Santa Fe"
 seoDescription: "Vasco se prepara na altitude de Bogotá para o duelo contra o Santa Fe pelas quartas de final da Sul-Americana. Spinelli e Rojas projetam o jogo."
 ---
 
-O Vasco está em Bogotá e já sente na pele o desafio que vai muito além dos 90 minutos dentro de campo. O elenco comandado pelo técnico realizou treino de adaptação à altitude da capital colombiana, que fica a mais de 2.600 metros acima do nível do mar — um fator que exige atenção especial na preparação física e tática do grupo cruzmaltino.
+O Vasco está em Bogotá e já sente na pele o desafio que vai muito além dos 90 minutos dentro de campo. O elenco comandado pelo técnico realizou treino de adaptação à altitude da capital colombiana, que fica a mais de 2.600 metros acima do nível do mar, um fator que exige atenção especial na preparação física e tática do grupo cruzmaltino.
 
 O zagueiro Spinelli e o meia Rojas participaram das atividades e projetaram o confronto contra o Santa Fe. Os dois atletas demonstraram confiança no trabalho desenvolvido pela comissão técnica e destacaram a importância de o time entrar em campo com intensidade desde o primeiro minuto, sem se deixar intimidar pelo ambiente adverso e pela altitude que pesa contra as equipes visitantes.
 

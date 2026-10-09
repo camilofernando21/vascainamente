@@ -11,7 +11,7 @@ seoTitle: "David joga e Vasco vai às semifinais da Copa do Brasil"
 seoDescription: "Dois dias após investigação policial, David entra em campo no Barradão, recebe apoio do elenco e ajuda o Vasco a avançar às semifinais da Copa do Brasil."
 ---
 
-David estava no banco de reservas quando o Vasco entrou em campo no Barradão nesta quarta-feira, mas não ficou de fora da festa. O atacante substituiu Spinelli no segundo tempo e teve atuação consistente: segurou bem a bola no ataque, deu fluidez às jogadas ofensivas e quase saiu com uma assistência — Colidio desperdiçou cara a cara aos 34 minutos. O Vasco venceu por 2 a 0 e está nas semifinais da Copa do Brasil.
+David estava no banco de reservas quando o Vasco entrou em campo no Barradão nesta quarta-feira, mas não ficou de fora da festa. O atacante substituiu Spinelli no segundo tempo e teve atuação consistente: segurou bem a bola no ataque, deu fluidez às jogadas ofensivas e quase saiu com uma assistência, Colidio desperdiçou cara a cara aos 34 minutos. O Vasco venceu por 2 a 0 e está nas semifinais da Copa do Brasil.
 
 A presença de David no jogo aconteceu dois dias depois de sua casa e o CT do clube serem alvos de mandados de busca e apreensão dentro de uma operação da Polícia Civil do Espírito Santo que investiga suposto envolvimento do atleta em tráfico interestadual de drogas e armas. Apesar do momento delicado, os relatos dão conta de que o jogador se manteve tranquilo e recebeu apoio integral do elenco e da diretoria. O diretor de futebol Admar Lopes reforçou na segunda-feira que David seguiria no grupo enquanto o caso se desdobra.
 

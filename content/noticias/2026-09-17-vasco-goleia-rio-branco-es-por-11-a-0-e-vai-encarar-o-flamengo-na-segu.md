@@ -13,8 +13,8 @@ seoDescription: "Vasco massacrou o Rio Branco-ES por 11 a 0 na Copa do Brasil Su
 
 O Vasco da Gama deu um recado claro na Copa do Brasil Sub-20. Na primeira fase da competição, o time cruz-maltino atropelou o Rio Branco-ES por 11 a 0 e mostrou força suficiente para brigar pelo título. A goleada histórica deixou qualquer dúvida de lado sobre a capacidade ofensiva desta geração vascaína.
 
-Andrey foi o grande nome da partida, com três gols marcados. Avellar e Diego Minete contribuíram com dois cada, assim como Bruno Lopes. Léo Félix e Alex Bruno completaram a festa cruz-maltina. Um coletivo afinado, com vários jogadores na lista de gols — exatamente o que um treinador quer ver numa estreia de torneio.
+Andrey foi o grande nome da partida, com três gols marcados. Avellar e Diego Minete contribuíram com dois cada, assim como Bruno Lopes. Léo Félix e Alex Bruno completaram a festa cruz-maltina. Um coletivo afinado, com vários jogadores na lista de gols, exatamente o que um treinador quer ver numa estreia de torneio.
 
 Com a classificação encaminhada desde cedo, a comissão técnica teve a oportunidade de observar o elenco em profundidade durante os 90 minutos. E o resultado não deixa margem para interpretação: o grupo tem qualidade, entrosamento e fome de bola. Ingredientes essenciais para uma campanha longa na competição.
 
-O próximo desafio, porém, eleva consideravelmente o nível de exigência. O Vasco vai encarar o Flamengo na segunda fase — o maior rival do estado do Rio de Janeiro. Um clássico nas categorias de base tem peso diferente: é formação, é identidade, é a história do clube sendo escrita por quem ainda está começando. O Cruz-Maltino chega embalado. Agora é manter o nível.
+O próximo desafio, porém, eleva consideravelmente o nível de exigência. O Vasco vai encarar o Flamengo na segunda fase, o maior rival do estado do Rio de Janeiro. Um clássico nas categorias de base tem peso diferente: é formação, é identidade, é a história do clube sendo escrita por quem ainda está começando. O Cruz-Maltino chega embalado. Agora é manter o nível.

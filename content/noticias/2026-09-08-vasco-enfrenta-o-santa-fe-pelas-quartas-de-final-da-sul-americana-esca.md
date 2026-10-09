@@ -13,7 +13,7 @@ seoDescription: "Vasco enfrenta o Santa Fe nas quartas da Sul-Americana. Veja pr
 
 O Vasco da Gama tem pela frente mais um desafio continental de peso. O Cruz-Maltino enfrenta o Santa Fe, da Colômbia, fora de casa, pelas quartas de final da Copa Sul-Americana. A partida representa uma das fases mais decisivas da campanha vascaína na competição, e a torcida já vibra com a possibilidade de ver o clube avançar entre os quatro melhores do torneio.
 
-O confronto contra os colombianos exige atenção redobrada. O Santa Fe é um clube tradicional do futebol sul-americano, com torcida apaixonada e um estádio que dificulta a vida de qualquer visitante. O Vasco, no entanto, chega à partida com moral e com a confiança de quem sabe o que está disputando — uma vaga nas semifinais da Sul-Americana.
+O confronto contra os colombianos exige atenção redobrada. O Santa Fe é um clube tradicional do futebol sul-americano, com torcida apaixonada e um estádio que dificulta a vida de qualquer visitante. O Vasco, no entanto, chega à partida com moral e com a confiança de quem sabe o que está disputando, uma vaga nas semifinais da Sul-Americana.
 
 Do lado cruzmaltino, a comissão técnica deve montar a equipe com os atletas disponíveis e em melhor condição física, equilibrando o desgaste do calendário brasileiro com a importância do jogo. As prováveis escalações serão definidas até a véspera da partida, mas o torcedor pode esperar um Vasco organizado e com disposição para brigar pelo resultado em território adversário.
 

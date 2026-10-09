@@ -13,7 +13,7 @@ seoDescription: "Técnico do Vasco celebrou resultado positivo e exaltou o apoio
 
 Pedro Emanuel não escondeu o alívio após a vitória do Vasco. Em entrevista após o jogo, o técnico português celebrou o resultado e fez questão de exaltar o papel da torcida, que voltou a dar suporte ao time em um momento de pressão. Para ele, o abraço da nação vascaína foi fundamental para que o elenco correspondesse dentro de campo.
 
-O treinador usou a frase 'já conseguimos respirar melhor' para traduzir o momento do clube. A declaração é honesta e revela que o grupo estava sentindo o peso da sequência difícil. Uma vitória, nesse contexto, vale mais do que três pontos — vale confiança, e Pedro Emanuel sabe disso.
+O treinador usou a frase 'já conseguimos respirar melhor' para traduzir o momento do clube. A declaração é honesta e revela que o grupo estava sentindo o peso da sequência difícil. Uma vitória, nesse contexto, vale mais do que três pontos, vale confiança, e Pedro Emanuel sabe disso.
 
 O Vasco atravessou um período turbulento, com resultados abaixo do esperado e cobrança crescente por parte da torcida e da imprensa. A resposta dentro de campo foi o caminho que o técnico encontrou para começar a mudar o ambiente. Agora, o desafio é manter o nível e transformar esse alívio em consistência.
 

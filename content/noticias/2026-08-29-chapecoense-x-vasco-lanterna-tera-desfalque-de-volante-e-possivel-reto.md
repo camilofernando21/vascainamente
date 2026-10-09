@@ -17,4 +17,4 @@ Para a partida contra o Grêmio, o técnico da Chapecoense não poderá contar c
 
 A boa notícia para a Chape é o possível retorno do lateral-direito Bruno Tubarão, liberado pelo departamento médico após se recuperar de lesão na perna direita. O provável time tem: Anderson; Heitor (Bruno Tubarão), Kauan Faria, Eduardo Doma, Bruno Pacheco; Bruno Matias, Yago Felipe, Giovanni Augusto; Marcinho, Túlio Eduardo e Garcez.
 
-Com 14 pontos em 23 jogos, a Chapecoense é a lanterna do Campeonato Brasileiro. O Vasco, que ainda tem esse confronto pendente para disputar, precisa ficar de olho na situação do adversário — qualquer definição de data para esse jogo adiado pode impactar diretamente a tabela e a briga por posições no campeonato.
+Com 14 pontos em 23 jogos, a Chapecoense é a lanterna do Campeonato Brasileiro. O Vasco, que ainda tem esse confronto pendente para disputar, precisa ficar de olho na situação do adversário, qualquer definição de data para esse jogo adiado pode impactar diretamente a tabela e a briga por posições no campeonato.

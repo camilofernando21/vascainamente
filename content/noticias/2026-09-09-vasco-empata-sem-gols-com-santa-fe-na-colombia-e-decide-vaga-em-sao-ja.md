@@ -13,7 +13,7 @@ seoDescription: "Vasco segurou o 0 a 0 no El Campín e agora decide classificaç
 
 O Vasco cumpriu a missão na Colômbia. Nesta terça-feira, no El Campín, em Bogotá, o Cruz-Maltino optou por poupar alguns titulares e entrou em campo com um time mesclado para encarar o Santa Fe nas quartas de final da Copa Sul-Americana. O resultado: 0 a 0. Simples, sem brilho, mas absolutamente válido para o momento.
 
-Jogar na altitude de Bogotá, contra uma equipe que conhece cada centímetro do El Campín, nunca é tarefa fácil. Por isso, o empate sem gols tem peso de resultado positivo. O Vasco soube administrar o confronto, evitou riscos desnecessários e saiu da Colômbia com o placar virgem e a vaga em aberto — e nas próprias mãos.
+Jogar na altitude de Bogotá, contra uma equipe que conhece cada centímetro do El Campín, nunca é tarefa fácil. Por isso, o empate sem gols tem peso de resultado positivo. O Vasco soube administrar o confronto, evitou riscos desnecessários e saiu da Colômbia com o placar virgem e a vaga em aberto, e nas próprias mãos.
 
 Agora, o cenário é dos mais favoráveis para a torcida vascaína. A volta será em São Januário, e o time precisa apenas de um empate para garantir a classificação às semifinais. Uma vitória, seja qual for o placar, também resolve. O Gigante da Colina estará lotado e pronto para empurrar o Cruz-Maltino rumo à próxima fase.
 

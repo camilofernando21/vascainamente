@@ -13,7 +13,7 @@ seoDescription: "Artilheiro da final do Brasileirão Sub-20, Andrey Fernandes ma
 
 Andrey Fernandes escolheu o maior palco possível para se apresentar ao mundo. Na noite desta sexta-feira, no Nubank Parque, o atacante de 18 anos marcou os dois gols que deram ao Vasco o título do Brasileirão Sub-20, diante do Palmeiras. Uma noite que vai ficar gravada na memória de quem acompanha as categorias de base do clube.
 
-Filho das categorias de base vascaína, Andrey mostrou dentro de campo exatamente o que o torcedor mais valoriza: frieza na hora certa, técnica e uma vontade absurda de decidir. Dois gols contra um Palmeiras finalista não é qualquer coisa. É o tipo de atuação que abre portas — e ele sabe disso.
+Filho das categorias de base vascaína, Andrey mostrou dentro de campo exatamente o que o torcedor mais valoriza: frieza na hora certa, técnica e uma vontade absurda de decidir. Dois gols contra um Palmeiras finalista não é qualquer coisa. É o tipo de atuação que abre portas, e ele sabe disso.
 
 Depois do apito final, ainda com a euforia da conquista, o jovem atacante não escondeu a ambição. Em declaração após a partida, Andrey mandou um recado claro ao elenco profissional: 'Tô preparado'. Palavras curtas, mas que dizem tudo sobre o momento e a mentalidade de quem acabou de ser herói numa final.
 

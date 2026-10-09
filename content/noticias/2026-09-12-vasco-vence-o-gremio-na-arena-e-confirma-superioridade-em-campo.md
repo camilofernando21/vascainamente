@@ -15,6 +15,6 @@ O Vasco foi a Porto Alegre e trouxe os três pontos da Arena do Grêmio com uma 
 
 Se a derrota não foi maior, o crédito vai para Weverton. O goleiro gremista foi, sem exagero, o único jogador indiscutível do Grêmio em campo. Fez defesas decisivas que poderiam ter transformado o placar em algo mais constrangedor para a equipe gaúcha. Mesmo assim, não foi suficiente para segurar a qualidade do Vasco na noite desta sexta-feira.
 
-Do lado do Grêmio, a situação é delicada. A equipe não consegue se afastar da zona de rebaixamento e o técnico Luís Castro vive sob pressão máxima. Com apenas dois jogos antes da data Fifa, o clube terá cerca de 15 dias que podem definir o futuro do treinador. Ao fim da partida, os 35 mil torcedores presentes entoaram o nome de Renato Portaluppi — um recado claro das arquibancadas.
+Do lado do Grêmio, a situação é delicada. A equipe não consegue se afastar da zona de rebaixamento e o técnico Luís Castro vive sob pressão máxima. Com apenas dois jogos antes da data Fifa, o clube terá cerca de 15 dias que podem definir o futuro do treinador. Ao fim da partida, os 35 mil torcedores presentes entoaram o nome de Renato Portaluppi, um recado claro das arquibancadas.
 
 Para o Vasco, a vitória em Porto Alegre tem sabor especial. Ganhar fora de casa, de virada, mostrando consistência tática e força de elenco, é exatamente o que um time que quer brigar no alto da tabela precisa fazer. O Cruz-Maltino segue sua caminhada no Brasileirão com moral renovada.

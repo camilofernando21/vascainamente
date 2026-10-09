@@ -17,4 +17,4 @@ A Copa do Brasil Sub-20 reúne clubes de todo o Brasil e exige do Vasco um desem
 
 O Rio Branco-ES, representante do Espírito Santo, chega ao confronto como adversário a ser respeitado. Clubes do interior e de estados com menor tradição futebolística costumam surpreender justamente pela motivação de enfrentar uma grande potência nacional, o que exige do Vasco atenção total desde o apito inicial.
 
-Torcedor vascaíno, fique de olho na escalação, nos destaques individuais e nos lances do jogo. A base do Gigante da Colina segue trabalhando para manter viva a chama que já produziu ídolos históricos do clube — e cada passo nessa competição conta para o desenvolvimento do grupo.
+Torcedor vascaíno, fique de olho na escalação, nos destaques individuais e nos lances do jogo. A base do Gigante da Colina segue trabalhando para manter viva a chama que já produziu ídolos históricos do clube, e cada passo nessa competição conta para o desenvolvimento do grupo.

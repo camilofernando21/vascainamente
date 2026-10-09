@@ -13,7 +13,7 @@ seoDescription: "Novo zagueiro do Vasco, Gabriel Pereira revelou como o futebol 
 
 Gabriel Pereira é o mais novo reforço do Vasco da Gama e já chega com uma história que merece atenção. O zagueiro revelou que boa parte do que sabe dentro de campo foi construído nas peladas de rua, longe das academias e das pranchetas táticas. Essa formação livre, segundo ele, desenvolveu atributos que o futebol estruturado dificilmente ensina com a mesma eficiência.
 
-O defensor explicou que jogar na rua exige uma leitura de jogo apurada desde cedo. Sem regras rígidas e com espaços variados, o jogador aprende a se adaptar rapidamente a diferentes situações, algo que hoje se traduz em posicionamento, antecipação e na capacidade de resolver problemas sob pressão — qualidades essenciais para um zagueiro moderno.
+O defensor explicou que jogar na rua exige uma leitura de jogo apurada desde cedo. Sem regras rígidas e com espaços variados, o jogador aprende a se adaptar rapidamente a diferentes situações, algo que hoje se traduz em posicionamento, antecipação e na capacidade de resolver problemas sob pressão, qualidades essenciais para um zagueiro moderno.
 
 Essa bagagem informal complementa a formação técnica que Gabriel Pereira adquiriu ao longo da carreira. O equilíbrio entre o que aprendeu na rua e o que aperfeiçoou nos clubes por onde passou resulta em um perfil de zagueiro completo, com personalidade e repertório para encarar os desafios que o Vasco vai impor ao longo da temporada.
 

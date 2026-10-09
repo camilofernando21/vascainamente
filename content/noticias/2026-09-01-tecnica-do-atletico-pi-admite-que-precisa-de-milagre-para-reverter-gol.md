@@ -11,10 +11,10 @@ seoTitle: "Técnica do Atlético-PI fala em milagre após goleada do Vasco"
 seoDescription: "Após perder por 4 a 1 para o Vasco na semifinal do Brasileiro Feminino Série A2, técnica do Atlético-PI admite que precisa de milagre no jogo de volta."
 ---
 
-O Vasco fez o dever de casa com autoridade. Na noite da última sexta-feira, em pleno Estádio Lindolfo Monteiro, em Teresina, o time feminino cruzmaltino atropelou o Atlético-PI por 4 a 1 e colocou um pé e meio na final do Campeonato Brasileiro Feminino Série A2. Tefah, Lourdes — que marcou duas vezes — e Arce balançaram a rede. Eduarda Balbino fez o único gol do Auriverde, num jogo que nunca escapou do controle vascaíno.
+O Vasco fez o dever de casa com autoridade. Na noite da última sexta-feira, em pleno Estádio Lindolfo Monteiro, em Teresina, o time feminino cruzmaltino atropelou o Atlético-PI por 4 a 1 e colocou um pé e meio na final do Campeonato Brasileiro Feminino Série A2. Tefah, Lourdes, que marcou duas vezes, e Arce balançaram a rede. Eduarda Balbino fez o único gol do Auriverde, num jogo que nunca escapou do controle vascaíno.
 
 Diante de uma desvantagem tão expressiva, a técnica do Atlético-PI, Renata Costa, foi direta ao avaliar as chances da equipe no jogo de volta. 'Vai ser difícil, mas não é impossível. A gente quer acreditar que pode haver um milagre. Sabemos que o futebol, às vezes, tem essas emoções', afirmou a treinadora, que também cobrou atenção redobrada nas falhas defensivas que custaram caro no primeiro confronto. 'Quando a gente tem chance, a gente tem que fazer. Errar a gente vai, mas no mínimo possível', completou.
 
 Para o Vasco, a equação é simples: qualquer vitória ou empate garante a classificação. Até uma derrota por um gol de diferença serve. O clube cruzmaltino tem, portanto, uma ampla margem para trabalhar no jogo de volta e confirmar a vaga na decisão do torneio. O torcedor vascaíno já começa a sonhar com a final.
 
-A partida de volta está marcada para o dia 7 de setembro, às 21h30, com local ainda a ser definido pela CBF. O Vasco entra em campo com a vantagem, a confiança e a obrigação de fechar o trabalho. O caminho para a final passa pelo Cruz-Maltino — e tudo indica que não vai ser diferente.
+A partida de volta está marcada para o dia 7 de setembro, às 21h30, com local ainda a ser definido pela CBF. O Vasco entra em campo com a vantagem, a confiança e a obrigação de fechar o trabalho. O caminho para a final passa pelo Cruz-Maltino, e tudo indica que não vai ser diferente.

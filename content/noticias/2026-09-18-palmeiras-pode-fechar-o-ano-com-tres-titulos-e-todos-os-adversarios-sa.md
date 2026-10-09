@@ -6,7 +6,7 @@ category: "clube"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/18/fla-flu-e-vasco-palmeiras-encara-campeonato-carioca-por-tres-tacas.ghtm"
 imageUrl: ""
-excerpt: "O Palmeiras vive momento raro no futebol brasileiro: a chance de conquistar três taças no mesmo ano. Para isso, o clube alviverde terá pela frente Flamengo, Fluminense e Vasco — um verdadeiro Campeonato Carioca nas fases decisivas das competições que restam em 2026."
+excerpt: "O Palmeiras vive momento raro no futebol brasileiro: a chance de conquistar três taças no mesmo ano. Para isso, o clube alviverde terá pela frente Flamengo, Fluminense e Vasco, um verdadeiro Campeonato Carioca nas fases decisivas das competições que restam em 2026."
 seoTitle: "Palmeiras mira tríplice coroa com rivais cariocas no caminho"
 seoDescription: "Palmeiras pode conquistar três títulos em 2026, mas terá Flamengo, Fluminense e Vasco como obstáculos. Tríplice coroa inédita no futebol brasileiro está em jogo."
 ---
@@ -17,4 +17,4 @@ Flamengo, Fluminense e Vasco da Gama se colocam no caminho alviverde. Para a tor
 
 A possibilidade de uma tríplice coroa nunca foi conquistada na história do futebol brasileiro, o que torna o feito ainda mais cobiçado. O Palmeiras, evidentemente, fará de tudo para escrever esse capítulo. Mas os clubes cariocas, e o Vasco em particular, têm motivação de sobra para barrar esse roteiro e garantir que a festa seja nossa.
 
-A reta final de 2026 promete confrontos de alto nível entre as principais forças do futebol nacional. Para o Vasco, cada jogo contra o Palmeiras vai muito além dos três pontos — é uma chance de marcar nome na história e frustrar um dos projetos mais ambiciosos do clube paulista nos últimos anos.
+A reta final de 2026 promete confrontos de alto nível entre as principais forças do futebol nacional. Para o Vasco, cada jogo contra o Palmeiras vai muito além dos três pontos, é uma chance de marcar nome na história e frustrar um dos projetos mais ambiciosos do clube paulista nos últimos anos.

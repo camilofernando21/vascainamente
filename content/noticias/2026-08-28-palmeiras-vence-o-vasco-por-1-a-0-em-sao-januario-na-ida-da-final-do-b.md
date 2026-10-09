@@ -19,7 +19,7 @@ venue: "São Januário"
 
 O Vasco saiu de campo com uma derrota amarga em São Januário. Na tarde desta quinta-feira, o Palmeiras venceu o Cruz-maltino por 1 a 0 no primeiro jogo da final do Campeonato Brasileiro Sub-20, com gol marcado por Erick Bele. O resultado coloca o Verdão em vantagem na decisão, e o time vascaíno precisará reverter o placar no jogo de volta para conquistar o título.
 
-A partida foi disputada em casa, o que tornava a derrota ainda mais dolorosa para a torcida vascaína. O Vasco teve a oportunidade de largar na frente na disputa pelo título sub-20, mas não aproveitou o fator campo e viu o adversário sair de São Januário com o resultado positivo. Agora, a classificação para o título depende de uma vitória com pelo menos dois gols de diferença no segundo confronto — ou uma vitória simples que leve a decisão para os pênaltis.
+A partida foi disputada em casa, o que tornava a derrota ainda mais dolorosa para a torcida vascaína. O Vasco teve a oportunidade de largar na frente na disputa pelo título sub-20, mas não aproveitou o fator campo e viu o adversário sair de São Januário com o resultado positivo. Agora, a classificação para o título depende de uma vitória com pelo menos dois gols de diferença no segundo confronto, ou uma vitória simples que leve a decisão para os pênaltis.
 
 Após o jogo, o elenco do Palmeiras voltou para São Paulo em voo fretado pela presidente Leila Pereira, reforçando a estrutura oferecida pelo clube paulista às suas categorias de base. O episódio evidencia a diferença de investimento entre os clubes e serve como mais um ponto de atenção para a diretoria vascaína, que vem trabalhando para fortalecer a base.
 

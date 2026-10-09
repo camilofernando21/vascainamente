@@ -11,10 +11,10 @@ seoTitle: "Freytes volta ao Fluminense para clássico contra o Vasco"
 seoDescription: "Recuperado de edema ósseo, Freytes deve ser relacionado pelo Fluminense para o clássico contra o Vasco neste sábado, no Maracanã, pelo Brasileirão."
 ---
 
-O Fluminense terá um reforço na zaga para o clássico contra o Vasco. O zagueiro Freytes, fora desde 29 de julho por conta de um edema ósseo no tornozelo direito — lesão sofrida no jogo contra o Bahia —, está recuperado e deve ser relacionado pelo técnico Marcão para o duelo deste sábado, às 21h, no Maracanã, pela 26ª rodada do Campeonato Brasileiro.
+O Fluminense terá um reforço na zaga para o clássico contra o Vasco. O zagueiro Freytes, fora desde 29 de julho por conta de um edema ósseo no tornozelo direito, lesão sofrida no jogo contra o Bahia, está recuperado e deve ser relacionado pelo técnico Marcão para o duelo deste sábado, às 21h, no Maracanã, pela 26ª rodada do Campeonato Brasileiro.
 
 A volta, no entanto, deve ser gradual. Freytes deve aparecer no banco de reservas, sem previsão de ser titular de imediato. Durante a semana, o zagueiro participou normalmente dos treinos com o restante do grupo e realizou diferentes tipos de trabalho em campo. A comissão técnica optou por cautela na recuperação para evitar qualquer recorrência do problema.
 
-Com 94 jogos pelo Fluminense, Freytes foi titular ao longo de 2025, mas encontra o setor defensivo reorganizado após sua ausência. Ignácio se consolidou ao lado de Thiago Silva, e o argentino Millán ganhou espaço como opção quando o capitão não está disponível — foi justamente Millán quem atuou como titular no último jogo, contra o Athletico-PR.
+Com 94 jogos pelo Fluminense, Freytes foi titular ao longo de 2025, mas encontra o setor defensivo reorganizado após sua ausência. Ignácio se consolidou ao lado de Thiago Silva, e o argentino Millán ganhou espaço como opção quando o capitão não está disponível, foi justamente Millán quem atuou como titular no último jogo, contra o Athletico-PR.
 
 Para o Vasco, o retorno de Freytes é informação relevante. O clássico no Maracanã exige atenção máxima, e qualquer mudança no setor defensivo do rival precisa ser monitorada. O Cruz-Maltino entra em campo neste sábado com o dever de aproveitar cada detalhe a seu favor.

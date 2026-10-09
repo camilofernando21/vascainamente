@@ -1,13 +1,29 @@
+// Contour traced from public/images/escudo-1-cruz-original.png (696x696), same shape, recolorable.
+const CROSS_PATH =
+  "M528.5 695.8L167.1 695.5L167.3 694.5L177.8 680.5L193.8 657.5L214.8 624.5L236 586.5L253.7 549.5L268.7 511.5L274.7 493.5L280.8 472.5L288.8 438.5L293.8 407.5L294.3 402.5L293.5 401.7L274.5 404.2L257.5 407.2L239.5 411.1L219.5 416.3L202.5 421.2L184.5 427.3L146.5 442.3L129.5 450.1L103.5 463.1L71.5 481.2L38.5 502.1L19.5 515.2L2.5 527.9L1.5 528.5L0.3 528.5L0.5 167.3L2.5 168.1L19.5 180.7L38.5 193.9L76.5 217.7L90.5 225.9L109.5 236L146.5 253.7L184.5 268.7L202.5 274.8L223.5 280.8L257.5 288.8L288.5 293.8L293.5 294.3L294.3 293.5L288.7 257.5L284.8 239.5L279.9 220.5L274.7 202.5L268.9 185.5L261.9 166.5L254.8 149.5L245.9 129.5L236.9 111.5L217.7 76.5L193.8 38.5L167.3 1.5L167.5 1L528.5 0.9L528.7 1.5L502.2 38.5L478.2 76.5L460.1 109.5L449.1 131.5L440.2 151.5L427.2 184.5L421.2 202.5L415.4 222.5L411.3 238.5L406.2 262.5L402.2 288.5L401.7 293.5L402.5 294.3L421.5 291.8L438.5 288.8L456.5 284.8L475.5 279.9L493.5 274.8L511.5 268.6L549.5 253.6L584.5 237L605.5 225.8L617.5 218.8L654.5 195.8L676.5 180.7L693.5 168.1L695.5 167L695.9 167.5L695.9 528.5L695.5 529L657.5 502.2L622.5 480.1L605.5 470.2L588.5 461.1L549.5 442.3L511.5 427.3L493.5 421.2L472.5 415.3L438.5 407.2L407.5 402.2L402.5 401.7L401.7 402.5L404.1 421.5L407.2 438.5L411.2 457.5L416.2 476.5L427.2 511.5L442.2 549.5L459.3 585.5L479.2 621.5L490.2 639.5L502.1 657.5L515.1 676.5L528.6 694.5L528.9 695.5Z";
+
 interface CruzMaltaProps {
-  size?: number;
+  size?: number | string;
   color?: string;
   opacity?: number;
+  className?: string;
 }
 
-export function CruzMalta({ size = 16, color = "#C00000", opacity = 1 }: CruzMaltaProps) {
+export function CruzMalta({ size = 16, color = "#C8003C", opacity = 1, className }: CruzMaltaProps) {
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill={color} opacity={opacity}>
-      <polygon points="50,2 61,35 95,35 68,57 79,90 50,70 21,90 32,57 5,35 39,35" />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 696 696"
+      fill={color}
+      opacity={opacity}
+      className={className}
+      aria-hidden="true"
+    >
+      <path d={CROSS_PATH} />
     </svg>
   );
 }
+
+// Same path for drawing the cross inside another SVG (e.g. the pitch markers).
+export { CROSS_PATH };

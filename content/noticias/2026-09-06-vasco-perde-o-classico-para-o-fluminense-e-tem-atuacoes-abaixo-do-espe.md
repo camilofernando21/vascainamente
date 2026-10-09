@@ -11,10 +11,10 @@ seoTitle: "Vasco perde para o Flu: piores atuações do clássico"
 seoDescription: "Piton, Gómez, Adson e Tchê Tchê foram os destaques negativos na derrota do Vasco para o Fluminense por 1 a 0 na 26ª rodada do Brasileirão 2026."
 ---
 
-O clássico dos milhões terminou com o sabor amargo que todo vascaíno conhece bem. O Fluminense venceu por 1 a 0 e o Vasco não conseguiu criar o suficiente para ameaçar o rival, saindo de São Januário — ou de onde quer que o jogo tenha sido disputado — de mãos vazias e com a cabeça baixa. Uma derrota que dói não só pelo placar, mas pela forma apagada com que o time se apresentou.
+O clássico dos milhões terminou com o sabor amargo que todo vascaíno conhece bem. O Fluminense venceu por 1 a 0 e o Vasco não conseguiu criar o suficiente para ameaçar o rival, saindo de São Januário, ou de onde quer que o jogo tenha sido disputado, de mãos vazias e com a cabeça baixa. Uma derrota que dói não só pelo placar, mas pela forma apagada com que o time se apresentou.
 
 No setor defensivo, Gómez teve uma noite para esquecer. O zagueiro, que em outros momentos foi sólido e seguro, vacilou nas coberturas e deixou brechas que o Fluminense soube explorar. Piton, pelo lado esquerdo, também não entregou o que o torcedor espera de um lateral com suas características: pouco apoio ofensivo, duelos perdidos e posicionamento questionável ao longo dos 90 minutos.
 
 No meio e no ataque, Tchê Tchê e Adson completaram a lista dos que ficaram muito abaixo do necessário. Tchê Tchê, que deveria ser o motor da equipe na construção das jogadas, sumiu nos momentos mais importantes e perdeu bolas em regiões perigosas. Adson, por sua vez, não conseguiu criar desequilíbrio algum pelo setor ofensivo, desperdiçando as poucas chances que teve de colocar o time em situações de perigo.
 
-A derrota no clássico cobra um preço alto — dentro e fora de campo. O Vasco precisa reagir rápido no Brasileirão 2026 e esses jogadores têm uma dívida com a torcida. Dê sua nota para cada um deles e mostre o que você achou do desempenho cruz-maltino nessa noite que o Gigante da Colina preferia não ter vivido.
+A derrota no clássico cobra um preço alto, dentro e fora de campo. O Vasco precisa reagir rápido no Brasileirão 2026 e esses jogadores têm uma dívida com a torcida. Dê sua nota para cada um deles e mostre o que você achou do desempenho cruz-maltino nessa noite que o Gigante da Colina preferia não ter vivido.

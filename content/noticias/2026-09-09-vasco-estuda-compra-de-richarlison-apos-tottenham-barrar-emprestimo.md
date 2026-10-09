@@ -11,7 +11,7 @@ seoTitle: "Vasco estuda compra de Richarlison até sexta"
 seoDescription: "Após Tottenham barrar empréstimo, Vasco viabiliza compra de Richarlison. Atacante quer sair e torce pela transferência. Janela fecha na sexta-feira."
 ---
 
-O Vasco continua firme na tentativa de contratar Richarlison e mudou de estratégia após o Tottenham comunicar a impossibilidade de empréstimo — o clube inglês já excedeu o limite de atletas cedidos permitido pela Fifa nesta temporada. Diante disso, a diretoria vascaína passou a viabilizar uma proposta de compra definitiva pelo atacante, com o presidente Pedrinho declarando que não quer medir esforços para fechar o negócio.
+O Vasco continua firme na tentativa de contratar Richarlison e mudou de estratégia após o Tottenham comunicar a impossibilidade de empréstimo, o clube inglês já excedeu o limite de atletas cedidos permitido pela Fifa nesta temporada. Diante disso, a diretoria vascaína passou a viabilizar uma proposta de compra definitiva pelo atacante, com o presidente Pedrinho declarando que não quer medir esforços para fechar o negócio.
 
 A operação é muito mais complexa do que seria um empréstimo. O Vasco precisaria convencer o Tottenham a aceitar um valor muito abaixo do que poderia exigir no mercado aberto, e ainda fazer isso antes do fechamento da janela brasileira na sexta-feira. Dois caminhos estão sendo estudados pelo departamento de futebol: o pagamento de uma entrada menor com parcelamento ao longo dos próximos anos, ou uma compra combinada com cláusula de recompra, que permitiria ao Tottenham recuperar o jogador no futuro por um valor previamente acordado.
 

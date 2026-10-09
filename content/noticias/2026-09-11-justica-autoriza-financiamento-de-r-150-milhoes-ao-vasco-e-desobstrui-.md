@@ -17,4 +17,4 @@ Além do financiamento, a mesma decisão judicial desobstruiu o processo de leil
 
 A movimentação jurídica representa uma virada importante num momento em que o Vasco precisava de estabilidade para planejar os próximos passos dentro e fora de campo. A captação dos R$ 150 milhões deve cobrir compromissos imediatos e dar fôlego à gestão enquanto as negociações em torno da SAF avançam em bases mais sólidas.
 
-Agora, os olhos se voltam para o desenrolar do leilão e para as condições que Lamacchia apresentará formalmente. O torcedor do Vasco, acostumado a ver promessas se perderem em labirintos jurídicos e financeiros, tem motivo concreto para acompanhar os próximos capítulos com mais otimismo — mas, como manda a história do clube, com os pés no chão.
+Agora, os olhos se voltam para o desenrolar do leilão e para as condições que Lamacchia apresentará formalmente. O torcedor do Vasco, acostumado a ver promessas se perderem em labirintos jurídicos e financeiros, tem motivo concreto para acompanhar os próximos capítulos com mais otimismo, mas, como manda a história do clube, com os pés no chão.

@@ -13,7 +13,7 @@ seoDescription: "Goleiro Phillipe Gabriel foi decisivo na final do Brasileiro Su
 
 O Vasco tem um novo herói nas categorias de base. O goleiro Phillipe Gabriel foi um dos protagonistas da conquista do Campeonato Brasileiro Sub-20, nesta sexta-feira, ao ser decisivo na final contra o Palmeiras. O clube conquistou o título inédito da competição, e o arqueiro foi peça fundamental para que a taça chegasse a São Januário.
 
-O que torna a história ainda mais interessante é a origem familiar de Phillipe Gabriel. Ele é filho do ex-zagueiro Luiz Alberto, que construiu carreira justamente pelos maiores rivais do Vasco no Rio de Janeiro. O pai defendeu as cores do Flamengo e do Fluminense entre os anos 90 e 2000, e agora vê o filho escrever seu próprio capítulo — do outro lado dessa rivalidade histórica.
+O que torna a história ainda mais interessante é a origem familiar de Phillipe Gabriel. Ele é filho do ex-zagueiro Luiz Alberto, que construiu carreira justamente pelos maiores rivais do Vasco no Rio de Janeiro. O pai defendeu as cores do Flamengo e do Fluminense entre os anos 90 e 2000, e agora vê o filho escrever seu próprio capítulo, do outro lado dessa rivalidade histórica.
 
 A conquista do Sub-20 reforça o trabalho sólido que o Vasco vem desenvolvendo na base. Revelar e valorizar jogadores com essa qualidade é fundamental para o projeto do clube, e Phillipe Gabriel surge como um nome a ser acompanhado de perto. Filho de jogador profissional, o goleiro parece ter herdado a seriedade e a habilidade que o futebol exige.
 

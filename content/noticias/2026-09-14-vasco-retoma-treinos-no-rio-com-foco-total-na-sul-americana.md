@@ -13,8 +13,8 @@ seoDescription: "Vasco da Gama retoma os trabalhos no Rio de Janeiro e se prepar
 
 O Vasco da Gama retomou os trabalhos no Rio de Janeiro com a cabeça voltada para o que pode ser um dos jogos mais importantes da temporada na Copa Sul-Americana. A comissão técnica já organizou a rotina de treinos para deixar o elenco pronto física e taticamente para o desafio que se aproxima.
 
-A preparação vascaína segue com a seriedade que o momento exige. Cada sessão de treino vale ouro nesta fase do campeonato continental, onde qualquer deslize pode significar a eliminação. O grupo sabe disso e entra em campo — mesmo no CT — com a mentalidade de quem tem tudo a ganhar e não pode abrir mão de nenhum detalhe.
+A preparação vascaína segue com a seriedade que o momento exige. Cada sessão de treino vale ouro nesta fase do campeonato continental, onde qualquer deslize pode significar a eliminação. O grupo sabe disso e entra em campo, mesmo no CT, com a mentalidade de quem tem tudo a ganhar e não pode abrir mão de nenhum detalhe.
 
 A Sul-Americana representa uma das grandes oportunidades do Vasco de brigar por um título inédito e de projetar o clube novamente no cenário sul-americano. A torcida cruzmaltina acompanha de perto cada passo desta caminhada, e o apoio da Colina será fundamental para empurrar o time rumo à classificação.
 
-Nos próximos dias, mais detalhes sobre o estado físico do elenco e as possíveis escolhas táticas do treinador devem surgir conforme os treinos evoluem. O Vasco tem compromisso marcado com a história — e o momento é de honrá-lo.
+Nos próximos dias, mais detalhes sobre o estado físico do elenco e as possíveis escolhas táticas do treinador devem surgir conforme os treinos evoluem. O Vasco tem compromisso marcado com a história, e o momento é de honrá-lo.

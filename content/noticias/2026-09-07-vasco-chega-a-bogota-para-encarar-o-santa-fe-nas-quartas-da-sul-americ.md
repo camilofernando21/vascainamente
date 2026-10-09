@@ -13,7 +13,7 @@ seoDescription: "Delegação vascaína desembarcou na Colômbia para enfrentar o
 
 O Vasco da Gama já está em Bogotá. A delegação cruz-maltina desembarcou na capital colombiana para enfrentar o Santa Fe no jogo de ida das quartas de final da Copa Sul-Americana. A viagem marca mais um capítulo importante da campanha do clube na competição, a mais longe que o Gigante de Colina chegou no torneio nos últimos anos.
 
-O elenco viajou com a missão de trazer um bom resultado da Colômbia antes de decidir a vaga em São Januário. Jogar fora de casa em altitude elevada — Bogotá está a mais de 2.600 metros acima do nível do mar — é um desafio extra que o time de Felipe Maestro precisará superar dentro de campo.
+O elenco viajou com a missão de trazer um bom resultado da Colômbia antes de decidir a vaga em São Januário. Jogar fora de casa em altitude elevada, Bogotá está a mais de 2.600 metros acima do nível do mar, é um desafio extra que o time de Felipe Maestro precisará superar dentro de campo.
 
 Os bastidores da viagem mostraram um grupo concentrado e unido, ciente da importância do confronto. A preparação da semana foi voltada para adaptar o elenco às condições climáticas e físicas que a capital colombiana impõe, algo que faz diferença em jogos disputados nesse tipo de ambiente.
 

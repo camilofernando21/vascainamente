@@ -11,7 +11,7 @@ seoTitle: "David marca e Vasco se classifica na Sul-Americana"
 seoDescription: "Atacante David balançou as redes pelo segundo gol da partida e garantiu a classificação do Vasco da Gama na Copa Sul-Americana. Veja o lance."
 ---
 
-O Vasco da Gama está classificado na Copa Sul-Americana, e David foi o nome da noite. O atacante balançou as redes pela segunda vez no confronto, colocando uma pedra no caixão de qualquer esperança do adversário e confirmando a vaga do Cruz-Maltino na próxima fase da competição. Um gol que vale mais do que três pontos — vale confiança, vale fôlego para uma temporada que exige muito deste grupo.
+O Vasco da Gama está classificado na Copa Sul-Americana, e David foi o nome da noite. O atacante balançou as redes pela segunda vez no confronto, colocando uma pedra no caixão de qualquer esperança do adversário e confirmando a vaga do Cruz-Maltino na próxima fase da competição. Um gol que vale mais do que três pontos, vale confiança, vale fôlego para uma temporada que exige muito deste grupo.
 
 David vem se firmando como peça fundamental no sistema ofensivo vascaíno. O faro de gol, a movimentação inteligente e a frieza na hora de definir têm feito do atacante um dos destaques da equipe nas últimas rodadas. Contra pressão, contra a necessidade de resultado, o camisa respondeu dentro de campo, que é onde as respostas realmente importam.
 

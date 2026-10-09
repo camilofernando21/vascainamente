@@ -17,4 +17,4 @@ Esse talento para os momentos decisivos não é novidade. Em 2024, ainda no sub-
 
 Os números de 2026 reforçam o que os olhos já indicam: 24 gols e três assistências em 36 partidas, com 13 deles apenas no Brasileiro Sub-20. Artilheiro do Vasco na temporada, Andrey termina o ano com mais um título na galeria e o nome gravado entre as maiores promessas das categorias de base do clube.
 
-Agora, o passo seguinte é esperado por todos. O próprio Andrey já sinalizou que aguarda uma oportunidade com Pedro Emanuel no time principal. Com esse histórico em mãos, a pergunta não é se ele está pronto — é quando o Vasco vai chamá-lo.
+Agora, o passo seguinte é esperado por todos. O próprio Andrey já sinalizou que aguarda uma oportunidade com Pedro Emanuel no time principal. Com esse histórico em mãos, a pergunta não é se ele está pronto, é quando o Vasco vai chamá-lo.

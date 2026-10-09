@@ -17,4 +17,4 @@ Andrés Gomes abriu o placar e deu o tom da partida. O meio-campista português 
 
 Os bastidores revelam um ambiente de concentração e comprometimento dentro do elenco. A comissão técnica trabalhou a semana inteira para preparar a equipe para o duelo em Salvador, e o resultado em campo foi o reflexo direto desse trabalho. Cada detalhe foi pensado para garantir que o Vasco saísse com os três pontos.
 
-Agora o foco cruzmaltino se volta para aproveitar o embalo dessa vitória e seguir escalando a tabela. Cada ponto conquistado nesta reta do Brasileirão vale ouro, e o Vasco sabe disso. A torcida faz sua parte, o grupo também — e o objetivo é um só: tirar o clube de vez da zona de rebaixamento.
+Agora o foco cruzmaltino se volta para aproveitar o embalo dessa vitória e seguir escalando a tabela. Cada ponto conquistado nesta reta do Brasileirão vale ouro, e o Vasco sabe disso. A torcida faz sua parte, o grupo também, e o objetivo é um só: tirar o clube de vez da zona de rebaixamento.

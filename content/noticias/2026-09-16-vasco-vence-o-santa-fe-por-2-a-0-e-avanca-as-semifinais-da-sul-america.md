@@ -11,7 +11,7 @@ seoTitle: "Vasco bate Santa Fe e vai às semifinais da Sul-Americana"
 seoDescription: "Vasco venceu o Independiente Santa Fe por 2 a 0 em São Januário e avançou às semifinais da Copa Sul-Americana. Veja como foi."
 ---
 
-O Vasco da Gama voltou a fazer São Januário vibrar e garantiu uma vaga histórica nas semifinais da Copa Sul-Americana. Na noite desta terça-feira, o Cruzmaltino dominou o Independiente Santa Fe dentro de casa, venceu por 2 a 0 e confirmou o avanço na competição continental. Depois do empate sem gols no duelo de ida, disputado na Colômbia, bastava não ser derrotado por mais de um gol de diferença — mas o time foi além e impôs sua superioridade em campo.
+O Vasco da Gama voltou a fazer São Januário vibrar e garantiu uma vaga histórica nas semifinais da Copa Sul-Americana. Na noite desta terça-feira, o Cruzmaltino dominou o Independiente Santa Fe dentro de casa, venceu por 2 a 0 e confirmou o avanço na competição continental. Depois do empate sem gols no duelo de ida, disputado na Colômbia, bastava não ser derrotado por mais de um gol de diferença, mas o time foi além e impôs sua superioridade em campo.
 
 A partida em São Januário teve o Vasco como protagonista desde o início. O time mostrou organização defensiva e soube aproveitar as oportunidades criadas para liquidar a fatura diante de sua torcida. Os dois gols garantiram não apenas a classificação, mas também a confiança necessária para a sequência na Sul-Americana.
 

@@ -17,4 +17,4 @@ A passagem de Coutinho por São Januário foi marcada por altos e baixos. Contra
 
 O desempenho abaixo do esperado e a falta de consistência foram os principais fatores que desgastaram a relação entre Coutinho e a Colina. O vínculo foi encerrado em fevereiro de 2026, sem grandes cerimônias, depois de uma temporada que ficará mais na memória pelo que poderia ter sido do que pelo que foi.
 
-Agora no Santos, Coutinho tenta reconstruir a carreira em um novo ambiente. Para o Vasco, a página está virada. O clube segue seu caminho, e a torcida — que não perdoa desempenho fraco dentro de campo — já tem outros nomes para torcer e cobrar.
+Agora no Santos, Coutinho tenta reconstruir a carreira em um novo ambiente. Para o Vasco, a página está virada. O clube segue seu caminho, e a torcida, que não perdoa desempenho fraco dentro de campo, já tem outros nomes para torcer e cobrar.

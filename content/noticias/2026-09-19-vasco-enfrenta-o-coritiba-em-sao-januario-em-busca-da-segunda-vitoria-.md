@@ -17,4 +17,4 @@ A situação é paradoxal, mas real. O clube chegou às semifinais de duas compe
 
 A torcida vascaína tem papel fundamental nessa recuperação. São Januário precisa ser o que sempre foi: um caldeirão que pressiona, empurra e faz diferença. O apoio da Colina tem sido crucial nos momentos difíceis, e este é mais um deles. O Gigante da Colina joga em casa e precisa aproveitar essa vantagem.
 
-O Coritiba, por sua vez, também vive situação delicada na competição, o que torna o confronto direto ainda mais tenso e decisivo. Para o Vasco, vencer não é apenas uma questão de tabela — é uma questão de afirmar que a reação é real e que o clube tem estrutura para se manter na elite do futebol brasileiro onde, por tradição e história, sempre pertenceu.
+O Coritiba, por sua vez, também vive situação delicada na competição, o que torna o confronto direto ainda mais tenso e decisivo. Para o Vasco, vencer não é apenas uma questão de tabela, é uma questão de afirmar que a reação é real e que o clube tem estrutura para se manter na elite do futebol brasileiro onde, por tradição e história, sempre pertenceu.

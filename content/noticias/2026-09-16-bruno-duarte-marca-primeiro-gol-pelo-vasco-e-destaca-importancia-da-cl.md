@@ -13,7 +13,7 @@ seoDescription: "Bruno Duarte comemora primeiro gol com a camisa do Vasco e cele
 
 Bruno Duarte não escondeu a satisfação após marcar seu primeiro gol com a camisa do Vasco da Gama. O atacante, que chegou ao clube com a missão de somar forças ao setor ofensivo, enfim abriu seu conta e contribuiu diretamente para uma classificação que o próprio jogador definiu como 'muito importante'.
 
-O momento não poderia ser mais oportuno. O Vasco vinha em busca de consistência, e o gol de Bruno Duarte chegou para aliviar a pressão e dar mais confiança ao grupo. Para um atacante, nada substitui o ato de marcar — e o camisa escolhido sabe disso melhor do que ninguém.
+O momento não poderia ser mais oportuno. O Vasco vinha em busca de consistência, e o gol de Bruno Duarte chegou para aliviar a pressão e dar mais confiança ao grupo. Para um atacante, nada substitui o ato de marcar, e o camisa escolhido sabe disso melhor do que ninguém.
 
 Após o apito final, Bruno Duarte falou com a imprensa e não poupou elogios ao trabalho coletivo. Para ele, a classificação reflete o esforço do elenco nas últimas semanas e representa um passo fundamental nos objetivos do clube na temporada. O atacante também agradeceu o apoio da torcida, peça fundamental na caminhada vascaína.
 

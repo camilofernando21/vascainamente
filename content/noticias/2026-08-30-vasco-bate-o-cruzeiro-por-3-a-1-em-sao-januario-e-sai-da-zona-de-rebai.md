@@ -15,6 +15,6 @@ O Vasco respirou. Com uma vitória consistente sobre o Cruzeiro por 3 a 1, em S�
 
 Foi a primeira vitória do técnico português à frente do Vasco no campeonato nacional. Pedro Emanuel assumiu o clube em um momento delicado, e o triunfo desta data pode representar uma virada de chave na temporada. A equipe mostrou organização e competitividade frente a um adversário de peso, o que dá motivos para acreditar na recuperação.
 
-As arquibancadas de São Januário fizeram a sua parte, empurrando o time durante os 90 minutos. E da tribuna, o CEO Luis Lamacchia acompanhou de perto o desempenho da equipe — presença que não passou despercebida e reforça o monitoramento da diretoria sobre os rumos do futebol vascaíno.
+As arquibancadas de São Januário fizeram a sua parte, empurrando o time durante os 90 minutos. E da tribuna, o CEO Luis Lamacchia acompanhou de perto o desempenho da equipe, presença que não passou despercebida e reforça o monitoramento da diretoria sobre os rumos do futebol vascaíno.
 
-Agora é manter os pés no chão e transformar essa vitória em ponto de partida. O Brasileirão é longo, a luta contra o rebaixamento ainda não acabou, mas o Vasco mostrou que tem condições de brigar. São Januário voltou a ver o Cruz-Maltino ganhar — e isso, por si só, já vale muito.
+Agora é manter os pés no chão e transformar essa vitória em ponto de partida. O Brasileirão é longo, a luta contra o rebaixamento ainda não acabou, mas o Vasco mostrou que tem condições de brigar. São Januário voltou a ver o Cruz-Maltino ganhar, e isso, por si só, já vale muito.

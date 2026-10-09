@@ -13,7 +13,7 @@ seoDescription: "Bruno Duarte celebrou o primeiro gol com a camisa do Vasco na v
 
 Bruno Duarte não poderia ter escolhido palco melhor para estrear no livro de artilheiros com a camisa do Vasco. Na vitória por 2 a 0 sobre o Santa Fe, em São Januário, o atacante marcou seu primeiro gol com o manto cruzmaltino e ajudou o clube a garantir vaga nas semifinais da Copa Sul-Americana. Uma noite para guardar na memória.
 
-Após o apito final, Bruno Duarte não escondeu a emoção. O atacante agradeceu o suporte da torcida durante toda a partida e reconheceu o papel fundamental do apoio das arquibancadas de São Januário para o resultado. Com São Januário em festa, fica mais fácil jogar — e o jogador sabe disso.
+Após o apito final, Bruno Duarte não escondeu a emoção. O atacante agradeceu o suporte da torcida durante toda a partida e reconheceu o papel fundamental do apoio das arquibancadas de São Januário para o resultado. Com São Januário em festa, fica mais fácil jogar, e o jogador sabe disso.
 
 Além do gol pessoal, Bruno Duarte fez questão de ressaltar o coletivo. Para o atacante, o elenco tem qualidade e entrosamento suficientes para ir longe na competição. A mensagem é clara: o Vasco não chegou às semifinais por acaso, e a equipe tem fome de mais.
 

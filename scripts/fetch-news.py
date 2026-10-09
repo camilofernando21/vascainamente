@@ -6,6 +6,7 @@ import json
 import hashlib
 import re
 import os
+import sys
 from datetime import datetime
 from pathlib import Path
 import anthropic
@@ -112,8 +113,32 @@ def slugify(text: str) -> str:
     text = re.sub(r"\s+", "-", text.strip())
     return text[:70]
 
-def process_with_ai(title: str, desc: str, source: str) -> dict:
-    client = anthropic.Anthropic()
+# Matches a dash used as punctuation. Dashes between digits (placar 2–1, 2023–2024)
+# become a hyphen so the meaning survives; everything else becomes a comma.
+DIGIT_DASH = re.compile(r"(?<=\d)\s*[—–]\s*(?=\d)")
+LINE_START_DASH = re.compile(r"^[ \t]*[—–][ \t]*", re.MULTILINE)
+DASH = re.compile(r"[ \t]*[—–][ \t]*")
+COMMA_BEFORE_PUNCT = re.compile(r",\s*([,.;:!?])")
+
+def strip_dashes(text: str) -> str:
+    """Remove travessão (—) e meia-risca (–) de texto visível no site."""
+    text = DIGIT_DASH.sub("-", text)
+    text = LINE_START_DASH.sub("", text)
+    text = DASH.sub(", ", text)
+    text = COMMA_BEFORE_PUNCT.sub(r"\1", text)
+    return re.sub(r",[ \t]*$", "", text, flags=re.MULTILINE)
+
+# Errors that will fail every call (bad key, no permission, no credits): stop the run
+# with a non-zero exit so the GitHub Actions job goes red and sends the e-mail.
+def is_fatal_api_error(e: Exception) -> bool:
+    if isinstance(e, (anthropic.AuthenticationError, anthropic.PermissionDeniedError)):
+        return True
+    if isinstance(e, anthropic.APIStatusError):
+        msg = str(e).lower()
+        return "credit balance" in msg or "billing" in msg
+    return False
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str) -> dict:
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1200,
@@ -121,6 +146,7 @@ def process_with_ai(title: str, desc: str, source: str) -> dict:
             "role": "user",
             "content": f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
 Escreva de forma direta, profissional e apaixonada pelo clube. NUNCA use linguagem de IA.
+Regra de pontuação: nunca use travessão (—) nem meia-risca (–), use vírgula, ponto ou dois-pontos.
 
 Artigo original:
 Título: {title}
@@ -128,7 +154,7 @@ Trecho: {desc}
 Fonte: {source}
 
 Retorne SOMENTE um JSON (sem markdown) com:
-- "title": título reescrito — direto, preciso, sem sensacionalismo
+- "title": título reescrito: direto, preciso, sem sensacionalismo
 - "excerpt": 2-3 frases naturais de resumo
 - "body": 3-4 parágrafos desenvolvendo a notícia
 - "seoTitle": título SEO (máx 60 chars)
@@ -138,7 +164,12 @@ Retorne SOMENTE um JSON (sem markdown) com:
     text = response.content[0].text.strip()
     text = re.sub(r"^```(?:json)?\s*", "", text)
     text = re.sub(r"\s*```$", "", text)
-    return json.loads(text)
+    article = json.loads(text)
+    # safety net in case the model ignores the punctuation rule
+    for key in ("title", "excerpt", "body", "seoTitle", "seoDescription"):
+        if isinstance(article.get(key), str):
+            article[key] = strip_dashes(article[key])
+    return article
 
 def publish(article: dict, category: str, source: str, url: str, image_url: str = ""):
     now = datetime.now()
@@ -170,6 +201,15 @@ def main():
     cache = load_cache(cache_file)
     published = 0
 
+    if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
+        print("ERRO FATAL: ANTHROPIC_API_KEY ausente ou vazia.")
+        sys.exit(1)
+    try:
+        client = anthropic.Anthropic()
+    except anthropic.AnthropicError as e:
+        print(f"ERRO FATAL: cliente da Anthropic não inicializou: {e}")
+        sys.exit(1)
+
     for src in RSS_SOURCES:
         try:
             feed = feedparser.parse(src["url"])
@@ -189,12 +229,15 @@ def main():
                 cat = classify(title, desc)
 
                 try:
-                    article = process_with_ai(title, desc, src["name"])
+                    article = process_with_ai(client, title, desc, src["name"])
                     publish(article, cat, src["name"], link, image_url)
                     cache.add(fp)
                     published += 1
                 except Exception as e:
-                    print(f"  ERRO: {title[:60]} — {e}")
+                    if is_fatal_api_error(e):
+                        print(f"ERRO FATAL na API da Anthropic (autenticação, chave ou créditos): {e}")
+                        sys.exit(1)
+                    print(f"  ERRO: {title[:60]}: {e}")
 
         except Exception as e:
             print(f"  ERRO RSS {src['name']}: {e}")

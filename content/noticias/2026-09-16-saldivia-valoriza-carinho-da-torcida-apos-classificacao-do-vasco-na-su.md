@@ -11,10 +11,10 @@ seoTitle: "Saldivia celebra apoio da torcida do Vasco"
 seoDescription: "Autor de assistência decisiva contra o Santa Fe, Saldivia elogiou o carinho dos vascaínos após superar má fase desde sua chegada ao clube."
 ---
 
-O Vasco avançou na Sul-Americana e um dos protagonistas da classificação diante do Santa Fe foi Saldivia. O zagueiro deu a assistência para Bruno Duarte abrir o placar e deixou o campo com razões de sobra para comemorar — dentro e fora de campo. A torcida, que havia cobrado o defensor durante sua má fase, resolveu enaltecer a atuação dele após o apito final.
+O Vasco avançou na Sul-Americana e um dos protagonistas da classificação diante do Santa Fe foi Saldivia. O zagueiro deu a assistência para Bruno Duarte abrir o placar e deixou o campo com razões de sobra para comemorar, dentro e fora de campo. A torcida, que havia cobrado o defensor durante sua má fase, resolveu enaltecer a atuação dele após o apito final.
 
 O próprio Saldivia reconheceu o significado desse gesto. 'É bom se sentir querido', declarou o zagueiro, em frase simples que resume bem o que representa o carinho da Nação para um jogador que lutou para encontrar seu espaço no clube. Contratado na janela do início do ano, o paraguaio enfrentou dificuldades de adaptação e conviveu com a pressão natural de quem ainda não havia correspondido às expectativas.
 
 A virada de chave parece estar acontecendo no momento certo. O Vasco disputa uma competição continental e precisa de todos os seus jogadores comprometidos e confiantes. Saldivia, ao contribuir diretamente para o gol que abriu o caminho da classificação, deu um passo importante para reconquistar a confiança da torcida e do grupo.
 
-Agora é seguir em frente. O torcedor do Vasco sabe reconhecer quando um jogador se entrega — e Saldivia mostrou, contra o Santa Fe, que tem disposição para brigar pelo seu espaço em São Januário.
+Agora é seguir em frente. O torcedor do Vasco sabe reconhecer quando um jogador se entrega, e Saldivia mostrou, contra o Santa Fe, que tem disposição para brigar pelo seu espaço em São Januário.

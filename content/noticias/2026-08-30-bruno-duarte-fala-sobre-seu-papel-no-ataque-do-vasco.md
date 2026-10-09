@@ -11,7 +11,7 @@ seoTitle: "Bruno Duarte fala sobre seu papel no ataque do Vasco"
 seoDescription: "Bruno Duarte explicou como pretende contribuir no ataque do Vasco da Gama e mostrou motivação para defender o manto cruz-maltino nesta temporada."
 ---
 
-Bruno Duarte chegou ao Vasco da Gama carregando a responsabilidade de reforçar um setor ofensivo que busca consistência ao longo da temporada. Em entrevista recente, o atacante foi direto ao ponto e explicou de que forma pretende contribuir para o time de Fernando Diniz — ou do atual comandante da equipe —, destacando suas qualidades dentro de campo.
+Bruno Duarte chegou ao Vasco da Gama carregando a responsabilidade de reforçar um setor ofensivo que busca consistência ao longo da temporada. Em entrevista recente, o atacante foi direto ao ponto e explicou de que forma pretende contribuir para o time de Fernando Diniz, ou do atual comandante da equipe, destacando suas qualidades dentro de campo.
 
 O jogador se apresentou como um centroavante com capacidade de atuar nas beiradas da área, criando espaços para os companheiros e também finalizando com eficiência. Bruno Duarte ressaltou que sua movimentação constante é uma das principais armas para desorganizar as defesas adversárias, algo que pode ser valioso no modelo de jogo que o Vasco pretende adotar.
 

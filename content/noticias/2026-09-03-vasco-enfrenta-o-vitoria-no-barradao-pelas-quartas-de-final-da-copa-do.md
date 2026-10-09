@@ -7,7 +7,7 @@ source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/campeonatos/copa-do-brasil/vitoria-x-vasco-copa-do-brasil-02-09-2026/"
 imageUrl: ""
 excerpt: "O Cruz-Maltino volta a campo nesta quarta-feira para enfrentar o Vitória no Barradão, pelo jogo de volta das quartas de final da Copa do Brasil. Com a vantagem de ter vencido por 1 a 0 em São Januário, o Vasco joga pelo empate para avançar às semifinais. A bola rola a partir das 21h30 (de Brasília)."
-seoTitle: "Vasco x Vitória ao vivo — Quartas da Copa do Brasil"
+seoTitle: "Vasco x Vitória ao vivo, Quartas da Copa do Brasil"
 seoDescription: "Vasco enfrenta o Vitória no Barradão pelas quartas da Copa do Brasil. Cruz-Maltino joga pelo empate após vencer por 1 a 0 em São Januário. Siga ao vivo."
 ---
 
@@ -17,4 +17,4 @@ A vantagem conquistada em São Januário é o principal trunfo do Vasco. O triun
 
 A Copa do Brasil representa uma das grandes oportunidades do clube na temporada. Chegar às semifinais seria um passo histórico e importante, tanto pelo prestígio da competição quanto pela premiação financeira, que pode reforçar o caixa do clube de forma significativa. O torcedor vascaíno sabe o peso do que está em jogo esta noite.
 
-Acompanhe aqui no Vascainamente toda a movimentação do jogo em tempo real. Fique de olho nas atualizações, análises e reações durante e após a partida. O gigante da Colina tem uma classificação para buscar — e a torcida estará junto em cada minuto.
+Acompanhe aqui no Vascainamente toda a movimentação do jogo em tempo real. Fique de olho nas atualizações, análises e reações durante e após a partida. O gigante da Colina tem uma classificação para buscar, e a torcida estará junto em cada minuto.

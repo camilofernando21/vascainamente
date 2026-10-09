@@ -13,8 +13,8 @@ seoDescription: "Vasco enfrenta o Coritiba neste sábado pelo Brasileirão em S�
 
 São Januário recebe mais um confronto decisivo neste sábado. Vasco e Coritiba se enfrentam pela 28ª rodada do Campeonato Brasileiro, e o Cruz-Maltino entra em campo com uma missão clara: vencer e escapar da incômoda zona de rebaixamento que assombra o clube nas últimas rodadas.
 
-Do lado coxa-branca, a situação também exige resultado. O Coritiba chega a São Januário buscando reencontrar o caminho das vitórias para se manter vivo na briga por uma vaga em competições continentais na próxima temporada. Dois times com objetivos distintos, mas igualmente motivados — o que promete um jogo disputado e intenso.
+Do lado coxa-branca, a situação também exige resultado. O Coritiba chega a São Januário buscando reencontrar o caminho das vitórias para se manter vivo na briga por uma vaga em competições continentais na próxima temporada. Dois times com objetivos distintos, mas igualmente motivados, o que promete um jogo disputado e intenso.
 
 Para o técnico vascaíno, a escalação deve ser montada com foco em equilibrar marcação e produção ofensiva. São Januário precisa cumprir seu papel de fortaleza, e a torcida tem papel fundamental para empurrar o time nos momentos difíceis. O apoio das arquibancadas pode ser o diferencial em um duelo tão importante quanto esse.
 
-A partida tem transmissão confirmada, e todo vascaíno deve estar ligado para não perder nenhum detalhe desse confronto. O Vascainamente acompanha tudo em tempo real. Fique de olho nas atualizações e prepare o coração — São Januário não pode ser palco de tropeço.
+A partida tem transmissão confirmada, e todo vascaíno deve estar ligado para não perder nenhum detalhe desse confronto. O Vascainamente acompanha tudo em tempo real. Fique de olho nas atualizações e prepare o coração, São Januário não pode ser palco de tropeço.

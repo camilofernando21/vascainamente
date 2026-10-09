@@ -17,4 +17,4 @@ O treinamento em solo baiano mostra a seriedade com que o grupo encarou a sequê
 
 O próximo obstáculo é um clássico pelo Campeonato Brasileiro, partida que, por natureza, exige ainda mais do elenco. Jogos desse calibre têm história, pressão e um peso que vai além dos três pontos. O Vasco sabe disso e trata o duelo com o respeito que ele merece.
 
-A torcida vascaína tem motivos para acreditar em um time que não para de trabalhar. Se a classificação foi conquistada com dedicação, o clássico será disputado com a mesma garra — e com a Colina Histórica por trás de cada jogador em campo.
+A torcida vascaína tem motivos para acreditar em um time que não para de trabalhar. Se a classificação foi conquistada com dedicação, o clássico será disputado com a mesma garra, e com a Colina Histórica por trás de cada jogador em campo.

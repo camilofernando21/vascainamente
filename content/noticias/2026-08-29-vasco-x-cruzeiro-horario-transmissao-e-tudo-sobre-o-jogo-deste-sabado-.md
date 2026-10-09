@@ -17,4 +17,4 @@ São Januário tem sido um fator importante para o Vasco ao longo da temporada. 
 
 A partida terá transmissão ao vivo, então não tem desculpa para não acompanhar cada lance do seu time do coração. Fique atento aos canais e plataformas que detêm os direitos de exibição do Brasileirão para não perder nenhum detalhe deste confronto.
 
-O Vascainamente acompanha tudo em tempo real. Fique aqui pelo portal para conferir a escalação confirmada, os lances do jogo e a análise completa após o apito final. É sábado de São Januário — e São Januário é sagrado.
+O Vascainamente acompanha tudo em tempo real. Fique aqui pelo portal para conferir a escalação confirmada, os lances do jogo e a análise completa após o apito final. É sábado de São Januário, e São Januário é sagrado.

@@ -13,7 +13,7 @@ seoDescription: "Com gols de Bruno Duarte e David, Vasco vence o Santa Fe e avan
 
 O Vasco da Gama está na semifinal da Copa Sul-Americana. Nesta quinta-feira, em São Januário, o Cruz-Maltino superou o Santa Fe com autoridade e confirmou o que a torcida já sentia: este grupo tem capacidade para ir longe na competição. Bruno Duarte e David balançaram as redes e garantiram o resultado que faltava para selar a classificação.
 
-A última vez que o Vasco havia chegado tão longe em um torneio continental foi há 15 anos. Uma geração inteira de torcedores cresceu sem ver o clube nessa fase. Agora, São Januário voltou a viver uma noite daquelas — com a Hill a pleno vapor e o Cruz-Maltino lembrando ao continente quem é o Vasco da Gama.
+A última vez que o Vasco havia chegado tão longe em um torneio continental foi há 15 anos. Uma geração inteira de torcedores cresceu sem ver o clube nessa fase. Agora, São Januário voltou a viver uma noite daquelas, com a Hill a pleno vapor e o Cruz-Maltino lembrando ao continente quem é o Vasco da Gama.
 
 Bruno Duarte abriu o placar e mostrou por que é peça importante nesse esquema. David, cada vez mais decisivo com a camisa vascaína, ampliou e enterrou qualquer esperança do time colombiano de virar o confronto. A equipe foi sólida, controlou os momentos de pressão e soube administrar a classificação dentro de campo.
 

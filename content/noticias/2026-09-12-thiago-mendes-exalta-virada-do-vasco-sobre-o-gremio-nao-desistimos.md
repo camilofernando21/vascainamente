@@ -17,4 +17,4 @@ Captão da equipe e nome importante na virada, Thiago Mendes foi direto ao sair 
 
 Com a vitória, o Vasco chega aos 28 pontos e sobe para a 17ª colocação, mesma pontuação do Mirassol, primeiro clube fora do Z-4. A situação ainda é delicada, mas o resultado em Porto Alegre mostra um time com mais personalidade do que os últimos meses sugeriam. Thiago Mendes reconhece a importância da conquista, mas cobra foco imediato no que vem pela frente.
 
-'Hoje comemoramos, mas amanhã já tem que ter a cabeça no lugar. Terça-feira tem outra decisão e temos que classificar também', disse o capitão, se referindo ao confronto contra o Santa Fe pela Sul-Americana. Para o Vasco, todo jogo virou decisão — e a equipe parece ter entendido isso.
+'Hoje comemoramos, mas amanhã já tem que ter a cabeça no lugar. Terça-feira tem outra decisão e temos que classificar também', disse o capitão, se referindo ao confronto contra o Santa Fe pela Sul-Americana. Para o Vasco, todo jogo virou decisão, e a equipe parece ter entendido isso.

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, DM_Mono } from "next/font/google";
 import "./globals.css";
+import Loader, { LOADER_HEAD_SCRIPT } from "@/components/effects/Loader";
+import GrainCanvas from "@/components/effects/GrainCanvas";
+import CustomCursor from "@/components/effects/CustomCursor";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -19,7 +22,7 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Vascainamente — Notícias do Vasco da Gama",
+    default: "Vascainamente · Notícias do Vasco da Gama",
     template: "%s · Vascainamente",
   },
   description:
@@ -32,45 +35,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${instrumentSerif.variable} ${dmMono.variable}`}>
+    <html lang="pt-BR" suppressHydrationWarning className={`${instrumentSerif.variable} ${dmMono.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: LOADER_HEAD_SCRIPT }} />
+      </head>
       <body className="antialiased">
+        <Loader />
         {children}
-
-        <canvas
-          id="grain-canvas"
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            pointerEvents: "none",
-            zIndex: 9999,
-            opacity: 0.08,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-      const c=document.getElementById('grain-canvas');
-      const ctx=c.getContext('2d');
-      function grain(){
-        c.width=window.innerWidth;
-        c.height=window.innerHeight;
-        const img=ctx.createImageData(c.width,c.height);
-        const d=img.data;
-        for(let i=0;i<d.length;i+=4){
-          const v=Math.random()*255|0;
-          d[i]=d[i+1]=d[i+2]=v;d[i+3]=255;
-        }
-        ctx.putImageData(img,0,0);
-      }
-      grain();
-      window.addEventListener('resize',grain);
-      setInterval(grain,300);
-    `,
-          }}
-        />
+        <GrainCanvas />
+        <CustomCursor />
       </body>
     </html>
   );

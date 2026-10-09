@@ -17,4 +17,4 @@ A partida é fundamental para as pretensões do time na segunda metade do campeo
 
 O Cruzeiro chega como um adversário qualificado e bem organizado na temporada, o que exige atenção máxima do grupo comandado pelo técnico do Vasco. O confronto promete ser disputado, e cada detalhe pode fazer a diferença no resultado final.
 
-Acompanhe aqui, no Vascainamente, todos os lances em tempo real. Gol, cartão, substituição — nada passa sem você saber. É jogo do Vasco e o seu lugar é aqui.
+Acompanhe aqui, no Vascainamente, todos os lances em tempo real. Gol, cartão, substituição, nada passa sem você saber. É jogo do Vasco e o seu lugar é aqui.

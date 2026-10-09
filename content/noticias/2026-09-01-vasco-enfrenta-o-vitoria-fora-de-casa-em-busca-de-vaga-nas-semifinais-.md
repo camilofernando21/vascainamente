@@ -15,6 +15,6 @@ O Vasco tem nas mãos uma das melhores oportunidades do ano para chegar às semi
 
 Do lado baiano, a missão é árdua. O Vitória precisa vencer por pelo menos dois gols de diferença para avançar diretamente. Caso vença por apenas um, a decisão vai para os pênaltis. O fator casa ajuda o Leão, mas o Vasco chega com moral e um resultado que joga completamente a seu favor.
 
-O técnico do Vasco deverá manter a base que conquistou o resultado positivo na ida, com atenção especial para a solidez defensiva — peça-chave para segurar o ímpeto do adversário em seu próprio estádio. A tendência é de um jogo equilibrado, com o Cruz-Maltino apostando na organização e nos contra-ataques para selar a vaga.
+O técnico do Vasco deverá manter a base que conquistou o resultado positivo na ida, com atenção especial para a solidez defensiva, peça-chave para segurar o ímpeto do adversário em seu próprio estádio. A tendência é de um jogo equilibrado, com o Cruz-Maltino apostando na organização e nos contra-ataques para selar a vaga.
 
 A partida promete ser intensa e tem tudo para ser mais um capítulo marcante na campanha vascaína na competição. O torcedor que quiser acompanhar ao vivo deve ficar atento aos canais que transmitem o jogo. O Gigante da Colina está a 90 minutos de mais uma semifinal.

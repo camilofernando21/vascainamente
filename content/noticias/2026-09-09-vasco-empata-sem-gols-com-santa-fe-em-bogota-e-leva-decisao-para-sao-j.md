@@ -15,6 +15,6 @@ O Vasco da Gama fez o dever de casa longe do Rio. Jogando em Bogotá, a mais de 
 
 A partida foi disputada com equilíbrio. O Santa Fe tentou impor o ritmo que a altitude favorece, mas encontrou um Vasco organizado defensivamente e atento para não sofrer o gol que poderia complicar a classificação. O empate em branco, fora de casa, é um trunfo precioso para o jogo de volta.
 
-Agora, o Cruz-Maltino tem a decisão nas próprias mãos — e em casa. São Januário, com a Colina Histórica lotada, será o palco do confronto que definirá o classificado às semifinais da Sul-Americana. Para avançar, basta um empate com gols ou qualquer vitória. O Santa Fe precisa vencer por qualquer placar.
+Agora, o Cruz-Maltino tem a decisão nas próprias mãos, e em casa. São Januário, com a Colina Histórica lotada, será o palco do confronto que definirá o classificado às semifinais da Sul-Americana. Para avançar, basta um empate com gols ou qualquer vitória. O Santa Fe precisa vencer por qualquer placar.
 
 A torcida vascaína já pode marcar na agenda. A volta será disputada no Rio de Janeiro, e São Januário promete fazer sua parte para empurrar o time rumo à semifinal. O Vasco está vivo, está bem posicionado e tem a força da Colina ao seu lado para fechar o trabalho.

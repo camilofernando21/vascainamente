@@ -11,9 +11,9 @@ seoTitle: "Richarlison no Vasco em 2026: único caminho possível"
 seoDescription: "Janela fechou sem Richarlison no Vasco. Atacante segue no Tottenham sem ser inscrito na Premier League. Rescisão é a única saída para 2026."
 ---
 
-A novela acabou sem o final que a torcida queria. Após semanas de negociação e expectativa, a janela de transferências se encerrou com Richarlison ainda vinculado ao Tottenham — e sem qualquer perspectiva concreta de mudança no curto prazo. O Pombo não foi inscrito na Premier League e também não deve figurar nas Copas inglesas, o que o coloca numa situação delicada dentro do clube londrino.
+A novela acabou sem o final que a torcida queria. Após semanas de negociação e expectativa, a janela de transferências se encerrou com Richarlison ainda vinculado ao Tottenham, e sem qualquer perspectiva concreta de mudança no curto prazo. O Pombo não foi inscrito na Premier League e também não deve figurar nas Copas inglesas, o que o coloca numa situação delicada dentro do clube londrino.
 
-Do lado do Vasco, a frustração é real, mas o assunto não está completamente encerrado. Existe uma única alternativa para que o atacante capixaba defenda as cores de São Januário em 2026: a rescisão contratual com o Tottenham. Se o clube inglês optar por liberar o jogador antes do término do vínculo, o Vasco pode voltar à cena — e essa possibilidade, por mais remota que pareça agora, não foi descartada pelos bastidores.
+Do lado do Vasco, a frustração é real, mas o assunto não está completamente encerrado. Existe uma única alternativa para que o atacante capixaba defenda as cores de São Januário em 2026: a rescisão contratual com o Tottenham. Se o clube inglês optar por liberar o jogador antes do término do vínculo, o Vasco pode voltar à cena, e essa possibilidade, por mais remota que pareça agora, não foi descartada pelos bastidores.
 
 Richarlison nunca escondeu o desejo de jogar no Vasco. A relação do atacante com o clube onde se revelou é afetiva e pública, o que mantém a porta entreaberta para uma negociação futura. A questão financeira, porém, segue sendo o maior obstáculo. O salário do jogador na Europa não é compatível com a realidade do mercado brasileiro, e qualquer acordo dependeria de concessões significativas de todas as partes envolvidas.
 

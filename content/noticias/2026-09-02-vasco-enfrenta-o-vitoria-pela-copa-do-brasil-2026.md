@@ -7,7 +7,7 @@ source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/ba/futebol/copa-do-brasil/jogo/02-09-2026/vitoria-vasco.ghtml"
 imageUrl: ""
 excerpt: "O Cruz-Maltino entra em campo contra o Vitória em mais um duelo decisivo na Copa do Brasil 2026. A partida promete ser disputada e o Vasco busca avançar na competição. Acompanhe todas as informações sobre o confronto."
-seoTitle: "Vasco x Vitória ao vivo – Copa do Brasil 2026"
+seoTitle: "Vasco x Vitória ao vivo, Copa do Brasil 2026"
 seoDescription: "Vasco enfrenta o Vitória pela Copa do Brasil 2026. Veja escalação, informações do jogo e acompanhe tudo sobre o confronto pelo Cruz-Maltino."
 ---
 

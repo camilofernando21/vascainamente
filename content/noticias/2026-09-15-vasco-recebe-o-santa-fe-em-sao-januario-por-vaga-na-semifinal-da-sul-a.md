@@ -13,7 +13,7 @@ seoDescription: "Vasco recebe o Santa Fe nesta terça (15), às 19h, em São Jan
 
 São Januário volta a ser palco de uma noite importante na história recente do Vasco. Nesta terça-feira (15), às 19h, o Cruz-Maltino recebe o Independiente Santa Fe pelo jogo de volta das quartas de final da Copa Sul-Americana, com uma vaga na semifinal da competição em disputa. O Gigante da Colina tem a oportunidade de dar mais um passo em busca do título continental.
 
-O apoio da Nação Vascaína será peça fundamental. São Januário, quando cheio e vibrando, transforma o ambiente em algo diferente — e o elenco sabe disso. Jogar em casa, com a arquibancada empurando desde o primeiro minuto, é uma vantagem real que o time precisa saber usar dentro de campo.
+O apoio da Nação Vascaína será peça fundamental. São Januário, quando cheio e vibrando, transforma o ambiente em algo diferente, e o elenco sabe disso. Jogar em casa, com a arquibancada empurando desde o primeiro minuto, é uma vantagem real que o time precisa saber usar dentro de campo.
 
 O Independiente Santa Fe chega como um adversário respeitável, com tradição no futebol colombiano e experiência em competições sul-americanas. O Vasco não pode subestimar o rival e precisa entrar em campo com seriedade, intensidade e foco desde o apito inicial. Qualquer deslize pode custar caro num jogo com esse nível de exigência.
 
