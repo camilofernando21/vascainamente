@@ -3493,6 +3493,17 @@ html.vm-cursor body:not(.is-touch) *::after {
   }
 
   /* players: bottom right of the hero, behind the logo and the menu, faded so text stays readable */
+  /* historic crests flipping, bottom-left of the hero, next to the players */
+  .vm-mhero-crest {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 2.25rem;
+    z-index: 10;
+    width: min(32vw, 140px);
+    height: min(32vw, 140px);
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.6));
+  }
+
   .vm-mhero-player {
     position: absolute;
     right: 0;

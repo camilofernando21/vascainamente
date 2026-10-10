@@ -32,6 +32,8 @@ export default function HeroSection({ post }: { post: Post }) {
         intervalMs={5000}
         className="absolute left-[27%] top-[22%] z-10 hidden h-[250px] w-[250px] md:block lg:h-[300px] lg:w-[300px]"
       />
+      {/* phones: the same crests, smaller, in the free corner bottom-left (the players stand on the right) */}
+      <CrestShowcase intervalMs={5000} sizes="150px" className="vm-mhero-crest absolute md:hidden" />
 
       {/* site tagline — one line ending near the right edge, above the fans' heads */}
       <p className="pointer-events-none absolute left-[68%] top-[10%] z-10 hidden whitespace-nowrap font-serif text-[2.4vw] italic leading-none text-text-hero md:block">

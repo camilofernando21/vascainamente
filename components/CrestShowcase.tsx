@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -15,9 +16,12 @@ const CRESTS = [
 export default function CrestShowcase({
   className,
   intervalMs = 5000,
+  sizes = "300px",
 }: {
   className?: string;
   intervalMs?: number;
+  // rendered width of the crest, so the server sends a resized WebP instead of the original PNG
+  sizes?: string;
 }) {
   const [index, setIndex] = useState(0);
 
@@ -29,13 +33,14 @@ export default function CrestShowcase({
   }, [intervalMs]);
 
   return (
-    <div className={cn("pointer-events-none", className)} style={{ perspective: "800px" }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+    <div className={cn("pointer-events-none relative", className)} style={{ perspective: "800px" }}>
+      <Image
         key={index}
         src={CRESTS[index]}
         alt="Escudos históricos do Vasco da Gama"
-        className="crest-flip h-full w-full object-contain"
+        fill
+        sizes={sizes}
+        className="crest-flip object-contain"
       />
     </div>
   );
