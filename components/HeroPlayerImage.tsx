@@ -2,17 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { PLAYER_IMAGES } from "@/lib/players";
 
-const IMAGES = [
-  "/images/jogador-vasco-1.png",
-  "/images/jogador-vasco-2.png",
-  "/images/jogador-vasco-3.png",
-  "/images/jogador-vasco-4.png",
-  "/images/jogador-vasco-5.png",
-  "/images/jogador-vasco-6.png",
-  "/images/jogador-vasco-7.png",
-  "/images/jogador-vasco-8.png",
-];
+const IMAGES = PLAYER_IMAGES;
 
 export default function HeroPlayerImage({
   className,
@@ -37,6 +29,9 @@ export default function HeroPlayerImage({
         key={index}
         src={IMAGES[index]}
         alt=""
+        // lazy: on phones this desktop photo sits in a hidden block, and lazy images that aren't
+        // rendered are never downloaded; on desktop it's on screen, so it loads right away
+        loading="lazy"
         className="glitch-in absolute inset-0 h-full w-full object-contain object-bottom"
       />
       <div

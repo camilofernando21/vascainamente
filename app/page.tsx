@@ -15,6 +15,8 @@ import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import { dayLabel, factsForToday } from "@/lib/historia";
 import JsonLd from "@/components/JsonLd";
+import MobileCategoryNav from "@/components/home/MobileCategoryNav";
+import MobileHeroPlayer from "@/components/home/MobileHeroPlayer";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 
@@ -45,6 +47,11 @@ export default async function Home() {
       {/* hero keeps its own box so the menu stays pinned to the hero, not to the bottom of the page */}
       <div className="relative vm-hero-wrap">
         <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />
+        {/* phones only (hidden from 768px up): categories under the logo + pinned bar, and the players */}
+        <div className="md:hidden">
+          <MobileCategoryNav />
+          <MobileHeroPlayer />
+        </div>
         {/* the whole hero is one big link: keep the cursor as a plain dot over it */}
         {featured && (
           <div data-cursor="plain">

@@ -3400,3 +3400,184 @@ html.vm-cursor body:not(.is-touch) *::after {
     bottom: 1.25rem;
   }
 }
+
+/* ==========================================================================
+   Phones, part 2: categories under the logo (+ pinned bar) and hero players.
+   Everything below is inside max-width: 767px; the wrapper is md:hidden.
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* hero grows a little to fit the players; the news title still lands in the first 844px */
+  .vm-hero-wrap [data-cursor="plain"] > a {
+    min-height: 50svh;
+  }
+
+  /* categories: horizontal strip under the logo, swipe sideways, no visible scrollbar */
+  .vm-mnav {
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    z-index: 30;
+  }
+
+  .vm-mnav-list {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    padding: 0 1.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .vm-mnav-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vm-mnav-list li {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+
+  .vm-mnav-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 44px; /* touch target */
+    padding: 0 0.75rem;
+    font-family: var(--font-mono), monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--text-muted);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.3s ease;
+  }
+
+  .vm-mnav-list li:first-child .vm-mnav-link {
+    padding-left: 0;
+  }
+
+  /* same thin red line as the desktop menu, under the item while tapped or keyboard-focused */
+  .vm-mnav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 8px;
+    height: 1px;
+    background: var(--red);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .vm-mnav-list li:first-child .vm-mnav-link::after {
+    left: 0;
+  }
+
+  .vm-mnav-link:active,
+  .vm-mnav-link:focus-visible {
+    color: var(--text);
+  }
+
+  .vm-mnav-link:active::after,
+  .vm-mnav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  /* pinned bar: appears once the hero has scrolled away */
+  .vm-mnav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    padding-left: 1.25rem;
+    background: rgba(13, 13, 13, 0.88);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transform: translateY(-100%);
+    visibility: hidden;
+    transition: transform 0.35s ease, visibility 0.35s ease;
+  }
+
+  .vm-mnav-bar.is-pinned {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .vm-mnav-cross {
+    flex: 0 0 auto;
+  }
+
+  .vm-mnav-bar .vm-mnav-list {
+    padding-left: 0.75rem;
+  }
+
+  .vm-mnav-bar .vm-mnav-list li:first-child .vm-mnav-link {
+    padding-left: 0.5rem;
+  }
+
+  .vm-mnav-bar .vm-mnav-list li:first-child .vm-mnav-link::after {
+    left: 0.5rem;
+  }
+
+  /* in-page jumps on the home land below the pinned bar */
+  html {
+    scroll-padding-top: 52px;
+  }
+
+  /* players: bottom right of the hero, behind the logo and the menu, faded so text stays readable */
+  .vm-mhero-player {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    width: 72vw;
+    height: calc(100% - 128px);
+    pointer-events: none;
+    opacity: 0.7;
+    /* single gradient: fades the feet into the next block and the head under the menu
+       (two masks with mask-composite rendered nothing in Chromium) */
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 22%, #000 72%, transparent 100%);
+    mask-image: linear-gradient(to top, transparent 0%, #000 22%, #000 72%, transparent 100%);
+  }
+
+  .vm-mhero-img {
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .vm-mhero-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+
+  .vm-mhero-layer.glitch-layer-red {
+    filter: sepia(1) saturate(10) hue-rotate(-30deg) brightness(1.2);
+  }
+
+  .vm-mhero-layer.glitch-layer-blue {
+    filter: sepia(1) saturate(10) hue-rotate(190deg) brightness(1.2);
+  }
+
+  .vm-mhero-preload {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .vm-mnav-bar {
+    transition: none;
+  }
+}
