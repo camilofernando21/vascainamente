@@ -45,7 +45,8 @@ export default function TodayCards({
     const field = fieldRef.current;
     const punch = punchRef.current;
     if (!section || !headline || !field || !punch) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // phones get a plain readable list instead of the floating cards (see the CSS)
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) return;
 
     const els = Array.from(field.querySelectorAll<HTMLElement>(".quote-card"));
     const total = els.length;

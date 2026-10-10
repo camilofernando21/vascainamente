@@ -118,7 +118,8 @@ export default function GoalSection({ item }: { item: HomeItem | null }) {
     const flash = flashRef.current;
     if (!section || !ball || !panel || !flash) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    // phones skip the ball sequence: the news of the day must be on the first screen (CSS makes it static)
+    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) {
       panel.classList.add("visible");
       return;
     }

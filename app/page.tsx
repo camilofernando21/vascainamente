@@ -43,7 +43,7 @@ export default async function Home() {
     <main className="relative min-h-screen">
       <JsonLd data={[organizationSchema(), websiteSchema()]} />
       {/* hero keeps its own box so the menu stays pinned to the hero, not to the bottom of the page */}
-      <div className="relative">
+      <div className="relative vm-hero-wrap">
         <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />
         {/* the whole hero is one big link: keep the cursor as a plain dot over it */}
         {featured && (

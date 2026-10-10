@@ -10,7 +10,8 @@ export default function CustomCursor() {
   const [isTouch, setIsTouch] = useState(false);
 
   useEffect(() => {
-    if ("ontouchstart" in window) {
+    // touch screens (no hover or a coarse pointer) never get the custom dot
+    if ("ontouchstart" in window || window.matchMedia("(hover: none), (pointer: coarse)").matches) {
       document.body.classList.add("is-touch");
       setIsTouch(true);
       return;

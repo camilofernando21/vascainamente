@@ -3240,3 +3240,163 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text);
   text-decoration-color: var(--red);
 }
+
+/* ==========================================================================
+   Phones (< 768px) and touch screens: news first, no empty stretches.
+   Desktop is untouched.
+   ========================================================================== */
+
+/* touch screens never show the custom cursor or the spinning scroll badge */
+@media (hover: none), (pointer: coarse) {
+  #custom-cursor,
+  #scroll-badge {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* the badge covered the logo ("…INAMENTE"): hidden on phones */
+  #scroll-badge {
+    display: none !important;
+  }
+
+  /* hero: a short brand strip (logo + 1898) so the news of the day fits in the first screen */
+  .vm-hero-wrap [data-cursor="plain"] > a {
+    min-height: 34svh;
+  }
+
+  /* news of the day: no pinned ball/goal sequence, the panel is shown right away */
+  #vm-goal {
+    height: auto;
+  }
+  #vm-goal-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  .vm-court-label,
+  #goal-back,
+  #goal-front,
+  #vm-ball,
+  #vm-goal-flash {
+    display: none;
+  }
+  #vm-swish-panel {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 1.75rem 1.5rem 3rem;
+    background: none;
+    overflow: visible;
+  }
+  .swish-word {
+    font-size: 2.6rem;
+  }
+  .swish-title {
+    margin-top: 0.75rem;
+    font-size: 1.6rem;
+  }
+  .swish-copy {
+    margin-top: 0.75rem;
+    -webkit-line-clamp: 3;
+  }
+  .vm-button {
+    margin-top: 1rem;
+  }
+
+  /* "tudo o que saiu": a readable list instead of tiny floating cards */
+  #vm-today {
+    height: auto;
+  }
+  #vm-today-sticky {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+  #vm-today-headline,
+  #vm-today-field,
+  #vm-today-punchline {
+    position: relative;
+    inset: auto;
+    opacity: 1 !important;
+  }
+  #vm-today-headline {
+    padding: 4rem 1.5rem 2rem;
+  }
+  .quotes-heading {
+    font-size: 2.6rem;
+  }
+  #vm-today-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 1.5rem;
+  }
+  #vm-today-field .quote-card,
+  #vm-today-field .quote-card.fading {
+    position: relative;
+    inset: auto !important;
+    width: auto;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition: none;
+    padding: 1rem 1.1rem;
+  }
+  #vm-today-field .quote-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.6rem;
+  }
+  #vm-today-field .quote-name {
+    font-size: 0.8rem;
+  }
+  #vm-today-field .quote-handle {
+    font-size: 0.7rem;
+  }
+  #vm-today-field .quote-text {
+    font-size: 0.95rem; /* >= 14px, required for reading on a phone */
+    line-height: 1.55;
+    color: rgba(240, 235, 225, 0.8);
+    -webkit-line-clamp: unset;
+    display: block;
+  }
+  #vm-today-punchline {
+    padding: 3.5rem 1.5rem 4rem;
+  }
+  .punchline-main {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  /* idols: no full-screen height with an empty middle before the footer */
+  #idolos {
+    min-height: 0;
+    padding: 4.5rem 1.5rem 3rem;
+  }
+  #final-hint {
+    position: static;
+    transform: none;
+    margin-top: 2.5rem;
+    text-align: center;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 767px) {
+  #idolos .vm-sound-toggle.is-idols {
+    position: static;
+    transform: none;
+    margin: 1.25rem auto 0;
+  }
+}
+
+@media (max-width: 767px) {
+  /* the section is compact now, so the fixed stats card goes to the bottom of the screen, clear of the names */
+  .final-stats {
+    top: auto;
+    bottom: 1.25rem;
+  }
+}
