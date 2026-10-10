@@ -9,7 +9,7 @@ imageUrl: ""
 excerpt: "Vasco e Remo se enfrentam pelo Campeonato Brasileiro 2026, e o Vascaínamente traz as informações disponíveis sobre a partida. Escalação, horário e detalhes do jogo são os pontos de atenção para a torcida cruzmaltina. Fique por dentro de tudo sobre mais um compromisso do Cruz-Maltino na competição nacional."
 seoTitle: "Vasco x Remo: tudo sobre o jogo no Brasileirão 2026"
 seoDescription: "Vasco enfrenta o Remo pelo Campeonato Brasileiro 2026. Veja escalação, horário, onde assistir e acompanhe todos os detalhes da partida no Vascaínamente."
-updated: "2026-10-10T03:15:50-03:00"
+updated: "2026-10-10T13:15:51-03:00"
 ---
 
 O Vasco da Gama tem pela frente o Remo no Campeonato Brasileiro 2026, e a partida já desperta atenção da torcida cruzmaltina. O confronto coloca o Cruz-Maltino diante de um adversário que não pode ser subestimado, e a preparação da equipe será fundamental para garantir um bom resultado dentro de campo.
@@ -21,3 +21,5 @@ O Campeonato Brasileiro 2026 é uma das principais metas do clube na temporada, 
 O Vascaínamente acompanha todos os detalhes deste confronto e atualiza as informações à medida que forem confirmadas. Escalação, onde assistir e placar: tudo o que você precisa saber sobre Vasco x Remo você encontra aqui.
 
 **Atualização em 10/10 às 03:15:** Andrés Gómez retorna ao time titular no lugar de Hinestroza, e a provável escalação do Vasco está definida com Léo Jardim, Saldivia, Robert Renan, Sosa, Thiago Mendes, Lescano, Colidio e David. O Remo terá Jajá como novidade e não contará com Tchamba, preservado após a Data Fifa. ([GE.Globo](https://ge.globo.com/futebol/brasileirao-serie-a/noticia/2026/10/10/vasco-x-remo-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml))
+
+**Atualização em 10/10 às 13:15:** O Vasco chega a 75% da meta interna de quatro pontos após vencer o Botafogo por 2 a 1, com a vitória sobre o Remo sendo suficiente para cumprir o objetivo antes da Bombonera. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/10/vasco-pode-ultrapassar-meta-tracada-no-brasileiro-antes-de-jogo-contra-o-boca-entenda-o-plano.ghtml))
