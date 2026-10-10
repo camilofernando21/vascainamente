@@ -178,7 +178,7 @@ def video_prompt(videos: list) -> str:
     if not videos:
         return ""
     lines = "\n".join(f"- {v['id']}: {v['title']}" for v in videos)
-    return f"\nVídeos publicados nas últimas 48 horas no canal oficial Vasco TV (ID: título):\n{lines}\n"
+    return f"\nVídeos publicados nos últimos 3 dias no canal oficial Vasco TV (ID: título):\n{lines}\n"
 
 VIDEO_FIELD = (
     "\n- \"videoId\": o ID de UM vídeo da lista acima SOMENTE se o vídeo mostrar o fato principal desta notícia: "
@@ -222,8 +222,8 @@ SP_TZ = ZoneInfo("America/Sao_Paulo")
 # Same-fact detection: news published in the last 48h are sent to the AI (title + summary) in the
 # same call that rewrites the article, so a story already covered by another source is skipped,
 # or appended to the existing article when it brings important new information.
-RECENT_WINDOW_HOURS = 48
-RECENT_MAX = 40
+RECENT_WINDOW_HOURS = 72
+RECENT_MAX = 60
 FRONT_FIELD = re.compile(r'^(title|slug|date|excerpt):\s*"(.*)"\s*$', re.MULTILINE)
 
 def load_recent_posts() -> list:
@@ -252,13 +252,19 @@ def recent_prompt(recent: list) -> str:
     if not recent:
         return ""
     lines = "\n".join(f"- {p['slug']}: {p['title']} | {p['excerpt'][:200]}" for p in recent)
-    return f"\nMatérias já publicadas no site nas últimas 48 horas (slug: título | resumo):\n{lines}\n"
+    return f"\nMatérias já publicadas no site nos últimos 3 dias (slug: título | resumo):\n{lines}\n"
 
 DUPLICATE_FIELD = (
     "\n- \"duplicateOf\": o slug de UMA matéria publicada acima que noticia o MESMO fato desta notícia "
     "(o mesmo anúncio, a mesma decisão, o mesmo resultado, a mesma declaração), ou null. "
-    "Notícias diferentes sobre o mesmo jogo ou o mesmo tema (prévia, escalação, resultado, coletiva, ingressos) "
-    "NÃO são o mesmo fato. Na dúvida, null."
+    "O site tem UMA matéria por fato. Regras para jogos: cada jogo tem no máximo UMA prévia (horário, onde assistir, "
+    "escalações, 'tudo sobre', 'acompanhe ao vivo' e 'o que se sabe' são todos a mesma prévia) e UM resultado "
+    "(placar, como foi, 'vence', 'bate', 'vira', 'atropela', 'empata' são o mesmo resultado). Se já existe a prévia "
+    "ou o resultado daquele jogo, esta notícia é o mesmo fato. Também é o mesmo fato: a mesma entrevista ou coletiva da "
+    "mesma pessoa, a mesma decisão da Justiça, o mesmo anúncio oficial, a mesma contratação, a mesma morte, contados "
+    "com outras palavras ou por outro veículo. São fatos diferentes, e podem ser publicados: a prévia e o resultado "
+    "do mesmo jogo, a fala de outra pessoa, uma análise ou bastidor com informação que a matéria publicada não tem. "
+    "Na dúvida entre mesmo fato e fato novo sobre o mesmo jogo ou anúncio, é o mesmo fato."
     "\n- \"update\": somente se duplicateOf não for null. Use APENAS para um fato concreto e novo que muda o que o "
     "torcedor sabe e que NÃO está no título nem no resumo da matéria publicada: horário ou data definidos, ingressos "
     "à venda ou preço, local confirmado, lesão ou desfalque confirmado, valores de negócio, placar. Escreva 1 ou 2 "
