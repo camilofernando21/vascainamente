@@ -28,8 +28,8 @@ export default function NewsOfTheDay({ item }: { item: HomeItem | null }) {
     const panel = panelRef.current;
     if (!section || !win || !photo || !intro || !panel) return;
 
-    // phones and reduced motion: photo and news right away (the news must be on the first screen)
-    if (window.matchMedia("(prefers-reduced-motion: reduce), (max-width: 767px)").matches) {
+    // reduced motion: photo and news right away
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       section.classList.add("day-static");
       panel.classList.add("visible");
       return;
@@ -48,7 +48,8 @@ export default function NewsOfTheDay({ item }: { item: HomeItem | null }) {
       // its solid center is ~15% of the drawing, so ~9x the longest side covers everything
       const p = easeInOut(clamp01(progress / OPEN_END));
       const vmax = Math.max(window.innerWidth, window.innerHeight);
-      const start = Math.min(window.innerWidth, window.innerHeight) * 0.42;
+      // phones start with a bigger cross, so the photo reads from the first moment
+      const start = Math.min(window.innerWidth, window.innerHeight) * (window.innerWidth < 768 ? 0.72 : 0.42);
       const end = vmax * 9;
       const size = start * Math.pow(end / start, p);
       win!.style.setProperty("--cross", `${size.toFixed(1)}px`);

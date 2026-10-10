@@ -3190,42 +3190,65 @@ html.vm-cursor body:not(.is-touch) *::after {
     min-height: 34svh;
   }
 
-  /* news of the day: no pinned sequence, the photo and the news right away */
+  /* news of the day: the same cross sequence, shorter (about one screen of scroll) */
   #vm-goal {
-    height: auto;
+    height: 210svh;
   }
   #vm-goal-sticky {
-    position: relative;
-    height: auto;
+    position: sticky;
+    top: 0;
+    height: 100svh;
     overflow: hidden;
     display: block;
   }
-  .vm-court-label,
-  .vm-day-intro {
-    display: none;
+  .vm-court-label {
+    display: block;
+    font-size: 2.1rem;
+    top: 5rem;
+  }
+  .vm-day-kicker {
+    bottom: 3.5rem;
   }
   .vm-day-window {
+    -webkit-mask-position: center 52%;
+    mask-position: center 52%;
+  }
+  .vm-day-panel {
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 6svh;
+  }
+  .vm-day-title {
+    font-size: 2rem;
+    line-height: 1.08;
+  }
+  .vm-day-copy {
+    margin-top: 0.9rem;
+  }
+
+  /* reduced motion: photo and news right away, no pinned sequence */
+  #vm-goal.day-static {
+    height: auto;
+  }
+  .day-static #vm-goal-sticky {
+    position: relative;
+    height: auto;
+  }
+  .day-static .vm-day-window {
     position: relative;
     inset: auto;
     height: 62vw;
   }
-  .vm-day-shade {
+  .day-static .vm-day-shade {
     background: linear-gradient(to top, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0) 55%);
   }
-  .vm-day-panel {
+  .day-static .vm-day-panel {
     position: relative;
     left: auto;
     right: auto;
     bottom: auto;
     margin-top: -3.5rem;
     padding: 0 1.5rem 3rem;
-  }
-  .vm-day-title {
-    font-size: 1.85rem;
-    line-height: 1.1;
-  }
-  .vm-day-copy {
-    margin-top: 0.9rem;
   }
   
   
