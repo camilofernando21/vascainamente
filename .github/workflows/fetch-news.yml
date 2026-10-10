@@ -40,13 +40,16 @@ jobs:
       - name: Fetch and publish news
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # beat reporters on X: off while the secret is empty (paid API, see scripts/x_source.py)
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_MONTHLY_POST_LIMIT: ${{ vars.X_MONTHLY_POST_LIMIT }}
         run: python scripts/fetch-news.py
 
       - name: Commit new articles
         run: |
           git config user.name  "vascainamente-bot"
           git config user.email "bot@vascainamente.com.br"
-          git add content/noticias/ .news_cache.json
+          git add content/noticias/ .news_cache.json $(ls .x_state.json 2>/dev/null)
           git diff --staged --quiet && exit 0
           git commit -m "feat(news): $(date +'%d/%m %H:%M') — novas notícias do Vasco"
           # someone (or the reclassify workflow) may have pushed meanwhile

@@ -15,6 +15,8 @@ from zoneinfo import ZoneInfo
 from pathlib import Path
 import anthropic
 
+from x_source import fetch_x_items
+
 RSS_SOURCES = [
     {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/"},
     # Vasco-only ge feed (adds base and women's team news, tested 2026-10-09: 100 items)
@@ -272,7 +274,17 @@ DUPLICATE_FIELD = (
     "grafias, detalhes do processo ou outra forma de contar o mesmo fato NÃO são novidade: nesses casos, null."
 )
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None) -> dict:
+X_NOTE = (
+    "\nATENÇÃO: o texto acima é um post de um setorista no X, não uma matéria pronta. "
+    "Se ele não trouxer uma informação concreta e nova sobre o Vasco (contratação, saída, lesão, escalação, "
+    "bastidor apurado, data ou local de jogo), responda SOMENTE {\"skip\": true}. "
+    "Opinião, piada, enquete, palpite, divulgação de live ou de outro conteúdo também são skip. "
+    "Se for notícia, trate como apuração do setorista: diga no título ou no primeiro parágrafo que a informação é dele "
+    "(por exemplo \"segundo o setorista ...\"), não afirme como fato confirmado pelo clube e não invente detalhes "
+    "que não estão no post.\n"
+)
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False) -> dict:
     recent = recent or []
     video_field = VIDEO_FIELD if videos else ""
     duplicate_field = DUPLICATE_FIELD if recent else ""
@@ -289,7 +301,7 @@ Artigo original:
 Título: {title}
 Trecho: {desc}
 Fonte: {source}
-{video_prompt(videos)}{recent_prompt(recent)}
+{X_NOTE if from_x else ""}{video_prompt(videos)}{recent_prompt(recent)}
 {CATEGORY_GUIDE}
 
 Retorne SOMENTE um JSON (sem markdown) com:
@@ -306,6 +318,8 @@ Retorne SOMENTE um JSON (sem markdown) com:
     text = re.sub(r"^```(?:json)?\s*", "", text)
     text = re.sub(r"\s*```$", "", text)
     article = json.loads(text)
+    if article.get("skip") is True:
+        return {"skip": True}
     # safety net in case the model ignores the punctuation rule
     for key in ("title", "excerpt", "body", "seoTitle", "seoDescription"):
         if isinstance(article.get(key), str):
@@ -387,54 +401,69 @@ def main():
         print(f"ERRO FATAL: cliente da Anthropic não inicializou: {e}")
         sys.exit(1)
 
+    # every source becomes the same kind of item: RSS news and the beat reporters' posts on X
+    items = []
     for src in RSS_SOURCES:
         try:
             feed = feedparser.parse(src["url"])
             for entry in feed.entries[:15]:
                 title = entry.get("title", "").strip()
-                desc  = entry.get("summary", "").strip()
-                link  = entry.get("link", "")
-                image_url = extract_image(entry)
-
+                desc = entry.get("summary", "").strip()
                 if not title or not is_vasco(title, desc):
                     continue
-
-                fp = fingerprint(title)
-                if fp in cache:
-                    continue
-
-                try:
-                    if videos is None:
-                        videos = fetch_recent_videos()
-                    # re-read on every item: includes what this same run has just published
-                    recent = load_recent_posts()
-                    article = process_with_ai(client, title, desc, src["name"], videos, recent)
-                    if article["duplicateOf"]:
-                        dup = article["duplicateOf"]
-                        if article["update"]:
-                            apply_update(dup, article["update"], src["name"], link)
-                            updated += 1
-                        else:
-                            print(f"PULADA (mesmo fato de {dup['slug']}): {title}")
-                            skipped += 1
-                        cache.add(fp)
-                        continue
-                    # AI category first; keyword rules only as a fallback
-                    cat = article["category"] or classify(title, desc)
-                    publish(article, cat, src["name"], link, image_url)
-                    cache.add(fp)
-                    published += 1
-                except Exception as e:
-                    if is_fatal_api_error(e):
-                        print(f"ERRO FATAL na API da Anthropic (autenticação, chave ou créditos): {e}")
-                        sys.exit(1)
-                    print(f"  ERRO: {title[:60]}: {e}")
-
+                items.append({
+                    "name": src["name"],
+                    "title": title,
+                    "desc": desc,
+                    "link": entry.get("link", ""),
+                    "image": extract_image(entry),
+                    "from_x": False,
+                })
         except Exception as e:
             print(f"  ERRO RSS {src['name']}: {e}")
+    # beat reporters cover only Vasco, so their posts skip the title filter: the AI decides what is news
+    items.extend(fetch_x_items())
+
+    for item in items:
+        title, desc, link = item["title"], item["desc"], item["link"]
+        fp = fingerprint(item["link"] if item["from_x"] else title)
+        if fp in cache:
+            continue
+
+        try:
+            if videos is None:
+                videos = fetch_recent_videos()
+            # re-read on every item: includes what this same run has just published
+            recent = load_recent_posts()
+            article = process_with_ai(client, title, desc, item["name"], videos, recent, from_x=item["from_x"])
+            if article.get("skip"):
+                print(f"PULADA (post sem notícia): {title[:60]}")
+                skipped += 1
+                cache.add(fp)
+                continue
+            if article["duplicateOf"]:
+                dup = article["duplicateOf"]
+                if article["update"]:
+                    apply_update(dup, article["update"], item["name"], link)
+                    updated += 1
+                else:
+                    print(f"PULADA (mesmo fato de {dup['slug']}): {title}")
+                    skipped += 1
+                cache.add(fp)
+                continue
+            # AI category first; keyword rules only as a fallback
+            cat = article["category"] or classify(title, desc)
+            publish(article, cat, item["name"], link, item["image"])
+            cache.add(fp)
+            published += 1
+        except Exception as e:
+            if is_fatal_api_error(e):
+                print(f"ERRO FATAL na API da Anthropic (autenticação, chave ou créditos): {e}")
+                sys.exit(1)
+            print(f"  ERRO: {title[:60]}: {e}")
 
     save_cache(cache_file, cache)
-    print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) por repetir o mesmo fato.")
+    print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) (mesmo fato ou post sem notícia).")
 
 if __name__ == "__main__":
     main()
