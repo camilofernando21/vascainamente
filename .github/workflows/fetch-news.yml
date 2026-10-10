@@ -1,13 +1,23 @@
 name: Fetch Vasco News
 
 on:
+  # GitHub runs scheduled workflows on a best-effort basis (in practice every 4 to 7 hours here).
+  # The real 15-minute cadence comes from an external trigger (cron-job.org) calling
+  # workflow_dispatch; this schedule stays only as a fallback if that trigger stops.
   schedule:
-    - cron: '*/15 * * * *'   # a cada 15 minutos
-  workflow_dispatch:           # permite disparo manual
+    - cron: '*/15 * * * *'
+  workflow_dispatch:           # external trigger every 15 min + manual runs
+
+# never two runs at once (the external trigger and the schedule can coincide):
+# a new run waits for the current one instead of racing it on the same files
+concurrency:
+  group: fetch-news
+  cancel-in-progress: false
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     permissions:
       contents: write
 
@@ -37,6 +47,8 @@ jobs:
           git config user.name  "vascainamente-bot"
           git config user.email "bot@vascainamente.com.br"
           git add content/noticias/ .news_cache.json
-          git diff --staged --quiet || \
-            git commit -m "feat(news): $(date +'%d/%m %H:%M') — novas notícias do Vasco" && \
-            git push
+          git diff --staged --quiet && exit 0
+          git commit -m "feat(news): $(date +'%d/%m %H:%M') — novas notícias do Vasco"
+          # someone (or the reclassify workflow) may have pushed meanwhile
+          git pull --rebase
+          git push
