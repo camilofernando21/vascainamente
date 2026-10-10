@@ -15,7 +15,7 @@ const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t 
 
 export default function NewsOfTheDay({ item }: { item: HomeItem | null }) {
   const sectionRef = useRef<HTMLElement>(null);
-  const windowRef = useRef<HTMLDivElement>(null);
+  const windowRef = useRef<HTMLAnchorElement>(null);
   const photoRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
