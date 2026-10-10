@@ -9,7 +9,7 @@ imageUrl: "https://s2-ge.glbimg.com/dMB6Y2ae60A9-XFkFXpPPTWtx3w=/i.s3.glbimg.com
 excerpt: "O volante Leandro Paredes deixou o campo com dores musculares nesta sexta-feira, no empate do Boca Juniors com o Instituto por 2 a 2, pelo Campeonato Argentino. A lesão acende o alerta no clube argentino a quatro dias do confronto de ida da semifinal da Sul-Americana, na Bombonera. O Vasco acompanha a situação de perto."
 seoTitle: "Paredes se machuca antes de Boca x Vasco na Sul-Americana"
 seoDescription: "Capitão do Boca Juniors sente problema muscular a quatro dias do jogo de ida da semifinal da Copa Sul-Americana contra o Vasco, na Bombonera."
-updated: "2026-10-10T15:00:53-03:00"
+updated: "2026-10-10T17:31:35-03:00"
 ---
 
 O Boca Juniors ganhou uma dor de cabeça antes do duelo decisivo contra o Vasco pela semifinal da Copa Sul-Americana. O volante Leandro Paredes, capitão e peça fundamental do esquema de Rodolfo Arruabarrena, sentiu um problema muscular e pediu substituição aos 35 minutos do segundo tempo no empate em 2 a 2 com o Instituto, em Córdoba, nesta sexta-feira, pelo Torneo Clausura. Paredes havia entrado apenas aos dez minutos da etapa final, justamente porque o técnico poupou metade do time titular pensando na terça-feira.
@@ -23,3 +23,5 @@ Para o Vasco, a notícia chega como um dado importante de análise, mas o foco c
 **Atualização em 10/10 às 12:00:** Exames confirmaram lesão no músculo posterior da coxa direita, e Paredes está descartado dos dois jogos da semifinal contra o Vasco. ([GE.Globo](https://ge.globo.com/futebol/futebol-internacional/noticia/2026/10/10/paredes-tem-lesao-no-musculo-posterior-da-coxa-e-desfalca-boca-juniors-nos-jogos-contra-o-vasco.ghtml))
 
 **Atualização em 10/10 às 15:00:** Os exames confirmaram lesão muscular de grau 2 na coxa direita. Paredes está oficialmente fora do jogo contra o Vasco. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/10/paredes-tem-lesao-grau-2-e-vira-desfalque-do-boca-contra-o-vasco-diz-site.ghtm))
+
+**Atualização em 10/10 às 17:31:** Exames confirmaram lesão de grau 2 no isquiotibial da coxa esquerda: Paredes está fora dos dois jogos do Boca contra o Vasco na semifinal. ([leia a matéria](/2026-10-10-paredes-tem-lesao-confirmada-e-esta-fora-dos-dois-jogos-do-boca-contra))

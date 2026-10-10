@@ -9,7 +9,7 @@ imageUrl: "https://s2-ge.glbimg.com/K2pCkLCdAIFBNkw36XDZdnRZt6E=/i.s3.glbimg.com
 excerpt: "O desembargador Marco Antônio Ibrahim, do TJRJ, acatou recurso do Vasco e autorizou a realização da semifinal da Sul-Americana contra o Boca Juniors no Maracanã, no dia 20 de outubro. A decisão derrubou a recusa da concessionária e reconheceu o direito do clube ao estádio. O jogo está confirmado para as 21h30."
 seoTitle: "Justiça libera Maracanã para Vasco x Boca Juniors"
 seoDescription: "TJRJ acatou recurso do Vasco e autorizou o Maracanã para a semifinal da Sul-Americana contra o Boca Juniors no dia 20 de outubro, às 21h30."
-updated: "2026-10-10T17:30:59-03:00"
+updated: "2026-10-10T17:30:55-03:00"
 ---
 
 O Vasco venceu mais uma batalha judicial pelo direito de jogar em casa. O desembargador Marco Antônio Ibrahim, presidente da 23ª Câmara de Direito Privado do Tribunal de Justiça do Estado do Rio de Janeiro, publicou decisão nesta sexta-feira determinando que a concessionária disponibilize o Maracanã para a semifinal da CONMEBOL Sudamericana entre Vasco e Boca Juniors, marcada para o dia 20 de outubro, às 21h30. O clube deveria indicar o estádio à entidade sul-americana até sábado, e a decisão chegou no limite do prazo.
@@ -28,4 +28,4 @@ O Vasco agradeceu ao Ministério Público, ao TJRJ, à CBF e ao Governo do Estad
 
 **Atualização em 10/10 às 15:30:** O TJ-RJ derrubou a autorização anteriormente concedida e suspendeu o Maracanã como sede da partida, atendendo a recurso do Consórcio Fla-Flu. O local do jogo volta a ser indefinido. ([Gazeta Esportiva](https://www.gazetaesportiva.com/times/vasco/justica-derruba-vasco-maracana-boca-juniors/))
 
-**Atualização em 10/10 às 17:30:** A desembargadora Suely Lopes Magalhães, vice-presidente do TJ-RJ, derrubou a decisão que liberava o Maracanã após recurso do Consórcio Fla-Flu. O Vasco prepara novo recurso com prazo até 23h59, quando a Conmebol precisa da confirmação do estádio. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/10/e-agora-entenda-proximos-passos-do-vasco-em-luta-para-enfrentar-o-boca-no-maracana.ghtml))
+**Atualização em 10/10 às 17:30:** A desembargadora Suely Lopes Magalhães, vice-presidente do TJ-RJ, derrubou a autorização do Maracanã neste sábado após recurso do Consórcio Fla-Flu, e o Vasco prepara nova ação na Justiça com prazo da Conmebol encerrando às 23h59. ([leia a matéria](/2026-10-10-vasco-recorre-apos-nova-liminar-derrubar-autorizacao-do-maracana-para-))

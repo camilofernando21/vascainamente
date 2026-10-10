@@ -278,6 +278,13 @@ DUPLICATE_FIELD = (
     "à venda ou preço, local confirmado, lesão ou desfalque confirmado, valores de negócio, placar. Escreva 1 ou 2 "
     "frases como notícia, direto ao fato (nunca \"a notícia informa\" ou \"a fonte detalha\"). Nomes, cargos, "
     "grafias, detalhes do processo ou outra forma de contar o mesmo fato NÃO são novidade: nesses casos, null."
+    "\n- \"development\": true somente se duplicateOf não for null e esta notícia for um DESDOBRAMENTO que merece "
+    "manchete própria: decisão nova ou revertida (Justiça, Conmebol, CBF, clube), recurso apresentado, lesão ou "
+    "desfalque confirmado por exame, marca de ingressos vendidos ou esgotados, negociação que avançou ou fechou, ou "
+    "qualquer fato que deixa o título da matéria publicada errado ou desatualizado. Nesse caso escreva title, excerpt e "
+    "body sobre o desdobramento e preencha update com 1 frase sobre ele. false se for o mesmo fato contado de novo, "
+    "por outro veículo, ou só um detalhe a mais. Também false se o que esta notícia conta aconteceu ANTES do que a "
+    "matéria publicada já relata (fonte atrasada contando uma etapa anterior da mesma história)."
 )
 
 X_NOTE = (
@@ -363,6 +370,7 @@ final de um jogo do time principal, ou null{video_field}{duplicate_field}"""
         article["duplicateOf"] = None
     upd = article.get("update")
     article["update"] = strip_dashes(upd.strip()) if article["duplicateOf"] and isinstance(upd, str) and upd.strip() else None
+    article["development"] = bool(article["duplicateOf"]) and article.get("development") is True
     return article
 
 MATCH_EVENTS = {"escalacao", "gol", "resultado"}
@@ -415,6 +423,7 @@ seoDescription: "{article.get('seoDescription', '').replace('"', "'")}"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
     print(f"OK {article['title']}")
+    return slug
 
 def main():
     cache_file = ".news_cache.json"
@@ -475,6 +484,14 @@ def main():
                 print(f"PULADA (post sem notícia): {title[:60]}")
                 skipped += 1
                 cache.add(fp)
+                continue
+            if article["development"]:
+                # a development of a published story: its own headline, and the older article points to it
+                cat = article["category"] or classify(title, desc)
+                new_slug = publish(article, cat, item["name"], link, item["image"])
+                apply_update(article["duplicateOf"], article["update"] or article["title"], "leia a matéria", f"/{new_slug}")
+                cache.add(fp)
+                published += 1
                 continue
             if article["duplicateOf"]:
                 dup = article["duplicateOf"]
