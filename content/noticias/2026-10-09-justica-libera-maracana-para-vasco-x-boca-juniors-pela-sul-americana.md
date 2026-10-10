@@ -9,7 +9,7 @@ imageUrl: "https://s2-ge.glbimg.com/K2pCkLCdAIFBNkw36XDZdnRZt6E=/i.s3.glbimg.com
 excerpt: "O desembargador Marco Antônio Ibrahim, do TJRJ, acatou recurso do Vasco e autorizou a realização da semifinal da Sul-Americana contra o Boca Juniors no Maracanã, no dia 20 de outubro. A decisão derrubou a recusa da concessionária e reconheceu o direito do clube ao estádio. O jogo está confirmado para as 21h30."
 seoTitle: "Justiça libera Maracanã para Vasco x Boca Juniors"
 seoDescription: "TJRJ acatou recurso do Vasco e autorizou o Maracanã para a semifinal da Sul-Americana contra o Boca Juniors no dia 20 de outubro, às 21h30."
-updated: "2026-10-10T14:45:47-03:00"
+updated: "2026-10-10T15:01:10-03:00"
 ---
 
 O Vasco venceu mais uma batalha judicial pelo direito de jogar em casa. O desembargador Marco Antônio Ibrahim, presidente da 23ª Câmara de Direito Privado do Tribunal de Justiça do Estado do Rio de Janeiro, publicou decisão nesta sexta-feira determinando que a concessionária disponibilize o Maracanã para a semifinal da CONMEBOL Sudamericana entre Vasco e Boca Juniors, marcada para o dia 20 de outubro, às 21h30. O clube deveria indicar o estádio à entidade sul-americana até sábado, e a decisão chegou no limite do prazo.
@@ -23,3 +23,5 @@ O Vasco agradeceu ao Ministério Público, ao TJRJ, à CBF e ao Governo do Estad
 **Atualização em 10/10 às 10:30:** Fla e Flu entraram com recurso no TJRJ para derrubar a decisão que liberou o Maracanã para Vasco x Boca Juniors pela Sul-Americana. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/10/consorcio-fla-x-flu-recorre-para-tirar-jogo-do-vasco-do-maracana.ghtm))
 
 **Atualização em 10/10 às 14:45:** A desembargadora Suely Lopes Magalhães derrubou a autorização concedida por Ibrahim, devolvendo a decisão ao relator do caso. O Maracanã está novamente bloqueado para o jogo. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/10/justica-derruba-decisao-de-ceder-maracana-para-vasco-x-boca-juniors.ghtml))
+
+**Atualização em 10/10 às 15:01:** O TJ-RJ suspendeu a liminar que havia liberado o Maracanã, atendendo a mandado de segurança do consórcio Fla-Flu. Mais de 45 mil ingressos já tinham sido vendidos quando a decisão foi derrubada. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/10/justica-suspende-liminar-que-determinava-vasco-x-boca-no-maracana.htm))
