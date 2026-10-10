@@ -127,7 +127,13 @@ def load_cache(path: str) -> set:
         return set()
 
 def save_cache(path: str, data: set):
-    Path(path).write_text(json.dumps(list(data)))
+    # Sorted, and only written when it changes: a set has no stable order, so dumping it as-is
+    # rewrote the file on every run, which made the workflow commit (and Vercel deploy) with no news.
+    text = json.dumps(sorted(data))
+    p = Path(path)
+    if p.exists() and p.read_text() == text:
+        return
+    p.write_text(text)
 
 def slugify(text: str) -> str:
     text = text.lower()
