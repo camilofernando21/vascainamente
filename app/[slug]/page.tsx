@@ -14,7 +14,7 @@ import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 import { CATEGORY_NAMES, categoryHref } from "@/lib/categories";
 import { toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_NAME, absoluteUrl } from "@/lib/site";
-import { formatDateFull, readingTime } from "@/lib/time";
+import { formatDateFull, formatDateShort, readingTime } from "@/lib/time";
 import { cn } from "@/lib/utils";
 
 export const revalidate = 60;
@@ -44,6 +44,7 @@ export async function generateMetadata({
       title,
       description,
       publishedTime: new Date(post.date).toISOString(),
+      ...(post.updated ? { modifiedTime: new Date(post.updated).toISOString() } : {}),
       section: CATEGORY_NAMES[post.category],
     },
     twitter: { card: "summary_large_image", title, description },
@@ -71,7 +72,7 @@ export default async function ArticlePage({
     headline: post.title,
     description: post.seoDescription || post.excerpt,
     datePublished: new Date(post.date).toISOString(),
-    dateModified: new Date(post.date).toISOString(),
+    dateModified: new Date(post.updated ?? post.date).toISOString(),
     articleSection: CATEGORY_NAMES[post.category],
     inLanguage: "pt-BR",
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -116,6 +117,14 @@ export default async function ArticlePage({
               </Link>
               <span aria-hidden="true"> · </span>
               <time dateTime={post.date}>{formatDateFull(post.date)}</time>
+              {post.updated && (
+                <>
+                  <span aria-hidden="true"> · </span>
+                  <span>
+                    Atualizado em <time dateTime={post.updated}>{formatDateShort(post.updated)}</time>
+                  </span>
+                </>
+              )}
             </p>
             <h1 className="vm-article-title">{post.title}</h1>
             {post.excerpt && <p className="vm-article-dek">{post.excerpt}</p>}

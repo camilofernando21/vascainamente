@@ -36,6 +36,8 @@ export interface PostMeta {
   // YouTube video picked by the news robot (official channel only)
   videoId?: string;
   videoSource?: string;
+  // set by the news robot when a later source added important information to this article
+  updated?: string;
 }
 
 export interface Post extends PostMeta {
@@ -74,6 +76,7 @@ function readPostFile(slug: string): Post {
     venue: data.venue,
     videoId: typeof data.videoId === "string" && data.videoId ? data.videoId : undefined,
     videoSource: typeof data.videoSource === "string" && data.videoSource ? data.videoSource : undefined,
+    updated: typeof data.updated === "string" && data.updated ? data.updated : undefined,
     content,
   };
 }

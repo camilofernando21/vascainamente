@@ -11,6 +11,7 @@ import calendar
 import unicodedata
 import time
 from datetime import datetime
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import anthropic
 
@@ -209,8 +210,60 @@ def is_fatal_api_error(e: Exception) -> bool:
         return "credit balance" in msg or "billing" in msg
     return False
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list) -> dict:
+# The servers run in UTC: every date written by the robot uses Sao Paulo time explicitly.
+SP_TZ = ZoneInfo("America/Sao_Paulo")
+
+# Same-fact detection: news published in the last 48h are sent to the AI (title + summary) in the
+# same call that rewrites the article, so a story already covered by another source is skipped,
+# or appended to the existing article when it brings important new information.
+RECENT_WINDOW_HOURS = 48
+RECENT_MAX = 40
+FRONT_FIELD = re.compile(r'^(title|slug|date|excerpt):\s*"(.*)"\s*$', re.MULTILINE)
+
+def load_recent_posts() -> list:
+    cutoff = time.time() - RECENT_WINDOW_HOURS * 3600
+    posts = []
+    for path in Path("content/noticias").glob("*.md"):
+        try:
+            text = path.read_text(encoding="utf-8")
+            end = text.find("\n---", 4)
+            fields = dict(FRONT_FIELD.findall(text[:end]))
+            ts = datetime.fromisoformat(fields["date"]).timestamp()
+        except Exception:
+            continue
+        if ts >= cutoff:
+            posts.append({
+                "slug": fields.get("slug") or path.stem,
+                "title": fields.get("title", ""),
+                "excerpt": fields.get("excerpt", ""),
+                "path": path,
+                "ts": ts,
+            })
+    posts.sort(key=lambda p: -p["ts"])
+    return posts[:RECENT_MAX]
+
+def recent_prompt(recent: list) -> str:
+    if not recent:
+        return ""
+    lines = "\n".join(f"- {p['slug']}: {p['title']} | {p['excerpt'][:200]}" for p in recent)
+    return f"\nMatérias já publicadas no site nas últimas 48 horas (slug: título | resumo):\n{lines}\n"
+
+DUPLICATE_FIELD = (
+    "\n- \"duplicateOf\": o slug de UMA matéria publicada acima que noticia o MESMO fato desta notícia "
+    "(o mesmo anúncio, a mesma decisão, o mesmo resultado, a mesma declaração), ou null. "
+    "Notícias diferentes sobre o mesmo jogo ou o mesmo tema (prévia, escalação, resultado, coletiva, ingressos) "
+    "NÃO são o mesmo fato. Na dúvida, null."
+    "\n- \"update\": somente se duplicateOf não for null. Use APENAS para um fato concreto e novo que muda o que o "
+    "torcedor sabe e que NÃO está no título nem no resumo da matéria publicada: horário ou data definidos, ingressos "
+    "à venda ou preço, local confirmado, lesão ou desfalque confirmado, valores de negócio, placar. Escreva 1 ou 2 "
+    "frases como notícia, direto ao fato (nunca \"a notícia informa\" ou \"a fonte detalha\"). Nomes, cargos, "
+    "grafias, detalhes do processo ou outra forma de contar o mesmo fato NÃO são novidade: nesses casos, null."
+)
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None) -> dict:
+    recent = recent or []
     video_field = VIDEO_FIELD if videos else ""
+    duplicate_field = DUPLICATE_FIELD if recent else ""
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1200,
@@ -224,7 +277,7 @@ Artigo original:
 Título: {title}
 Trecho: {desc}
 Fonte: {source}
-{video_prompt(videos)}
+{video_prompt(videos)}{recent_prompt(recent)}
 {CATEGORY_GUIDE}
 
 Retorne SOMENTE um JSON (sem markdown) com:
@@ -233,7 +286,7 @@ Retorne SOMENTE um JSON (sem markdown) com:
 - "body": 3-4 parágrafos desenvolvendo a notícia
 - "seoTitle": título SEO (máx 60 chars)
 - "seoDescription": meta description (máx 155 chars)
-- "category": uma das categorias acima, exatamente como escrita{video_field}"""
+- "category": uma das categorias acima, exatamente como escrita{video_field}{duplicate_field}"""
         }]
     )
     text = response.content[0].text.strip()
@@ -249,15 +302,37 @@ Retorne SOMENTE um JSON (sem markdown) com:
     valid_ids = {v["id"] for v in videos}
     vid = article.get("videoId")
     article["videoId"] = vid if isinstance(vid, str) and vid in valid_ids else None
+    # same-fact check: only a slug that was actually offered counts
+    by_slug = {p["slug"]: p for p in recent}
+    dup = article.get("duplicateOf")
+    article["duplicateOf"] = by_slug.get(dup) if isinstance(dup, str) else None
+    upd = article.get("update")
+    article["update"] = strip_dashes(upd.strip()) if article["duplicateOf"] and isinstance(upd, str) and upd.strip() else None
     return article
 
+UPDATED_LINE = re.compile(r'^updated:\s*"[^"]*"\s*\n', re.MULTILINE)
+
+def apply_update(post: dict, update: str, source: str, url: str):
+    """Appends the new information to the existing article and marks it as updated (no new page)."""
+    now = datetime.now(SP_TZ)
+    path = post["path"]
+    text = path.read_text(encoding="utf-8")
+    end = text.find("\n---", 4)
+    front, body = text[:end], text[end:]
+    front = UPDATED_LINE.sub("", front + "\n").rstrip("\n")
+    front += f'\nupdated: "{now.isoformat(timespec="seconds")}"'
+    credit = f" ([{source}]({url}))" if url else f" ({source})"
+    note = f"\n\n**Atualização em {now.strftime('%d/%m')} às {now.strftime('%H:%M')}:** {update}{credit}\n"
+    path.write_text(front + body.rstrip("\n") + note, encoding="utf-8")
+    print(f"ATUALIZADA {post['slug']}: {update}")
+
 def publish(article: dict, category: str, source: str, url: str, image_url: str = ""):
-    now = datetime.now()
+    now = datetime.now(SP_TZ)
     video_frontmatter = (
         f'videoId: "{article["videoId"]}"\nvideoSource: "Vasco TV"\n' if article.get("videoId") else ""
     )
     slug = f"{now.strftime('%Y-%m-%d')}-{slugify(article['title'])}"
-    date = now.strftime("%Y-%m-%dT%H:%M:%S-03:00")
+    date = now.isoformat(timespec="seconds")  # e.g. 2026-10-10T00:36:12-03:00
 
     content = f"""---
 title: "{article['title'].replace('"', "'")}"
@@ -283,6 +358,8 @@ def main():
     cache_file = ".news_cache.json"
     cache = load_cache(cache_file)
     published = 0
+    skipped = 0
+    updated = 0
     videos = None  # fetched once, only when there is news to process
 
     if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
@@ -313,7 +390,19 @@ def main():
                 try:
                     if videos is None:
                         videos = fetch_recent_videos()
-                    article = process_with_ai(client, title, desc, src["name"], videos)
+                    # re-read on every item: includes what this same run has just published
+                    recent = load_recent_posts()
+                    article = process_with_ai(client, title, desc, src["name"], videos, recent)
+                    if article["duplicateOf"]:
+                        dup = article["duplicateOf"]
+                        if article["update"]:
+                            apply_update(dup, article["update"], src["name"], link)
+                            updated += 1
+                        else:
+                            print(f"PULADA (mesmo fato de {dup['slug']}): {title}")
+                            skipped += 1
+                        cache.add(fp)
+                        continue
                     # AI category first; keyword rules only as a fallback
                     cat = article["category"] or classify(title, desc)
                     publish(article, cat, src["name"], link, image_url)
@@ -329,7 +418,7 @@ def main():
             print(f"  ERRO RSS {src['name']}: {e}")
 
     save_cache(cache_file, cache)
-    print(f"\n{published} noticia(s) publicada(s).")
+    print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) por repetir o mesmo fato.")
 
 if __name__ == "__main__":
     main()
