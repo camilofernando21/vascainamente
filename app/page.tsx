@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import NavTabs from "@/components/NavTabs";
 import ScrollBadge from "@/components/effects/ScrollBadge";
 import HeadlineMarquee from "@/components/home/HeadlineMarquee";
-import GoalSection from "@/components/home/GoalSection";
+import SashSection from "@/components/home/SashSection";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
 import HistoricQuote from "@/components/home/HistoricQuote";
@@ -61,7 +61,7 @@ export default async function Home() {
       </div>
 
       <HeadlineMarquee items={posts.slice(0, 12).map(toHomeItem)} />
-      <GoalSection item={featured ? toHomeItem(featured) : null} />
+      <SashSection item={featured ? toHomeItem(featured) : null} />
       <LatestHorizontal items={posts.slice(1, 5).map(toHomeItem)} />
       <TodayCards
         items={today.items.map(toHomeItem)}
