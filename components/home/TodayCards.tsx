@@ -6,6 +6,7 @@ import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
 import { PlayMark } from "@/components/ui/play-mark";
 import { CruzMalta } from "@/components/ui/cruz-malta";
+import { TimeAgo } from "@/components/TimeAgo";
 
 // Positions and tilts copied from Bam83's #quotes field.
 const SLOTS: { style: React.CSSProperties; rot: number }[] = [
@@ -170,7 +171,7 @@ export default function TodayCards({
                       {item.source || "Vascainamente"}
                       {item.hasVideo && <PlayMark size={8} />}
                     </span>
-                    <span className="quote-handle">{item.ago}</span>
+                    <span className="quote-handle"><TimeAgo date={item.date} initial={item.ago} /></span>
                   </div>
                 </div>
                 <p className="quote-text">{item.title}</p>

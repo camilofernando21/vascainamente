@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
 import { PlayMark } from "@/components/ui/play-mark";
+import { TimeAgo } from "@/components/TimeAgo";
 
 // List rows in the language of the home's "últimas" panels: label, serif title, mono summary, stat line.
 export default function NewsList({
@@ -40,7 +41,7 @@ export default function NewsList({
             </span>
             <span className="vm-news-meta">
               <span>{item.source || "Vascainamente"}</span>
-              <span>{item.ago}</span>
+              <span><TimeAgo date={item.date} initial={item.ago} /></span>
             </span>
           </Link>
         </li>

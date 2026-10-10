@@ -3,6 +3,7 @@ import type { Post } from "@/lib/posts";
 import { CATEGORY_LABELS } from "@/lib/categories";
 import { timeAgoWords } from "@/lib/time";
 import { NumberTicker } from "@/components/motion/number-ticker";
+import { TimeAgo } from "@/components/TimeAgo";
 
 export default function EditorialGrid({
   analysisPost,
@@ -34,7 +35,7 @@ function AnalysisCard({ post }: { post: Post }) {
       </h2>
       <p className="mt-3 text-[13px] leading-[1.7] text-text-secondary">{post.excerpt}</p>
       <p className="mt-4 text-[12px] text-text-meta">
-        {post.source} · {timeAgoWords(post.date)}
+        {post.source} · <TimeAgo date={post.date} initial={timeAgoWords(post.date)} />
       </p>
     </Link>
   );
@@ -97,7 +98,7 @@ function ResultCard({ post }: { post: Post }) {
             </div>
             <p className="mt-4 text-[12px] text-text-meta">
               {post.venue ? `${post.venue} · ` : ""}
-              {timeAgoWords(post.date)}
+              <TimeAgo date={post.date} initial={timeAgoWords(post.date)} />
             </p>
           </div>
         ) : (
@@ -106,7 +107,7 @@ function ResultCard({ post }: { post: Post }) {
               {post.title}
             </h2>
             <p className="mt-4 text-[12px] text-text-meta">
-              {post.source} · {timeAgoWords(post.date)}
+              {post.source} · <TimeAgo date={post.date} initial={timeAgoWords(post.date)} />
             </p>
           </div>
         )}

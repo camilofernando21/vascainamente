@@ -13,6 +13,7 @@ export interface HomeItem {
   source: string;
   sourceShort: string;
   imageUrl: string;
+  date: string;
   ago: string;
   agoCompact: string;
   dateFull: string;
@@ -53,6 +54,7 @@ export function toHomeItem(post: Post): HomeItem {
     source: post.source,
     sourceShort: sourceShort(post.source),
     imageUrl: post.imageUrl,
+    date: post.date,
     ago: timeAgoWords(post.date),
     agoCompact: timeAgoCompact(post.date),
     dateFull: formatDateFull(post.date),

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
 import { PlayMark } from "@/components/ui/play-mark";
+import { TimeAgo } from "@/components/TimeAgo";
 
 // Static version of the home's floating cards ("Tudo o que saiu"): avatar with the source's initials,
 // source, time and the headline, with the same slight tilt.
@@ -20,7 +21,7 @@ export default function NewsCards({ items }: { items: HomeItem[] }) {
                   {item.source || "Vascainamente"}
                   {item.hasVideo && <PlayMark size={8} />}
                 </span>
-                <span className="quote-handle">{item.ago}</span>
+                <span className="quote-handle"><TimeAgo date={item.date} initial={item.ago} /></span>
               </span>
             </span>
             <span className="vm-card-title">{item.title}</span>

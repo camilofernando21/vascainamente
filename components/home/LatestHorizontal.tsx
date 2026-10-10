@@ -6,6 +6,7 @@ import { CROSS_PATH } from "@/components/ui/cruz-malta";
 import type { HomeItem } from "@/lib/home";
 import { cn } from "@/lib/utils";
 import { PlayMark } from "@/components/ui/play-mark";
+import { TimeAgo } from "@/components/TimeAgo";
 
 const LINE = "rgba(240,235,225,0.08)";
 const LINE_MID = "rgba(240,235,225,0.15)";
@@ -164,7 +165,7 @@ export default function LatestHorizontal({ items }: { items: HomeItem[] }) {
                     <span className="q-stat-cat">Fonte</span>
                   </div>
                   <div className="q-stat-item">
-                    <span className="q-stat-val">{item.ago}</span>
+                    <span className="q-stat-val"><TimeAgo date={item.date} initial={item.ago} /></span>
                     <span className="q-stat-cat">Publicado</span>
                   </div>
                   <div className="q-stat-item">

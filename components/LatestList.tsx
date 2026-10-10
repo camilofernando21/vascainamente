@@ -3,6 +3,7 @@ import { VariableFontCursorProximity } from "@/components/ui/variable-font-curso
 import type { Post } from "@/lib/posts";
 import { CATEGORY_LABELS } from "@/lib/categories";
 import { timeAgoCompact } from "@/lib/time";
+import { TimeAgo } from "@/components/TimeAgo";
 
 export default function LatestList({ posts }: { posts: Post[] }) {
   return (
@@ -33,7 +34,7 @@ export default function LatestList({ posts }: { posts: Post[] }) {
                 {CATEGORY_LABELS[post.category]}
               </span>
               <span className="whitespace-nowrap text-[11px] text-text-muted">
-                {timeAgoCompact(post.date)}
+                <TimeAgo date={post.date} initial={timeAgoCompact(post.date)} compact />
               </span>
             </Link>
           </li>
