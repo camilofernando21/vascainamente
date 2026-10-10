@@ -9,7 +9,7 @@ imageUrl: "https://s2-ge.glbimg.com/K2pCkLCdAIFBNkw36XDZdnRZt6E=/i.s3.glbimg.com
 excerpt: "A Conmebol confirmou nas redes sociais que a semifinal da Sul-Americana entre Vasco e Boca Juniors será realizada no Maracanã, no dia 20 de outubro. A decisão veio após vitória do clube na Justiça, que derrubou a recusa da concessionária do estádio. A venda de ingressos já começou para os sócios."
 seoTitle: "Vasco x Boca Juniors confirmado no Maracanã pela Sul-Americana"
 seoDescription: "Conmebol oficializa Vasco x Boca Juniors no Maracanã em 20 de outubro pela semifinal da Sul-Americana. Venda de ingressos aberta para sócios."
-updated: "2026-10-10T11:45:47-03:00"
+updated: "2026-10-10T14:01:00-03:00"
 ---
 
 O Maracanã receberá Vasco e Boca Juniors na semifinal da Copa Sul-Americana. A Conmebol publicou o anúncio oficial nas redes sociais, confirmando o estádio para o duelo marcado para o dia 20 de outubro, às 21h30. A definição só foi possível após decisão judicial favorável ao clube, publicada nesta sexta-feira pelo desembargador Marco Antônio Ibrahim, presidente da 23ª Câmara de Direito Privado do Tribunal de Justiça do Estado do Rio de Janeiro.
@@ -23,3 +23,5 @@ Com o estádio definido e o prazo da Conmebol cumprido, o Vasco agora se concent
 **Atualização em 10/10 às 00:36:** O Vasco abriu a venda de ingressos para os sócios do Sócio Gigante, pelo site oficial e pelo aplicativo do clube; sócios estatutários compram pelo sociovasco.com.br. O público geral e quem tem direito a gratuidade poderão comprar a partir de 12 de outubro, às 10h, pelo vasco.eleventickets.com. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/09/conmebol-anuncia-vasco-x-boca-juniors-no-maracana.ghtml))
 
 **Atualização em 10/10 às 11:45:** Apenas entre sócios-torcedores, o Vasco já vendeu 35 mil ingressos em 12 horas, com a venda geral ainda por abrir. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/10/vasco-vende-35-mil-ingressos-para-jogo-contra-o-boca-no-maracana-em-12-horas.ghtml))
+
+**Atualização em 10/10 às 14:01:** Em menos de 12 horas de vendas exclusivas para sócios-torcedores, o Vasco já comercializou 45 mil ingressos para a semifinal, com o Setor Sul esgotado e a venda geral ainda por abrir. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/10/vasco-vende-35-mil-ingressos-para-jogo-contra-o-boca-no-maracana-em-12-horas.ghtml))
