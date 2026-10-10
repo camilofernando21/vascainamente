@@ -12,6 +12,8 @@ const nextConfig = {
       { protocol: "https", hostname: "**.glbimg.com" },
       { protocol: "https", hostname: "trivela.com.br" },
       { protocol: "https", hostname: "i.ytimg.com" },
+      // photos from the official Vasco profile on X (lineup and match cards)
+      { protocol: "https", hostname: "pbs.twimg.com" },
     ],
   },
   async redirects() {

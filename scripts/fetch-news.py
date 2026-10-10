@@ -226,7 +226,7 @@ SP_TZ = ZoneInfo("America/Sao_Paulo")
 # or appended to the existing article when it brings important new information.
 RECENT_WINDOW_HOURS = 72
 RECENT_MAX = 60
-FRONT_FIELD = re.compile(r'^(title|slug|date|excerpt):\s*"(.*)"\s*$', re.MULTILINE)
+FRONT_FIELD = re.compile(r'^(title|slug|date|excerpt|matchEvent):\s*"(.*)"\s*$', re.MULTILINE)
 
 def load_recent_posts() -> list:
     cutoff = time.time() - RECENT_WINDOW_HOURS * 3600
@@ -244,6 +244,7 @@ def load_recent_posts() -> list:
                 "slug": fields.get("slug") or path.stem,
                 "title": fields.get("title", ""),
                 "excerpt": fields.get("excerpt", ""),
+                "matchEvent": fields.get("matchEvent"),
                 "path": path,
                 "ts": ts,
             })
@@ -253,19 +254,24 @@ def load_recent_posts() -> list:
 def recent_prompt(recent: list) -> str:
     if not recent:
         return ""
-    lines = "\n".join(f"- {p['slug']}: {p['title']} | {p['excerpt'][:200]}" for p in recent)
+    lines = "\n".join(
+        f"- {p['slug']}: {p['title']} | {p['excerpt'][:200]}" + (f" [{p['matchEvent']}]" if p.get("matchEvent") else "")
+        for p in recent
+    )
     return f"\nMatérias já publicadas no site nos últimos 3 dias (slug: título | resumo):\n{lines}\n"
 
 DUPLICATE_FIELD = (
     "\n- \"duplicateOf\": o slug de UMA matéria publicada acima que noticia o MESMO fato desta notícia "
     "(o mesmo anúncio, a mesma decisão, o mesmo resultado, a mesma declaração), ou null. "
     "O site tem UMA matéria por fato. Regras para jogos: cada jogo tem no máximo UMA prévia (horário, onde assistir, "
-    "escalações, 'tudo sobre', 'acompanhe ao vivo' e 'o que se sabe' são todos a mesma prévia) e UM resultado "
+    "provável escalação, 'tudo sobre', 'acompanhe ao vivo' e 'o que se sabe' são todos a mesma prévia) e UM resultado "
     "(placar, como foi, 'vence', 'bate', 'vira', 'atropela', 'empata' são o mesmo resultado). Se já existe a prévia "
     "ou o resultado daquele jogo, esta notícia é o mesmo fato. Também é o mesmo fato: a mesma entrevista ou coletiva da "
     "mesma pessoa, a mesma decisão da Justiça, o mesmo anúncio oficial, a mesma contratação, a mesma morte, contados "
     "com outras palavras ou por outro veículo. São fatos diferentes, e podem ser publicados: a prévia e o resultado "
     "do mesmo jogo, a fala de outra pessoa, uma análise ou bastidor com informação que a matéria publicada não tem. "
+    "Os gols seguintes de um jogo são o mesmo fato da matéria do primeiro gol (marcada [gol]): use update com o novo "
+    "placar e quem marcou. "
     "Na dúvida entre mesmo fato e fato novo sobre o mesmo jogo ou anúncio, é o mesmo fato."
     "\n- \"update\": somente se duplicateOf não for null. Use APENAS para um fato concreto e novo que muda o que o "
     "torcedor sabe e que NÃO está no título nem no resumo da matéria publicada: horário ou data definidos, ingressos "
@@ -284,16 +290,21 @@ X_NOTE = (
     "que não estão no post.\n"
 )
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False) -> dict:
+OFFICIAL_NOTE = (
+    "\nATENÇÃO: o texto acima é um post do perfil oficial do Vasco no X. O que ele informa é oficial e pode ser "
+    "afirmado como fato (\"o Vasco divulgou\", \"o clube confirmou\"). É notícia: escalação confirmada, gol, resultado "
+    "final, contratação, saída, renovação, lesão, comunicado oficial, ingressos, data ou local de jogo. Se houver imagem, "
+    "leia nela os nomes da escalação, o placar ou o comunicado. Marketing, produto, sócio-torcedor, meme, contagem "
+    "regressiva, aniversário, convite para live, bastidor sem informação e lances do jogo que não são gol (cartão, "
+    "substituição, intervalo, chance perdida) são skip: responda SOMENTE {\"skip\": true}. Nunca invente nome, "
+    "número ou placar que não esteja no texto ou na imagem.\n"
+)
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None) -> dict:
     recent = recent or []
     video_field = VIDEO_FIELD if videos else ""
     duplicate_field = DUPLICATE_FIELD if recent else ""
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=1200,
-        messages=[{
-            "role": "user",
-            "content": f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
+    prompt = f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
 Escreva de forma direta, profissional e apaixonada pelo clube. NUNCA use linguagem de IA.
 Regra de pontuação: nunca use travessão (—) nem meia-risca (–), use vírgula, ponto ou dois-pontos.
 
@@ -301,7 +312,7 @@ Artigo original:
 Título: {title}
 Trecho: {desc}
 Fonte: {source}
-{X_NOTE if from_x else ""}{video_prompt(videos)}{recent_prompt(recent)}
+{(OFFICIAL_NOTE if official else X_NOTE) if from_x else ""}{video_prompt(videos)}{recent_prompt(recent)}
 {CATEGORY_GUIDE}
 
 Retorne SOMENTE um JSON (sem markdown) com:
@@ -311,8 +322,17 @@ Retorne SOMENTE um JSON (sem markdown) com:
 - "seoTitle": título SEO (máx 60 chars)
 - "seoDescription": meta description (máx 155 chars)
 - "category": uma das categorias acima, exatamente como escrita
-- "importance": número de 1 a 5, o peso da notícia para o torcedor do Vasco hoje. 5: anúncio oficial grande (contratação ou saída de peso, título, troca de técnico, decisão que muda a temporada). 4: resultado de jogo do time principal, lesão séria de titular, negociação avançada de peso. 3: prévia de jogo importante, notícia relevante do elenco ou do clube. 2: bastidores, declarações, base, feminino. 1: curiosidade, adversário, notícia lateral{video_field}{duplicate_field}"""
-        }]
+- "importance": número de 1 a 5, o peso da notícia para o torcedor do Vasco hoje. 5: anúncio oficial grande (contratação ou saída de peso, título, troca de técnico, decisão que muda a temporada). 4: resultado de jogo do time principal, lesão séria de titular, negociação avançada de peso. 3: prévia de jogo importante, notícia relevante do elenco ou do clube. 2: bastidores, declarações, base, feminino. 1: curiosidade, adversário, notícia lateral
+- "matchEvent": "escalacao" se for o time titular do Vasco CONFIRMADO para o jogo de hoje (escalado, time "
+confirmado; provável escalação não conta), "gol" se for um gol do jogo em andamento, "resultado" se for o placar "
+final de um jogo do time principal, ou null{video_field}{duplicate_field}"""
+    # photos from the official account carry the lineup or the score: the model reads them
+    content = [{"type": "image", "source": {"type": "url", "url": u}} for u in (photos or [])]
+    content.append({"type": "text", "text": prompt})
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1200,
+        messages=[{"role": "user", "content": content}],
     )
     text = response.content[0].text.strip()
     text = re.sub(r"^```(?:json)?\s*", "", text)
@@ -327,6 +347,8 @@ Retorne SOMENTE um JSON (sem markdown) com:
     article["category"] = valid_category(article.get("category"))
     imp = article.get("importance")
     article["importance"] = int(imp) if isinstance(imp, (int, float)) and 1 <= int(imp) <= 5 else None
+    event = article.get("matchEvent")
+    article["matchEvent"] = event if event in MATCH_EVENTS else None
     # only accept an ID that was actually offered: never trust a made-up one
     valid_ids = {v["id"] for v in videos}
     vid = article.get("videoId")
@@ -335,9 +357,17 @@ Retorne SOMENTE um JSON (sem markdown) com:
     by_slug = {p["slug"]: p for p in recent}
     dup = article.get("duplicateOf")
     article["duplicateOf"] = by_slug.get(dup) if isinstance(dup, str) else None
+    # official lineup and goals are news of their own: never folded into the preview of the match
+    same = article["duplicateOf"]
+    if same and article["matchEvent"] in EVENT_SAME_AS and same.get("matchEvent") not in EVENT_SAME_AS[article["matchEvent"]]:
+        article["duplicateOf"] = None
     upd = article.get("update")
     article["update"] = strip_dashes(upd.strip()) if article["duplicateOf"] and isinstance(upd, str) and upd.strip() else None
     return article
+
+MATCH_EVENTS = {"escalacao", "gol", "resultado"}
+# an official lineup or a goal only repeats an article of these events (the result keeps the AI's call)
+EVENT_SAME_AS = {"escalacao": {"escalacao"}, "gol": {"gol", "resultado"}}
 
 UPDATED_LINE = re.compile(r'^updated:\s*"[^"]*"\s*\n', re.MULTILINE)
 
@@ -361,6 +391,8 @@ def publish(article: dict, category: str, source: str, url: str, image_url: str 
         f'videoId: "{article["videoId"]}"\nvideoSource: "Vasco TV"\n' if article.get("videoId") else ""
     )
     importance_frontmatter = f'importance: {article["importance"]}\n' if article.get("importance") else ""
+    if article.get("matchEvent"):
+        importance_frontmatter += f'matchEvent: "{article["matchEvent"]}"\n'
     slug = f"{now.strftime('%Y-%m-%d')}-{slugify(article['title'])}"
     date = now.isoformat(timespec="seconds")  # e.g. 2026-10-10T00:36:12-03:00
 
@@ -435,7 +467,10 @@ def main():
                 videos = fetch_recent_videos()
             # re-read on every item: includes what this same run has just published
             recent = load_recent_posts()
-            article = process_with_ai(client, title, desc, item["name"], videos, recent, from_x=item["from_x"])
+            article = process_with_ai(
+                client, title, desc, item["name"], videos, recent,
+                from_x=item["from_x"], official=item.get("official", False), photos=item.get("photos"),
+            )
             if article.get("skip"):
                 print(f"PULADA (post sem notícia): {title[:60]}")
                 skipped += 1

@@ -8,7 +8,7 @@ Desligado enquanto não houver X_BEARER_TOKEN. Para gastar pouco:
 
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -18,8 +18,12 @@ API = "https://api.x.com/2"
 STATE_FILE = Path(".x_state.json")
 SP_TZ = ZoneInfo("America/Sao_Paulo")
 
-# perfis acompanhados (handle sem @). O nome exibido vem da própria API.
-ACCOUNTS = ["pabloramadas", "gustavotutinha", "pedrosa", "leolacerdantv"]
+# perfis acompanhados (handle sem @, minúsculo). O nome exibido vem da própria API.
+ACCOUNTS = ["vascodagama", "pabloramadas", "gustavotutinha", "pedrosa", "leolacerdantv"]
+# perfil oficial do clube: o que ele posta é fato confirmado, e a escalação costuma vir só na imagem
+OFFICIAL = {"vascodagama"}
+# na primeira leitura de um perfil, posts mais novos que isso ainda viram notícia
+FIRST_READ_HOURS = 3
 
 # a cerca de US$ 0,005 por post, 2.000 posts dão uns US$ 10 por mês
 DEFAULT_MONTHLY_LIMIT = 2000
@@ -80,7 +84,9 @@ def fetch_x_items() -> list:
             first_time = handle not in since
             params = {
                 "exclude": "retweets,replies",
-                "tweet.fields": "created_at",
+                "tweet.fields": "created_at,attachments",
+                "expansions": "attachments.media_keys",
+                "media.fields": "url,type",
                 "max_results": 5 if first_time else 20,
             }
             if not first_time:
@@ -96,20 +102,30 @@ def fetch_x_items() -> list:
             if body.get("meta", {}).get("newest_id"):
                 since[handle] = body["meta"]["newest_id"]
             if first_time:
-                # primeira leitura: só marca onde parou, nada antigo vira notícia
+                # primeira leitura: só o que saiu nas últimas horas vira notícia, nada antigo
                 print(f"  X: @{handle} começou a ser acompanhado")
-                continue
+                cutoff = datetime.now(SP_TZ) - timedelta(hours=FIRST_READ_HOURS)
+                posts = [
+                    p for p in posts
+                    if p.get("created_at") and datetime.fromisoformat(p["created_at"].replace("Z", "+00:00")) >= cutoff
+                ]
 
+            media = {m["media_key"]: m for m in body.get("includes", {}).get("media", [])}
             for post in reversed(posts):  # do mais antigo para o mais novo
                 text = " ".join(post.get("text", "").split())
-                if len(text) < MIN_TEXT:
+                keys = post.get("attachments", {}).get("media_keys", [])
+                photos = [media[k]["url"] for k in keys if k in media and media[k].get("type") == "photo" and media[k].get("url")]
+                # post curto só passa com foto (a escalação oficial vem na arte, com pouco texto)
+                if len(text) < MIN_TEXT and not photos:
                     continue
                 items.append({
                     "name": f"{user['name']} (X)",
                     "title": text[:140],
                     "desc": text,
                     "link": f"https://x.com/{handle}/status/{post['id']}",
-                    "image": "",
+                    "image": photos[0] if photos else "",
+                    "photos": photos[:2],
+                    "official": handle in OFFICIAL,
                     "from_x": True,
                 })
     except requests.RequestException as e:
