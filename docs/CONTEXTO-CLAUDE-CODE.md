@@ -18,7 +18,7 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - O token está salvo como secret `X_BEARER_TOKEN` no GitHub. Nunca mostrar o valor nem commitar.
 - Teto mensal de leitura: 2.000 posts (`X_MONTHLY_POST_LIMIT`). O estado fica em `.x_state.json`.
 - Primeira rodada com token (18:45 UTC, 10/10): os 4 perfis foram marcados, 20 posts lidos no mês.
-- Pendente: confirmar no console do X que o limite de gasto está em cerca de US$ 10 (estava "Cap: Unlimited").
+- Limite de gasto no console do X: FEITO em 10/10. Ciclo de 9/10 a 9/11, teto de US$ 10,00, recarga automática desligada. Saldo de US$ 24,86 (US$ 19,86 gratuitos, vencem em 8/1/2027). Gasto em 10/10: US$ 0,14.
 
 ### Site
 - Tempo relativo calculado no navegador (`components/TimeAgo.tsx`).
