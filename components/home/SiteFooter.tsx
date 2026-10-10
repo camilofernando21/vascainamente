@@ -2,6 +2,7 @@ import Link from "next/link";
 import { NAV_TABS, categoryHref } from "@/lib/categories";
 import type { Category } from "@/lib/posts";
 import LegalLinks from "@/components/consent/LegalLinks";
+import InstagramLink from "@/components/InstagramLink";
 import { PUBLISHER } from "@/lib/site";
 
 const CATEGORIES = NAV_TABS.filter(
@@ -16,6 +17,7 @@ export default function SiteFooter() {
         <img src="/images/logo-vasco.png" alt="" className="h-9 w-auto" />
         <span className="vm-label text-text-hero">Vascainamente</span>
       </Link>
+      <InstagramLink showHandle className="vm-insta-footer" />
       <ul className="vm-footer-cats">
         {CATEGORIES.map((tab) => (
           <li key={tab.category} className="vm-label">

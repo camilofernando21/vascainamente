@@ -3509,6 +3509,7 @@ html.vm-cursor body:not(.is-touch) *::after {
     right: 0;
     bottom: 0;
     z-index: 5;
+    overflow: hidden; /* the glitch layers shift up to 10px sideways: never past the screen edge */
     width: 72vw;
     height: calc(100% - 128px);
     pointer-events: none;
@@ -3548,4 +3549,73 @@ html.vm-cursor body:not(.is-touch) *::after {
   .vm-mnav-bar {
     transition: none;
   }
+}
+
+/* ==========================================================================
+   Instagram link (hero, top bar, footer, phone pinned bar)
+   ========================================================================== */
+
+.vm-insta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-width: 44px;
+  min-height: 44px; /* touch target */
+  color: rgba(240, 235, 225, 0.6);
+  outline: none;
+  transition: color 0.3s ease;
+}
+
+.vm-insta:hover,
+.vm-insta:focus-visible {
+  color: var(--text);
+}
+
+.vm-insta:focus-visible {
+  box-shadow: inset 0 -1px 0 var(--red);
+}
+
+.vm-insta-handle {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+}
+
+/* home hero: top right, same line as the logo */
+.vm-insta-hero {
+  position: absolute;
+  top: 20px;
+  right: 1rem;
+  z-index: 30;
+}
+
+@media (min-width: 1024px) {
+  .vm-insta-hero {
+    top: 24px;
+    right: 2.25rem;
+  }
+}
+
+/* inner pages: right side of the top bar */
+.vm-topbar {
+  justify-content: space-between;
+}
+
+/* footer: next to the logo lockup */
+.vm-insta-footer {
+  justify-content: flex-start;
+}
+
+/* phone pinned bar: right end, after the scrollable categories */
+.vm-insta-bar {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 0 0.75rem;
+  border-left: 1px solid var(--line);
+}
+
+.vm-mnav-bar .vm-mnav-list {
+  flex: 1 1 auto;
+  min-width: 0;
 }

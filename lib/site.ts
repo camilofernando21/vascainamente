@@ -30,3 +30,9 @@ export const PUBLISHER = {
 // Contact for LGPD and content removal requests. Switch back to "contato@vascainamente.com.br"
 // once the domain's e-mail exists.
 export const CONTACT_EMAIL = PUBLISHER.email;
+
+// Official social profiles (also listed as "sameAs" in the Organization schema).
+export const INSTAGRAM = {
+  url: "https://www.instagram.com/_vascainamente_/",
+  handle: "@_vascainamente_",
+} as const;

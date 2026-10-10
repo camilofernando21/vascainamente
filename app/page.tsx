@@ -15,6 +15,7 @@ import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import { dayLabel, factsForToday } from "@/lib/historia";
 import JsonLd from "@/components/JsonLd";
+import InstagramLink from "@/components/InstagramLink";
 import MobileCategoryNav from "@/components/home/MobileCategoryNav";
 import MobileHeroPlayer from "@/components/home/MobileHeroPlayer";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
@@ -48,6 +49,8 @@ export default async function Home() {
       {/* hero keeps its own box so the menu stays pinned to the hero, not to the bottom of the page */}
       <div className="relative vm-hero-wrap">
         <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />
+        {/* Instagram, top right of the hero (desktop and phone) */}
+        <InstagramLink className="vm-insta-hero" size={22} />
         {/* phones only (hidden from 768px up): categories under the logo + pinned bar, and the players */}
         <div className="md:hidden">
           <MobileCategoryNav />
