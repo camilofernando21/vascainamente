@@ -2,7 +2,7 @@
 title: "Árbitro de Boca x Vasco cometeu erro grave em jogo do Boca na Sul-Americana"
 slug: "2026-10-09-arbitro-de-boca-x-vasco-cometeu-erro-grave-em-jogo-do-boca-na-sul-amer"
 date: "2026-10-09T23:57:47-03:00"
-category: "clube"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/10/09/boca-x-vasco-arbitro-da-semifinal-cometeu-erro-bizarro-em-jogo-dos-argentinos-nesta-sul-americana.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/uB9V2o-X6T-RaGN1-iBcKDE43S0=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/y/y/EDWum5QJOht2UlXXF21Q/2026-08-11t233022z-981133741-up1em8b1talos-rtrmadp-3-soccer-sudamericana-boc-rec.jpg"

@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import NavTabs from "@/components/NavTabs";
 import ScrollBadge from "@/components/effects/ScrollBadge";
 import HeadlineMarquee from "@/components/home/HeadlineMarquee";
-import SashSection from "@/components/home/SashSection";
+import NewsOfTheDay from "@/components/home/NewsOfTheDay";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
 import HistoricQuote from "@/components/home/HistoricQuote";
@@ -10,7 +10,7 @@ import VascoTv from "@/components/home/VascoTv";
 import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
-import { pickTodayPosts, toHomeItem } from "@/lib/home";
+import { pickFeaturedPost, pickTodayPosts, toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import { dayLabel, factsForToday } from "@/lib/historia";
@@ -40,6 +40,7 @@ export default async function Home() {
   const historyToday = factsForToday()[0];
   const featured = posts[0] ?? null;
   const today = pickTodayPosts(posts);
+  const ofTheDay = pickFeaturedPost(posts);
 
   return (
     <main className="relative min-h-screen">
@@ -61,7 +62,7 @@ export default async function Home() {
       </div>
 
       <HeadlineMarquee items={posts.slice(0, 12).map(toHomeItem)} />
-      <SashSection item={featured ? toHomeItem(featured) : null} />
+      <NewsOfTheDay item={ofTheDay ? toHomeItem(ofTheDay) : null} />
       <LatestHorizontal items={posts.slice(1, 5).map(toHomeItem)} />
       <TodayCards
         items={today.items.map(toHomeItem)}

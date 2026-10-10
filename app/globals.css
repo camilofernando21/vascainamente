@@ -225,7 +225,6 @@ a {
   }
 }
 
-
 /* ==========================================================================
    Bam83 port: global effects and home sections.
    Values copied from _referencia/bam83/index.html, renamed with vm- ids where needed.
@@ -570,274 +569,158 @@ html.vm-cursor body:not(.is-touch) *::after {
   pointer-events: none;
 }
 
-/* the white diagonal sash of the shirt, drawn across the screen */
-.vm-sash {
+/* the photo seen through the Cruz de Malta, which grows with the scroll until it fills the screen */
+.vm-day-intro {
   position: absolute;
-  left: 50%;
-  top: 56%;
-  width: 170vmax;
-  height: clamp(120px, 22vh, 230px);
-  transform: translate(-50%, -50%) rotate(24deg);
-  background:
-    repeating-linear-gradient(90deg, rgba(13, 13, 13, 0.035) 0 1px, transparent 1px 5px),
-    repeating-linear-gradient(0deg, rgba(13, 13, 13, 0.03) 0 1px, transparent 1px 4px),
-    var(--text);
-  box-shadow: 0 0 0 1px rgba(240, 235, 225, 0.4), 0 40px 120px rgba(0, 0, 0, 0.55);
-  clip-path: inset(-20% 84% -20% 0);
-  overflow: hidden;
-  z-index: 3;
+  inset: 0;
+  z-index: 4;
   pointer-events: none;
-  transition: opacity 0.7s ease, filter 0.7s ease;
-  will-change: clip-path;
+  will-change: opacity, transform;
 }
 
-/* the lead edge of the sash, like a seam being sewn */
-.vm-sash::after {
-  content: "";
+.vm-day-kicker {
   position: absolute;
-  inset: 10px 0;
-  border-top: 1px dashed rgba(13, 13, 13, 0.25);
-  border-bottom: 1px dashed rgba(13, 13, 13, 0.25);
-  pointer-events: none;
-}
-
-.vm-sash-text {
-  position: absolute;
-  top: 50%;
+  bottom: 5.5rem;
   left: 0;
-  display: flex;
-  white-space: nowrap;
-  translate: 0 -50%;
+  right: 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(240, 235, 225, 0.45);
+}
+
+.vm-day-window {
+  --cross: 40vmin;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: block;
+  overflow: hidden;
+  background: var(--bg);
+  -webkit-mask-image: url("/images/escudo-1-cruz.png");
+  mask-image: url("/images/escudo-1-cruz.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center 54%;
+  mask-position: center 54%;
+  -webkit-mask-size: var(--cross) var(--cross);
+  mask-size: var(--cross) var(--cross);
+}
+
+/* fully open: no mask at all, so no edge can ever show */
+.vm-day-window.full {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.vm-day-photo {
+  position: absolute;
+  inset: 0;
   will-change: transform;
 }
 
-.sash-run {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-serif), serif;
-  font-style: italic;
-  font-size: clamp(2.6rem, 9vh, 6.5rem);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--bg);
-}
-
-.sash-sep {
-  width: 0.62em;
-  height: 0.62em;
-  margin: 0 0.55em;
-  object-fit: contain;
-}
-
-/* the cross stamped on the sash: a cream patch so the running headline passes under it */
-.vm-sash-cross {
-  position: absolute;
-  left: 41%;
-  top: 50%;
-  width: clamp(96px, 17vh, 180px);
-  height: clamp(96px, 17vh, 180px);
-  padding: 14px;
-  background: var(--text);
-  object-fit: contain;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(2.4);
-  filter: drop-shadow(0 6px 18px rgba(200, 0, 60, 0.25));
-  z-index: 2;
-}
-
-.vm-sash.stamped .vm-sash-cross {
-  animation: sashStamp 0.45s ease-out;
-}
-
-@keyframes sashStamp {
-  0% { filter: drop-shadow(0 0 0 rgba(200, 0, 60, 0.9)); }
-  100% { filter: drop-shadow(0 6px 18px rgba(200, 0, 60, 0.25)); }
-}
-
-/* once the news opens, the shirt stays behind it as texture */
-.sash-open .vm-sash {
-  opacity: 0.16;
-  filter: blur(1px);
-}
-
-/* phones and reduced motion: a short static strip of the sash above the news */
-.sash-static .vm-sash {
-  clip-path: none;
-}
-.sash-static .vm-sash-cross {
-  opacity: 1;
-  transform: translate(-50%, -50%);
-}
-
-#vm-swish-panel {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 0 6vw;
-  gap: 4vw;
-  z-index: 7;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.7s ease;
-  background: rgba(13, 13, 13, 0.82);
-}
-
-#vm-swish-panel.visible {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.swish-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.swish-eyebrow {
-  color: rgba(240, 235, 225, 0.3);
-  margin-bottom: 1.2rem;
-}
-
-.swish-word {
-  font-family: var(--font-serif), serif;
-  font-size: clamp(5rem, 13vw, 11rem);
-  font-weight: 400;
-  font-style: italic;
-  color: var(--text);
-  line-height: 0.85;
-  letter-spacing: -0.01em;
-}
-
-.swish-title {
-  font-family: var(--font-serif), serif;
-  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
-  line-height: 1.1;
-  color: var(--text);
-  margin-top: 1.8rem;
-  max-width: 24ch;
-}
-
-.swish-copy {
-  font-family: var(--font-mono), monospace;
-  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-  line-height: 1.85;
-  color: rgba(240, 235, 225, 0.45);
-  margin-top: 1.2rem;
-  max-width: 46ch;
-  letter-spacing: 0.04em;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.swish-right {
-  position: relative;
-  display: block;
-  aspect-ratio: 16/9;
-  background: rgba(240, 235, 225, 0.03);
-  border: 1px solid rgba(240, 235, 225, 0.1);
-  overflow: hidden;
-  max-height: 55vh;
-}
-
-.swish-right::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(13, 13, 13, 0.06) 2px,
-    rgba(13, 13, 13, 0.06) 4px
-  );
-  z-index: 2;
-  pointer-events: none;
-}
-
-.swish-image {
+.vm-day-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.swish-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-corner {
+.vm-day-shade {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  z-index: 3;
-}
-.video-corner-tl { top: 8px; left: 8px; border-top: 1px solid rgba(240, 235, 225, 0.3); border-left: 1px solid rgba(240, 235, 225, 0.3); }
-.video-corner-tr { top: 8px; right: 8px; border-top: 1px solid rgba(240, 235, 225, 0.3); border-right: 1px solid rgba(240, 235, 225, 0.3); }
-.video-corner-bl { bottom: 8px; left: 8px; border-bottom: 1px solid rgba(240, 235, 225, 0.3); border-left: 1px solid rgba(240, 235, 225, 0.3); }
-.video-corner-br { bottom: 8px; right: 8px; border-bottom: 1px solid rgba(240, 235, 225, 0.3); border-right: 1px solid rgba(240, 235, 225, 0.3); }
-
-.video-caption {
-  position: absolute;
-  top: 1rem;
-  right: 1.75rem;
-  font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: rgba(240, 235, 225, 0.4);
-  text-transform: uppercase;
-  z-index: 4;
-}
-
-#vm-goal-flash {
-  position: fixed;
   inset: 0;
-  background: var(--flash);
-  pointer-events: none;
-  z-index: 200;
+  background:
+    linear-gradient(to top, rgba(13, 13, 13, 0.95) 0%, rgba(13, 13, 13, 0.55) 38%, rgba(13, 13, 13, 0.05) 70%),
+    linear-gradient(to right, rgba(13, 13, 13, 0.55), transparent 60%);
   opacity: 0;
-  transition: opacity 0.12s ease;
+  transition: opacity 0.9s ease;
+}
+
+.day-open .vm-day-shade,
+.day-static .vm-day-shade {
+  opacity: 1;
+}
+
+.vm-day-panel {
+  position: absolute;
+  left: 6vw;
+  right: 6vw;
+  bottom: 9vh;
+  z-index: 5;
+  max-width: 62rem;
+  pointer-events: none;
+}
+
+.vm-day-panel.visible {
+  pointer-events: auto;
+}
+
+/* each line rises in turn, like the credits of a film */
+.vm-day-eyebrow,
+.vm-day-title,
+.vm-day-copy,
+.vm-day-panel .vm-button {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vm-day-panel.visible .vm-day-eyebrow,
+.vm-day-panel.visible .vm-day-title,
+.vm-day-panel.visible .vm-day-copy,
+.vm-day-panel.visible .vm-button {
+  opacity: 1;
+  transform: none;
+}
+
+.vm-day-panel.visible .vm-day-title { transition-delay: 0.08s; }
+.vm-day-panel.visible .vm-day-copy { transition-delay: 0.18s; }
+.vm-day-panel.visible .vm-button { transition-delay: 0.26s; }
+
+.vm-day-eyebrow {
+  color: rgba(240, 235, 225, 0.6);
+  font-size: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.vm-day-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.4rem, 5.2vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  max-width: 20ch;
+  text-wrap: balance;
+}
+
+.vm-day-title a:hover {
+  opacity: 0.8;
+}
+
+.vm-day-copy {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  color: rgba(240, 235, 225, 0.7);
+  margin-top: 1.4rem;
+  max-width: 52ch;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* reduced motion on large screens: the open state, without the sequence */
+.day-static .vm-day-window {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+.day-static .vm-day-intro {
+  display: none;
 }
 
 @media (max-width: 767px) {
-  #vm-swish-panel {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    padding: 8rem 6vw 2rem;
-    gap: 1rem;
-    overflow-y: auto;
-    align-items: start;
-    align-content: start;
-  }
-  .swish-eyebrow {
-    margin-bottom: 0.6rem;
-  }
-  .swish-word {
-    font-size: 3rem;
-  }
-  .swish-title {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  }
-  .swish-copy {
-    max-width: 100%;
-    font-size: 0.875rem;
-  }
   .vm-button {
     margin-top: 1.2rem;
-  }
-  .swish-right {
-    width: 100%;
-    height: 50vw;
-    aspect-ratio: unset;
-    max-height: none;
   }
   .vm-court-label {
     font-size: 2rem;
@@ -1800,18 +1683,9 @@ html.vm-cursor body:not(.is-touch) *::after {
     overflow: visible;
   }
   .vm-court-label,
-  #vm-goal-flash,
   #vm-latest-progress,
   #vm-latest-nav {
     display: none;
-  }
-  #vm-swish-panel {
-    position: relative;
-    inset: auto;
-    opacity: 1;
-    pointer-events: auto;
-    padding: 6rem 6vw;
-    background: none;
   }
 
   #vm-latest-track {
@@ -3092,9 +2966,6 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 /* external images (next/image fill) and their fallback */
-.swish-right {
-  isolation: isolate;
-}
 
 .vm-img-fallback {
   position: absolute;
@@ -3319,7 +3190,7 @@ html.vm-cursor body:not(.is-touch) *::after {
     min-height: 34svh;
   }
 
-  /* news of the day: no pinned sequence, a short strip of the sash and the news right away */
+  /* news of the day: no pinned sequence, the photo and the news right away */
   #vm-goal {
     height: auto;
   }
@@ -3327,50 +3198,43 @@ html.vm-cursor body:not(.is-touch) *::after {
     position: relative;
     height: auto;
     overflow: hidden;
+    display: block;
   }
   .vm-court-label,
-  #vm-goal-flash {
+  .vm-day-intro {
     display: none;
   }
-  .vm-sash {
-    top: 2.6rem;
-    width: 170vw;
-    height: 58px;
-    transform: translate(-50%, -50%) rotate(5deg);
-    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
-  }
-  .vm-sash::after {
-    inset: 5px 0;
-  }
-  .sash-run {
-    font-size: 1.75rem;
-  }
-  .vm-sash-cross {
-    left: 38%;
-    width: 50px;
-    height: 50px;
-    padding: 6px;
-  }
-  #vm-swish-panel {
+  .vm-day-window {
     position: relative;
     inset: auto;
-    opacity: 1;
-    pointer-events: auto;
-    padding: 5.5rem 1.5rem 3rem;
-    background: none;
-    overflow: visible;
+    height: 62vw;
   }
-  .swish-word {
-    font-size: 2.6rem;
+  .vm-day-shade {
+    background: linear-gradient(to top, rgba(13, 13, 13, 1) 0%, rgba(13, 13, 13, 0) 55%);
   }
-  .swish-title {
-    margin-top: 0.75rem;
-    font-size: 1.6rem;
+  .vm-day-panel {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: -3.5rem;
+    padding: 0 1.5rem 3rem;
   }
-  .swish-copy {
-    margin-top: 0.75rem;
-    -webkit-line-clamp: 3;
+  .vm-day-title {
+    font-size: 1.85rem;
+    line-height: 1.1;
   }
+  .vm-day-copy {
+    margin-top: 0.9rem;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
   .vm-button {
     margin-top: 1rem;
   }

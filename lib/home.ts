@@ -71,3 +71,37 @@ export function pickTodayPosts(posts: Post[], max = 9): { items: Post[]; isToday
   if (today.length >= 3) return { items: today.slice(0, max), isToday: true };
   return { items: posts.slice(0, max), isToday: false };
 }
+
+// "A notícia do dia": the most important news of the last 30 hours, not simply the latest one.
+// Older articles have no importance score, so they get one from what they are about.
+function importanceOf(post: Post): number {
+  if (post.importance) return post.importance;
+  if (post.category === "urgente") return 5;
+  const title = post.title.toLowerCase();
+  // "contra o Vasco" / "Boca x Vasco": the news is about the rival, not about Vasco
+  const aboutVasco = title.includes("vasco") && !/contra o vasco|\bx vasco/.test(title);
+  const official = /\b(oficializa|oficial|anuncia|confirma|contrata|libera)\b/.test(title);
+  if (post.category === "resultado" && /\b(vence|venceu|bate|goleia|vira|empata|perde|perdeu)\b|\d+ a \d+/.test(title))
+    return aboutVasco ? 3.5 : 2;
+  if (!aboutVasco) return 1.5;
+  return (post.category === "transferencia" ? 3 : 2.5) + (official ? 1 : 0);
+}
+
+export function pickFeaturedPost(posts: Post[]): Post | null {
+  const now = Date.now();
+  const recent = posts.filter((p) => now - new Date(p.date).getTime() <= 30 * 60 * 60 * 1000);
+  const pool = recent.length ? recent : posts.slice(0, 10);
+  let best: Post | null = null;
+  let bestScore = -1;
+  for (const p of pool) {
+    // a photo makes the section; the newest wins a tie (pool is sorted newest first)
+    // and fresher news weighs a little more
+    const hoursAgo = (now - new Date(p.date).getTime()) / 3_600_000;
+    const score = importanceOf(p) + (p.imageUrl ? 0.3 : 0) - hoursAgo / 24;
+    if (score > bestScore) {
+      best = p;
+      bestScore = score;
+    }
+  }
+  return best;
+}

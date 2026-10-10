@@ -38,6 +38,8 @@ export interface PostMeta {
   videoSource?: string;
   // set by the news robot when a later source added important information to this article
   updated?: string;
+  // 1 to 5, how much the news matters to the fan (set by the news robot)
+  importance?: number;
 }
 
 export interface Post extends PostMeta {
@@ -77,6 +79,7 @@ function readPostFile(slug: string): Post {
     videoId: typeof data.videoId === "string" && data.videoId ? data.videoId : undefined,
     videoSource: typeof data.videoSource === "string" && data.videoSource ? data.videoSource : undefined,
     updated: typeof data.updated === "string" && data.updated ? data.updated : undefined,
+    importance: typeof data.importance === "number" ? data.importance : undefined,
     content,
   };
 }

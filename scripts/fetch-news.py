@@ -38,8 +38,8 @@ VASCO_KEYWORDS = [
 CATEGORIES = ["transferencia", "resultado", "elenco", "base", "feminino", "clube", "urgente"]
 CATEGORY_GUIDE = """Categorias (escolha UMA, pelo assunto principal da notícia):
 - transferencia: chegada ou saída de jogador ou técnico, negociações, propostas, empréstimos, rescisões.
-- resultado: jogo do time profissional masculino: prévia, onde assistir, placar, análise e repercussão da partida.
-- elenco: lesão, escalação, treino, técnico e comissão, renovação de contrato, situação de jogadores do elenco.
+- resultado: jogo do time profissional masculino: prévia, onde assistir, placar, análise e repercussão da partida, e também o adversário do próximo jogo (lesões, escalação, técnico e arbitragem do rival).
+- elenco: SOMENTE jogadores, técnico e comissão do Vasco: lesão, escalação, treino, renovação de contrato, situação no elenco. Jogador de outro clube nunca é elenco.
 - base: categorias de base (sub-15 a sub-20) e seus torneios.
 - feminino: qualquer time feminino do Vasco.
 - clube: diretoria, política, SAF, finanças, estádio, torcida, institucional e o que não couber acima.
@@ -298,7 +298,8 @@ Retorne SOMENTE um JSON (sem markdown) com:
 - "body": 3-4 parágrafos desenvolvendo a notícia
 - "seoTitle": título SEO (máx 60 chars)
 - "seoDescription": meta description (máx 155 chars)
-- "category": uma das categorias acima, exatamente como escrita{video_field}{duplicate_field}"""
+- "category": uma das categorias acima, exatamente como escrita
+- "importance": número de 1 a 5, o peso da notícia para o torcedor do Vasco hoje. 5: anúncio oficial grande (contratação ou saída de peso, título, troca de técnico, decisão que muda a temporada). 4: resultado de jogo do time principal, lesão séria de titular, negociação avançada de peso. 3: prévia de jogo importante, notícia relevante do elenco ou do clube. 2: bastidores, declarações, base, feminino. 1: curiosidade, adversário, notícia lateral{video_field}{duplicate_field}"""
         }]
     )
     text = response.content[0].text.strip()
@@ -310,6 +311,8 @@ Retorne SOMENTE um JSON (sem markdown) com:
         if isinstance(article.get(key), str):
             article[key] = strip_dashes(article[key])
     article["category"] = valid_category(article.get("category"))
+    imp = article.get("importance")
+    article["importance"] = int(imp) if isinstance(imp, (int, float)) and 1 <= int(imp) <= 5 else None
     # only accept an ID that was actually offered: never trust a made-up one
     valid_ids = {v["id"] for v in videos}
     vid = article.get("videoId")
@@ -343,6 +346,7 @@ def publish(article: dict, category: str, source: str, url: str, image_url: str 
     video_frontmatter = (
         f'videoId: "{article["videoId"]}"\nvideoSource: "Vasco TV"\n' if article.get("videoId") else ""
     )
+    importance_frontmatter = f'importance: {article["importance"]}\n' if article.get("importance") else ""
     slug = f"{now.strftime('%Y-%m-%d')}-{slugify(article['title'])}"
     date = now.isoformat(timespec="seconds")  # e.g. 2026-10-10T00:36:12-03:00
 
@@ -351,7 +355,7 @@ title: "{article['title'].replace('"', "'")}"
 slug: "{slug}"
 date: "{date}"
 category: "{category}"
-source: "{source}"
+{importance_frontmatter}source: "{source}"
 sourceUrl: "{url}"
 imageUrl: "{image_url}"
 excerpt: "{article['excerpt'].replace('"', "'")}"

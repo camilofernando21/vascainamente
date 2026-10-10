@@ -2,7 +2,7 @@
 title: "Paredes sente problema muscular no último jogo do Boca antes da semifinal contra o Vasco"
 slug: "2026-10-10-paredes-sente-problema-muscular-no-ultimo-jogo-do-boca-antes-da-semifi"
 date: "2026-10-10T03:36:09-03:00"
-category: "elenco"
+category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/futebol-internacional/noticia/2026/10/09/paredes-sente-problema-muscular-no-ultimo-jogo-do-boca-antes-de-semifinal-contra-o-vasco-na-sul-americana.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/dMB6Y2ae60A9-XFkFXpPPTWtx3w=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/P/H/CbzytUSDOtGhsMiD297Q/afp-20261003-d24k9ta-v1-midres-fblargbocaunion.jpg"
