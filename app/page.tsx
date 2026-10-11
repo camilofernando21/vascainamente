@@ -5,12 +5,14 @@ import HeadlineMarquee from "@/components/home/HeadlineMarquee";
 import NewsOfTheDay from "@/components/home/NewsOfTheDay";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
+import Competitions from "@/components/home/Competitions";
 import HistoricResponse from "@/components/home/HistoricResponse";
 import RobertoDinamite from "@/components/home/RobertoDinamite";
 import VascoTv from "@/components/home/VascoTv";
 import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
+import { getCompetitions } from "@/lib/competitions";
 import { pickFeaturedPost, pickTodayPosts, toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const posts = getAllPosts();
-  const channelVideos = await getVascoTvVideos(6);
+  const [channelVideos, competitions] = await Promise.all([getVascoTvVideos(6), getCompetitions()]);
   const historyToday = factsForToday()[0];
   const featured = posts[0] ?? null;
   const today = pickTodayPosts(posts);
@@ -77,6 +79,7 @@ export default async function Home() {
             : null
         }
       />
+      {competitions && <Competitions data={competitions} />}
       <VascoTv videos={channelVideos} channelUrl={VASCO_TV_CHANNEL_URL} />
       <HistoricResponse />
       <RobertoDinamite />
