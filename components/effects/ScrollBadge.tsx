@@ -5,8 +5,8 @@ import { useEffect, useRef } from "react";
 const BADGE_W = 60;
 
 // Ported from Bam83's #scroll-badge: spinning ring, follows the mouse after the first scroll,
-// hides while scrolling, and is gone for good once the idols section is reached.
-export default function ScrollBadge({ stopAtId = "idolos" }: { stopAtId?: string }) {
+// hides while scrolling, and is gone for good once the news section is reached.
+export default function ScrollBadge({ stopAtId = "vm-goal" }: { stopAtId?: string }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -56,7 +56,8 @@ export default function ScrollBadge({ stopAtId = "idolos" }: { stopAtId?: string
     function update() {
       ticking = false;
       if (gone) return;
-      const stop = document.getElementById(stopAtId);
+      // the news section; the idols section is the fallback when there is no news of the day
+      const stop = document.getElementById(stopAtId) ?? document.getElementById("idolos");
       if (stop && stop.getBoundingClientRect().top <= window.innerHeight * 0.75) {
         gone = true;
         clearTimeout(hideTimer);

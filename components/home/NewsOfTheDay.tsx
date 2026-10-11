@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef } from "react";
+import NewsCover from "@/components/NewsCover";
 import NewsImage from "@/components/NewsImage";
 import type { HomeItem } from "@/lib/home";
 
@@ -106,8 +107,7 @@ export default function NewsOfTheDay({ item }: { item: HomeItem | null }) {
               // below the hero: lazy, never priority
               <NewsImage src={item.imageUrl} sizes="100vw" className="vm-day-img" />
             ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src="/images/vasco-bg.png" alt="" className="vm-day-img" />
+              <NewsCover label={item.category} />
             )}
           </div>
           <div className="vm-day-shade" />

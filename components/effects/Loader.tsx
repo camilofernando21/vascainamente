@@ -1,15 +1,20 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { CruzMalta } from "@/components/ui/cruz-malta";
 
-// Ported from Bam83's #bam-loader: 1100ms per step, label fades in 0.3s, loader fades out in 0.8s.
+// Opening of the home, shown once per session: two milestones (the founding and the 1998 Libertadores)
+// and the cross, about 1.6 s in all, with a button to skip it. Reduced-motion visitors never see it.
 const STEPS: { label: string; num?: string }[] = [
   { label: "Fundação", num: "1898" },
-  { label: "Brasileiro", num: "1974" },
   { label: "Libertadores", num: "1998" },
   { label: "Vascainamente" },
 ];
+
+const SWAP_MS = 130; // the label fades out, then the next one comes in
+const STEP_MS = 450; // each milestone
+const HOLD_MS = 250; // the last one stays a moment before the fade
+const FADE_MS = 500; // same as the CSS transition of #vm-loader
 
 const STORAGE_KEY = "vm-loader-seen";
 
@@ -29,6 +34,7 @@ export default function Loader() {
   const [step, setStep] = useState(0);
   const [visible, setVisible] = useState(false);
   const [done, setDone] = useState(false);
+  const stopTimers = useRef<() => void>(() => {});
 
   useBeforePaint(() => {
     // The inline script at the top of <body> normally flags repeat visits / reduced motion before paint.
@@ -48,7 +54,7 @@ export default function Loader() {
         setTimeout(() => {
           setStep(i);
           setVisible(true);
-        }, 300)
+        }, SWAP_MS)
       );
     };
 
@@ -58,30 +64,50 @@ export default function Loader() {
       i++;
       if (i >= STEPS.length) {
         clearInterval(interval);
-        timers.push(setTimeout(() => setDone(true), 900));
-        timers.push(setTimeout(() => setActive(false), 900 + 800));
+        timers.push(setTimeout(() => setDone(true), HOLD_MS));
+        timers.push(setTimeout(() => setActive(false), HOLD_MS + FADE_MS));
       } else {
         show(i);
       }
-    }, 1100);
+    }, STEP_MS);
 
-    return () => {
+    stopTimers.current = () => {
       clearInterval(interval);
       timers.forEach(clearTimeout);
     };
+    return stopTimers.current;
   }, []);
+
+  const skip = () => {
+    stopTimers.current();
+    setDone(true);
+    window.setTimeout(() => setActive(false), FADE_MS);
+  };
+
+  useEffect(() => {
+    if (!active || done) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && skip();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, done]);
 
   if (!active) return null;
 
   const current = STEPS[step];
   return (
-    <div id="vm-loader" className={done ? "done" : undefined} aria-hidden="true">
-      <p id="vm-loader-label" className={visible ? "visible" : undefined}>
-        {current.label}
-      </p>
-      <div id="vm-loader-number" style={{ opacity: visible ? 1 : 0 }}>
-        {current.num ?? <CruzMalta size="1em" className="vm-loader-cross" />}
+    <div id="vm-loader" className={done ? "done" : undefined}>
+      <div aria-hidden="true" className="vm-loader-stage">
+        <p id="vm-loader-label" className={visible ? "visible" : undefined}>
+          {current.label}
+        </p>
+        <div id="vm-loader-number" style={{ opacity: visible ? 1 : 0 }}>
+          {current.num ?? <CruzMalta size="1em" className="vm-loader-cross" />}
+        </div>
       </div>
+      <button type="button" className="vm-loader-skip" onClick={skip}>
+        Pular
+      </button>
     </div>
   );
 }

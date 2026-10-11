@@ -87,7 +87,7 @@ export default async function Home() {
       <Idols />
       <SiteFooter />
 
-      <ScrollBadge stopAtId="idolos" />
+      <ScrollBadge stopAtId="vm-goal" />
     </main>
   );
 }
