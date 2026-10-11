@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/qcHvXr1nfilG0NYIfnx73I2kLu4=/i.s3.glbimg.com
 excerpt: "O Vasco viajou para a Argentina na tarde deste domingo para a semifinal da Sul-Americana contra o Boca Juniors. Bruno Duarte e Brenner retornam à lista de relacionados. Cauan Barros, Cuesta, Spinelli, Rojas e Colidio estão fora."
 seoTitle: "Vasco embarca para Buenos Aires com Bruno Duarte e Brenner"
 seoDescription: "Vasco viaja à Argentina para a semifinal da Sul-Americana. Bruno Duarte e Brenner retornam. Cuesta, Cauan Barros, Spinelli, Rojas e Colidio ficam fora."
+updated: "2026-10-11T20:30:57-03:00"
 ---
 
 O Vasco embarcou para Buenos Aires em voo fretado do Aeroporto do Galeão na tarde deste domingo. O cruzmaltino enfrenta o Boca Juniors na terça-feira, em La Bombonera, no jogo de ida da semifinal da Sul-Americana. O elenco chega à capital argentina ainda neste domingo e terá apenas um treino antes da decisão, no estádio do Riestra, na segunda-feira.
@@ -19,3 +20,5 @@ As boas notícias ficam por conta dos retornos de Bruno Duarte e Brenner. O cent
 As baixas, no entanto, são várias. Cuesta segue fora por problema na coluna. Spinelli levou uma pancada no pé no treino deste domingo e não viajou. Rojas foi cortado por opção técnica. Cauan Barros sofreu um acidente de carro e, com um corte no pé esquerdo, deu entrada em hospital neste domingo. Colidio também não pode ser utilizado: foi inscrito pelo River Plate na fase de mata-mata da Sul-Americana e as regras da Conmebol impedem que um jogador atue por dois clubes diferentes a partir dos play-offs, mesmo sem ter entrado em campo pelo ex-clube.
 
 O grupo relacionado conta com: Léo Jardim, Fuzato e Pablo nos gols; Puma Rodriguez, Paulo Henrique, Lucas Piton e Cuiabano nas laterais; Lucas Freitas, Robert Renan, Gabriel Pereira e Saldivia na zaga; Sosa, Thiago Mendes, Lescano, Jair, Tchê Tchê e Ramon Rique no meio; Hinestroza, Nuno Moreira, Andrés Gómez, David, Brenner, Bruno Duarte e Adson no ataque.
+
+**Atualização em 11/10 às 20:30:** O elenco chegou a Buenos Aires e foi recebido por mais de 100 torcedores na porta do hotel, com 'casaca', bandeiras e cartazes do clube. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/11/vasco-e-recebido-com-festa-da-torcida-em-chegada-na-argentina.ghtml))
