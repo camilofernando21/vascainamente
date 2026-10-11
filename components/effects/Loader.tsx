@@ -3,18 +3,19 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { CruzMalta } from "@/components/ui/cruz-malta";
 
-// Opening of the home, shown once per session: two milestones (the founding and the 1998 Libertadores)
-// and the cross, about 1.6 s in all, with a button to skip it. Reduced-motion visitors never see it.
+// Opening of the home, shown once per session: the three milestones (1898, 1974, 1998) and the cross,
+// paced to be read (about 4 s), with a button to skip it. Reduced-motion visitors never see it.
 const STEPS: { label: string; num?: string }[] = [
   { label: "Fundação", num: "1898" },
+  { label: "Brasileiro", num: "1974" },
   { label: "Libertadores", num: "1998" },
   { label: "Vascainamente" },
 ];
 
-const SWAP_MS = 130; // the label fades out, then the next one comes in
-const STEP_MS = 450; // each milestone
-const HOLD_MS = 250; // the last one stays a moment before the fade
-const FADE_MS = 500; // same as the CSS transition of #vm-loader
+const SWAP_MS = 200; // the label fades out, then the next one comes in
+const STEP_MS = 850; // each milestone
+const HOLD_MS = 450; // the cross stays a moment before the fade
+const FADE_MS = 600; // same as the CSS transition of #vm-loader
 
 const STORAGE_KEY = "vm-loader-seen";
 
