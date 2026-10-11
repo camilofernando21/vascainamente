@@ -20,7 +20,9 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Teto mensal de leitura: 2.000 posts (`X_MONTHLY_POST_LIMIT`). O estado fica em `.x_state.json`. Limite de gasto no console do X: US$ 10 por ciclo, recarga automática desligada.
 
 ### Site (home, de cima para baixo)
-- Abertura com o loader da Cruz de Malta (cerca de 3,3 s na primeira visita da sessão), hero, faixa de manchetes, "A notícia do dia" (prioriza as de hoje), as 4 últimas, "Tudo o que saiu hoje".
+- Abertura com o loader da Cruz de Malta: 4 marcos (1898, 1974, 1998 e a cruz), cerca de 4 s, só na primeira visita da sessão, com botão "Pular" e tecla Esc (`components/effects/Loader.tsx`). Depois vêm o hero, a faixa de manchetes, "A notícia do dia" (prioriza as de hoje), as 4 últimas e "Tudo o que saiu hoje".
+- As fotos das matérias só aparecem na "Notícia do dia"; a página da matéria é tipográfica de propósito. Se a matéria escolhida não tem foto, a seção mostra uma capa feita pelo site (`components/NewsCover.tsx`: categoria em contorno, brilho vermelho e a Cruz de Malta). Não puxar foto de outros veículos.
+- A faixa giratória "ROLE PARA VER AS NOTÍCIAS" aparece depois de 9 s parado e some de vez ao chegar na notícia do dia.
 - **Competições** (`components/home/Competitions.tsx`, `lib/competitions.ts`): lê a ESPN (pública, sem chave, não oficial) com cache de 2 a 5 minutos. Mostra o próximo jogo com contagem regressiva, abas por competição detectadas sozinhas, a tabela do Brasileirão com a posição do Vasco, e a campanha por fase das copas. Se a ESPN falhar, a seção some. O placar ao vivo tem até uns 3 minutos de atraso.
 - Vasco TV, **Resposta Histórica** (`HistoricResponse.tsx`, capítulo fixo em 4 momentos, só a frase final da carta é citada porque as fontes divergem), **Roberto Dinamite** (`RobertoDinamite.tsx`), ídolos e rodapé.
 - A Cruz de Malta sempre vem de `public/images/escudo-1-cruz.png` (o componente `CruzMalta` usa o contorno extraído dela). Nunca redesenhar.
@@ -28,16 +30,38 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Consentimento (LGPD): GA4 e Clarity só carregam depois de "Aceitar". Verificado em 11/10.
 
 ### Auditoria de 11/10/2026
-- Lighthouse no celular (site publicado): desempenho 90, acessibilidade 97, boas práticas 96, SEO 100. A nota de desempenho é puxada pelo loader inicial (LCP de 3,6 s).
+- Lighthouse no celular (site publicado): desempenho 90, acessibilidade 97, boas práticas 96, SEO 100. O LCP varia entre 3 e 5 s de uma medição para outra, então não dá para atribuir a nota ao loader.
 - Sem erro de JavaScript, sem imagem quebrada e sem link interno quebrado nas páginas testadas, no computador e no celular.
 - `npm audit`: o Next 14.2.35 tem avisos de negação de serviço que só se resolvem subindo para a versão 16 (atualização grande, deixar para uma tarefa própria). O restante é de ferramentas de build.
 
+### Domínio e Search Console (concluído em 11/10/2026)
+- vascainamente.com.br está conectado e funcionando. Registrado no registro.br, e o DNS continua nos servidores do registro.br (a zona do Cloudflare foi criada, mas os nameservers NÃO foram trocados).
+- Registros no registro.br: A (raiz) 216.198.79.1; CNAME www apontando para d88a6868cc0019b5.vercel-dns-017.com.; TXT da raiz com a verificação do Google Search Console.
+- Na Vercel, os 3 domínios (vascainamente.com.br, www.vascainamente.com.br e vascainamente.vercel.app) estão com "Valid Configuration". A raiz redireciona (308) para o www.
+- Variável de ambiente na Vercel (Production): NEXT_PUBLIC_SITE_URL=https://www.vascainamente.com.br. É lida em `lib/site.ts` e usada no canonical, no sitemap e nos links de compartilhamento. O redeploy já foi feito.
+- Google Search Console: propriedade de Domínio vascainamente.com.br, verificada por TXT no DNS. Sitemap enviado: https://www.vascainamente.com.br/sitemap.xml (em propriedade de Domínio é preciso a URL completa). Logo após o envio o status mostrou "Não foi possível buscar o sitemap" com 0 páginas, o que é normal no início. Conferir de novo em algumas horas ou no dia seguinte.
+
+### Outros itens concluídos em 11/10/2026
+- Limite de gasto do X: US$ 10 por ciclo, recarga automática desligada.
+- `.claude/settings.json` com modelo padrão sonnet e `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, para gastar menos tokens.
+- Os 5 branches antigos do GitHub foram apagados (já estavam 100% no master). Só existe o `master`.
+
+### Monetização (achados de 11/10/2026)
+- Publicidade de apostas está proibida pela MP 1.394/2026 (aguarda votação no Congresso, prazo por volta de 23/11/2026).
+- Risco de o conteúdo reescrito automaticamente ser tratado como "scaled content" pelo Google/AdSense: o site precisa de mais conteúdo original.
+- Afiliado do Mercado Livre (até cerca de 14% em esportes e vestuário) é uma rota possível. Canais do WhatsApp ainda não monetizam.
+- Google News: a elegibilidade é automática e exige domínio próprio e conteúdo original.
+
 ### Pendências
-- Domínio vascainamente.com.br: registrado no registro.br, mas o DNS ainda não aponta para a Vercel. Depois: adicionar o domínio na Vercel, definir `NEXT_PUBLIC_SITE_URL`, e-mail profissional, Google Search Console e Google News Publisher Center.
-- Quando o e-mail do domínio funcionar, trocar `CONTACT_EMAIL` em `lib/site.ts` para contato@vascainamente.com.br.
-- Central do Jogo (placar ao vivo, escalações e eventos): precisa do API-Football Pro (cerca de US$ 19 por mês). Decisão adiada. A chave do plano grátis está na Vercel e no `.env.local` como `API_FOOTBALL_KEY` (o plano grátis só libera temporadas de 2022 a 2024).
+- E-mail profissional no domínio. Quando funcionar, trocar `CONTACT_EMAIL` em `lib/site.ts` para contato@vascainamente.com.br.
+- Google News Publisher Center.
+- Conferir o status do sitemap no Search Console (algumas horas ou no dia seguinte ao envio).
 - Conferir no GA4, em aba anônima, se aparece 1 usuário.
-- A Vercel Hobby é para uso não comercial. Se o site tiver anúncios ou for da empresa, considerar o plano Pro.
+- Central do Jogo (placar ao vivo, escalações e eventos): precisa do API-Football Pro (cerca de US$ 19 por mês). Decisão adiada. A chave do plano grátis está na Vercel e no `.env.local` como `API_FOOTBALL_KEY` (o plano grátis só libera temporadas de 2022 a 2024).
+- A Vercel Hobby é para uso não comercial. Se o site tiver anúncios, considerar o plano Pro.
+- Conferir as primeiras matérias vindas do X (crédito do setorista e categoria).
+- Decidir a rota de monetização (ver os achados acima).
+- Atualizar o Next 14 para o 16, como tarefa própria (os avisos de segurança do 14.2.35 só se resolvem assim).
 
 ### Arquivos de prompt
 - Os antigos `PROMPT-*.md` estão em `_prompts/`, fora do git (ignorados por `.git/info/exclude`).
