@@ -5,7 +5,8 @@ import HeadlineMarquee from "@/components/home/HeadlineMarquee";
 import NewsOfTheDay from "@/components/home/NewsOfTheDay";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
-import HistoricQuote from "@/components/home/HistoricQuote";
+import HistoricResponse from "@/components/home/HistoricResponse";
+import RobertoDinamite from "@/components/home/RobertoDinamite";
 import VascoTv from "@/components/home/VascoTv";
 import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
@@ -77,7 +78,8 @@ export default async function Home() {
         }
       />
       <VascoTv videos={channelVideos} channelUrl={VASCO_TV_CHANNEL_URL} />
-      <HistoricQuote />
+      <HistoricResponse />
+      <RobertoDinamite />
       <Idols />
       <SiteFooter />
 

@@ -4,7 +4,7 @@
 export const VASCO_TV = "Vasco TV";
 export const GE = "ge.globo";
 
-export type IdolVideo = { id: string; credit: string };
+export type IdolVideo = { id: string; credit: string; title?: string };
 
 // Texts supplied by the editor; do not change numbers or wording without checking with them.
 export const IDOLS: {
@@ -18,10 +18,10 @@ export const IDOLS: {
   {
     name: "Roberto Dinamite",
     videos: [
-      { id: "RpTCqNPEq-g", credit: VASCO_TV },
-      { id: "Cf0EsQDY4iI", credit: GE },
-      { id: "-COqah3cdZw", credit: GE },
-      { id: "nIbv85ePNvU", credit: GE },
+      { id: "RpTCqNPEq-g", credit: VASCO_TV, title: "#DinamiteEterno" },
+      { id: "Cf0EsQDY4iI", credit: GE, title: "Dinamite: a trajetória explosiva do craque" },
+      { id: "-COqah3cdZw", credit: GE, title: "Dinamite: o segredo das faltas perfeitas" },
+      { id: "nIbv85ePNvU", credit: GE, title: "Dinamite: biografia do craque do Vasco" },
     ],
     rank: "Maior artilheiro da história",
     value: "708",

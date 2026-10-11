@@ -1232,26 +1232,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   }
 }
 
-/* ---------- historic quote (#presser, no video) ---------- */
-#vm-presser {
-  position: relative;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-#vm-presser-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: url("/images/vasco-bg.png") center / cover no-repeat;
-  filter: grayscale(1);
-}
-
-/* background video, created near the viewport; fades in over the texture once the player is ready */
-#vm-presser-video-wrap,
+/* background video of the idols section */
 #vm-idol-video {
   position: absolute;
   inset: 0;
@@ -1259,17 +1240,6 @@ html.vm-cursor body:not(.is-touch) *::after {
   pointer-events: none;
 }
 
-#vm-presser-video-wrap {
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-#vm-presser-video-wrap.is-ready {
-  opacity: 1;
-}
-
-#vm-presser-video-wrap iframe,
 #vm-idol-video iframe {
   position: absolute;
   top: 50%;
@@ -1281,13 +1251,6 @@ html.vm-cursor body:not(.is-touch) *::after {
   min-width: 177.78vh;
   border: none;
   pointer-events: none;
-}
-
-@media (max-width: 767px) {
-  #vm-presser-video-wrap iframe {
-    left: 20%;
-    transform: translate(-20%, -50%);
-  }
 }
 
 .vm-sound-toggle {
@@ -1390,51 +1353,6 @@ html.vm-cursor body:not(.is-touch) *::after {
   position: absolute;
   inset: 0;
   background: rgba(13, 13, 13, 0.7);
-}
-
-#vm-presser::before,
-#vm-presser::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 45%;
-  z-index: 2;
-  pointer-events: none;
-}
-#vm-presser::before { top: 0; background: linear-gradient(to bottom, #0d0d0d 0%, transparent 100%); }
-#vm-presser::after { bottom: 0; background: linear-gradient(to top, #0d0d0d 0%, transparent 100%); }
-
-#vm-presser-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(13, 13, 13, 0.6);
-  z-index: 2;
-}
-
-#vm-presser-quote {
-  position: relative;
-  z-index: 4;
-  text-align: center;
-  padding: 0 6vw;
-  max-width: 900px;
-}
-
-.presser-quote-text {
-  font-family: var(--font-serif), serif;
-  font-size: clamp(2.2rem, 5.5vw, 5rem);
-  font-weight: 400;
-  font-style: italic;
-  line-height: 1.2;
-  color: rgba(240, 235, 225, 0.82);
-  letter-spacing: -0.02em;
-}
-
-.presser-quote-attr {
-  display: block;
-  font-style: normal;
-  color: rgba(240, 235, 225, 0.5);
-  margin-top: 2rem;
 }
 
 /* ---------- idols (#final) ---------- */
@@ -3618,4 +3536,750 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-mnav-bar .vm-mnav-list {
   flex: 1 1 auto;
   min-width: 0;
+}
+
+/* ==========================================================================
+   Resposta Histórica: a pinned chapter, four beats that follow the scroll
+   ========================================================================== */
+
+.vm-resp {
+  position: relative;
+  height: 480vh;
+  background: var(--bg);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --pad: clamp(1.25rem, 4vw, 4rem);
+}
+
+.vm-resp-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  padding: 0 var(--pad);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(0.75rem, 2vw, 2rem);
+  align-content: center;
+}
+
+/* thin rail on the left edge: the red part is how far the story has gone */
+.vm-resp-rail {
+  position: absolute;
+  left: clamp(0.55rem, 1.5vw, 1.4rem);
+  top: 14vh;
+  bottom: 14vh;
+  width: 1px;
+  background: var(--line);
+}
+.vm-resp-rail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--red);
+  transform: scaleY(var(--p, 0));
+  transform-origin: top;
+}
+
+.vm-resp-tag {
+  position: absolute;
+  top: clamp(1.25rem, 5vh, 3rem);
+  left: var(--pad);
+  font-size: 0.72rem;
+  color: var(--text-label);
+  z-index: 3;
+}
+
+/* huge outlined year behind the text, one per beat */
+.vm-resp-ghosts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.vm-resp-ghost {
+  position: absolute;
+  right: -1vw;
+  bottom: 8vh;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(12rem, 38vw, 46rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(240, 235, 225, 0.16);
+  opacity: 0;
+  transform: translateY(7%);
+  transition: opacity 0.9s var(--ease), transform 1.2s var(--ease);
+  white-space: nowrap;
+}
+.vm-resp[data-beat="0"] .g0,
+.vm-resp[data-beat="1"] .g1,
+.vm-resp[data-beat="2"] .g2,
+.vm-resp[data-beat="3"] .g3 {
+  opacity: 1;
+  transform: none;
+}
+
+/* the beats share one box and swap in place */
+.vm-resp-beats {
+  position: relative;
+  grid-column: 1 / span 7;
+  grid-row: 1;
+  min-height: 64vh;
+  z-index: 2;
+}
+.vm-resp-beat {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+  transition: visibility 0s linear 0.7s;
+}
+.vm-resp-beat.is-active {
+  visibility: visible;
+  transition-delay: 0s;
+}
+.vm-resp-beat.is-leaving {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.vm-resp-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: clamp(1rem, 2.6vh, 1.75rem);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.vm-resp-kicker::after {
+  content: "";
+  width: clamp(2rem, 5vw, 4.5rem);
+  height: 1px;
+  background: currentColor;
+  opacity: 0.5;
+}
+.vm-resp-beat.is-active .vm-resp-kicker {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s var(--ease) 0.05s, transform 0.9s var(--ease) 0.05s;
+}
+
+.vm-resp-title {
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.3rem, 5.2vw, 6.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+.vm-resp-line {
+  display: block;
+  overflow: hidden;
+  padding: 0.06em 0 0.1em;
+  margin: -0.06em 0 -0.1em;
+}
+.vm-resp-line-in {
+  display: block;
+  transform: translateY(110%);
+}
+.vm-resp-line:last-child .vm-resp-line-in {
+  font-style: italic;
+}
+.vm-resp-beat:nth-child(n + 3) .vm-resp-line:last-child {
+  color: var(--red);
+}
+.vm-resp-beat.is-active .vm-resp-line-in {
+  animation: vm-resp-in 1.05s var(--ease) both;
+}
+.vm-resp-beat.is-leaving .vm-resp-line-in {
+  animation: vm-resp-out 0.45s cubic-bezier(0.87, 0, 0.13, 1) both;
+  transition-delay: 0s !important;
+}
+@keyframes vm-resp-in {
+  from { transform: translateY(110%); }
+  to { transform: none; }
+}
+@keyframes vm-resp-out {
+  from { transform: none; }
+  to { transform: translateY(-110%); }
+}
+
+.vm-resp-body {
+  margin-top: clamp(1.25rem, 3vh, 2.25rem);
+  max-width: 44ch;
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  line-height: 1.85;
+  color: var(--text-mid);
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.vm-resp-beat.is-active .vm-resp-body {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.9s var(--ease) 0.4s, transform 1s var(--ease) 0.4s;
+}
+
+/* quote shown inside the beat on narrow screens (the letter is hidden there) */
+.vm-resp-mquote {
+  display: none;
+  margin-top: 1.4rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--red);
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+/* the letter: cream paper, header from the sources, closing line quoted */
+.vm-resp-letter {
+  grid-column: 9 / span 4;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 24rem);
+  aspect-ratio: 3 / 4.15;
+  padding: clamp(1.3rem, 2.2vw, 2.1rem);
+  background: linear-gradient(162deg, #f5f0e6 0%, #e7e0d0 100%);
+  color: #151515;
+  box-shadow: 0 50px 90px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  opacity: 0;
+  transform: rotate(-2.4deg) translateY(70px);
+  transition: opacity 0.9s var(--ease), transform 1.2s var(--ease);
+}
+.vm-resp[data-beat="1"] .vm-resp-letter,
+.vm-resp[data-beat="2"] .vm-resp-letter {
+  opacity: 1;
+  transform: rotate(-2.4deg);
+}
+.vm-resp[data-beat="3"] .vm-resp-letter {
+  opacity: 0.22;
+  transform: rotate(-1deg) translateX(2.5vw) scale(0.94);
+}
+.vm-resp-letter-head {
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.22);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.vm-resp-letter-date,
+.vm-resp-letter-to,
+.vm-resp-letter-sign {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  line-height: 1.7;
+  color: rgba(21, 21, 21, 0.78);
+}
+.vm-resp-letter-date { margin-top: 1rem; }
+.vm-resp-letter-to { margin-top: 0.7rem; }
+.vm-resp-letter-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0.9rem;
+}
+.vm-resp-letter-rules span {
+  display: block;
+  height: 5px;
+  border-radius: 1px;
+  background: rgba(21, 21, 21, 0.14);
+}
+.vm-resp-letter-rules i {
+  display: block;
+  height: 0.5rem;
+}
+.vm-resp-letter-quote {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.45vw, 1.4rem);
+  line-height: 1.3;
+  padding-bottom: 0.1em;
+  background: linear-gradient(var(--red), var(--red)) 0 100% / 0% 2px no-repeat;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.7s var(--ease), transform 0.9s var(--ease), background-size 1.4s var(--ease) 0.5s;
+}
+.vm-resp[data-beat="2"] .vm-resp-letter-quote,
+.vm-resp[data-beat="3"] .vm-resp-letter-quote {
+  opacity: 1;
+  transform: none;
+  background-size: 100% 2px;
+}
+.vm-resp-letter-sign {
+  margin-top: auto;
+  text-align: right;
+}
+
+/* the 12 players, as twelve crosses */
+.vm-resp-twelve {
+  position: absolute;
+  left: var(--pad);
+  bottom: clamp(1.25rem, 5vh, 3rem);
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 2rem);
+  z-index: 3;
+}
+.vm-resp-twelve-label {
+  position: relative;
+  width: 16.5rem;
+  height: 1em;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+.vm-resp-twelve-label span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s ease, transform 0.6s var(--ease);
+}
+.vm-resp[data-beat="0"] .t0,
+.vm-resp[data-beat="1"] .t1,
+.vm-resp[data-beat="2"] .t2,
+.vm-resp[data-beat="3"] .t3 {
+  opacity: 1;
+  transform: none;
+}
+.vm-resp-crosses {
+  display: flex;
+  gap: clamp(0.35rem, 0.8vw, 0.65rem);
+}
+.vm-resp-cross {
+  display: block;
+  width: clamp(0.85rem, 1.5vw, 1.4rem);
+  height: clamp(0.85rem, 1.5vw, 1.4rem);
+  color: rgba(240, 235, 225, 0.14);
+  transition: color 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: calc(var(--i) * 55ms);
+}
+.vm-resp-cross svg {
+  display: block;
+}
+.vm-resp[data-beat="1"] .vm-resp-cross {
+  color: rgba(240, 235, 225, 0.78);
+  transform: scale(1.12);
+}
+.vm-resp[data-beat="2"] .vm-resp-cross,
+.vm-resp[data-beat="3"] .vm-resp-cross {
+  color: var(--red);
+  transform: none;
+}
+
+.vm-resp-count {
+  position: absolute;
+  right: var(--pad);
+  bottom: clamp(1.25rem, 5vh, 3rem);
+  width: 6rem;
+  height: 1em;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  color: var(--text-label);
+  z-index: 3;
+}
+.vm-resp-count span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.vm-resp[data-beat="0"] .c0,
+.vm-resp[data-beat="1"] .c1,
+.vm-resp[data-beat="2"] .c2,
+.vm-resp[data-beat="3"] .c3 {
+  opacity: 1;
+}
+
+.vm-resp-cta {
+  position: absolute;
+  right: var(--pad);
+  bottom: clamp(3.6rem, 12vh, 6.5rem);
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--red);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0s linear 0.4s;
+}
+.vm-resp[data-beat="3"] .vm-resp-cta {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.9s var(--ease) 0.7s, transform 1s var(--ease) 0.7s, visibility 0s;
+}
+.vm-resp-cta svg {
+  transition: transform 0.4s var(--ease);
+}
+.vm-resp-cta:hover svg,
+.vm-resp-cta:focus-visible svg {
+  transform: translateX(5px);
+}
+.vm-resp-cta:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 6px;
+}
+
+@media (max-width: 899px) {
+  .vm-resp { height: 430vh; }
+  .vm-resp-stage { display: flex; flex-direction: column; justify-content: center; }
+  .vm-resp-beats { width: 100%; min-height: 62svh; margin-top: 1rem; }
+  .vm-resp-title { font-size: clamp(2.1rem, 10vw, 3.7rem); }
+  .vm-resp-letter { display: none; }
+  .vm-resp-mquote { display: block; }
+  .vm-resp-ghost { font-size: clamp(9rem, 58vw, 22rem); bottom: 16vh; right: -3vw; }
+  .vm-resp-tag { top: 4.4rem; }
+  .vm-resp-twelve { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+  .vm-resp-twelve-label { width: 100%; }
+  .vm-resp-cta { left: var(--pad); right: auto; bottom: 5.4rem; }
+  .vm-resp-count { bottom: clamp(1.25rem, 5vh, 3rem); }
+}
+
+/* reduced motion: nothing pinned, every beat in sequence */
+@media (prefers-reduced-motion: reduce) {
+  .vm-resp { height: auto; }
+  .vm-resp-stage { position: relative; height: auto; display: block; padding-top: 7rem; padding-bottom: 6rem; overflow: visible; }
+  .vm-resp-rail,
+  .vm-resp-ghosts,
+  .vm-resp-letter,
+  .vm-resp-count,
+  .vm-resp-twelve-label span:not(.t2) { display: none; }
+  .vm-resp-beats { min-height: 0; }
+  .vm-resp-beat { position: relative; inset: auto; visibility: visible; margin-bottom: 4.5rem; }
+  .vm-resp-kicker,
+  .vm-resp-body { opacity: 1; transform: none; transition: none; }
+  .vm-resp-line-in { transform: none; animation: none !important; }
+  .vm-resp-mquote { display: block; }
+  .vm-resp-twelve { position: relative; left: auto; bottom: auto; margin-top: 1rem; }
+  .vm-resp-twelve-label span.t2 { position: static; opacity: 1; transform: none; }
+  .vm-resp-cross { color: var(--red); transition: none; }
+  .vm-resp-cta { position: relative; right: auto; bottom: auto; margin-top: 2.5rem; visibility: visible; opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   Roberto Dinamite: the greatest idol
+   ========================================================================== */
+
+.vm-rd {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --pad: clamp(1.25rem, 4vw, 4rem);
+}
+
+.vm-rd-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(1.25rem, 5vh, 3rem) var(--pad) clamp(2.5rem, 7vh, 5rem);
+}
+
+.vm-rd-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 55% at 74% 36%, rgba(200, 0, 60, 0.26), transparent 70%),
+    radial-gradient(42% 40% at 8% 100%, rgba(200, 0, 60, 0.1), transparent 70%);
+}
+
+.vm-rd-cross {
+  position: absolute;
+  right: -5vw;
+  top: 3vh;
+  width: clamp(20rem, 52vw, 58rem);
+  height: clamp(20rem, 52vw, 58rem);
+  z-index: -1;
+}
+
+.vm-rd-top {
+  position: absolute;
+  top: clamp(1.25rem, 5vh, 3rem);
+  left: var(--pad);
+  right: var(--pad);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 3;
+}
+.vm-rd-top .vm-label {
+  font-size: 0.72rem;
+  color: var(--text-label);
+}
+.vm-rd-dates {
+  text-align: right;
+}
+
+.vm-rd-figure {
+  position: absolute;
+  right: var(--pad);
+  top: clamp(4.5rem, 12vh, 8rem);
+  text-align: right;
+  z-index: 1;
+}
+.vm-rd-number {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(8rem, 27vw, 31rem);
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.vm-rd-figure-label {
+  margin-top: clamp(0.8rem, 1.6vw, 1.6rem);
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.8vw, 2.9rem);
+  line-height: 1;
+  color: var(--red);
+}
+.vm-rd-figure-note {
+  margin: 0.9rem 0 0 auto;
+  max-width: 21ch;
+  font-size: 0.7rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+.vm-rd-name {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  font-size: clamp(4.2rem, 22vw, 6rem);
+  line-height: 0.84;
+  letter-spacing: -0.04em;
+  color: var(--text);
+}
+.vm-rd-name-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+.vm-rd-name-line > * {
+  display: block;
+}
+.vm-rd-name em {
+  font-style: italic;
+  color: var(--red);
+}
+@media (min-width: 768px) {
+  .vm-rd-name { font-size: clamp(6rem, 17.5vw, 19rem); }
+}
+
+.vm-rd-wrap {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 var(--pad) clamp(5rem, 10vw, 9rem);
+}
+
+.vm-rd-lede {
+  max-width: min(100%, 58rem);
+  margin: clamp(4.5rem, 10vw, 9rem) 0 clamp(4rem, 8vw, 7rem) clamp(0px, 14vw, 13rem);
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.8rem, 4.2vw, 4.3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-wrap: balance;
+}
+.vm-rd-lede em {
+  color: var(--red);
+}
+
+.vm-rd-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.vm-rd-stat {
+  padding: clamp(1.5rem, 3vw, 2.75rem) clamp(1rem, 2vw, 2rem);
+  border-left: 1px solid var(--line);
+}
+.vm-rd-stat:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.vm-rd-stat-value {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3.4rem, 7.2vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.vm-rd-stat-label {
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  color: var(--text);
+}
+.vm-rd-stat-note {
+  margin-top: 0.6rem;
+  max-width: 28ch;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+.vm-rd-sub {
+  font-size: 0.72rem;
+  color: var(--text-label);
+}
+
+.vm-rd-career {
+  margin-top: clamp(5rem, 10vw, 9rem);
+}
+.vm-rd-years {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: clamp(1rem, 3vw, 3rem);
+}
+.vm-rd-years li {
+  padding: clamp(1.1rem, 2vw, 1.8rem) 0 clamp(1.6rem, 3vw, 2.6rem);
+  border-top: 1px solid var(--line);
+}
+.vm-rd-year {
+  display: block;
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(2.6rem, 4.4vw, 4.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.vm-rd-years li:last-child .vm-rd-year {
+  color: var(--red);
+}
+.vm-rd-year-text {
+  display: block;
+  margin-top: 0.8rem;
+  max-width: 32ch;
+  font-size: 0.8rem;
+  line-height: 1.75;
+  color: var(--text-mid);
+}
+
+.vm-rd-videos {
+  margin-top: clamp(5rem, 10vw, 9rem);
+}
+.vm-rd-video-grid {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem);
+  align-items: start;
+}
+.vm-rd-video figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.25rem, 1.9vw, 1.8rem);
+  line-height: 1.15;
+}
+.vm-rd-video figcaption .vm-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.64rem;
+  color: var(--text-label);
+}
+
+.vm-rd-farewell {
+  margin-top: clamp(6rem, 14vw, 12rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  text-align: center;
+}
+.vm-rd-eternal {
+  font-family: var(--font-serif), serif;
+  font-style: italic;
+  font-size: clamp(5rem, 17vw, 19rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+.vm-rd-farewell .vm-label {
+  font-size: 0.72rem;
+  color: var(--text-label);
+}
+
+/* reveals: hidden only after scripts run, so nothing depends on them to be readable */
+.vm-rd.is-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(34px);
+  transition: opacity 1s var(--ease), transform 1.2s var(--ease);
+}
+.vm-rd.is-ready [data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+.vm-rd.is-ready .vm-rd-name-line > * {
+  transform: translateY(108%);
+  transition: transform 1.3s var(--ease);
+}
+.vm-rd.is-ready .vm-rd-name-line:nth-child(2) > * {
+  transition-delay: 0.14s;
+}
+.vm-rd.is-ready .vm-rd-name-line.is-in > * {
+  transform: none;
+}
+
+@media (max-width: 899px) {
+  .vm-rd-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vm-rd-stat:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .vm-rd-stat:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .vm-rd-years { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vm-rd-video-grid { grid-template-columns: 1fr; }
+  .vm-rd-top { flex-direction: column; gap: 0.4rem; top: 4.4rem; }
+  .vm-rd-dates { text-align: left; }
+  .vm-rd-figure { top: clamp(5.5rem, 14vh, 8rem); }
+}
+
+@media (max-width: 560px) {
+  .vm-rd-years { grid-template-columns: 1fr; }
+  .vm-rd-years li { display: grid; grid-template-columns: 5.2rem 1fr; column-gap: 1rem; align-items: baseline; }
+  .vm-rd-year-text { margin-top: 0; }
 }
