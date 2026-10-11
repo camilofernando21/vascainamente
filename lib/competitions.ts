@@ -238,6 +238,31 @@ function outcomeOf(results: MatchInfo[]): { outcome: string; outcomeAt: string }
 
 // ---------- the league table ----------
 
+type Res = "V" | "E" | "D";
+
+// the run the Vasco is on right now (newest game first), in one sentence; nothing when there is no run worth saying
+function streakLine(newestFirst: Res[]): string {
+  const run = (ok: (r: Res) => boolean) => {
+    let n = 0;
+    while (n < newestFirst.length && ok(newestFirst[n])) n++;
+    return n;
+  };
+  const wins = run((r) => r === "V");
+  const unbeaten = run((r) => r !== "D");
+  const losses = run((r) => r === "D");
+  const winless = run((r) => r !== "V");
+  const pl = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+
+  if (wins >= 2) return `${wins} vitórias seguidas no Brasileirão.`;
+  if (unbeaten >= 3) {
+    const w = newestFirst.slice(0, unbeaten).filter((r) => r === "V").length;
+    return `Invicto há ${unbeaten} jogos no Brasileirão (${pl(w, "vitória", "vitórias")} e ${pl(unbeaten - w, "empate", "empates")}).`;
+  }
+  if (losses >= 2) return `${losses} derrotas seguidas no Brasileirão.`;
+  if (winless >= 4) return `${winless} jogos sem vencer no Brasileirão.`;
+  return "";
+}
+
 function zoneOf(pos: number): TableRow["zone"] {
   if (pos <= 4) return "lib";
   if (pos <= 6) return "pre";
@@ -291,6 +316,8 @@ function buildTable(d: { children?: { standings?: { entries?: unknown[] } }[] } 
   } else if (line17 !== undefined) {
     insights.push(`${pl(vasco.pts - line17, "ponto", "pontos")} acima da zona de rebaixamento.`);
   }
+  const run = streakLine(results.filter((m) => m.result).map((m) => m.result as Res));
+  if (run) insights.unshift(run);
   if (roundsLeft > 0) insights.push(`Restam ${pl(roundsLeft, "rodada", "rodadas")}, até ${roundsLeft * 3} pontos em disputa.`);
 
   const form = results
