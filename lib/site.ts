@@ -27,9 +27,8 @@ export const PUBLISHER = {
   email: "contato@catetoaocubo.com.br",
 } as const;
 
-// Contact for LGPD and content removal requests. Switch back to "contato@vascainamente.com.br"
-// once the domain's e-mail exists.
-export const CONTACT_EMAIL = PUBLISHER.email;
+// Contact for LGPD and content removal requests (shown on /privacidade and /termos).
+export const CONTACT_EMAIL = "contato@vascainamente.com.br";
 
 // Official social profiles (also listed as "sameAs" in the Organization schema).
 export const INSTAGRAM = {

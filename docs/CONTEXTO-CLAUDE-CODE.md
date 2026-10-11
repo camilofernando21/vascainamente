@@ -41,6 +41,12 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Variável de ambiente na Vercel (Production): NEXT_PUBLIC_SITE_URL=https://www.vascainamente.com.br. É lida em `lib/site.ts` e usada no canonical, no sitemap e nos links de compartilhamento. O redeploy já foi feito.
 - Google Search Console: propriedade de Domínio vascainamente.com.br, verificada por TXT no DNS. Sitemap enviado: https://www.vascainamente.com.br/sitemap.xml (em propriedade de Domínio é preciso a URL completa). Logo após o envio o status mostrou "Não foi possível buscar o sitemap" com 0 páginas, o que é normal no início. Conferir de novo em algumas horas ou no dia seguinte.
 
+### E-mail profissional (ativo em 11/10/2026)
+- contato@vascainamente.com.br recebe pelo ImprovMX (plano grátis, só para receber) e encaminha para o Gmail do responsável. Registros no registro.br: MX com prioridade 10 e 20 e um TXT de SPF na raiz.
+- A resposta sai pelo Gmail com "Enviar como" contato@, usando o SMTP do Gmail com uma senha de app. Nenhuma senha fica guardada em arquivo do projeto.
+- Atenção: alguns provedores, como o Outlook, podem mandar essas respostas para o spam. Se isso virar problema, a alternativa é o ImprovMX Premium.
+- `CONTACT_EMAIL` em `lib/site.ts` já aponta para contato@vascainamente.com.br. Ele aparece só nas páginas de privacidade e de termos, que leem a constante (nenhum endereço escrito direto no código). `PUBLISHER.email` (contato@catetoaocubo.com.br) continua sendo o e-mail da empresa e hoje não é exibido no site.
+
 ### Outros itens concluídos em 11/10/2026
 - Limite de gasto do X: US$ 10 por ciclo, recarga automática desligada.
 - `.claude/settings.json` com modelo padrão sonnet e `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, para gastar menos tokens.
@@ -53,7 +59,6 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Google News: a elegibilidade é automática e exige domínio próprio e conteúdo original.
 
 ### Pendências
-- E-mail profissional no domínio. Quando funcionar, trocar `CONTACT_EMAIL` em `lib/site.ts` para contato@vascainamente.com.br.
 - Google News Publisher Center.
 - Conferir o status do sitemap no Search Console (algumas horas ou no dia seguinte ao envio).
 - Conferir no GA4, em aba anônima, se aparece 1 usuário.
