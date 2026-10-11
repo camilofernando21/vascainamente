@@ -87,10 +87,16 @@ function importanceOf(post: Post): number {
   return (post.category === "transferencia" ? 3 : 2.5) + (official ? 1 : 0);
 }
 
+// calendar day in Brasília, so "today" turns at midnight for the fan, not at midnight UTC
+const spDay = (d: Date) => d.toLocaleDateString("en-CA", { timeZone: "America/Sao_Paulo" });
+
 export function pickFeaturedPost(posts: Post[]): Post | null {
   const now = Date.now();
+  const today = spDay(new Date(now));
+  // today's news first: yesterday's big story only holds the spot while today has nothing relevant
+  const ofToday = posts.filter((p) => spDay(new Date(p.date)) === today);
   const recent = posts.filter((p) => now - new Date(p.date).getTime() <= 30 * 60 * 60 * 1000);
-  const pool = recent.length ? recent : posts.slice(0, 10);
+  const pool = ofToday.some((p) => importanceOf(p) >= 3) ? ofToday : recent.length ? recent : posts.slice(0, 10);
   let best: Post | null = null;
   let bestScore = -1;
   for (const p of pool) {
