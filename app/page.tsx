@@ -49,6 +49,7 @@ export default async function Home() {
   return (
     <main className="relative min-h-screen">
       <JsonLd data={[organizationSchema(), websiteSchema()]} />
+      <h1 className="sr-only">Vascainamente: notícias do Vasco da Gama</h1>
       {/* hero keeps its own box so the menu stays pinned to the hero, not to the bottom of the page */}
       <div className="relative vm-hero-wrap">
         <NavTabs className="absolute bottom-10 left-6 z-30 hidden md:block lg:bottom-14 lg:left-12" />

@@ -6,7 +6,7 @@
   --bg: #0d0d0d;
   --text: rgb(240, 235, 225);
   --text-mid: rgba(240, 235, 225, 0.6);
-  --text-muted: rgba(240, 235, 225, 0.3);
+  --text-muted: rgba(240, 235, 225, 0.5);
   --border: rgba(240, 235, 225, 0.1);
   --red: #c8003c;
   --flash: #98002e;
@@ -17,7 +17,7 @@
   --text-primary: var(--text);
   --text-secondary: var(--text-mid);
   --text-meta: var(--text-muted);
-  --text-label: rgba(240, 235, 225, 0.4);
+  --text-label: rgba(240, 235, 225, 0.5);
   --surface: rgba(240, 235, 225, 0.04);
 }
 
@@ -284,7 +284,7 @@ html.vm-loader-off #vm-loader {
   font-family: var(--font-mono), monospace;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   margin-bottom: 1rem;
   opacity: 0;
@@ -519,7 +519,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s ease;
 }
 
@@ -585,7 +585,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   right: 0;
   text-align: center;
   font-size: 0.75rem;
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
 }
 
 .vm-day-window {
@@ -810,7 +810,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .q-panel-eyebrow {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 1.5rem;
 }
 
@@ -881,7 +881,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .q-stat-cat {
   font-size: 0.6rem;
   letter-spacing: 0.25em;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   margin-top: 0.4rem;
   display: block;
@@ -902,7 +902,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
-  color: rgba(240, 235, 225, 0.2);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s, transform 0.3s;
   user-select: none;
 }
@@ -1020,7 +1020,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .quotes-eyebrow {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 1.5rem;
 }
 
@@ -1036,7 +1036,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .quotes-heading em {
   font-style: italic;
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
 }
 
 #vm-today-field {
@@ -1122,7 +1122,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .quote-handle {
   font-size: 0.5rem;
   letter-spacing: 0.04em;
-  color: rgba(240, 235, 225, 0.28);
+  color: rgba(240, 235, 225, 0.5);
   font-family: var(--font-mono), monospace;
 }
 
@@ -1267,7 +1267,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.875rem;
   letter-spacing: 0.3em;
-  color: rgba(240, 235, 225, 0.2);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   white-space: nowrap;
   cursor: pointer;
@@ -1296,7 +1296,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 /* the idol whose video is playing in full cream, the others dimmed */
 .final-names.has-active .final-name {
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 .final-names.has-active .final-name-wrap.is-active .final-name {
   color: var(--text);
@@ -1311,7 +1311,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.6rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s ease, opacity 0.6s ease;
 }
 
@@ -1411,7 +1411,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-serif), serif;
   font-size: clamp(3rem, 7.5vw, 7.5rem);
   font-weight: 400;
-  color: rgba(240, 235, 225, 0.25);
+  color: rgba(240, 235, 225, 0.5);
   line-height: 1;
   padding: 0 0.15em;
 }
@@ -1442,7 +1442,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.6rem;
   letter-spacing: 0.32em;
-  color: rgba(240, 235, 225, 0.28);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   display: block;
   margin-bottom: 0.8rem;
@@ -1462,7 +1462,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .final-stats-pts span {
   font-family: var(--font-mono), monospace;
   font-size: 0.6rem;
-  color: rgba(240, 235, 225, 0.28);
+  color: rgba(240, 235, 225, 0.5);
   letter-spacing: 0.1em;
   margin-left: 0.3rem;
   vertical-align: middle;
@@ -1472,7 +1472,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.6rem;
   letter-spacing: 0.1em;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   line-height: 2;
   border-top: 1px solid rgba(240, 235, 225, 0.07);
@@ -1501,7 +1501,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.875rem;
   letter-spacing: 0.2em;
-  color: rgba(240, 235, 225, 0.2);
+  color: rgba(240, 235, 225, 0.5);
   text-transform: uppercase;
   white-space: nowrap;
   animation: hintPulse 3s ease-in-out infinite;
@@ -1554,7 +1554,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem 1.5rem;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-footer-cats .vm-label {
@@ -1565,7 +1565,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   width: 100%;
   font-size: 0.75rem;
   letter-spacing: 0.05em;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 /* ---------- reduced motion: no animation, pinned sections become normal blocks ---------- */
@@ -1755,7 +1755,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-cat-eyebrow {
   position: relative;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 1.5rem;
 }
 
@@ -1778,7 +1778,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-serif), serif;
   font-style: italic;
   font-size: clamp(1.6rem, 3vw, 2.4rem);
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
 }
 
 /* news rows */
@@ -1801,7 +1801,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-news-index {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color: rgba(240, 235, 225, 0.25);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-news-main {
@@ -1813,7 +1813,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-news-cat {
   font-size: 0.7rem;
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-news-cat.is-red {
@@ -1844,7 +1844,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.85rem;
   line-height: 1.75;
   letter-spacing: 0.02em;
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -1859,7 +1859,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   white-space: nowrap;
 }
 
@@ -1914,7 +1914,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-page-num,
 .vm-page-step {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s ease;
   outline: none;
 }
@@ -1983,7 +1983,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-article-kicker {
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 2rem;
 }
 
@@ -2033,7 +2033,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-article-meta a {
@@ -2154,7 +2154,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-share-title {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 1rem;
 }
 
@@ -2211,7 +2211,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-related-title {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 2.5rem;
 }
 
@@ -2384,7 +2384,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s ease;
 }
 
@@ -2417,7 +2417,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-vtv-eyebrow {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 1rem;
 }
 
@@ -2486,7 +2486,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-vtv-credit {
@@ -2522,7 +2522,7 @@ html.vm-cursor body:not(.is-touch) *::after {
    ========================================================================== */
 
 .vm-hist-eyebrow {
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
   margin-bottom: 2rem;
 }
 
@@ -2604,7 +2604,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   position: absolute;
   top: 3rem;
   left: 5vw;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-tl-track {
@@ -2638,7 +2638,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   gap: 0.6rem;
   margin-top: 1.5rem;
   font-size: 0.7rem;
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
 }
 
 .vm-tl-title {
@@ -2680,7 +2680,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-hist-block-title em {
   font-style: italic;
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
 }
 
 .vm-titles {
@@ -2737,7 +2737,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.65rem;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-hist-idol-name {
@@ -2759,7 +2759,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-hist-idol-lines {
@@ -2772,7 +2772,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   letter-spacing: 0.1em;
   line-height: 1.8;
   text-transform: uppercase;
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-hist-cta {
@@ -2906,7 +2906,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-footer-legal a {
-  color: rgba(240, 235, 225, 0.4);
+  color: rgba(240, 235, 225, 0.5);
   transition: color 0.3s ease;
   outline: none;
 }
@@ -3013,7 +3013,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-legal-updated {
   margin-top: 1.5rem;
-  color: rgba(240, 235, 225, 0.35);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-legal-body {
@@ -3066,11 +3066,11 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
-  color: rgba(240, 235, 225, 0.3);
+  color: rgba(240, 235, 225, 0.5);
 }
 
 .vm-footer-credit a {
-  color: rgba(240, 235, 225, 0.45);
+  color: rgba(240, 235, 225, 0.55);
   text-decoration: underline;
   text-decoration-color: rgba(240, 235, 225, 0.2);
   text-underline-offset: 3px;
@@ -3460,6 +3460,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
   .vm-mhero-preload {
     opacity: 0;
+    object-fit: contain;
   }
 }
 
