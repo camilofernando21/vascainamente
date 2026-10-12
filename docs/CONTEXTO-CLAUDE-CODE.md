@@ -35,14 +35,17 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - `npm audit`: o Next 14.2.35 tem avisos de negação de serviço que só se resolvem subindo para a versão 16 (atualização grande, deixar para uma tarefa própria). O restante é de ferramentas de build.
 
 ### Domínio e Search Console (concluído em 11/10/2026)
-- vascainamente.com.br está conectado e funcionando. Registrado no registro.br, e o DNS continua nos servidores do registro.br (a zona do Cloudflare foi criada, mas os nameservers NÃO foram trocados).
-- Registros no registro.br: A (raiz) 216.198.79.1; CNAME www apontando para d88a6868cc0019b5.vercel-dns-017.com.; TXT da raiz com a verificação do Google Search Console.
+- vascainamente.com.br está conectado e funcionando. Registrado no registro.br. Em 12/10/2026 o DNS foi movido para a Cloudflare (plano grátis), com os nameservers laila.ns.cloudflare.com e todd.ns.cloudflare.com definidos no registro.br. Domínio ativo na Cloudflare, site abre com e sem www e o e-mail chega.
+- Todos os registros na Cloudflare ficam em "Somente DNS" (nuvem cinza). NÃO ligar o proxy (nuvem laranja): a Vercel não recomenda. Ignorar o aviso amarelo da Cloudflare que sugere ligar o proxy.
+- Registros na Cloudflare (7): A (raiz) 216.198.79.1; CNAME www d88a6868cc0019b5.vercel-dns-017.com; MX mx1.improvmx.com (10) e mx2.improvmx.com (20); TXT SPF `v=spf1 include:spf.improvmx.com include:_spf.google.com ~all`; TXT google-site-verification do Search Console; TXT _dmarc `v=DMARC1; p=none;`. A Cloudflare cria sozinha um MX nulo, um SPF `-all` e um DMARC `p=reject` ao importar a zona: esses foram removidos ou editados, porque derrubariam o e-mail.
+- DNSSEC: o DS antigo do registro.br foi removido na troca. Depois, o DNSSEC foi ligado pela Cloudflare e o DS foi cadastrado no registro.br (Keytag 2371, algoritmo 13, SHA256). Conferido em 12/10/2026 pelo dns.google: `AD: true`.
 - Na Vercel, os 3 domínios (vascainamente.com.br, www.vascainamente.com.br e vascainamente.vercel.app) estão com "Valid Configuration". A raiz redireciona (308) para o www.
 - Variável de ambiente na Vercel (Production): NEXT_PUBLIC_SITE_URL=https://www.vascainamente.com.br. É lida em `lib/site.ts` e usada no canonical, no sitemap e nos links de compartilhamento. O redeploy já foi feito.
 - Google Search Console: propriedade de Domínio vascainamente.com.br, verificada por TXT no DNS. Sitemap enviado: https://www.vascainamente.com.br/sitemap.xml (em propriedade de Domínio é preciso a URL completa). Logo após o envio o status mostrou "Não foi possível buscar o sitemap" com 0 páginas, o que é normal no início. Conferir de novo em algumas horas ou no dia seguinte.
 
 ### E-mail profissional (ativo em 11/10/2026)
-- contato@vascainamente.com.br recebe pelo ImprovMX (plano grátis, só para receber) e encaminha para o Gmail do responsável. Registros no registro.br: MX com prioridade 10 e 20 e um TXT de SPF na raiz.
+- contato@vascainamente.com.br recebe pelo ImprovMX (plano grátis, só para receber) e encaminha para o Gmail do responsável. Registros (agora na Cloudflare): MX com prioridade 10 e 20 e um TXT de SPF na raiz.
+- Mensagens encaminhadas podem cair no spam do Gmail. Foi criado no Gmail um filtro "nunca enviar para spam" para contato@vascainamente.com.br.
 - A resposta sai pelo Gmail com "Enviar como" contato@, usando o SMTP do Gmail com uma senha de app. Nenhuma senha fica guardada em arquivo do projeto.
 - Atenção: alguns provedores, como o Outlook, podem mandar essas respostas para o spam. Se isso virar problema, a alternativa é o ImprovMX Premium.
 - `CONTACT_EMAIL` em `lib/site.ts` já aponta para contato@vascainamente.com.br. Ele aparece só nas páginas de privacidade e de termos, que leem a constante (nenhum endereço escrito direto no código). `PUBLISHER.email` (contato@catetoaocubo.com.br) continua sendo o e-mail da empresa e hoje não é exibido no site.
@@ -55,11 +58,21 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 ### Monetização (achados de 11/10/2026)
 - Publicidade de apostas está proibida pela MP 1.394/2026 (aguarda votação no Congresso, prazo por volta de 23/11/2026).
 - Risco de o conteúdo reescrito automaticamente ser tratado como "scaled content" pelo Google/AdSense: o site precisa de mais conteúdo original.
-- Afiliado do Mercado Livre (até cerca de 14% em esportes e vestuário) é uma rota possível. Canais do WhatsApp ainda não monetizam.
+- Afiliado do Mercado Livre (até 16% em esportes e vestuário na venda direta, segundo a imprensa) é uma rota possível. Canais do WhatsApp ainda não monetizam diretamente.
 - Google News: a elegibilidade é automática e exige domínio próprio e conteúdo original.
+
+### Redes sociais e canal (ideias de 11 e 12/10/2026)
+- Plano: reativar o Instagram @_vascainamente_ (postagem diária), usar a conta nova do X (usuário ainda a informar) e criar o TikTok. Cobalt criará os posts e artes com a identidade do site. Tudo só vai ao ar com aprovação do proprietário no Slack.
+- Kit de marca para o Cobalt (cores, fontes, Cruz de Malta, grão, layout do card 1080x1350, voz e regras) foi gerado fora do repositório. A Cruz de Malta vem sempre de `public/images/escudo-1-cruz.png`.
+- Canal do WhatsApp (modelo Lance! Vasco) é a opção recomendada para distribuir notícia, no lugar de um grupo. Decisão de criar ainda pendente.
+- Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
 ### Pendências
 - Google News Publisher Center.
+- Confirmar que o Search Console continua verificado depois da troca de DNS (o TXT foi copiado para a Cloudflare).
+- Entregar o kit de marca ao Cobalt e obter o usuário do X.
+- Decidir sobre o canal do WhatsApp e sobre os programas de afiliados.
+- Opcional: ImprovMX Premium ou SMTP gratuito com DKIM do domínio, se o Outlook mandar as respostas do contato@ para o spam.
 - Conferir o status do sitemap no Search Console (algumas horas ou no dia seguinte ao envio).
 - Conferir no GA4, em aba anônima, se aparece 1 usuário.
 - Central do Jogo (placar ao vivo, escalações e eventos): precisa do API-Football Pro (cerca de US$ 19 por mês). Decisão adiada. A chave do plano grátis está na Vercel e no `.env.local` como `API_FOOTBALL_KEY` (o plano grátis só libera temporadas de 2022 a 2024).
