@@ -9,6 +9,9 @@ imageUrl: "https://s2-ge.glbimg.com/oKmsI0TuVcB1x7l4aK3Q7ULKZUY=/i.s3.glbimg.com
 excerpt: "O clube ingressou com um agravo interno no TJ-RJ nesta sexta-feira, argumentando que o prazo da Conmebol para definição do estádio se encerra neste sábado. O caso será agora julgado por três ou cinco desembargadores da 23ª Câmara de Direito Privado. Já são duas negativas na Justiça, mas o Vasco não desiste."
 seoTitle: "Vasco recorre à Justiça para jogar no Maracanã contra o Boca"
 seoDescription: "Vasco entra com agravo interno no TJ-RJ e pede urgência para garantir o Maracanã na semifinal da Sul-Americana contra o Boca Juniors no dia 20 de outubro."
+updated: "2026-10-12T12:30:56-03:00"
 ---
 
 O Vasco recorreu novamente à Justiça na tarde desta sexta-feira para tentar garantir o Maracanã como palco do jogo contra o Boca Juniors, válido pela semifinal da Copa Sul-Americana, marcado para o dia 20 de outubro. O clube protocolou um agravo interno contestando a decisão tomada na última terça-feira pelo desembargador Alexandre de Carvalho Mesquita, que havia negado sozinho o pedido. Com o recurso, o caso agora será apreciado por três ou cinco integrantes da 23ª Câmara de Direito Privado do Tribunal de Justiça do Estado do Rio de Janeiro.
+
+**Atualização em 12/10 às 12:30:** O Vasco protocolou novo pedido de liminar nesta segunda-feira, e a Conmebol estendeu o prazo para definição do estádio até as 12h desta terça-feira, ameaçando se manifestar caso não haja resposta. ([leia a matéria](/2026-10-12-vasco-entra-com-novo-pedido-de-liminar-para-garantir-maracana-contra-o))
