@@ -12,6 +12,7 @@ imageUrl: "https://pbs.twimg.com/media/HUjDQZnWcAAJm38.jpg"
 excerpt: "O Vasco divulgou o time titular para o jogo de ida da semifinal da Sul-Americana contra o Boca Juniors, na Bombonera, às 21h30. Léo Jardim defende o gol e Thiago Mendes é o capitão. Pedro Emanuel manda a campo a equipe com Bruno Duarte e Andrés Gómez no ataque."
 seoTitle: "Escalação do Vasco contra o Boca Juniors na Bombonera"
 seoDescription: "Vasco confirma os 11 titulares para enfrentar o Boca Juniors na Bombonera pela semifinal de ida da Sul-Americana 2026. Confira a escalação."
+updated: "2026-10-13T20:31:37-03:00"
 ---
 
 O Vasco confirmou a escalação para o duelo desta terça-feira contra o Boca Juniors, em La Bombonera, pela semifinal de ida da Copa Sul-Americana 2026. O jogo começa às 21h30 e tem transmissão pelo SBT e Paramount+.
@@ -21,3 +22,5 @@ Léo Jardim defende o gol. A defesa é formada por Paulo Henrique, Saldivia, Rob
 Entre os reservas estão Fuzato, Puma Rodríguez, Gabriel, Lucas Freitas, Lucas Piton, Jair, Ramon Rique, Tchê Tchê, Nuno Moreira, Marino, David e Brenner. A ausência de Facundo Colidio, impedido de jogar contra o Boca por estar inscrito pelo River Plate na fase mata-mata, já era esperada.
 
 O Cruzmaltino busca um resultado positivo em Buenos Aires para chegar ao jogo de volta no Maracanã, no dia 20 de outubro, em situação favorável. A torcida vascaína marcou presença nas ruas da capital argentina e promete fazer barulho nas arquibancadas da Bombonera.
+
+**Atualização em 13/10 às 20:31:** Adson é confirmado como novidade na lista de relacionados do Vasco para o duelo contra o Boca Juniors em La Bombonera. ([Gazeta Esportiva](https://www.gazetaesportiva.com/times/vasco/vasco-tem-adson-como-novidade-para-duelo-contra-o-boca-juniors/))
