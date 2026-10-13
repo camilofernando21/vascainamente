@@ -18,6 +18,14 @@ export const OG_DEFAULTS = {
   locale: "pt_BR",
 } as const;
 
+// Link-preview image for pages without their own (the site card at app/opengraph-image.tsx).
+export const OG_IMAGE_DEFAULT = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: "Vascainamente, notícias do Vasco da Gama",
+} as const;
+
 // Who publishes the site. The CNPJ is shown only on /privacidade and /termos (not in the footer or schema).
 export const PUBLISHER = {
   legalName: "Camilo Fernando Bomfim & Cia Ltda",

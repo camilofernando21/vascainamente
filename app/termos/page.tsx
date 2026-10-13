@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SiteTopBar from "@/components/SiteTopBar";
 import SiteFooter from "@/components/home/SiteFooter";
-import { CONTACT_EMAIL, OG_DEFAULTS, PUBLISHER, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, OG_DEFAULTS, OG_IMAGE_DEFAULT, PUBLISHER, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Termos de uso",
   description: `Termos de uso do ${SITE_NAME}.`,
   alternates: { canonical: "/termos" },
-  openGraph: { ...OG_DEFAULTS, type: "website", url: "/termos", title: `Termos de uso · ${SITE_NAME}` },
+  openGraph: { ...OG_DEFAULTS, type: "website", url: "/termos", title: `Termos de uso · ${SITE_NAME}`, images: [OG_IMAGE_DEFAULT] },
 };
 
 const UPDATED = "9 de outubro de 2026";

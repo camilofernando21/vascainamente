@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import SiteTopBar from "@/components/SiteTopBar";
 import SiteFooter from "@/components/home/SiteFooter";
 import ReopenConsentButton from "@/components/consent/ReopenConsentButton";
-import { CONTACT_EMAIL, OG_DEFAULTS, PUBLISHER, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, OG_DEFAULTS, OG_IMAGE_DEFAULT, PUBLISHER, SITE_NAME } from "@/lib/site";
 import { ACTIVE_TRACKERS, GA_ID, CLARITY_ID, META_PIXEL_ID, listPt } from "@/lib/trackers";
 
 export const metadata: Metadata = {
   title: "Privacidade",
   description: `Como o ${SITE_NAME} trata dados e cookies.`,
   alternates: { canonical: "/privacidade" },
-  openGraph: { ...OG_DEFAULTS, type: "website", url: "/privacidade", title: `Privacidade · ${SITE_NAME}` },
+  openGraph: { ...OG_DEFAULTS, type: "website", url: "/privacidade", title: `Privacidade · ${SITE_NAME}`, images: [OG_IMAGE_DEFAULT] },
 };
 
 const UPDATED = "9 de outubro de 2026";

@@ -6,7 +6,7 @@ import HistoryTimeline from "@/components/history/HistoryTimeline";
 import { CruzMalta } from "@/components/ui/cruz-malta";
 import { HISTORY_DATES, TITLES, dayLabel, factsForToday, nextFact } from "@/lib/historia";
 import { IDOLS } from "@/lib/idols";
-import { OG_DEFAULTS } from "@/lib/site";
+import { OG_DEFAULTS, OG_IMAGE_DEFAULT } from "@/lib/site";
 import { HISTORY_HREF } from "@/lib/categories";
 import JsonLd from "@/components/JsonLd";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   title: "Histórico",
   description: DESCRIPTION,
   alternates: { canonical: HISTORY_HREF },
-  openGraph: { ...OG_DEFAULTS, type: "website", url: HISTORY_HREF, title: "Histórico · Vascainamente", description: DESCRIPTION },
-  twitter: { card: "summary_large_image", title: "Histórico · Vascainamente", description: DESCRIPTION },
+  openGraph: { ...OG_DEFAULTS, type: "website", url: HISTORY_HREF, title: "Histórico · Vascainamente", description: DESCRIPTION, images: [OG_IMAGE_DEFAULT] },
+  twitter: { card: "summary_large_image", title: "Histórico · Vascainamente", description: DESCRIPTION, images: [OG_IMAGE_DEFAULT.url] },
 };
 
 function inDays(days: number) {
