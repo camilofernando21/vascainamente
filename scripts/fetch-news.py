@@ -483,9 +483,19 @@ def main():
         print(f"ERRO FATAL: cliente da Anthropic não inicializou: {e}")
         sys.exit(1)
 
+    # matchday mode (lineup-watch.yml): `--only-x vascodagama` reads only that profile on X, no RSS at all
+    only_x = None
+    if "--only-x" in sys.argv:
+        at = sys.argv.index("--only-x") + 1
+        if at >= len(sys.argv):
+            print("ERRO: --only-x precisa do nome do perfil, por exemplo --only-x vascodagama")
+            sys.exit(2)
+        only_x = [sys.argv[at].lower().lstrip("@")]
+        print(f"Modo dia de jogo: lendo só @{only_x[0]} no X")
+
     # every source becomes the same kind of item: RSS news and the beat reporters' posts on X
     items = []
-    for src in RSS_SOURCES:
+    for src in ([] if only_x else RSS_SOURCES):
         try:
             feed = feedparser.parse(src["url"])
             for entry in feed.entries[:15]:
@@ -504,7 +514,7 @@ def main():
         except Exception as e:
             print(f"  ERRO RSS {src['name']}: {e}")
     # beat reporters cover only Vasco, so their posts skip the title filter: the AI decides what is news
-    items.extend(fetch_x_items())
+    items.extend(fetch_x_items(only_x))
 
     for item in items:
         title, desc, link = item["title"], item["desc"], item["link"]

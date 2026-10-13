@@ -1,0 +1,58 @@
+name: Lineup Watch
+
+# Matchday mode for the official lineup. An external trigger (cron-job.org) calls this every 5 minutes,
+# from 9:00 to 23:59 Brasília. The first step decides in seconds whether a game of the Vasco starts in the
+# next 3 hours and its lineup is not saved yet; outside that window the run ends there, without reading X.
+# Inside it, only the official profile @VascodaGama is read. The 15-minute cycle (fetch-news.yml) is untouched.
+on:
+  workflow_dispatch:
+
+# the same queue as the 15-minute cycle: never two runs at once on the same files
+concurrency:
+  group: fetch-news
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.ref }}
+
+      - name: Is there a lineup to wait for?
+        id: gate
+        run: python3 scripts/lineup_gate.py
+
+      - name: Setup Python
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run == 'true'
+        run: pip install -r scripts/requirements.txt
+
+      - name: Read the official profile and publish the lineup
+        if: steps.gate.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_MONTHLY_POST_LIMIT: ${{ vars.X_MONTHLY_POST_LIMIT }}
+        run: python scripts/fetch-news.py --only-x vascodagama
+
+      - name: Commit new articles
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name  "vascainamente-bot"
+          git config user.email "bot@vascainamente.com.br"
+          bash scripts/commit-news.sh

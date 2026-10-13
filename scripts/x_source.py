@@ -41,8 +41,10 @@ def _save_state(state: dict) -> None:
     STATE_FILE.write_text(json.dumps(state, ensure_ascii=False, indent=1, sort_keys=True) + "\n", encoding="utf-8")
 
 
-def fetch_x_items() -> list:
-    """Itens no mesmo formato das notícias do RSS: name, title, desc, link, image, from_x."""
+def fetch_x_items(only: list | None = None) -> list:
+    """Itens no mesmo formato das notícias do RSS: name, title, desc, link, image, from_x.
+
+    `only` limita a leitura a alguns perfis (modo dia de jogo: só o oficial do Vasco). Sem ele, lê todos."""
     token = os.environ.get("X_BEARER_TOKEN", "").strip()
     if not token:
         return []
@@ -57,10 +59,11 @@ def fetch_x_items() -> list:
     users = state.setdefault("users", {})
     since = state.setdefault("since", {})
     items = []
+    accounts = [h for h in ACCOUNTS if not only or h in only]
 
     try:
         # ids e nomes: uma consulta só, uma única vez por perfil
-        missing = [h for h in ACCOUNTS if h not in users]
+        missing = [h for h in accounts if h not in users]
         if missing:
             r = requests.get(
                 f"{API}/users/by",
@@ -72,7 +75,7 @@ def fetch_x_items() -> list:
             for u in r.json().get("data", []):
                 users[u["username"].lower()] = {"id": u["id"], "name": u["name"]}
 
-        for handle in ACCOUNTS:
+        for handle in accounts:
             user = users.get(handle)
             if not user:
                 print(f"  X: perfil @{handle} não encontrado")

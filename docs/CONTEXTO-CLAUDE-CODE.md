@@ -77,6 +77,16 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 - Sitemap: jogos dos 14 dias anteriores e dos 14 seguintes, mais `/jogos`. Os mais antigos continuam abertos, fora do sitemap. `/jogos` lista próximos jogos e resultados. Links de entrada: card do próximo jogo, jogos futuros e campanhas da seção Competições, rodapé e `llms.txt`.
 - Ideias para depois: comparar as chances "antes" e "depois" do jogo (precisa guardar uma foto das chances antes da partida), imagem de prévia própria por jogo e página ao vivo com atualização mais curta.
 
+### Modo dia de jogo para a escalação oficial (13/10/2026)
+- Objetivo: a escalação oficial do perfil @VascodaGama aparecer em 3 a 6 minutos (antes, até 16), sem mexer no ciclo de 15 minutos.
+- `.github/workflows/lineup-watch.yml` (só `workflow_dispatch`) é chamado a cada 5 minutos pelo cron-job.org, das 9h às 23h59 de Brasília. Usa o mesmo grupo de fila (`fetch-news`) do ciclo de 15 minutos, então nunca rodam juntos. O GitHub guarda só uma execução pendente por grupo: se uma rodada demorar mais de 5 minutos, uma pendente pode ser substituída por outra.
+- O primeiro passo é `scripts/lineup_gate.py` (só biblioteca padrão, cerca de 2 s): lê a agenda da ESPN (as mesmas 7 competições do site) e responde se um jogo do Vasco começa nas próximas 3 horas e a escalação estruturada (matéria com `matchEvent: "escalacao"` e `lineup`, com data depois do início da janela) ainda não foi gravada. Em dúvida, ou com a agenda fora do ar, responde "pular". Para testar uma hora qualquer: `GATE_NOW=2026-10-13T22:00:00+00:00 python scripts/lineup_gate.py`. Fora da janela o workflow termina aí, sem instalar nada e sem consultar o X.
+- Dentro da janela: `python scripts/fetch-news.py --only-x vascodagama` lê só esse perfil (nenhum RSS, nenhum outro setorista) e publica pelo `commit-news.sh`. `fetch_x_items(only=[...])` em `scripts/x_source.py` faz o filtro. O estado (`.x_state.json`: `since` e leituras do mês) e o cache de matérias são os mesmos do ciclo normal.
+- Parada: quando há uma matéria de escalação com os 11 titulares gravada na janela, ou quando o jogo começa. Se a IA não conseguir ler os 11 nomes, a matéria sai sem `lineup` e o vigia continua olhando até o início do jogo, sem custo (sem post novo, sem cobrança).
+- Custo no X: cobra-se por post devolvido (US$ 0,005), e a mesma leitura no mesmo dia (UTC) conta uma vez. O vigia lê os mesmos posts que o ciclo de 15 minutos já leria, só mais cedo. Em 10/10 o robô fez dezenas de consultas, a maioria vazia, e o gasto foi US$ 0,14 (28 posts), o que indica que consulta vazia não custa. A confirmar no painel de uso do X depois do primeiro jogo. Consumo do ciclo normal: cerca de 36 posts por dia (uns 1.100 por mês, perto de US$ 5,50) para um teto de 2.000.
+- Repositório público: Actions não consome minutos. Fora da janela cada disparo é um registro curto no histórico.
+- Job do cron-job.org (criado pelo responsável, depois do push): POST em `https://api.github.com/repos/camilofernando21/vascainamente/actions/workflows/lineup-watch.yml/dispatches`, cabeçalhos `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2022-11-28`, `Content-Type: application/json` e `Authorization: Bearer` com o mesmo token do job atual (nunca escrito em arquivo), corpo `{"ref":"master"}`, fuso America/Sao_Paulo, minutos 0, 5, 10 e assim até 55, horas 9 a 23, todos os dias. Resposta esperada: HTTP 204.
+
 ### Outros itens concluídos em 11/10/2026
 - Limite de gasto do X: US$ 10 por ciclo, recarga automática desligada.
 - `.claude/settings.json` com modelo padrão sonnet e `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, para gastar menos tokens.
@@ -99,6 +109,7 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 
 ### Pendências
 - Conferir a primeira escalação estruturada do X (jogo contra o Boca, 13/10, 21:30): quando o Vasco postar a escalação, a matéria gerada pelo robô deve ter `lineup` no cabeçalho com os 11 titulares, e a página `/jogo/boca-x-vasco-2026-10-13` deve mostrá-la com o selo "Perfil oficial do Vasco no X" e a hora. Se a matéria sair sem `lineup`, ver se a imagem do post trazia os nomes legíveis (o robô só grava com os 11 nomes).
+- Criar o segundo job no cron-job.org para o `lineup-watch` (configuração acima) e testar com uma execução manual, que deve responder 204. Depois do primeiro jogo, olhar o painel de uso do X para confirmar que as consultas vazias não custam nada.
 - Conferir o status do sitemap no Search Console em 1 ou 2 dias contados do envio, feito em 12/10/2026 (ou seja, entre 13 e 14/10/2026). Hoje mostra "Não foi possível buscar".
 - Entregar o kit de marca ao Cobalt (usuário do X já definido: @Vascainamente). O kit de marca foi gerado fora do repositório e ainda será entregue ao Cobalt.
 - Decidir sobre o canal do WhatsApp e sobre afiliados e monetização (ver os achados acima).
