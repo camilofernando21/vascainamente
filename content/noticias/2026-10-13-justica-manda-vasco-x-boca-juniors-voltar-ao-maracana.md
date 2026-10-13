@@ -10,6 +10,7 @@ imageUrl: ""
 excerpt: "O Tribunal de Justiça do Rio de Janeiro acatou nova petição do Vasco e determinou que o jogo de volta da semifinal da Sul-Americana, no dia 20 de outubro, seja disputado no Maracanã. A decisão reverte a suspensão imposta anteriormente e encerra, ao menos por ora, a batalha judicial pelo estádio."
 seoTitle: "TJ-RJ manda Vasco x Boca Juniors voltar ao Maracanã"
 seoDescription: "Tribunal de Justiça do Rio acata petição do Vasco e determina que jogo de volta da semifinal da Sul-Americana contra o Boca Juniors seja no Maracanã."
+updated: "2026-10-13T12:01:10-03:00"
 ---
 
 O TJ-RJ acatou nova petição apresentada pelo Vasco e determinou que o duelo de volta da semifinal da Copa Sul-Americana contra o Boca Juniors, marcado para o dia 20 de outubro, aconteça no Maracanã. A decisão representa uma vitória do clube na longa disputa judicial com o Consórcio Fla-Flu pelo direito de usar o estádio.
@@ -19,3 +20,5 @@ A batalha pelos portões do Maracanã já dura dias. Na última sexta-feira, a d
 A Conmebol, segundo apuração do setorista Gustavo Tutinha, está ao lado do Vasco nessa disputa e direciona sua irritação ao CEO do Consórcio, Frederico Nantes. O respaldo da entidade sul-americana reforçou a posição do clube nas instâncias jurídicas.
 
 Com o Maracanã confirmado para o dia 20, a torcida vascaína pode agora se planejar para o confronto decisivo. O clube já havia vendido 45 mil ingressos em pouco mais de 12 horas quando a venda foi aberta, mostrando a dimensão do apoio popular. A expectativa é de casa cheia para a semifinal mais importante dos últimos anos.
+
+**Atualização em 13/10 às 12:01:** Os ingressos para Vasco x Boca Juniors no Maracanã foram esgotados após a retomada das vendas nesta terça-feira, com mais de 45 mil bilhetes comercializados. ([leia a matéria](/2026-10-13-ingressos-esgotados-torcida-do-vasco-lota-o-maracana-para-a-semifinal-))
