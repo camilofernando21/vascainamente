@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/R38-Ric0NNM_sXiNmA7gCZtm4HQ=/i.s3.glbimg.com
 excerpt: "O Vasco protocolou nova liminar na Justiça do Rio nesta segunda-feira para reverter o veto do Consórcio Fla-Flu e usar o Maracanã na semifinal da Sul-Americana contra o Boca Juniors, no dia 20 de outubro. O clube argumenta que uma semifinal continental tem mais peso do que um jogo de NBB, argumento usado pelo Consórcio para derrubar a liminar anterior. A Conmebol estendeu o prazo até as 12h desta terça-feira para o Vasco confirmar o palco da partida."
 seoTitle: "Vasco pede nova liminar para jogar no Maracanã contra o Boca"
 seoDescription: "Vasco protocolou nova liminar nesta segunda para garantir o Maracanã na semifinal da Sul-Americana. Conmebol deu prazo até terça-feira para definição do palco."
-updated: "2026-10-12T12:31:13-03:00"
+updated: "2026-10-13T08:16:09-03:00"
 ---
 
 O Vasco entrou com mais um pedido de liminar na Justiça do Rio de Janeiro na manhã desta segunda-feira, buscando reverter o bloqueio imposto pelo Consórcio Fla-Flu e garantir o Maracanã para a semifinal da Copa Sul-Americana contra o Boca Juniors, marcada para o dia 20 de outubro. A batalha jurídica segue intensa: na última sexta-feira, uma primeira liminar havia liberado o estádio, mas a desembargadora Suely Lopes Magalhães derrubou a decisão no sábado após recurso do Consórcio.
@@ -22,3 +22,5 @@ Ao mesmo tempo, o próprio Ministério Público solicitou reconsideração à de
 O imbróglio expõe uma situação delicada para o clube. Mais de 45 mil ingressos foram vendidos nas primeiras 12 horas de comercialização, e a indefinição sobre o estádio gera ansiedade na torcida e pressão crescente sobre todos os envolvidos na disputa judicial. O Vasco segue firme na batalha e espera que a Justiça encerre a novela a tempo de garantir a melhor estrutura possível para um jogo histórico.
 
 **Atualização em 12/10 às 12:31:** O MP-RJ entrou com pedido de reconsideração da decisão que suspendeu a liminar favorável ao Vasco, e a Conmebol estendeu o prazo para indicação do estádio até amanhã, às 12h. ([leia a matéria](/2026-10-12-mp-rj-pede-reconsideracao-de-decisao-que-suspendeu-maracana-para-vasco))
+
+**Atualização em 13/10 às 08:16:** O TJ-RJ acatou a petição do Vasco e determinou que Vasco x Boca Juniors, no dia 20 de outubro, seja disputado no Maracanã. ([leia a matéria](/2026-10-13-justica-manda-vasco-x-boca-juniors-voltar-ao-maracana))
