@@ -3,9 +3,9 @@
 // section never renders a date or a number differently from the server. The source is cached for a
 // couple of minutes by Next's fetch cache; if ESPN fails, the section simply hides until it answers.
 
-const SITE = "https://site.api.espn.com/apis/site/v2/sports/soccer";
-const STANDINGS = "https://site.api.espn.com/apis/v2/sports/soccer";
-const VASCO_ID = "3454";
+export const SITE = "https://site.api.espn.com/apis/site/v2/sports/soccer";
+export const STANDINGS = "https://site.api.espn.com/apis/v2/sports/soccer";
+export const VASCO_ID = "3454";
 const TZ = "America/Sao_Paulo";
 const FIXTURES_TTL = 120; // seconds
 const TABLE_TTL = 300;
@@ -84,7 +84,7 @@ export type CompetitionsData = {
 
 // ---------- helpers ----------
 
-async function espn(url: string, ttl: number) {
+export async function espn(url: string, ttl: number) {
   try {
     const res = await fetch(url, { next: { revalidate: ttl }, signal: AbortSignal.timeout(8000) });
     if (!res.ok) return null;
@@ -96,7 +96,7 @@ async function espn(url: string, ttl: number) {
 
 const WEEKDAYS = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
 
-function sp(iso: string) {
+export function sp(iso: string) {
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: TZ,
     weekday: "short",
@@ -149,7 +149,7 @@ function num(v: unknown): number | null {
   return Number.isFinite(n) && v !== null && v !== "" ? n : null;
 }
 
-function team(c: { team: { id: string; displayName: string; shortDisplayName?: string; abbreviation?: string; logos?: { href: string }[]; logo?: string } }): TeamInfo {
+export function team(c: { team: { id: string; displayName: string; shortDisplayName?: string; abbreviation?: string; logos?: { href: string }[]; logo?: string } }): TeamInfo {
   const t = c.team;
   return {
     name: t.displayName,
@@ -263,7 +263,7 @@ function streakLine(newestFirst: Res[]): string {
   return "";
 }
 
-function zoneOf(pos: number): TableRow["zone"] {
+export function zoneOf(pos: number): TableRow["zone"] {
   if (pos <= 4) return "lib";
   if (pos <= 6) return "pre";
   if (pos <= 12) return "sula";

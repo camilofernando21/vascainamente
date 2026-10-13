@@ -8,6 +8,15 @@ export default function LegalLinks() {
   return (
     <ul className="vm-footer-legal">
       <li>
+        <Link href="/quem-somos">Quem somos</Link>
+      </li>
+      <li>
+        <Link href="/como-produzimos">Como produzimos</Link>
+      </li>
+      <li>
+        <Link href="/correcoes">Correções</Link>
+      </li>
+      <li>
         <Link href="/privacidade" onClick={() => reopenConsent()}>
           Privacidade
         </Link>

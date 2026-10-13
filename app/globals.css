@@ -2928,7 +2928,8 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-footer-legal {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
   font-family: var(--font-mono), monospace;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
@@ -5052,4 +5053,446 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-cover-word::first-letter {
   text-transform: uppercase;
+}
+
+/* note at the end of an article: how it was made and where to report an error */
+.vm-article-note {
+  margin-top: 2.75rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  color: rgba(240, 235, 225, 0.5);
+}
+.vm-article-note a {
+  color: rgba(240, 235, 225, 0.75);
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 235, 225, 0.25);
+  text-underline-offset: 3px;
+  transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+.vm-article-note a:hover,
+.vm-article-note a:focus-visible {
+  color: var(--text);
+  text-decoration-color: var(--red);
+}
+
+/* ==========================================================================
+   Chances do Vasco (/chances)
+   ========================================================================== */
+
+.vm-ch {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem var(--ch-pad, 5vw) 5rem;
+  --ch-pad: clamp(1.25rem, 4vw, 3rem);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vm-ch-kicker {
+  font-size: 0.72rem;
+  color: var(--red);
+}
+.vm-ch-title {
+  margin-top: 1.2rem;
+  font-size: clamp(3.4rem, 11vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+.vm-ch-title span,
+.vm-ch-title em {
+  display: block;
+}
+.vm-ch-title em {
+  font-style: italic;
+  color: var(--red);
+}
+.vm-ch-lede {
+  max-width: 52ch;
+  margin-top: 2rem;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  line-height: 1.25;
+  color: var(--text);
+}
+.vm-ch-updated {
+  margin-top: 1.4rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  color: var(--text-label);
+}
+.vm-ch-updated a,
+.vm-ch-foot a,
+.vm-ch-note a {
+  color: var(--text-mid);
+  text-decoration: underline;
+  text-decoration-color: rgba(240, 235, 225, 0.3);
+  text-underline-offset: 3px;
+}
+.vm-ch-updated a:hover {
+  color: var(--text);
+  text-decoration-color: var(--red);
+}
+
+/* the four numbers */
+.vm-ch-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(3rem, 6vw, 5rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.vm-ch-card {
+  padding: clamp(1.4rem, 2.6vw, 2.4rem) clamp(0.9rem, 1.8vw, 1.8rem);
+  border-left: 1px solid var(--line);
+}
+.vm-ch-card:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.vm-ch-card .vm-label {
+  font-size: 0.68rem;
+  color: var(--text-mid);
+}
+.vm-ch-big {
+  margin-top: 1rem;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(3.4rem, 7.4vw, 7.4rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.vm-ch-big sup {
+  font-size: 0.32em;
+  font-style: italic;
+  vertical-align: top;
+  position: relative;
+  top: 0.35em;
+  color: var(--red);
+}
+.vm-ch-card.is-red .vm-ch-big {
+  color: var(--red);
+}
+.vm-ch-sub {
+  margin-top: 0.9rem;
+  max-width: 24ch;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+.vm-ch-section {
+  margin-top: clamp(4rem, 8vw, 7rem);
+}
+.vm-ch-h2 {
+  font-size: clamp(2rem, 4.2vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: var(--text);
+}
+.vm-ch-h3 {
+  margin-top: 3rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+.vm-ch-note {
+  margin-top: 1.1rem;
+  max-width: 62ch;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+.vm-ch-foot {
+  margin-top: 1.1rem;
+  max-width: 70ch;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  line-height: 1.8;
+  color: var(--text-label);
+}
+
+/* distribution of the final position */
+.vm-ch-dist {
+  margin-top: 2rem;
+}
+.vm-ch-bars {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: clamp(2px, 0.5vw, 6px);
+  height: clamp(210px, 32vw, 330px);
+}
+.vm-ch-bar {
+  display: grid;
+  grid-template-rows: 1.4em minmax(0, 1fr) 1.8em;
+  min-width: 0;
+}
+.vm-ch-bar i {
+  align-self: end;
+  display: block;
+  width: 100%;
+  background: rgba(240, 235, 225, 0.18);
+  transition: height 0.9s var(--ease);
+}
+.vm-ch-bar[data-zone="lib"] i { background: rgba(240, 235, 225, 0.95); }
+.vm-ch-bar[data-zone="pre"] i { background: rgba(240, 235, 225, 0.55); }
+.vm-ch-bar[data-zone="sula"] i { background: rgba(240, 235, 225, 0.25); }
+.vm-ch-bar[data-zone="z4"] i { background: var(--red); }
+.vm-ch-bar-pct,
+.vm-ch-bar-pos {
+  text-align: center;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0;
+  color: var(--text-mid);
+}
+.vm-ch-bar-pct {
+  align-self: end;
+  white-space: nowrap;
+}
+.vm-ch-bar-pos {
+  padding-top: 0.5rem;
+  color: var(--text-label);
+}
+.vm-ch-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.6rem;
+  list-style: none;
+  margin-top: 1.4rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-label);
+}
+.vm-ch-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.vm-ch-legend i {
+  display: block;
+  width: 3px;
+  height: 13px;
+}
+.vm-ch-legend [data-zone="lib"] i { background: rgba(240, 235, 225, 0.95); }
+.vm-ch-legend [data-zone="pre"] i { background: rgba(240, 235, 225, 0.55); }
+.vm-ch-legend [data-zone="sula"] i { background: rgba(240, 235, 225, 0.25); }
+.vm-ch-legend [data-zone="z4"] i { background: var(--red); }
+
+/* tables */
+.vm-ch-tablewrap {
+  margin-top: 1.8rem;
+  overflow-x: auto;
+}
+.vm-ch-scen,
+.vm-ch-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.vm-ch-scen th,
+.vm-ch-table th {
+  padding: 0 0.6rem 0.9rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--text-label);
+}
+.vm-ch-scen th.n,
+.vm-ch-table th.n {
+  text-align: right;
+}
+.vm-ch-scen td,
+.vm-ch-scen tbody th,
+.vm-ch-table td {
+  padding: 0.7rem 0.6rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.84rem;
+  color: var(--text-mid);
+  font-variant-numeric: tabular-nums;
+}
+.vm-ch-scen tbody th {
+  font-family: var(--font-serif), serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text);
+}
+.vm-ch-scen .n,
+.vm-ch-table .n {
+  text-align: right;
+  white-space: nowrap;
+}
+.vm-ch-scen small {
+  font-size: 0.7rem;
+  color: var(--text-label);
+}
+.vm-ch-scen .is-z4 {
+  color: var(--red);
+}
+
+.vm-ch-table .pos {
+  width: 2.8rem;
+  padding-left: 0.85rem;
+}
+.vm-ch-table .team {
+  width: 100%;
+  white-space: nowrap;
+  font-family: var(--font-serif), serif;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+.vm-ch-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.8rem;
+  object-fit: contain;
+}
+.vm-ch-table .team span {
+  vertical-align: middle;
+}
+.vm-ch-table tr[data-zone="lib"] .pos { box-shadow: inset 3px 0 0 rgba(240, 235, 225, 0.95); }
+.vm-ch-table tr[data-zone="pre"] .pos { box-shadow: inset 3px 0 0 rgba(240, 235, 225, 0.55); }
+.vm-ch-table tr[data-zone="sula"] .pos { box-shadow: inset 3px 0 0 rgba(240, 235, 225, 0.25); }
+.vm-ch-table tr[data-zone="z4"] .pos { box-shadow: inset 3px 0 0 var(--red); }
+.vm-ch-table tr.is-vasco td {
+  background: linear-gradient(90deg, rgba(200, 0, 60, 0.28), rgba(200, 0, 60, 0.06));
+  border-top-color: rgba(200, 0, 60, 0.7);
+  border-bottom: 1px solid rgba(200, 0, 60, 0.7);
+  color: var(--text);
+}
+.vm-ch-table tr.is-vasco .team {
+  font-size: 1.4rem;
+}
+.vm-ch-cell {
+  display: inline-block;
+  min-width: 4.2rem;
+  padding: 0.25rem 0.5rem;
+  text-align: right;
+  color: var(--text);
+  background: linear-gradient(90deg, var(--ch-bar, rgba(240, 235, 225, 0.2)) calc(var(--p) * 100%), transparent 0);
+}
+.vm-ch-cell.is-g6 { --ch-bar: rgba(240, 235, 225, 0.3); }
+.vm-ch-cell.is-sula { --ch-bar: rgba(240, 235, 225, 0.16); }
+.vm-ch-cell.is-z4 { --ch-bar: rgba(200, 0, 60, 0.55); }
+
+/* next games with win / draw / loss */
+.vm-ch-games {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+.vm-ch-games li {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1.2fr) minmax(0, 1.4fr) auto;
+  align-items: center;
+  gap: 0.6rem 1.4rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+}
+.vm-ch-game-when {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--text-mid);
+}
+.vm-ch-game-when b {
+  font-weight: 400;
+  color: var(--red);
+}
+.vm-ch-game-vs {
+  font-family: var(--font-serif), serif;
+  font-size: 1.3rem;
+  color: var(--text);
+}
+.vm-ch-wdl {
+  display: flex;
+  height: 8px;
+  background: var(--line);
+}
+.vm-ch-wdl i {
+  display: block;
+  height: 100%;
+}
+.vm-ch-wdl .w { background: rgba(240, 235, 225, 0.95); }
+.vm-ch-wdl .e { background: rgba(240, 235, 225, 0.35); }
+.vm-ch-wdl .d { background: var(--red); }
+.vm-ch-wdl-txt {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: var(--text-mid);
+}
+
+.vm-ch-method {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  padding-top: 3rem;
+  border-top: 1px solid var(--line);
+}
+.vm-ch-method .vm-legal-body {
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 899px) {
+  .vm-ch-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vm-ch-card:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .vm-ch-card:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .vm-ch-games li { grid-template-columns: minmax(0, 1fr) auto; }
+  .vm-ch-game-when { grid-column: 1 / -1; }
+  .vm-ch-wdl { grid-column: 1 / -1; }
+  .vm-ch-wdl-txt { grid-column: 1 / -1; }
+}
+
+@media (max-width: 640px) {
+  .vm-ch { padding-top: 4.5rem; }
+  .vm-ch .opt { display: none; }
+  .vm-ch-bar-pct { font-size: 0.5rem; }
+  .vm-ch-bar-pos { font-size: 0.52rem; }
+  .vm-ch-table .team { font-size: 1.05rem; }
+  .vm-ch-table tr.is-vasco .team { font-size: 1.15rem; }
+  .vm-ch-logo { margin-right: 0.6rem; }
+  .vm-ch-cell { min-width: 3.4rem; }
+  .vm-ch-scen th, .vm-ch-scen td, .vm-ch-scen tbody th { padding-left: 0.3rem; padding-right: 0.3rem; }
+  .vm-ch-scen tbody th { font-size: 1.1rem; }
+  .vm-ch-scen td { font-size: 0.74rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vm-ch-bar i { transition: none; }
+}
+
+/* link from the competitions section to the chances page */
+.vm-comp-chances {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--red);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.vm-comp-chances:hover,
+.vm-comp-chances:focus-visible {
+  outline: none;
+  color: var(--text);
+  border-bottom-width: 2px;
 }

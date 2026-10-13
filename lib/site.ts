@@ -38,10 +38,19 @@ export const PUBLISHER = {
 // Contact for LGPD and content removal requests (shown on /privacidade and /termos).
 export const CONTACT_EMAIL = "contato@vascainamente.com.br";
 
+// Signature of every article, and the person in charge of the editorial side (shown on /quem-somos).
+export const BYLINE = "Redação Vascainamente";
+export const EDITOR = "Camilo Fernando Bomfim";
+
 // Official social profiles (also listed as "sameAs" in the Organization schema).
 export const INSTAGRAM = {
   url: "https://www.instagram.com/_vascainamente_/",
   handle: "@_vascainamente_",
+} as const;
+
+export const FACEBOOK = {
+  url: "https://www.facebook.com/profile.php?id=61594983706485",
+  nome: "Vascainamente",
 } as const;
 
 export const X_PROFILE = {

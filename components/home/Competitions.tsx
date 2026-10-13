@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import type { CompetitionInfo, CompetitionsData, MatchInfo, TableRow, TeamInfo } from "@/lib/competitions";
 import { cn } from "@/lib/utils";
@@ -159,6 +160,13 @@ function LeaguePanel({ data, fixtures }: { data: NonNullable<CompetitionsData["t
             <li key={t}>{t}</li>
           ))}
         </ul>
+
+        <Link href="/chances" className="vm-comp-chances">
+          Ver as chances do Vasco
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </Link>
 
         {fixtures.length > 0 && (
           <div className="vm-comp-upnext">

@@ -17,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: absoluteUrl("/"), lastModified: latest, changeFrequency: "hourly", priority: 1 },
     { url: absoluteUrl(HISTORY_HREF), lastModified: latest, changeFrequency: "daily", priority: 0.7 },
+    { url: absoluteUrl("/chances"), lastModified: latest, changeFrequency: "daily", priority: 0.8 },
+    { url: absoluteUrl("/quem-somos"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/como-produzimos"), changeFrequency: "yearly", priority: 0.3 },
+    { url: absoluteUrl("/correcoes"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/privacidade"), changeFrequency: "yearly", priority: 0.2 },
     { url: absoluteUrl("/termos"), changeFrequency: "yearly", priority: 0.2 },
     ...categories.map((c) => {

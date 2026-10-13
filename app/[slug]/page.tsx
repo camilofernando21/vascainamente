@@ -13,7 +13,7 @@ import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts, getPostBySlug, markdownToHtml } from "@/lib/posts";
 import { CATEGORY_NAMES, categoryHref } from "@/lib/categories";
 import { toHomeItem } from "@/lib/home";
-import { OG_DEFAULTS, SITE_NAME, absoluteUrl } from "@/lib/site";
+import { BYLINE, OG_DEFAULTS, SITE_NAME, absoluteUrl } from "@/lib/site";
 import { formatDateFull, formatDateShort, readingTime } from "@/lib/time";
 import { cn } from "@/lib/utils";
 
@@ -78,9 +78,9 @@ export default async function ArticlePage({
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
     image: [absoluteUrl(`/${post.slug}/opengraph-image`)],
-    author: { "@type": "Organization", name: SITE_NAME, url: absoluteUrl("/") },
+    author: { "@type": "Organization", name: BYLINE, url: absoluteUrl("/quem-somos") },
     publisher: {
-      "@type": "Organization",
+      "@type": "NewsMediaOrganization",
       "@id": absoluteUrl("/#organization"),
       name: SITE_NAME,
       logo: { "@type": "ImageObject", url: absoluteUrl("/images/logo-vasco.png") },
@@ -129,6 +129,8 @@ export default async function ArticlePage({
             <h1 className="vm-article-title">{post.title}</h1>
             {post.excerpt && <p className="vm-article-dek">{post.excerpt}</p>}
             <p className="vm-article-meta">
+              Por <Link href="/quem-somos">{BYLINE}</Link>
+              <span aria-hidden="true"> · </span>
               {post.source &&
                 (post.sourceUrl ? (
                   <>
@@ -169,6 +171,13 @@ export default async function ArticlePage({
             className="vm-article-body"
             dangerouslySetInnerHTML={{ __html: contentHtml }}
           />
+
+          <p className="vm-article-note">
+            Matéria escrita com apoio de inteligência artificial a partir da fonte citada.{" "}
+            <Link href="/como-produzimos">Como produzimos</Link>
+            <span aria-hidden="true"> · </span>
+            <Link href="/correcoes">Encontrou um erro?</Link>
+          </p>
 
           <ShareLinks url={url} title={post.title} variant="inline" />
         </div>

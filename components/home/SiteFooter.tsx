@@ -17,7 +17,7 @@ export default function SiteFooter() {
         <img src="/images/logo-vasco.png" alt="" className="h-9 w-auto" />
         <span className="vm-label text-text-hero">Vascainamente</span>
       </Link>
-      <SocialLinks showHandle className="vm-social-footer" />
+      <SocialLinks showHandle facebook className="vm-social-footer" />
       <ul className="vm-footer-cats">
         {CATEGORIES.map((tab) => (
           <li key={tab.category} className="vm-label">
