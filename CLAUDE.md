@@ -16,4 +16,5 @@ Site de notícias do Vasco da Gama, publicado na Vercel a partir do ramo `master
 - Matéria removida ou juntada com outra ganha redirecionamento em `content/redirects.json`, para os links compartilhados não quebrarem.
 - Nenhuma chave, ID ou segredo vai escrito no código: tudo por variável de ambiente.
 - Só envie (push) com autorização do usuário: o push publica o site na Vercel.
+- Nenhum texto público (arte, legenda, post, página do site) vai ao usuário sem revisão de português antes. Liste todas as frases do material, confira ortografia, acentos, concordância e modo verbal (por exemplo, "assim que saírem", nunca "assim que saem", quando fala de algo futuro) e peça a uma segunda leitura independente, por outro agente que veja só os textos. O usuário não é o revisor: erro em material já postado vira retrabalho.
 - O estado atual do projeto, as decisões e as pendências estão em `docs/CONTEXTO-CLAUDE-CODE.md`. Atualize esse arquivo ao terminar uma tarefa grande.
