@@ -69,14 +69,15 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Google News: a elegibilidade é automática e exige domínio próprio e conteúdo original.
 
 ### Redes sociais e canal (ideias de 11 e 12/10/2026)
-- Plano: reativar o Instagram @_vascainamente_ (postagem diária), usar a conta nova do X (usuário ainda a informar) e criar o TikTok. Cobalt criará os posts e artes com a identidade do site. Tudo só vai ao ar com aprovação do proprietário no Slack.
+- Perfis prontos em 12/10/2026: Instagram @_vascainamente_ (foto com o escudo do Canva, bio, link, post de relançamento) e X @Vascainamente (capa 1500x500 com a frase da marca, foto com o escudo, bio "Todas as notícias do Vasco da Gama. Vascaíno não se escolhe. Se nasce. Atualizado a cada 15 minutos.", site no perfil). O logo oficial agora é só o escudo, sem a palavra ao lado. TikTok ainda não criado.
+- Plano: manter o Instagram com postagem diária, usar o X @Vascainamente e criar o TikTok. Cobalt criará os posts e artes com a identidade do site. Tudo só vai ao ar com aprovação do proprietário no Slack.
 - Kit de marca para o Cobalt (cores, fontes, Cruz de Malta, grão, layout do card 1080x1350, voz e regras) foi gerado fora do repositório. A Cruz de Malta vem sempre de `public/images/escudo-1-cruz.png`.
 - Canal do WhatsApp (modelo Lance! Vasco) é a opção recomendada para distribuir notícia, no lugar de um grupo. Decisão de criar ainda pendente.
 - Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
 ### Pendências
 - Conferir o status do sitemap no Search Console em 1 ou 2 dias contados do envio, feito em 12/10/2026 (ou seja, entre 13 e 14/10/2026). Hoje mostra "Não foi possível buscar".
-- Entregar o kit de marca ao Cobalt e informar o usuário do X. O kit de marca foi gerado fora do repositório e ainda será entregue ao Cobalt.
+- Entregar o kit de marca ao Cobalt (usuário do X já definido: @Vascainamente). O kit de marca foi gerado fora do repositório e ainda será entregue ao Cobalt.
 - Decidir sobre o canal do WhatsApp e sobre afiliados e monetização (ver os achados acima).
 - Atualizar o Next 14 para o 16, como tarefa própria (os avisos de segurança do 14.2.35 só se resolvem assim).
 - Vercel Pro, se houver anúncios (a Hobby é para uso não comercial).
