@@ -68,6 +68,12 @@ function NextMatch({ match, competition }: { match: MatchInfo; competition: stri
           <span>{match.timeLabel}</span>
         </time>
         {match.venue && <p className="vm-comp-next-venue">{match.venue}</p>}
+        <Link href={`/jogo/${match.slug}`} className="vm-comp-chances">
+          Ver a página do jogo
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </Link>
       </div>
 
       <div className="vm-comp-next-teams">
@@ -177,9 +183,9 @@ function LeaguePanel({ data, fixtures }: { data: NonNullable<CompetitionsData["t
                   <time dateTime={m.iso}>
                     {m.dayLabel} <span>{m.timeLabel}</span>
                   </time>
-                  <span className="vm-comp-upnext-teams">
+                  <Link href={`/jogo/${m.slug}`} className="vm-comp-upnext-teams">
                     {m.home.short} x {m.away.short}
-                  </span>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -246,7 +252,7 @@ function MatchRow({ m }: { m: MatchInfo }) {
         <span>{m.home.short}</span>
         <Logo team={m.home} size={22} />
       </span>
-      <span className="vm-comp-match-score">
+      <Link href={`/jogo/${m.slug}`} className="vm-comp-match-score" aria-label={`Ver a página do jogo ${m.home.short} x ${m.away.short}`}>
         {finished || m.state === "in" ? (
           <>
             {m.homeScore ?? 0}
@@ -258,7 +264,7 @@ function MatchRow({ m }: { m: MatchInfo }) {
             <i>x</i>
           </>
         )}
-      </span>
+      </Link>
       <span className={cn("vm-comp-match-team", m.away.isVasco && "is-vasco")}>
         <Logo team={m.away} size={22} />
         <span>{m.away.short}</span>
@@ -312,6 +318,12 @@ function CupPanel({ c }: { c: CompetitionInfo }) {
                     </span>
                   </p>
                   {m.venue && <p className="vm-comp-legs-venue">{m.venue}</p>}
+                  <Link href={`/jogo/${m.slug}`} className="vm-comp-chances">
+                    Ver a página do jogo
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M1 7h11M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.4" />
+                    </svg>
+                  </Link>
                 </li>
               ))}
             </ul>

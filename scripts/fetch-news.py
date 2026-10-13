@@ -297,6 +297,14 @@ X_NOTE = (
     "que não estão no post.\n"
 )
 
+LINEUP_FIELD = (
+    "\n- \"lineup\": SOMENTE quando matchEvent for \"escalacao\" e o texto ou a imagem do post trouxerem os 11 titulares "
+    "do Vasco com nomes legíveis: {\"formation\": a formação como \"4-2-3-1\" ou null, \"starters\": os 11 titulares, "
+    "goleiro primeiro, \"bench\": os reservas (lista vazia se não aparecerem), \"coach\": o técnico ou null}. "
+    "Copie os nomes exatamente como aparecem. Se não tiver certeza dos 11 nomes, lineup deve ser null. "
+    "Nunca invente nem complete nomes."
+)
+
 OFFICIAL_NOTE = (
     "\nATENÇÃO: o texto acima é um post do perfil oficial do Vasco no X. O que ele informa é oficial e pode ser "
     "afirmado como fato (\"o Vasco divulgou\", \"o clube confirmou\"). É notícia: escalação confirmada, gol, resultado "
@@ -310,6 +318,7 @@ OFFICIAL_NOTE = (
 def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None) -> dict:
     recent = recent or []
     video_field = VIDEO_FIELD if videos else ""
+    lineup_field = LINEUP_FIELD if (official and from_x) else ""
     duplicate_field = DUPLICATE_FIELD if recent else ""
     prompt = f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
 Escreva de forma direta, profissional e apaixonada pelo clube. NUNCA use linguagem de IA.
@@ -332,7 +341,7 @@ Retorne SOMENTE um JSON (sem markdown) com:
 - "importance": número de 1 a 5, o peso da notícia para o torcedor do Vasco hoje. 5: anúncio oficial grande (contratação ou saída de peso, título, troca de técnico, decisão que muda a temporada). 4: resultado de jogo do time principal, lesão séria de titular, negociação avançada de peso. 3: prévia de jogo importante, notícia relevante do elenco ou do clube. 2: bastidores, declarações, base, feminino. 1: curiosidade, adversário, notícia lateral
 - "matchEvent": "escalacao" se for o time titular do Vasco CONFIRMADO para o jogo de hoje (escalado, time "
 confirmado; provável escalação não conta), "gol" se for um gol do jogo em andamento, "resultado" se for o placar "
-final de um jogo do time principal, ou null{video_field}{duplicate_field}"""
+final de um jogo do time principal, ou null{lineup_field}{video_field}{duplicate_field}"""
     # photos from the official account carry the lineup or the score: the model reads them
     content = [{"type": "image", "source": {"type": "url", "url": u}} for u in (photos or [])]
     content.append({"type": "text", "text": prompt})
@@ -356,6 +365,7 @@ final de um jogo do time principal, ou null{video_field}{duplicate_field}"""
     article["importance"] = int(imp) if isinstance(imp, (int, float)) and 1 <= int(imp) <= 5 else None
     event = article.get("matchEvent")
     article["matchEvent"] = event if event in MATCH_EVENTS else None
+    article["lineup"] = clean_lineup(article.get("lineup")) if article["matchEvent"] == "escalacao" and official else None
     # only accept an ID that was actually offered: never trust a made-up one
     valid_ids = {v["id"] for v in videos}
     vid = article.get("videoId")
@@ -374,6 +384,35 @@ final de um jogo do time principal, ou null{video_field}{duplicate_field}"""
     return article
 
 MATCH_EVENTS = {"escalacao", "gol", "resultado"}
+
+FORMATION = re.compile(r"^\d(?:-\d){2,4}$")
+
+
+def clean_lineup(raw):
+    """The official lineup as the site's match page reads it: exactly 11 starters, or nothing at all."""
+    if not isinstance(raw, dict):
+        return None
+
+    def names(value, limit):
+        if not isinstance(value, list):
+            return []
+        out = []
+        for v in value:
+            if isinstance(v, str) and v.strip() and len(v.strip()) <= 40:
+                out.append(strip_dashes(v.strip()))
+        return out[:limit]
+
+    starters = names(raw.get("starters"), 12)
+    if len(starters) != 11 or len(set(starters)) != 11:
+        return None
+    formation = raw.get("formation")
+    coach = raw.get("coach")
+    return {
+        "formation": formation if isinstance(formation, str) and FORMATION.match(formation) else None,
+        "starters": starters,
+        "bench": names(raw.get("bench"), 26),
+        "coach": strip_dashes(coach.strip()) if isinstance(coach, str) and 0 < len(coach.strip()) <= 40 else None,
+    }
 # an official lineup or a goal only repeats an article of these events (the result keeps the AI's call)
 EVENT_SAME_AS = {"escalacao": {"escalacao"}, "gol": {"gol", "resultado"}}
 
@@ -401,6 +440,8 @@ def publish(article: dict, category: str, source: str, url: str, image_url: str 
     importance_frontmatter = f'importance: {article["importance"]}\n' if article.get("importance") else ""
     if article.get("matchEvent"):
         importance_frontmatter += f'matchEvent: "{article["matchEvent"]}"\n'
+    if article.get("lineup"):
+        importance_frontmatter += f'lineup: {json.dumps(article["lineup"], ensure_ascii=False, separators=(",", ":"))}\n'
     slug = f"{now.strftime('%Y-%m-%d')}-{slugify(article['title'])}"
     date = now.isoformat(timespec="seconds")  # e.g. 2026-10-10T00:36:12-03:00
 

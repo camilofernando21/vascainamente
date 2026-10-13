@@ -199,7 +199,19 @@ type RawEvent = {
   competitions: { status: { type: { state: string } }; competitors: { homeAway: string; team: { id: string } }[] }[];
 };
 
-export async function getChances(): Promise<ChancesData | null> {
+type Model = {
+  entries: Entry[];
+  fixtures: Fixture[];
+  lam: { h: number; a: number }[];
+  seed: number;
+  index: Map<string, number>;
+  base: ReturnType<typeof simulate>;
+  n: number;
+  total: number;
+};
+
+// everything the page and the match pages share: the table, the games left and the base simulation
+async function buildModel(): Promise<Model | null> {
   const standings = await espn(`${STANDINGS}/bra.1/standings`, TABLE_TTL);
   const raw = standings?.children?.[0]?.standings?.entries as RawEntry[] | undefined;
   if (!raw || raw.length < 4) return null;
@@ -255,6 +267,13 @@ export async function getChances(): Promise<ChancesData | null> {
 
   const seed = hash(entries.map((e) => `${e.id}:${e.pts}:${e.j}:${e.gf}:${e.ga}`).join("|"));
   const base = simulate(entries, fixtures, lam, seed, null);
+  return { entries, fixtures, lam, seed, index, base, n, total };
+}
+
+export async function getChances(): Promise<ChancesData | null> {
+  const model = await buildModel();
+  if (!model) return null;
+  const { entries, fixtures, lam, seed, index, base, n, total } = model;
   const vi = index.get(VASCO_ID)!;
 
   const teams: TeamChance[] = entries.map((e, i) => ({
@@ -297,4 +316,53 @@ export async function getChances(): Promise<ChancesData | null> {
   const now = sp(new Date().toISOString());
   const roundsLeft = Math.max(0, total - entries[vi].j);
   return { updatedDay: now.dayLabel, updatedTime: now.timeLabel, sims: SIMS, roundsLeft, teams, vasco, games, scenarios };
+}
+
+// ---------- one game: what it changes for the Vasco ----------
+
+export type MatchStakes = {
+  sims: number;
+  home: boolean; // the Vasco plays at home
+  opponent: TeamInfo;
+  pW: number;
+  pE: number;
+  pD: number;
+  now: { pos: number; pts: number; pG6: number; pSula: number; pZ4: number; projPts: number };
+  scenarios: Scenario[]; // chances of the Vasco after each result of this game
+};
+
+/** For a Brasileirão game of the Vasco that is still to be played: its odds and what each result would change. */
+export async function getMatchStakes(eventId: string): Promise<MatchStakes | null> {
+  const model = await buildModel();
+  if (!model) return null;
+  const { entries, fixtures, lam, seed, index, base, n } = model;
+  const vi = index.get(VASCO_ID)!;
+  const k = fixtures.findIndex((f) => f.id === eventId);
+  if (k < 0) return null;
+  const f = fixtures[k];
+  if (f.home !== vi && f.away !== vi) return null;
+
+  const home = f.home === vi;
+  const o = outcome(lam[k].h, lam[k].a);
+  const pW = home ? o.w : o.l;
+  const pE = o.d;
+  const pD = home ? o.l : o.w;
+  const now = summarize(base.counts, base.sumPts, n, vi);
+
+  const scenarios: Scenario[] = [];
+  for (const key of ["V", "E", "D"] as ScenarioKey[]) {
+    const r = simulate(entries, fixtures, lam, seed, { index: k, result: key });
+    const sm = summarize(r.counts, r.sumPts, n, vi);
+    scenarios.push({ key, prob: key === "V" ? pW : key === "E" ? pE : pD, pG6: sm.pG6, pSula: sm.pSula, pZ4: sm.pZ4, projPts: sm.projPts });
+  }
+  return {
+    sims: SIMS,
+    home,
+    opponent: entries[home ? f.away : f.home].info,
+    pW,
+    pE,
+    pD,
+    now: { pos: vi + 1, pts: entries[vi].pts, pG6: now.pG6, pSula: now.pSula, pZ4: now.pZ4, projPts: now.projPts },
+    scenarios,
+  };
 }

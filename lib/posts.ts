@@ -40,6 +40,32 @@ export interface PostMeta {
   updated?: string;
   // 1 to 5, how much the news matters to the fan (set by the news robot)
   importance?: number;
+  // "escalacao", "gol" or "resultado" when the article is about a match event (set by the news robot)
+  matchEvent?: string;
+  // the official lineup, only on lineup articles taken from the Vasco's official X profile
+  lineup?: Lineup;
+}
+
+export interface Lineup {
+  formation: string | null;
+  starters: string[];
+  bench: string[];
+  coach: string | null;
+}
+
+// the robot writes it as one JSON line; anything that is not exactly 11 names is ignored
+function parseLineup(raw: unknown): Lineup | undefined {
+  if (!raw || typeof raw !== "object") return undefined;
+  const r = raw as Record<string, unknown>;
+  const names = (v: unknown) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string" && x.trim().length > 0) : []);
+  const starters = names(r.starters);
+  if (starters.length !== 11) return undefined;
+  return {
+    formation: typeof r.formation === "string" ? r.formation : null,
+    starters,
+    bench: names(r.bench),
+    coach: typeof r.coach === "string" ? r.coach : null,
+  };
 }
 
 export interface Post extends PostMeta {
@@ -80,6 +106,8 @@ function readPostFile(slug: string): Post {
     videoSource: typeof data.videoSource === "string" && data.videoSource ? data.videoSource : undefined,
     updated: typeof data.updated === "string" && data.updated ? data.updated : undefined,
     importance: typeof data.importance === "number" ? data.importance : undefined,
+    matchEvent: typeof data.matchEvent === "string" && data.matchEvent ? data.matchEvent : undefined,
+    lineup: parseLineup(data.lineup),
     content,
   };
 }

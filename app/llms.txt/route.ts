@@ -31,6 +31,7 @@ export function GET() {
     `- [Vasco TV](${absoluteUrl("/#vm-vascotv")}): últimos vídeos do canal oficial do clube`,
     `- [Competições](${absoluteUrl("/#vm-competicoes")}): tabela do Brasileirão com a posição do Vasco, próximo jogo e a campanha na Sul-Americana e na Copa do Brasil`,
     `- [Resposta Histórica](${absoluteUrl("/#vm-resposta")}): a carta de 7 de abril de 1924, em que o Vasco recusou excluir jogadores negros e operários`,
+    `- [Jogos](${absoluteUrl("/jogos")}): calendário e resultados do Vasco, com uma página para cada partida (o que está em jogo, histórico de confrontos, lances e estatísticas)`,
     `- [Chances do Vasco](${absoluteUrl("/chances")}): cálculo próprio das chances de Libertadores, Sul-Americana e rebaixamento no Brasileirão`,
     `- [Quem somos](${absoluteUrl("/quem-somos")}): responsável editorial, contato e independência em relação ao clube`,
     `- [Como produzimos as notícias](${absoluteUrl("/como-produzimos")}): fontes, uso de inteligência artificial e regras do sistema`,

@@ -25,6 +25,7 @@ export type TeamInfo = { name: string; short: string; abbr: string; logo: string
 
 export type MatchInfo = {
   id: string;
+  slug: string; // the address of its page: "sao-paulo-x-vasco-2026-10-17"
   iso: string;
   dayLabel: string; // "ter, 13/10"
   timeLabel: string; // "21:30"
@@ -84,14 +85,52 @@ export type CompetitionsData = {
 
 // ---------- helpers ----------
 
-export async function espn(url: string, ttl: number) {
-  try {
-    const res = await fetch(url, { next: { revalidate: ttl }, signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return null;
-    return await res.json();
-  } catch {
-    return null;
-  }
+const slugify = (s: string) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+/** Calendar day in Brasília, "2026-10-17", the same one the match is announced with. */
+export function brtDay(iso: string): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(iso));
+}
+
+export function matchSlug(homeShort: string, awayShort: string, iso: string): string {
+  return `${slugify(homeShort)}-x-${slugify(awayShort)}-${brtDay(iso)}`;
+}
+
+type Json = Awaited<ReturnType<Response["json"]>>;
+const FAIL_MEMORY = 30_000; // ms: after a failure the source is not asked again for this address
+const failedUntil = new Map<string, number>();
+const inFlight = new Map<string, Promise<Json | null>>();
+
+// Cached by Next for `ttl` seconds. On top of that, a failure is remembered for 30 s and visitors that arrive
+// together share one request, so a spike of visits (or a source that is down) never means one query per visit.
+export function espn(url: string, ttl: number): Promise<Json | null> {
+  const failed = failedUntil.get(url);
+  if (failed && Date.now() < failed) return Promise.resolve(null);
+  const running = inFlight.get(url);
+  if (running) return running;
+  const request = (async () => {
+    try {
+      const res = await fetch(url, { next: { revalidate: ttl }, signal: AbortSignal.timeout(8000) });
+      if (!res.ok) {
+        failedUntil.set(url, Date.now() + FAIL_MEMORY);
+        return null;
+      }
+      return await res.json();
+    } catch {
+      failedUntil.set(url, Date.now() + FAIL_MEMORY);
+      return null;
+    } finally {
+      inFlight.delete(url);
+    }
+  })();
+  inFlight.set(url, request);
+  return request;
 }
 
 const WEEKDAYS = ["dom", "seg", "ter", "qua", "qui", "sex", "sáb"];
@@ -198,13 +237,16 @@ function toMatch(e: RawEvent): MatchInfo | null {
   }
   const { dayLabel, timeLabel } = sp(e.date);
   const venue = [c.venue?.fullName, c.venue?.address?.city].filter(Boolean).join(", ");
+  const homeTeam = team(home);
+  const awayTeam = team(away);
   return {
     id: e.id,
+    slug: matchSlug(homeTeam.short, awayTeam.short, e.date),
     iso: e.date,
     dayLabel,
     timeLabel,
-    home: team(home),
-    away: team(away),
+    home: homeTeam,
+    away: awayTeam,
     homeScore,
     awayScore,
     state,

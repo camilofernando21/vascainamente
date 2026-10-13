@@ -26,6 +26,14 @@ export default function SiteFooter() {
         ))}
       </ul>
       <p className="vm-footer-note">Notícias atualizadas automaticamente a cada 15 minutos.</p>
+      <ul className="vm-footer-legal">
+        <li>
+          <Link href="/jogos">Jogos</Link>
+        </li>
+        <li>
+          <Link href="/chances">Chances do Vasco</Link>
+        </li>
+      </ul>
       <LegalLinks />
       <p className="vm-footer-credit">
         Site feito e mantido pela{" "}
