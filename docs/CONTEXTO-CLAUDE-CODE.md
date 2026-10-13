@@ -41,19 +41,26 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - DNSSEC: o DS antigo do registro.br foi removido na troca. Depois, o DNSSEC foi ligado pela Cloudflare e o DS foi cadastrado no registro.br (Keytag 2371, algoritmo 13, SHA256). Conferido em 12/10/2026 pelo dns.google: `AD: true`.
 - Na Vercel, os 3 domínios (vascainamente.com.br, www.vascainamente.com.br e vascainamente.vercel.app) estão com "Valid Configuration". A raiz redireciona (308) para o www.
 - Variável de ambiente na Vercel (Production): NEXT_PUBLIC_SITE_URL=https://www.vascainamente.com.br. É lida em `lib/site.ts` e usada no canonical, no sitemap e nos links de compartilhamento. O redeploy já foi feito.
-- Google Search Console: propriedade de Domínio vascainamente.com.br, verificada por TXT no DNS. Sitemap enviado: https://www.vascainamente.com.br/sitemap.xml (em propriedade de Domínio é preciso a URL completa). Logo após o envio o status mostrou "Não foi possível buscar o sitemap" com 0 páginas, o que é normal no início. Conferir de novo em algumas horas ou no dia seguinte.
+- Google Search Console: propriedade de Domínio vascainamente.com.br, verificada por TXT no DNS, e continua verificada depois da troca de DNS. A página inicial já está indexada. Sitemap enviado: https://www.vascainamente.com.br/sitemap.xml (em propriedade de Domínio é preciso a URL completa). O sitemap abre normalmente, mas o status ainda mostra "Não foi possível buscar" enquanto o Google não o lê. Conferir de novo em 1 ou 2 dias.
 
 ### E-mail profissional (ativo em 11/10/2026)
 - contato@vascainamente.com.br recebe pelo ImprovMX (plano grátis, só para receber) e encaminha para o Gmail do responsável. Registros (agora na Cloudflare): MX com prioridade 10 e 20 e um TXT de SPF na raiz.
+- Teste de recebimento feito depois da troca de DNS: chegou (inclusive a confirmação do Google).
 - Mensagens encaminhadas podem cair no spam do Gmail. Foi criado no Gmail um filtro "nunca enviar para spam" para contato@vascainamente.com.br.
 - A resposta sai pelo Gmail com "Enviar como" contato@, usando o SMTP do Gmail com uma senha de app. Nenhuma senha fica guardada em arquivo do projeto.
 - Atenção: alguns provedores, como o Outlook, podem mandar essas respostas para o spam. Se isso virar problema, a alternativa é o ImprovMX Premium.
 - `CONTACT_EMAIL` em `lib/site.ts` já aponta para contato@vascainamente.com.br. Ele aparece só nas páginas de privacidade e de termos, que leem a constante (nenhum endereço escrito direto no código). `PUBLISHER.email` (contato@catetoaocubo.com.br) continua sendo o e-mail da empresa e hoje não é exibido no site.
 
+### Analytics, Google Notícias e Instagram (conferido em 12/10/2026)
+- GA4 conferido em aba anônima: aparece 1 usuário e as páginas visitadas em tempo real. Funcionando.
+- Google Notícias (Publisher Center): publicação "Vascainamente" criada, URL vascainamente.com.br verificada, contato contato@vascainamente.com.br verificado e logo quadrado de 1000x1000 enviado. O Google decide a inclusão sozinho, então só acompanhar.
+- Instagram @_vascainamente_ renovado: foto, nome, bio, link e 4 destaques novos (Notícias, Jogo, Elenco, Histórico) no padrão do site, e um post de relançamento publicado.
+
 ### Outros itens concluídos em 11/10/2026
 - Limite de gasto do X: US$ 10 por ciclo, recarga automática desligada.
 - `.claude/settings.json` com modelo padrão sonnet e `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, para gastar menos tokens.
 - Os 5 branches antigos do GitHub foram apagados (já estavam 100% no master). Só existe o `master`.
+- As primeiras matérias vindas do X foram conferidas em 13/10/2026 (4 matérias): créditos e categorias corretos. As do perfil oficial dizem "o Vasco divulgou" e as dos setoristas dizem "segundo apuração do setorista".
 
 ### Monetização (achados de 11/10/2026)
 - Publicidade de apostas está proibida pela MP 1.394/2026 (aguarda votação no Congresso, prazo por volta de 23/11/2026).
@@ -68,18 +75,13 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
 ### Pendências
-- Google News Publisher Center.
-- Confirmar que o Search Console continua verificado depois da troca de DNS (o TXT foi copiado para a Cloudflare).
-- Entregar o kit de marca ao Cobalt e obter o usuário do X.
-- Decidir sobre o canal do WhatsApp e sobre os programas de afiliados.
-- Opcional: ImprovMX Premium ou SMTP gratuito com DKIM do domínio, se o Outlook mandar as respostas do contato@ para o spam.
-- Conferir o status do sitemap no Search Console (algumas horas ou no dia seguinte ao envio).
-- Conferir no GA4, em aba anônima, se aparece 1 usuário.
-- Central do Jogo (placar ao vivo, escalações e eventos): precisa do API-Football Pro (cerca de US$ 19 por mês). Decisão adiada. A chave do plano grátis está na Vercel e no `.env.local` como `API_FOOTBALL_KEY` (o plano grátis só libera temporadas de 2022 a 2024).
-- A Vercel Hobby é para uso não comercial. Se o site tiver anúncios, considerar o plano Pro.
-- Conferir as primeiras matérias vindas do X (crédito do setorista e categoria).
-- Decidir a rota de monetização (ver os achados acima).
+- Conferir o status do sitemap no Search Console em 1 ou 2 dias contados do envio, feito em 12/10/2026 (ou seja, entre 13 e 14/10/2026). Hoje mostra "Não foi possível buscar".
+- Entregar o kit de marca ao Cobalt e informar o usuário do X. O kit de marca foi gerado fora do repositório e ainda será entregue ao Cobalt.
+- Decidir sobre o canal do WhatsApp e sobre afiliados e monetização (ver os achados acima).
 - Atualizar o Next 14 para o 16, como tarefa própria (os avisos de segurança do 14.2.35 só se resolvem assim).
+- Vercel Pro, se houver anúncios (a Hobby é para uso não comercial).
+- Central do Jogo (placar ao vivo, escalações e eventos): precisa do API-Football Pro (cerca de US$ 19 por mês). Decisão adiada. A chave do plano grátis está na Vercel e no `.env.local` como `API_FOOTBALL_KEY` (o plano grátis só libera temporadas de 2022 a 2024).
+- Opcional: ImprovMX Premium ou SMTP gratuito com DKIM do domínio, se o Outlook mandar as respostas do contato@ para o spam.
 
 ### Arquivos de prompt
 - Os antigos `PROMPT-*.md` estão em `_prompts/`, fora do git (ignorados por `.git/info/exclude`).
