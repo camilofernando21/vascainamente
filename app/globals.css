@@ -3501,7 +3501,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 /* ==========================================================================
-   Instagram link (hero, top bar, footer, phone pinned bar)
+   Instagram and X links (hero, top bar, footer, phone pinned bar)
    ========================================================================== */
 
 .vm-insta {
@@ -3531,18 +3531,23 @@ html.vm-cursor body:not(.is-touch) *::after {
   letter-spacing: 0.15em;
 }
 
+.vm-social {
+  display: inline-flex;
+  align-items: center;
+}
+
 /* home hero: top right, same line as the logo */
-.vm-insta-hero {
+.vm-social-hero {
   position: absolute;
   top: 20px;
-  right: 1rem;
+  right: 0.5rem;
   z-index: 30;
 }
 
 @media (min-width: 1024px) {
-  .vm-insta-hero {
+  .vm-social-hero {
     top: 24px;
-    right: 2.25rem;
+    right: 1.75rem;
   }
 }
 
@@ -3552,15 +3557,19 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 /* footer: next to the logo lockup */
-.vm-insta-footer {
+.vm-social-footer {
+  flex-wrap: wrap;
+  gap: 0.2rem 1.4rem;
+}
+.vm-social-footer .vm-insta {
   justify-content: flex-start;
 }
 
 /* phone pinned bar: right end, after the scrollable categories */
-.vm-insta-bar {
+.vm-social-bar {
   flex: 0 0 auto;
   margin-left: auto;
-  padding: 0 0.75rem;
+  padding: 0 0.25rem 0 0.5rem;
   border-left: 1px solid var(--line);
 }
 

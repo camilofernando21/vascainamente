@@ -43,3 +43,8 @@ export const INSTAGRAM = {
   url: "https://www.instagram.com/_vascainamente_/",
   handle: "@_vascainamente_",
 } as const;
+
+export const X_PROFILE = {
+  url: "https://x.com/Vascainamente",
+  handle: "@Vascainamente",
+} as const;
