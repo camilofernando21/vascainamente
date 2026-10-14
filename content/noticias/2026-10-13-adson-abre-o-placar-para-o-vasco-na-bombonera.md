@@ -11,7 +11,7 @@ imageUrl: ""
 excerpt: "O Vasco saiu na frente do Boca Juniors na Bombonera. Adson marcou e colocou o Cruzmaltino em vantagem no jogo de ida da semifinal da Copa Sul-Americana de 2026."
 seoTitle: "Adson marca e Vasco abre placar na Bombonera"
 seoDescription: "Adson balançou as redes e o Vasco está vencendo o Boca Juniors por 1 a 0 na Bombonera, pela semifinal da Sul-Americana 2026."
-updated: "2026-10-13T22:30:53-03:00"
+updated: "2026-10-13T22:45:33-03:00"
 ---
 
 O Vasco da Gama balançou as redes na Bombonera. Adson abriu o placar para o Cruzmaltino no jogo de ida da semifinal da Copa Sul-Americana de 2026, colocando o time brasileiro em vantagem no estádio mais intimidador da Argentina.
@@ -21,3 +21,5 @@ O gol foi confirmado pelo perfil oficial do clube no X, com o placar de Boca Jun
 A Bombonera, palco histórico e temida por qualquer visitante, recebe uma cena que faz a torcida vascaína vibrar de ponta a ponta: o Gigante da Colina à frente no marcador, na casa do rival argentino, em uma semifinal continental.
 
 **Atualização em 13/10 às 22:30:** No intervalo, o placar segue 0 a 1 para o Vasco, com o clube confirmando a vantagem após os primeiros 45 minutos na Bombonera. ([Vasco da Gama (X)](https://x.com/vascodagama/status/2110179022915129419))
+
+**Atualização em 13/10 às 22:45:** O placar de 1 a 0 favorável ao Vasco se manteve até o início do segundo tempo na Bombonera. ([Vasco da Gama (X)](https://x.com/vascodagama/status/2110183082041155820))
