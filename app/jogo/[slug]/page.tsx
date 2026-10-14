@@ -175,8 +175,8 @@ function ScenarioTable({ scenarios, now }: { scenarios: Scenario[]; now: { pG6: 
           <tr>
             <th scope="col">Resultado</th>
             <th scope="col" className="n">Chance dele</th>
-            <th scope="col" className="n">Libertadores</th>
-            <th scope="col" className="n">Sul-Americana</th>
+            <th scope="col" className="n">Libertadores 2027</th>
+            <th scope="col" className="n">Sul-Americana 2027</th>
             <th scope="col" className="n">Rebaixamento</th>
           </tr>
         </thead>
@@ -203,8 +203,8 @@ function headline(scenarios: Scenario[], now: { pG6: number; pSula: number; pZ4:
   if (!v || !d) return null;
   const options = [
     { label: "Rebaixamento", now: now.pZ4, v: v.pZ4, d: d.pZ4 },
-    { label: "Sul-Americana", now: now.pSula, v: v.pSula, d: d.pSula },
-    { label: "Libertadores", now: now.pG6, v: v.pG6, d: d.pG6 },
+    { label: "Vaga na Sul-Americana 2027 pelo Brasileiro", now: now.pSula, v: v.pSula, d: d.pSula },
+    { label: "Vaga na Libertadores 2027 pelo Brasileiro", now: now.pG6, v: v.pG6, d: d.pG6 },
   ];
   return options.sort((a, b) => Math.abs(b.v - b.d) - Math.abs(a.v - a.d))[0];
 }
@@ -377,7 +377,7 @@ export default async function MatchPageRoute({ params }: { params: { slug: strin
                   Hoje, o Vasco está em {chancesNow.vasco.pos}º, com {chancesNow.vasco.pts} pontos.
                 </h2>
                 <p className="vm-mj-stakes-sub">
-                  As chances de hoje: Sul-Americana {pc(chancesNow.vasco.pSula)}, rebaixamento {pc(chancesNow.vasco.pZ4)}. Estimativas do {SITE_NAME}, não são dados oficiais.{" "}
+                  As chances de hoje: vaga na Sul-Americana 2027, {pc(chancesNow.vasco.pSula)}; rebaixamento, {pc(chancesNow.vasco.pZ4)}. São estimativas do {SITE_NAME}, não dados oficiais.{" "}
                   <Link href="/chances">Ver todas as chances do Vasco</Link>.
                 </p>
               </>

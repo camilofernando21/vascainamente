@@ -113,12 +113,12 @@ export default async function ChancesPage() {
 
         <section className="vm-ch-cards" aria-label="Resumo das chances do Vasco">
           <div className="vm-ch-card">
-            <p className="vm-label">Libertadores</p>
+            <p className="vm-label">Libertadores 2027</p>
             <p className="vm-ch-big">{pc(vasco.pG6)}</p>
             <p className="vm-ch-sub">Até o 6º lugar. Vaga direta (G4): {pc(vasco.pG4)}.</p>
           </div>
           <div className="vm-ch-card">
-            <p className="vm-label">Sul-Americana</p>
+            <p className="vm-label">Sul-Americana 2027</p>
             <p className="vm-ch-big">{pc(vasco.pSula)}</p>
             <p className="vm-ch-sub">Terminar do 7º ao 12º lugar.</p>
           </div>
@@ -177,8 +177,8 @@ export default async function ChancesPage() {
                   <tr>
                     <th scope="col">Resultado</th>
                     <th scope="col" className="n">Chance dele</th>
-                    <th scope="col" className="n">Libertadores</th>
-                    <th scope="col" className="n">Sul-Americana</th>
+                    <th scope="col" className="n">Libertadores 2027</th>
+                    <th scope="col" className="n">Sul-Americana 2027</th>
                     <th scope="col" className="n">Rebaixamento</th>
                     <th scope="col" className="n opt">Pontos</th>
                   </tr>
