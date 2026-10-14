@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/oL-aVoAVHUQLwhQbqOtd3L5bVKM=/i.s3.glbimg.com
 excerpt: "O atacante colombiano levou dois cartões amarelos em sequência no segundo tempo e deixou o campo revoltado. A expulsão aconteceu em momento de pressão do Boca Juniors e forçou Pedro Emanuel a reorganizar o time. O Vasco terminou a etapa com dez jogadores."
 seoTitle: "Andrés Gómez expulso na Bombonera após empurrar árbitro"
 seoDescription: "Atacante do Vasco levou dois amarelos em sequência no segundo tempo e deixou o campo revoltado. Veja o lance na Bombonera."
-updated: "2026-10-14T15:31:07-03:00"
+updated: "2026-10-14T19:15:55-03:00"
 ---
 
 Aos 18 minutos do segundo tempo, Andrés Gómez cometeu falta em Ascarcíbar e recebeu o primeiro cartão amarelo por atrapalhar a cobrança rápida e se estranhar com o jogador do Boca Juniors. A situação piorou na sequência, quando o colombiano foi reclamar com o árbitro chileno Piero Maza e tocou no juiz mais de uma vez, chegando a empurrá-lo levemente. A reação de Maza foi imediata: segundo amarelo e, consequentemente, cartão vermelho para o atacante do Vasco.
@@ -22,3 +22,5 @@ Pedro Emanuel, que já preparava a entrada de Tchê Tchê, acabou colocando o vo
 A saída de Andrés Gómez complica a vida do Vasco na reta final do confronto de ida da semifinal da Copa Sul-Americana, disputado na Bombonera, em Buenos Aires. O clube entrou em campo em vantagem e precisará segurar o resultado com um jogador a menos até o apito final.
 
 **Atualização em 14/10 às 15:31:** Após a expulsão, Andrés Gómez se pronunciou nas redes sociais nesta quarta-feira, pediu desculpas à torcida e reconheceu o erro. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/14/andres-gomez-pede-desculpa-a-torcida-do-vasco-por-expulsao-contra-o-boca.ghtml))
+
+**Atualização em 14/10 às 19:15:** Após a partida, Gómez pediu desculpas publicamente à torcida e estará suspenso no jogo de volta, no Maracanã, no dia 20 de outubro. ([Gazeta Esportiva](https://www.gazetaesportiva.com/times/vasco/andres-gomez-pede-desculpas-vasco-expulsao-boca-juniors/))
