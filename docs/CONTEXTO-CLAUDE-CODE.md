@@ -87,6 +87,14 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 - Repositório público: Actions não consome minutos. Fora da janela cada disparo é um registro curto no histórico.
 - Job do cron-job.org (criado pelo responsável, depois do push): POST em `https://api.github.com/repos/camilofernando21/vascainamente/actions/workflows/lineup-watch.yml/dispatches`, cabeçalhos `Accept: application/vnd.github+json`, `X-GitHub-Api-Version: 2022-11-28`, `Content-Type: application/json` e `Authorization: Bearer` com o mesmo token do job atual (nunca escrito em arquivo), corpo `{"ref":"master"}`, fuso America/Sao_Paulo, minutos 0, 5, 10 e assim até 55, horas 9 a 23, todos os dias. Resposta esperada: HTTP 204.
 
+### Ajustes de 14 e 15/10/2026
+- Card "O que está em jogo" e página `/chances`: os rótulos agora dizem "Vaga na Sul-Americana 2027 pelo Brasileiro" (e Libertadores 2027), porque os percentuais são a chance de terminar o Brasileirão do 7º ao 12º (ou até o 6º), e não a chance na Sul-Americana em disputa. Os números não mudaram.
+- Capa própria de matéria sem foto (`.vm-cover-word`): a palavra da categoria saiu de trás do título e foi para a metade de baixo, à direita, com contorno mais fraco (24%).
+- Notícia do dia (`pickFeaturedPost` em `lib/home.ts`): sempre a melhor matéria de hoje (dia de Brasília), mesmo de nota baixa. Só cai para as últimas 30 horas se hoje ainda não tiver matéria. Nova faixa "Ontem em destaque" (`components/home/YesterdayStrip.tsx`) logo abaixo, com a melhor matéria do dia anterior (`pickYesterdayPost`), sem repetir a do destaque.
+- Instalação como app (`components/pwa/InstallPrompt.tsx`, montado no layout): só em celular, depois de 20 s e de rolar a página, nunca junto do aviso de cookies, nunca dentro de navegador de aplicativo (Instagram, Facebook, X, TikTok). Android usa o diálogo nativo (`beforeinstallprompt`); iPhone mostra um guia de 3 passos. "Agora não" silencia por 14 dias; instalado, nunca mais aparece (chave `vm-install` no localStorage). O manifesto (`app/manifest.ts`) já existia; não há service worker. Foi acrescentado `appleWebApp` no layout.
+- Search Console (15/10): 73 páginas indexadas e 12 não. Dessas, 2 são redirecionamentos de `redirects.json` (esperado), 1 é cópia sem canônica escolhida (matéria de 31/08 sobre Lescano, endereço correto) e 9 estão rastreadas mas não indexadas (comum em site novo). Reavaliar em 10 a 14 dias; se os 9 não diminuírem, reforçar links internos e conteúdo próprio.
+- Pacote de posts da vitória sobre o Boca (13/10) feito fora do repositório (artes, legendas e zips); fluxo do Cobalt com o Composio segue pendente de conectar Instagram e X com o apelido `vascainamente`.
+
 ### Outros itens concluídos em 11/10/2026
 - Limite de gasto do X: US$ 10 por ciclo, recarga automática desligada.
 - `.claude/settings.json` com modelo padrão sonnet e `CLAUDE_CODE_SUBAGENT_MODEL=sonnet`, para gastar menos tokens.
@@ -108,7 +116,7 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 - Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
 ### Pendências
-- Conferir a primeira escalação estruturada do X (jogo contra o Boca, 13/10, 21:30): quando o Vasco postar a escalação, a matéria gerada pelo robô deve ter `lineup` no cabeçalho com os 11 titulares, e a página `/jogo/boca-x-vasco-2026-10-13` deve mostrá-la com o selo "Perfil oficial do Vasco no X" e a hora. Se a matéria sair sem `lineup`, ver se a imagem do post trazia os nomes legíveis (o robô só grava com os 11 nomes).
+- Escalação estruturada do X conferida no jogo contra o Boca (13/10): a página mostrou os 11 titulares com o selo do perfil oficial. Melhorias possíveis, com autorização de envio: ler o número da camisa, campo tático só com formação confiável e arte de "Escalação oficial".
 - Criar o segundo job no cron-job.org para o `lineup-watch` (configuração acima) e testar com uma execução manual, que deve responder 204. Depois do primeiro jogo, olhar o painel de uso do X para confirmar que as consultas vazias não custam nada.
 - Conferir o status do sitemap no Search Console em 1 ou 2 dias contados do envio, feito em 12/10/2026 (ou seja, entre 13 e 14/10/2026). Hoje mostra "Não foi possível buscar".
 - Entregar o kit de marca ao Cobalt (usuário do X já definido: @Vascainamente). O kit de marca foi gerado fora do repositório e ainda será entregue ao Cobalt.
