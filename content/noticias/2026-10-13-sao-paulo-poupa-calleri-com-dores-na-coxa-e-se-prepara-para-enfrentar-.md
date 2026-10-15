@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/oyGPzKB0bynbprtTVj4_w0LKDGo=/i.s3.glbimg.com
 excerpt: "O atacante sentiu desconforto na coxa esquerda após marcar dois gols contra o Vitória e ficou fora do treino coletivo. O confronto entre São Paulo e Vasco está marcado para sábado, às 21h, no Morumbis, pelo Brasileirão."
 seoTitle: "São Paulo poupa Calleri para jogo contra o Vasco"
 seoDescription: "Calleri sentiu dores na coxa e foi poupado do treino. São Paulo enfrenta o Vasco no sábado, às 21h, no Morumbis, pelo Brasileirão."
+updated: "2026-10-15T05:46:06-03:00"
 ---
 
 O São Paulo se reapresentou nesta terça-feira no CT da Barra Funda e já iniciou a preparação para o duelo contra o Vasco, no próximo sábado, às 21h, no Morumbis. O principal cuidado da comissão técnica foi com Calleri: o centroavante, que balançou as redes duas vezes na vitória sobre o Vitória, sentiu dores na coxa esquerda após a partida e realizou atividade separada na parte interna do CT, longe dos demais companheiros.
@@ -19,3 +20,5 @@ Os jogadores que não tiveram desgaste especial seguiram a rotina normal. O grup
 O São Paulo volta a treinar na manhã desta quarta-feira e ainda terá mais dois dias de atividades antes de encarar o Vasco. A equipe ocupa a décima colocação no Brasileirão, com 39 pontos. Do lado cruzmaltino, o foco da semana está dividido: o clube vive a emoção da semifinal da Sul-Americana contra o Boca Juniors, com o jogo de volta marcado para o dia 20 no Maracanã, mas o compromisso pelo campeonato nacional não pode ser negligenciado.
 
 A situação de Calleri será monitorada ao longo da semana. Se o argentino não se recuperar a tempo, o São Paulo terá que reorganizar o setor ofensivo para o confronto no Morumbis. O Vasco chega à partida com moral elevada após a campanha na Sul-Americana e vai querer manter a boa fase também no Brasileirão.
+
+**Atualização em 15/10 às 05:46:** Lucas Moura pode ser titular no lugar de Calleri contra o Vasco, o que seria sua primeira aparição entre os 11 em 216 dias. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/15/sao-paulo-lucas-moura-pode-voltar-a-ser-titular-apos-216-dias-contra-vasco.ghtm))
