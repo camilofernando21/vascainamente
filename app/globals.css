@@ -6039,3 +6039,57 @@ html.vm-cursor body:not(.is-touch) *::after {
   text-decoration-color: var(--red);
   text-underline-offset: 3px;
 }
+
+/* ---------- "Ontem em destaque": strip under the news of the day ---------- */
+.vm-yday {
+  position: relative;
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.vm-yday-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 5vw, 3rem);
+}
+.vm-yday-eyebrow {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.vm-yday-title {
+  font-family: var(--font-serif), serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+.vm-yday-title a:hover {
+  color: var(--red);
+}
+.vm-yday-copy {
+  max-width: 44rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+.vm-yday-link {
+  align-self: flex-start;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  border-bottom: 1px solid rgba(240, 235, 225, 0.3);
+  padding-bottom: 0.25rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.vm-yday-link:hover {
+  color: var(--red);
+  border-color: var(--red);
+}

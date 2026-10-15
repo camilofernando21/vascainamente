@@ -3,6 +3,7 @@ import NavTabs from "@/components/NavTabs";
 import ScrollBadge from "@/components/effects/ScrollBadge";
 import HeadlineMarquee from "@/components/home/HeadlineMarquee";
 import NewsOfTheDay from "@/components/home/NewsOfTheDay";
+import YesterdayStrip from "@/components/home/YesterdayStrip";
 import LatestHorizontal from "@/components/home/LatestHorizontal";
 import TodayCards from "@/components/home/TodayCards";
 import Competitions from "@/components/home/Competitions";
@@ -13,7 +14,7 @@ import Idols from "@/components/home/Idols";
 import SiteFooter from "@/components/home/SiteFooter";
 import { getAllPosts } from "@/lib/posts";
 import { getCompetitions } from "@/lib/competitions";
-import { pickFeaturedPost, pickTodayPosts, toHomeItem } from "@/lib/home";
+import { pickFeaturedPost, pickTodayPosts, pickYesterdayPost, toHomeItem } from "@/lib/home";
 import { OG_DEFAULTS, SITE_DESCRIPTION } from "@/lib/site";
 import { VASCO_TV_CHANNEL_URL, getVascoTvVideos } from "@/lib/vascotv";
 import { dayLabel, factsForToday } from "@/lib/historia";
@@ -45,6 +46,7 @@ export default async function Home() {
   const featured = posts[0] ?? null;
   const today = pickTodayPosts(posts);
   const ofTheDay = pickFeaturedPost(posts);
+  const yesterday = pickYesterdayPost(posts, ofTheDay?.slug);
 
   return (
     <main className="relative min-h-screen">
@@ -70,6 +72,7 @@ export default async function Home() {
 
       <HeadlineMarquee items={posts.slice(0, 12).map(toHomeItem)} />
       <NewsOfTheDay item={ofTheDay ? toHomeItem(ofTheDay) : null} />
+      <YesterdayStrip item={yesterday ? toHomeItem(yesterday) : null} />
       <LatestHorizontal items={posts.slice(1, 5).map(toHomeItem)} />
       <TodayCards
         items={today.items.map(toHomeItem)}

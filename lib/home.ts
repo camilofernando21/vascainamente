@@ -93,12 +93,26 @@ const spDay = (d: Date) => d.toLocaleDateString("en-CA", { timeZone: "America/Sa
 export function pickFeaturedPost(posts: Post[]): Post | null {
   const now = Date.now();
   const today = spDay(new Date(now));
-  // today's news first: yesterday's big story only holds the spot while today has nothing relevant
+  // the news of the day is always from today: the best of today's news, even a modest one.
+  // Only when nothing came out yet today (early morning) does yesterday's story hold the spot.
   const ofToday = posts.filter((p) => spDay(new Date(p.date)) === today);
   const recent = posts.filter((p) => now - new Date(p.date).getTime() <= 30 * 60 * 60 * 1000);
-  const pool = ofToday.some((p) => importanceOf(p) >= 3) ? ofToday : recent.length ? recent : posts.slice(0, 10);
+  const pool = ofToday.length ? ofToday : recent.length ? recent : posts.slice(0, 10);
+  return bestOf(pool, now);
+}
+
+// "Ontem em destaque": the most important story of the previous calendar day (Brasília),
+// never the one already shown as the news of the day.
+export function pickYesterdayPost(posts: Post[], excludeSlug?: string): Post | null {
+  const now = Date.now();
+  const yesterday = spDay(new Date(now - DAY_MS));
+  const pool = posts.filter((p) => spDay(new Date(p.date)) === yesterday && p.slug !== excludeSlug);
+  return bestOf(pool, now);
+}
+
+function bestOf(pool: Post[], now: number): Post | null {
   let best: Post | null = null;
-  let bestScore = -1;
+  let bestScore = -Infinity;
   for (const p of pool) {
     // a photo makes the section; the newest wins a tie (pool is sorted newest first)
     // and fresher news weighs a little more
