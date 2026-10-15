@@ -5,6 +5,7 @@ import Loader, { LOADER_HEAD_SCRIPT } from "@/components/effects/Loader";
 import GrainCanvas from "@/components/effects/GrainCanvas";
 import CustomCursor from "@/components/effects/CustomCursor";
 import ConsentManager from "@/components/consent/ConsentManager";
+import InstallPrompt from "@/components/pwa/InstallPrompt";
 import { OG_DEFAULTS, SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 
 const instrumentSerif = Instrument_Serif({
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   openGraph: { ...OG_DEFAULTS, type: "website" },
   twitter: { card: "summary_large_image" },
+  appleWebApp: { capable: true, title: "Vascainamente", statusBarStyle: "black" },
 };
 
 export const viewport: Viewport = {
@@ -53,6 +55,7 @@ export default function RootLayout({
         <GrainCanvas />
         <CustomCursor />
         <ConsentManager />
+        <InstallPrompt />
       </body>
     </html>
   );
