@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/jIMHkDw-EbZcicTgF2nHkSGwIDc=/i.s3.glbimg.com
 excerpt: "O Vasco desembarcou em São Paulo nesta sexta-feira com novidades na lista de relacionados: Loide Augusto e Colidio estão confirmados no grupo. Pedro Emanuel deve fazer mudanças pontuais no time para o duelo no Morumbis, de olho no jogo de volta contra o Boca Juniors pela Sul-Americana."
 seoTitle: "Escalação do Vasco para São Paulo: Loide é relacionado"
 seoDescription: "Pedro Emanuel deve poupar desgastados para o Boca e relaciona Loide Augusto e Colidio para o duelo com o São Paulo no Morumbis pelo Brasileirão."
+updated: "2026-10-17T14:15:05-03:00"
 ---
 
 O Vasco chegou à capital paulista na tarde desta sexta-feira para o confronto com o São Paulo, às 21h deste sábado, no Morumbis, pela 31ª rodada do Brasileirão. A delegação foi bem recebida no hotel, onde jogadores pararam para atender torcedores que aguardavam a chegada do grupo. As principais novidades na lista de relacionados foram Loide Augusto, que retorna a um jogo do clube após 14 meses de ausência, e Colidio, recuperado de desconforto muscular no glúteo.
@@ -19,3 +20,5 @@ Colidio havia deixado a partida contra o Remo no início do segundo tempo na sem
 Com o duelo de volta contra o Boca Juniors na semifinal da Copa Sul-Americana se aproximando, Pedro Emanuel tem motivo para dosar o esforço de alguns jogadores com maior desgaste físico. Cuiabano, Thiago Mendes e Bruno Duarte são os principais nomes que podem iniciar no banco. Nos treinamentos da semana, o treinador testou Brenner no ataque, Puma Rodríguez e Lucas Piton nas laterais. A provável escalação tem: Léo Jardim, Puma Rodríguez ou PH, Saldivia, Robert Renan, Lucas Piton, Sosa, Thiago Mendes ou Tchê Tchê, Lescano, Andrés Gómez, Brenner ou David ou Bruno, e Colidio.
 
 O Brasileirão tem peso real para o clube: o Vasco soma 35 pontos e está a três do Internacional, primeiro time na zona de rebaixamento, com um jogo a menos do que o rival. A situação exige seriedade, e Pedro Emanuel deixou claro que não pretende abrir mão do campeonato nacional. O equilíbrio entre os dois objetivos é o grande desafio da reta final da temporada.
+
+**Atualização em 17/10 às 14:15:** Brenner, recuperado de lesão ligamentar no pé esquerdo sem cirurgia, também está relacionado e briga por vaga no time titular ao lado de Colidio e Andrés Gómez. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/17/recuperado-brenner-projeta-duelo-do-vasco-com-sao-paulo-clube-onde-foi-revelado-decisao.ghtml))
