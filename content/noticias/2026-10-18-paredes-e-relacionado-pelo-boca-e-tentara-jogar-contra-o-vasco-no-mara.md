@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/JKH0t9HnT3GiWHghKn988GrqQmA=/i.s3.glbimg.com
 excerpt: "O volante Leandro Paredes, em recuperação de problema muscular, foi incluído na delegação do Boca Juniors para a viagem ao Rio de Janeiro. O capitão argentino desfalcou o Boca na derrota por 1 a 0 na Bombonera e seguirá tratamento no Brasil para tentar estar disponível na terça-feira. A presença do campeão mundial de 2022 é incerta, mas o Boca não abre mão de tê-lo perto."
 seoTitle: "Paredes é relacionado pelo Boca para jogo contra o Vasco"
 seoDescription: "Capitão do Boca Juniors, Leandro Paredes foi relacionado para viajar ao Rio e tentará jogar contra o Vasco na semifinal da Sul-Americana no Maracanã."
-updated: "2026-10-19T12:47:01-03:00"
+updated: "2026-10-19T20:01:02-03:00"
 ---
 
 O Boca Juniors relacionou Leandro Paredes para a viagem ao Rio de Janeiro, onde a delegação argentina se prepara para o jogo de volta da semifinal da Copa Sul-Americana contra o Vasco, na terça-feira, no Maracanã. O volante, capitão do time, segue em recuperação de um problema muscular sofrido no dia 9 de outubro, no duelo contra o Instituto, e continuará o tratamento no Brasil na tentativa de chegar em condições de jogo.
@@ -22,3 +22,5 @@ Para o Vasco, a informação é relevante. Paredes é o cérebro do meio-campo d
 O jogo de volta está marcado para terça-feira, no Maracanã. O Vasco precisa apenas de um empate para avançar à final da Sul-Americana. O Boca precisa vencer por dois gols de diferença para avançar no tempo normal, ou por um para levar a decisão aos pênaltis.
 
 **Atualização em 19/10 às 12:47:** O tratamento utilizado foi o PRP, plasma rico em plaquetas extraído do próprio Paredes e injetado na coxa lesionada, com evolução considerada muito positiva pelos médicos do Boca Juniors. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/19/vasco-x-boca-juniors-entenda-o-tratamento-e-a-recuperacao-relampago-de-paredes-para-jogar-no-maracana.ghtml))
+
+**Atualização em 19/10 às 20:01:** Paredes treinou sem limitações aparentes no CT do Flamengo nesta segunda-feira e o técnico Arruabarrena confirmou que ele pode entrar em campo, admitindo apenas que há risco. ([leia a matéria](/2026-10-19-paredes-treina-no-ct-do-flamengo-e-pode-enfrentar-o-vasco-no-maracana))
