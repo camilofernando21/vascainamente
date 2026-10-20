@@ -116,6 +116,10 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 - Canal do WhatsApp (modelo Lance! Vasco) é a opção recomendada para distribuir notícia, no lugar de um grupo. Decisão de criar ainda pendente.
 - Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
+### Acessibilidade
+- 19/10/2026: o vermelho da marca (`--red`, #c8003c) tinha contraste de cerca de 3,2 para 1 sobre o fundo escuro, abaixo dos 4,5 para 1 que o WCAG AA pede para texto pequeno. Criada a variável `--red-text` (#ff4d5e, cerca de 6 para 1) em `app/globals.css`, usada em todas as letras vermelhas (45 regras). `--red` continua em fundos, bordas, sublinhados e na Cruz de Malta. Os elementos decorativos `.vm-resp-cross` e `.vm-play-mark` ficaram com `--red`. Quem criar texto vermelho novo deve usar `--red-text`.
+- Pendente: medir o contraste das artes do Instagram e do X (texto vermelho sobre fundo escuro) e rever o cinza dos textos mudos (`--text-muted`, 50% de opacidade).
+
 ### Pendências
 - Escalação estruturada do X conferida no jogo contra o Boca (13/10): a página mostrou os 11 titulares com o selo do perfil oficial. Melhorias possíveis, com autorização de envio: ler o número da camisa, campo tático só com formação confiável e arte de "Escalação oficial".
 - Depois do primeiro jogo com o `lineup-watch` ativo, olhar o painel de uso do X para confirmar que as consultas vazias não custam nada.

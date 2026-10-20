@@ -9,6 +9,8 @@
   --text-muted: rgba(240, 235, 225, 0.5);
   --border: rgba(240, 235, 225, 0.1);
   --red: #c8003c;
+  /* lighter red for text on the dark background (contrast above 5:1; --red stays for fills, borders and the Cruz) */
+  --red-text: #ff4d5e;
   --flash: #98002e;
   --line: rgba(240, 235, 225, 0.08);
 
@@ -558,7 +560,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-marquee-item.is-urgent {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 @keyframes marqueeScroll {
@@ -845,7 +847,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .q-panel-eyebrow.is-red {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .q-panel-title {
@@ -905,7 +907,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .q-stat-val.red {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .q-stat-cat {
@@ -1847,7 +1849,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-news-cat.is-red {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-news-title {
@@ -2024,12 +2026,12 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 
 .vm-article-cat.is-red {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-article-cat:hover,
 .vm-article-cat:focus-visible {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-article-cat:focus-visible {
@@ -2163,7 +2165,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   opacity: 0;
   transition: opacity 0.3s ease;
   min-height: 1em;
@@ -2578,7 +2580,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: clamp(7rem, 22vw, 20rem);
   line-height: 0.8;
   letter-spacing: -0.04em;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-hist-when {
@@ -2730,7 +2732,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-serif), serif;
   font-size: 3.5rem;
   line-height: 1;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-title-name {
@@ -3696,7 +3698,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -3735,7 +3737,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-style: italic;
 }
 .vm-resp-beat:nth-child(n + 3) .vm-resp-line:last-child {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-resp-beat.is-active .vm-resp-line-in {
   animation: vm-resp-in 1.05s var(--ease) both;
@@ -4113,7 +4115,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-style: italic;
   font-size: clamp(1.5rem, 2.8vw, 2.9rem);
   line-height: 1;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-rd-figure-note {
   margin: 0.9rem 0 0 auto;
@@ -4142,7 +4144,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-rd-name em {
   font-style: italic;
-  color: var(--red);
+  color: var(--red-text);
 }
 @media (min-width: 768px) {
   .vm-rd-name { font-size: clamp(6rem, 17.5vw, 19rem); }
@@ -4165,7 +4167,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   text-wrap: balance;
 }
 .vm-rd-lede em {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-rd-stats {
@@ -4231,7 +4233,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   letter-spacing: -0.02em;
 }
 .vm-rd-years li:last-child .vm-rd-year {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-rd-year-text {
   display: block;
@@ -4347,7 +4349,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-comp-kicker {
   font-size: 0.72rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-title {
   margin-top: 1.2rem;
@@ -4362,7 +4364,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-comp-title em {
   font-style: italic;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-updated {
   display: flex;
@@ -4413,7 +4415,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text-mid);
 }
 .vm-comp-next-label.is-live {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-next-sub {
   margin-top: 0.6rem;
@@ -4440,7 +4442,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 1.1rem;
   letter-spacing: 0.14em;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-next-venue {
   margin-top: 0.9rem;
@@ -4486,7 +4488,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-comp-next-score i {
   margin: 0 0.18em;
   font-style: italic;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-countdown {
   text-align: right;
@@ -4560,7 +4562,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text-label);
 }
 .vm-comp-tab[aria-selected="true"] .vm-comp-tab-badge {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-tab::after {
   content: "";
@@ -4623,7 +4625,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-size: 0.26em;
   font-style: italic;
   letter-spacing: 0;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-mini {
   display: grid;
@@ -4719,7 +4721,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text-mid);
 }
 .vm-comp-upnext time span {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-upnext-teams {
   font-family: var(--font-serif), serif;
@@ -4838,7 +4840,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-style: italic;
   line-height: 0.95;
   letter-spacing: -0.035em;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-phase-at {
   margin-top: 1rem;
@@ -4866,7 +4868,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.78rem;
   letter-spacing: 0.06em;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-legs time strong {
   font-weight: 400;
@@ -4971,7 +4973,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-family: var(--font-mono), monospace;
   font-size: 0.66rem;
   letter-spacing: 0.04em;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-comp-empty {
   margin-top: 1rem;
@@ -5093,7 +5095,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 
 .vm-ch-kicker {
   font-size: 0.72rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-ch-title {
   margin-top: 1.2rem;
@@ -5108,7 +5110,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-ch-title em {
   font-style: italic;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-ch-lede {
   max-width: 52ch;
@@ -5172,10 +5174,10 @@ html.vm-cursor body:not(.is-touch) *::after {
   vertical-align: top;
   position: relative;
   top: 0.35em;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-ch-card.is-red .vm-ch-big {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-ch-sub {
   margin-top: 0.9rem;
@@ -5343,7 +5345,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text-label);
 }
 .vm-ch-scen .is-z4 {
-  color: var(--red);
+  color: var(--red-text);
 }
 
 .vm-ch-table .pos {
@@ -5412,7 +5414,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-ch-game-when b {
   font-weight: 400;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-ch-game-vs {
   font-family: var(--font-serif), serif;
@@ -5512,7 +5514,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 /* header: the two sides and the score */
 .vm-mj-kicker {
   font-size: 0.72rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mj-teams {
   display: grid;
@@ -5558,7 +5560,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-mj-score i {
   margin: 0 0.18em;
   font-style: italic;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mj-meta {
   display: flex;
@@ -5574,7 +5576,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text-mid);
 }
 .vm-mj-meta .is-live {
-  color: var(--red);
+  color: var(--red-text);
   text-transform: uppercase;
   letter-spacing: 0.18em;
 }
@@ -5582,7 +5584,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text);
 }
 .vm-mj-note {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mj-countdown {
   margin-left: auto;
@@ -5609,7 +5611,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   align-items: center;
   gap: 0.7rem 1rem;
   font-size: 0.72rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mj-stakes-title {
   max-width: 28ch;
@@ -5784,8 +5786,8 @@ html.vm-cursor body:not(.is-touch) *::after {
 }
 .vm-mj-timeline .k-goal,
 .vm-mj-timeline .k-pen,
-.vm-mj-timeline .k-own { color: var(--red); }
-.vm-mj-timeline .k-red { color: var(--red); }
+.vm-mj-timeline .k-own { color: var(--red-text); }
+.vm-mj-timeline .k-red { color: var(--red-text); }
 .vm-mj-timeline .txt {
   font-family: var(--font-serif), serif;
   font-size: 1.2rem;
@@ -5862,7 +5864,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-mj-xi .n {
   font-family: var(--font-mono), monospace;
   font-size: 0.74rem;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mj-xi small {
   font-family: var(--font-mono), monospace;
@@ -5951,7 +5953,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   display: block;
   margin-top: 0.2rem;
   font-weight: 400;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-mjs-row .comp {
   font-family: var(--font-mono), monospace;
@@ -5980,7 +5982,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   font-weight: 400;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
 }
 
 @media (max-width: 899px) {
@@ -6069,7 +6071,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   color: var(--text);
 }
 .vm-yday-title a:hover {
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-yday-copy {
   max-width: 44rem;
@@ -6090,7 +6092,7 @@ html.vm-cursor body:not(.is-touch) *::after {
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 .vm-yday-link:hover {
-  color: var(--red);
+  color: var(--red-text);
   border-color: var(--red);
 }
 
@@ -6223,7 +6225,7 @@ html.vm-cursor body:not(.is-touch) *::after {
 .vm-install-share {
   display: inline-block;
   vertical-align: -3px;
-  color: var(--red);
+  color: var(--red-text);
 }
 .vm-install-ok {
   width: 100%;
