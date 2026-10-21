@@ -11,7 +11,7 @@ imageUrl: ""
 excerpt: "O Boca Juniors derrotou o Vasco por 3 a 1 no Maracanã lotado e garantiu vaga na final da Copa Sul-Americana. Léo Jardim cometeu falha decisiva no fim da partida, liquidando qualquer esperança cruzmaltina. O clube argentino vai à decisão do torneio."
 seoTitle: "Boca vence por 3 a 1 e elimina Vasco da Sul-Americana"
 seoDescription: "Boca Juniors derrota o Vasco por 3 a 1 no Maracanã com falha de Léo Jardim e vai à final da Copa Sul-Americana. Cruzmaltino está eliminado."
-updated: "2026-10-20T23:47:15-03:00"
+updated: "2026-10-21T00:02:05-03:00"
 ---
 
 O sonho acabou no Maracanã. O Boca Juniors venceu o Vasco por 3 a 1 nesta terça-feira (20), em um estádio repleto, e avançou à final da Copa Sul-Americana. O Cruzmaltino havia conquistado uma vantagem preciosa ao bater o rival por 1 a 0 na Bombonera, mas não conseguiu segurar o ímpeto argentino em casa e foi eliminado de forma dolorosa.
@@ -25,3 +25,7 @@ A derrota levanta questões imediatas sobre os rumos da temporada. Com a Sul-Ame
 **Atualização em 20/10 às 23:45:** Leandro Paredes marcou o gol decisivo na reta final, após falha de Léo Jardim, fechando o placar em 3 a 1 para o Boca Juniors. ([GE.Globo](https://ge.globo.com/futebol/copa-sul-americana/jogo/20-10-2026/vasco-boca-juniors.ghtml))
 
 **Atualização em 20/10 às 23:47:** A eliminação na semifinal rendeu ao Vasco R$ 15,1 milhões em premiações pela campanha na Copa Sul-Americana 2026. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/20/premiacao-do-vasco-veja-quanto-o-clube-recebera-apos-ser-eliminado-na-sul-americana.ghtml))
+
+**Atualização em 21/10 às 00:01:** Jogadores admitiram publicamente que a equipe 'entrou desligada' na semifinal, reforçando a autocrítica coletiva após a eliminação. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/20/entramos-desligados-o-que-jogadores-do-vasco-disseram-apos-eliminacao.ghtm))
+
+**Atualização em 21/10 às 00:02:** O Boca Juniors venceu por 3 a 1: Di Lollo, Merentiel e Paredes marcaram para os argentinos, com Puma Rodríguez descontando para o Vasco. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/10/20/leo-jardim-falha-no-fim-boca-juniors-vira-no-agregado-e-vasco-da-adeus-a-sul-americana.htm))
