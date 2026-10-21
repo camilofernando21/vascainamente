@@ -16,6 +16,7 @@ from pathlib import Path
 import anthropic
 
 from x_source import fetch_x_items
+import fact_guard
 
 RSS_SOURCES = [
     {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/"},
@@ -315,8 +316,36 @@ OFFICIAL_NOTE = (
     "número ou placar que não esteja no texto ou na imagem.\n"
 )
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None) -> dict:
+WEEKDAY_NAMES = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
+
+
+def fidelity_rules(context: dict) -> str:
+    """Regras contra detalhe inventado: o modelo só tem título e trecho, então só pode usar o que está neles."""
+    now = datetime.now(SP_TZ)
+    fixed = []
+    if context.get("tecnico"):
+        fixed.append(f"o técnico do Vasco é {context['tecnico']}")
+    if context.get("temporada"):
+        fixed.append(f"a temporada é {context['temporada']}")
+    fixed.append(f"o site se chama {context.get('site', 'Vascainamente')}")
+    return (
+        "\nREGRA DE FIDELIDADE (a mais importante): use SOMENTE os fatos do título e do trecho acima. "
+        "Não acrescente placar, número, ano, data, dia da semana, horário, local, estádio, competição, rodada, "
+        "valor, idade, nome de pessoa nem citação que não estejam lá. Se o trecho for curto, a matéria é curta: "
+        "é melhor um parágrafo certo do que três com detalhe inventado. Se a fonte for coluna ou opinião, "
+        "atribua ao autor e não trate a opinião como fato. "
+        f"Fatos fixos que você pode usar: {'; '.join(fixed)}. "
+        f"Hoje é {WEEKDAY_NAMES[now.weekday()]}, {now.strftime('%d/%m/%Y')}.\n"
+    )
+
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None, feedback: list | None = None, context: dict | None = None) -> dict:
     recent = recent or []
+    context = context or {}
+    fix_note = (
+        "\nA versão anterior desta matéria foi barrada na checagem de fatos por trazer itens que não estão na fonte: "
+        + "; ".join(feedback) + ". Escreva de novo sem esses itens.\n"
+    ) if feedback else ""
     video_field = VIDEO_FIELD if videos else ""
     lineup_field = LINEUP_FIELD if (official and from_x) else ""
     duplicate_field = DUPLICATE_FIELD if recent else ""
@@ -328,13 +357,13 @@ Artigo original:
 Título: {title}
 Trecho: {desc}
 Fonte: {source}
-{(OFFICIAL_NOTE if official else X_NOTE) if from_x else ""}{video_prompt(videos)}{recent_prompt(recent)}
+{(OFFICIAL_NOTE if official else X_NOTE) if from_x else ""}{fidelity_rules(context)}{fix_note}{video_prompt(videos)}{recent_prompt(recent)}
 {CATEGORY_GUIDE}
 
 Retorne SOMENTE um JSON (sem markdown) com:
 - "title": título reescrito: direto, preciso, sem sensacionalismo
 - "excerpt": 2-3 frases naturais de resumo
-- "body": 3-4 parágrafos desenvolvendo a notícia
+- "body": de 1 a 3 parágrafos curtos, só com o que está no título e no trecho
 - "seoTitle": título SEO (máx 60 chars)
 - "seoDescription": meta description (máx 155 chars)
 - "category": uma das categorias acima, exatamente como escrita
@@ -384,6 +413,40 @@ final de um jogo do time principal, ou null{lineup_field}{video_field}{duplicate
     return article
 
 MATCH_EVENTS = {"escalacao", "gol", "resultado"}
+
+CHECKED_FIELDS = ("title", "excerpt", "body", "seoTitle", "seoDescription")
+
+
+def write_checked(client, item: dict, videos: list, recent: list, context: dict, results_cache: dict) -> dict:
+    """Escreve a matéria e passa pela checagem de fatos. Uma nova tentativa com a lista de problemas;
+    se ainda falhar, devolve {"blocked": [...]} e nada é publicado."""
+    source = f"{item['title']}\n{item['desc']}"
+    has_image = bool(item.get("photos"))
+    feedback = None
+    for attempt in (1, 2):
+        article = process_with_ai(
+            client, item["title"], item["desc"], item["name"], videos, recent,
+            from_x=item["from_x"], official=item.get("official", False), photos=item.get("photos"),
+            feedback=feedback, context=context,
+        )
+        if article.get("skip"):
+            return article
+        # a repeated fact publishes nothing new: only the appended update needs checking
+        if article["duplicateOf"] and not article["development"]:
+            texts = [article.get("update")]
+        else:
+            texts = [article.get(k) for k in CHECKED_FIELDS] + [article.get("update")]
+        today = WEEKDAY_NAMES[datetime.now(SP_TZ).weekday()]
+        problems = fact_guard.check(texts, source, context, has_image=has_image, today=today)
+        if article.get("matchEvent") == "resultado":
+            if "results" not in results_cache:
+                results_cache["results"] = fact_guard.recent_results()
+            problems += fact_guard.check_result(texts, results_cache["results"])
+        if not problems:
+            return article
+        print(f"  CHECAGEM ({attempt}/2): {'; '.join(problems)}")
+        feedback = problems
+    return {"blocked": problems}
 
 FORMATION = re.compile(r"^\d(?:-\d){2,4}$")
 
@@ -472,7 +535,10 @@ def main():
     published = 0
     skipped = 0
     updated = 0
+    blocked = 0
     videos = None  # fetched once, only when there is news to process
+    context = fact_guard.load_context()
+    results_cache = {}  # ESPN results, fetched once and only for result articles
 
     if not os.environ.get("ANTHROPIC_API_KEY", "").strip():
         print("ERRO FATAL: ANTHROPIC_API_KEY ausente ou vazia.")
@@ -527,10 +593,13 @@ def main():
                 videos = fetch_recent_videos()
             # re-read on every item: includes what this same run has just published
             recent = load_recent_posts()
-            article = process_with_ai(
-                client, title, desc, item["name"], videos, recent,
-                from_x=item["from_x"], official=item.get("official", False), photos=item.get("photos"),
-            )
+            article = write_checked(client, item, videos, recent, context, results_cache)
+            if article.get("blocked"):
+                # cached on purpose: retrying every 15 minutes would cost API calls and fail the same way
+                print(f"BARRADA (checagem de fatos): {title[:60]}: {'; '.join(article['blocked'])}")
+                blocked += 1
+                cache.add(fp)
+                continue
             if article.get("skip"):
                 print(f"PULADA (post sem notícia): {title[:60]}")
                 skipped += 1
@@ -566,7 +635,7 @@ def main():
             print(f"  ERRO: {title[:60]}: {e}")
 
     save_cache(cache_file, cache)
-    print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) (mesmo fato ou post sem notícia).")
+    print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) (mesmo fato ou post sem notícia), {blocked} barrada(s) na checagem de fatos.")
 
 if __name__ == "__main__":
     main()
