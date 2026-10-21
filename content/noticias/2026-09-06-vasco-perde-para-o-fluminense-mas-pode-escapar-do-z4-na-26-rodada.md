@@ -6,9 +6,10 @@ category: "resultado"
 source: "UOL Esporte"
 sourceUrl: "https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/09/06/vasco-sair-z4-apos-derrota-brasileirao.ghtm"
 imageUrl: ""
-excerpt: "O Cruz-Maltino caiu diante do Fluminense por 1 a 0 na noite desta quinta-feira, mas ainda tem chance de terminar a rodada fora da zona de rebaixamento. O cenário depende dos resultados dos concorrentes diretos na tabela. A situação segue delicada, mas o alívio ainda é possível."
+excerpt: "O Cruz-Maltino caiu diante do Fluminense por 1 a 0 na noite deste sábado, mas ainda tem chance de terminar a rodada fora da zona de rebaixamento. O cenário depende dos resultados dos concorrentes diretos na tabela. A situação segue delicada, mas o alívio ainda é possível."
 seoTitle: "Vasco pode sair do Z4 após derrota para o Flu"
 seoDescription: "O Vasco perdeu para o Fluminense por 1 a 0 na 26ª rodada, mas ainda pode escapar da zona de rebaixamento se rivais tropeçarem."
+updated: "2026-10-21T18:00:00-03:00"
 ---
 
 O Vasco voltou do Maracanã de mãos vazias. A derrota por 1 a 0 para o Fluminense, no clássico válido pela 26ª rodada do Campeonato Brasileiro, manteve o time de São Januário dentro da zona de rebaixamento, ao menos por enquanto. O gol que decidiu o derby carioca deixou Santiago Sosa e companhia na parte mais perigosa da tabela, mas o jogo ainda não acabou para o Cruz-Maltino neste fim de semana.

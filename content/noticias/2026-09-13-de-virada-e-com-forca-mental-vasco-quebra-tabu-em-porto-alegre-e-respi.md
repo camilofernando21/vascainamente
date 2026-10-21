@@ -6,9 +6,10 @@ category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/13/analise-vasco-da-resposta-na-hora-certa-e-mostra-forca-mental-para-reagir-no-brasileirao.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/etoTutENhPsHJymitMwKiicdRBk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/4/d/FFsfghQbAAUwkpjfpodQ/agif26091217425991.jpg"
-excerpt: "O Vasco venceu o Grêmio por 2 a 1, de virada, no Estádio Centenário, e conquistou sua primeira vitória como visitante no Brasileirão 2025. O resultado quebra um jejum de 20 anos sem triunfos em Porto Alegre contra o Grêmio e iguala os dois times na tabela. Pedro Emanuel foi decisivo com as mudanças certas na hora certa."
+excerpt: "O Vasco venceu o Grêmio por 2 a 1, de virada, no Estádio Centenário, e conquistou sua primeira vitória como visitante no Brasileirão 2026. O resultado quebra um jejum de 20 anos sem triunfos em Porto Alegre contra o Grêmio e iguala os dois times na tabela. Pedro Emanuel foi decisivo com as mudanças certas na hora certa."
 seoTitle: "Vasco vira sobre o Grêmio e quebra tabu em Porto Alegre"
-seoDescription: "De virada e com gols de Thiago Mendes e Colidio, Vasco vence o Grêmio por 2 a 1 em Porto Alegre e conquista primeira vitória fora de casa no Brasileirão 2025."
+seoDescription: "De virada e com gols de Thiago Mendes e Colidio, Vasco vence o Grêmio por 2 a 1 em Porto Alegre e conquista primeira vitória fora de casa no Brasileirão 2026."
+updated: "2026-10-21T18:00:00-03:00"
 ---
 
 O Vasco que entrou em campo neste sábado em Porto Alegre não foi o mais bonito da temporada, mas foi o mais necessário. Pressionado por um confronto direto contra o Grêmio que valia muito mais do que três pontos, o time de Pedro Emanuel mostrou personalidade, saiu atrás do placar e virou para 2 a 1, encerrando 20 anos sem vitórias na casa do rival gaúcho. A primeira vitória fora de casa no Campeonato Brasileiro chega no momento mais oportuno possível.

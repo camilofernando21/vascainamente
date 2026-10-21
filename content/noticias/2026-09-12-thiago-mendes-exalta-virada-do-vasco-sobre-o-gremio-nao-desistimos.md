@@ -6,9 +6,10 @@ category: "resultado"
 source: "GE.Globo"
 sourceUrl: "https://ge.globo.com/futebol/times/vasco/noticia/2026/09/12/thiago-mendes-aprova-postura-do-vasco-na-virada-sobre-o-gremio-nao-desistimos.ghtml"
 imageUrl: "https://s2-ge.glbimg.com/etoTutENhPsHJymitMwKiicdRBk=/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2026/4/d/FFsfghQbAAUwkpjfpodQ/agif26091217425991.jpg"
-excerpt: "O Vasco venceu o Grêmio por 2 a 1 em Porto Alegre e conquistou sua primeira vitória fora de casa no Brasileirão 2025. Thiago Mendes, capitão e um dos autores dos gols, destacou o espírito do time na virada. O resultado deixa o Cruz-Maltino na 17ª posição, com 28 pontos."
+excerpt: "O Vasco venceu o Grêmio por 2 a 1 em Porto Alegre e conquistou sua primeira vitória fora de casa no Brasileirão 2026. Thiago Mendes, capitão e um dos autores dos gols, destacou o espírito do time na virada. O resultado deixa o Cruz-Maltino na 17ª posição, com 28 pontos."
 seoTitle: "Thiago Mendes elogia virada do Vasco sobre o Grêmio"
-seoDescription: "Capitão e goleador, Thiago Mendes exaltou o espírito do Vasco na virada sobre o Grêmio por 2 a 1 em Porto Alegre, pelo Brasileirão 2025."
+seoDescription: "Capitão e goleador, Thiago Mendes exaltou o espírito do Vasco na virada sobre o Grêmio por 2 a 1 em Porto Alegre, pelo Brasileirão 2026."
+updated: "2026-10-21T18:00:00-03:00"
 ---
 
 O Vasco foi até Porto Alegre, sofreu o gol primeiro e saiu de lá com três pontos. A virada sobre o Grêmio por 2 a 1, na tarde deste sábado na Arena, trouxe a primeira vitória fora de casa do Cruz-Maltino nesta edição do Brasileirão e um alívio real na luta para sair da zona de rebaixamento. Villasanti abriu o placar para o Grêmio aos 39 minutos do primeiro tempo, mas o Vasco respondeu com gols de Thiago Mendes, aos 30 do segundo tempo, e Colídio, aos 34.
