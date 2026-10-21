@@ -11,7 +11,7 @@ imageUrl: ""
 excerpt: "O Boca Juniors derrotou o Vasco por 3 a 1 no Maracanã lotado e garantiu vaga na final da Copa Sul-Americana. Léo Jardim cometeu falha decisiva no fim da partida, liquidando qualquer esperança cruzmaltina. O clube argentino vai à decisão do torneio."
 seoTitle: "Boca vence por 3 a 1 e elimina Vasco da Sul-Americana"
 seoDescription: "Boca Juniors derrota o Vasco por 3 a 1 no Maracanã com falha de Léo Jardim e vai à final da Copa Sul-Americana. Cruzmaltino está eliminado."
-updated: "2026-10-21T09:15:57-03:00"
+updated: "2026-10-21T09:30:52-03:00"
 ---
 
 O sonho acabou no Maracanã. O Boca Juniors venceu o Vasco por 3 a 1 nesta terça-feira (20), em um estádio repleto, e avançou à final da Copa Sul-Americana. O Cruzmaltino havia conquistado uma vantagem preciosa ao bater o rival por 1 a 0 na Bombonera, mas não conseguiu segurar o ímpeto argentino em casa e foi eliminado de forma dolorosa.
@@ -31,3 +31,5 @@ A derrota levanta questões imediatas sobre os rumos da temporada. Com a Sul-Ame
 **Atualização em 21/10 às 00:02:** O Boca Juniors venceu por 3 a 1: Di Lollo, Merentiel e Paredes marcaram para os argentinos, com Puma Rodríguez descontando para o Vasco. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/10/20/leo-jardim-falha-no-fim-boca-juniors-vira-no-agregado-e-vasco-da-adeus-a-sul-americana.htm))
 
 **Atualização em 21/10 às 09:15:** Pedro Emanuel declarou publicamente que não vai abandonar Léo Jardim após a falha do goleiro no gol que definiu a eliminação. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/21/pedro-emanuel-vasco-leo-jardim-boca-juniors.ghtm))
+
+**Atualização em 21/10 às 09:30:** Puma Rodríguez descontou para o Vasco no Maracanã, batendo cruzado para fazer 1 a 1 parcial no confronto contra o Boca Juniors. ([Gazeta Esportiva](https://www.gazetaesportiva.com/todas-as-noticias/puma-rodriguez-bate-cruzado-e-diminui-para-o-vasco-no-maracana-veja-o-lance/))
