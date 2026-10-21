@@ -421,7 +421,8 @@ def write_checked(client, item: dict, videos: list, recent: list, context: dict,
     """Escreve a matéria e passa pela checagem de fatos. Uma nova tentativa com a lista de problemas;
     se ainda falhar, devolve {"blocked": [...]} e nada é publicado."""
     source = f"{item['title']}\n{item['desc']}"
-    has_image = bool(item.get("photos"))
+    # numbers may come from the image only on the club's official posts (score or lineup art)
+    has_image = bool(item.get("official") and item.get("photos"))
     feedback = None
     for attempt in (1, 2):
         article = process_with_ai(
@@ -436,17 +437,24 @@ def write_checked(client, item: dict, videos: list, recent: list, context: dict,
             texts = [article.get("update")]
         else:
             texts = [article.get(k) for k in CHECKED_FIELDS] + [article.get("update")]
-        today = WEEKDAY_NAMES[datetime.now(SP_TZ).weekday()]
-        problems = fact_guard.check(texts, source, context, has_image=has_image, today=today)
+        now = datetime.now(SP_TZ)
+        problems = fact_guard.check(
+            texts, source, context, has_image=has_image,
+            today=WEEKDAY_NAMES[now.weekday()], today_numbers=(now.day, now.month),
+        )
+        espn = []
         if article.get("matchEvent") == "resultado":
             if "results" not in results_cache:
                 results_cache["results"] = fact_guard.recent_results()
-            problems += fact_guard.check_result(texts, results_cache["results"])
-        if not problems:
+            espn = fact_guard.check_result(texts, results_cache["results"])
+        if not problems and not espn:
             return article
-        print(f"  CHECAGEM ({attempt}/2): {'; '.join(problems)}")
-        feedback = problems
-    return {"blocked": problems}
+        print(f"  CHECAGEM ({attempt}/2): {'; '.join(problems + espn)}")
+        feedback = problems + espn
+    # blocked only by the ESPN comparison while ESPN still shows the game live: the schedule is catching up
+    # with the final whistle, so the item stays out of the cache and is tried again next run
+    live = bool(results_cache.get("results")) and results_cache["results"][-1].get("estado") == "in"
+    return {"blocked": problems + espn, "retry": not problems and live}
 
 FORMATION = re.compile(r"^\d(?:-\d){2,4}$")
 
@@ -595,10 +603,11 @@ def main():
             recent = load_recent_posts()
             article = write_checked(client, item, videos, recent, context, results_cache)
             if article.get("blocked"):
-                # cached on purpose: retrying every 15 minutes would cost API calls and fail the same way
+                # cached on purpose (retrying every 15 minutes would fail the same way), except while ESPN lags
                 print(f"BARRADA (checagem de fatos): {title[:60]}: {'; '.join(article['blocked'])}")
                 blocked += 1
-                cache.add(fp)
+                if not article.get("retry"):
+                    cache.add(fp)
                 continue
             if article.get("skip"):
                 print(f"PULADA (post sem notícia): {title[:60]}")

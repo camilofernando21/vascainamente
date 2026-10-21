@@ -25,12 +25,33 @@ CONTEXT_FILE = Path("content/contexto-robo.json")
 
 # "21h30" vira 21 e 30; "25ª" vira 25; "1,5" e "52.827" ficam inteiros
 NUMBER = re.compile(r"\d+(?:[.,]\d+)*")
-SCORE = re.compile(r"(?<![\d/])(\d{1,2})\s*(?:a|x|×|-)\s*(\d{1,2})(?![\d/])", re.IGNORECASE)
+MONTH_NAMES = "janeiro|fevereiro|março|abril|maio|junho|julho|agosto|setembro|outubro|novembro|dezembro"
+# placar: "2 a 1", "2x1", "2-1", "2–1"; não conta faixa de datas ("18 a 20 de outubro")
+SCORE = re.compile(
+    r"(?<![\d/])(\d{1,2})\s*(?:a|x|×|-|–|—)\s*(\d{1,2})(?![\d/])(?!\s+de\s+(?:" + MONTH_NAMES + r"))",
+    re.IGNORECASE,
+)
+FORMATION = re.compile(r"\b\d\s*[-–—]\s*\d(?:\s*[-–—]\s*\d){1,3}\b")
+TABLE_ZONE = re.compile(r"\b[zg]-?\d{1,2}\b", re.IGNORECASE)  # Z-4, G-6: zona da tabela, não número da fonte
 WEEKDAYS = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]
 MONTHS = {
     "janeiro": "1", "fevereiro": "2", "março": "3", "abril": "4", "maio": "5", "junho": "6",
     "julho": "7", "agosto": "8", "setembro": "9", "outubro": "10", "novembro": "11", "dezembro": "12",
 }
+# número por extenso na fonte vale como o algarismo ("dois gols" na fonte, "2 gols" no texto)
+SPELLED = {
+    "zero": "0", "um": "1", "uma": "1", "dois": "2", "duas": "2", "três": "3", "quatro": "4", "cinco": "5",
+    "seis": "6", "sete": "7", "oito": "8", "nove": "9", "dez": "10", "onze": "11", "doze": "12",
+    "primeiro": "1", "primeira": "1", "segundo": "2", "segunda": "2", "terceiro": "3", "terceira": "3",
+    "quarto": "4", "quarta": "4", "quinto": "5", "quinta": "5", "sexto": "6", "sexta": "6",
+    "sétimo": "7", "sétima": "7", "oitavo": "8", "oitava": "8", "nono": "9", "nona": "9",
+    "décimo": "10", "décima": "10",
+}
+SPELLED_SCORE = re.compile(
+    r"\b(zero|um|uma|dois|duas|três|quatro|cinco|seis|sete|oito|nove|dez)\s+a\s+"
+    r"(zero|um|uma|dois|duas|três|quatro|cinco|seis|sete|oito|nove|dez)\b",
+    re.IGNORECASE,
+)
 
 VASCO_ID = "3454"
 ESPN = "https://site.api.espn.com/apis/site/v2/sports/soccer"
@@ -38,13 +59,18 @@ LEAGUES = [
     "bra.1", "conmebol.libertadores", "conmebol.sudamericana", "bra.copa_do_brazil",
     "bra.camp.carioca", "conmebol.recopa", "bra.supercopa_do_brazil",
 ]
+# título que diz quem ganhou: "Vasco perde para", "Vasco vence o"
+VASCO_LOST = re.compile(r"^\W*vasco\b[^.]{0,20}?\b(perde|perdeu|é derrotado|foi derrotado|sofre|cai|caiu|é eliminado|leva)\b", re.IGNORECASE)
+VASCO_WON = re.compile(r"^\W*vasco\b[^.]{0,20}?\b(vence|venceu|bate|bateu|goleia|goleou|derrotou|vira|virou|atropela)\b", re.IGNORECASE)
+VASCO_DREW = re.compile(r"^\W*vasco\b[^.]{0,20}?\b(empata|empatam|empatou|empataram)\b", re.IGNORECASE)
 
 
 def load_context() -> dict:
     """Fatos fixos que o robô pode usar sem estarem na fonte (técnico, temporada, nome do site)."""
     try:
         return json.loads(CONTEXT_FILE.read_text(encoding="utf-8"))
-    except Exception:
+    except Exception as e:
+        print(f"  AVISO: {CONTEXT_FILE} não foi lido ({e}); a checagem segue sem os fatos fixos")
         return {}
 
 
@@ -62,24 +88,32 @@ def numbers(text: str) -> set:
     return {_norm_number(n) for n in NUMBER.findall(text or "")}
 
 
+def _spell_scores(text: str) -> str:
+    """'dois a zero' vira '2 a 0', para o placar por extenso também ser conferido."""
+    return SPELLED_SCORE.sub(lambda m: f"{SPELLED[m.group(1).lower()]} a {SPELLED[m.group(2).lower()]}", text)
+
+
 def scores(text: str) -> set:
     """Placares como pares sem ordem: '3 a 1' e '1 a 3' são o mesmo jogo contado de lados diferentes."""
-    found = set()
-    for a, b in SCORE.findall(text or ""):
-        found.add(tuple(sorted((int(a), int(b)))))
-    return found
+    clean = FORMATION.sub(" ", _spell_scores(text or ""))
+    return {tuple(sorted((int(a), int(b)))) for a, b in SCORE.findall(clean)}
 
 
 def _lower(text: str) -> str:
     return unicodedata.normalize("NFC", (text or "").lower())
 
 
-def check(generated: list, source: str, context: dict | None = None, has_image: bool = False, today: str | None = None) -> list:
+def _weekday_root(day: str) -> str:
+    return day.replace("-feira", "")
+
+
+def check(generated: list, source: str, context: dict | None = None, has_image: bool = False,
+          today: str | None = None, today_numbers: tuple = ()) -> list:
     """Problemas do texto gerado em relação à fonte. Lista vazia: pode publicar.
 
     has_image: post oficial com imagem (placar ou escalação na arte). Números podem vir da imagem,
     então só ano e dia da semana são checados; o placar de resultado passa pela agenda da ESPN.
-    today: nome do dia de hoje ("quarta-feira"), que o robô pode usar para um fato do próprio dia.
+    today / today_numbers: dia da semana, dia e mês de hoje, que o robô pode usar para um fato do próprio dia.
     """
     context = context or {}
     text = "\n".join(t for t in generated if isinstance(t, str))
@@ -87,12 +121,15 @@ def check(generated: list, source: str, context: dict | None = None, has_image: 
     out = _lower(text)
     problems = []
 
-    allowed = numbers(source)
+    allowed = numbers(source) | {str(int(n)) for n in today_numbers}
     season = str(context.get("temporada", ""))
     if season:
         allowed.add(season)
     for month, num in MONTHS.items():
         if month in src:
+            allowed.add(num)
+    for word, num in SPELLED.items():
+        if re.search(rf"\b{word}\b", src):
             allowed.add(num)
 
     if not has_image:
@@ -100,7 +137,8 @@ def check(generated: list, source: str, context: dict | None = None, has_image: 
         for pair in bad_scores:
             problems.append(f"placar {pair[1]} a {pair[0]} não está na fonte")
         in_scores = {str(n) for pair in bad_scores for n in pair}
-        extra = sorted(numbers(text) - allowed - in_scores, key=lambda n: (len(n), n))
+        counted = TABLE_ZONE.sub(" ", text)
+        extra = sorted(numbers(counted) - allowed - in_scores, key=lambda n: (len(n), n))
         if extra:
             problems.append("números que não estão na fonte: " + ", ".join(extra))
     else:
@@ -110,19 +148,31 @@ def check(generated: list, source: str, context: dict | None = None, has_image: 
             problems.append("anos que não estão na fonte: " + ", ".join(bad_years))
 
     for day in WEEKDAYS:
-        if day in out and day not in src and day != today:
+        if not re.search(rf"\b{day}\b", out) or day == today:
+            continue
+        # "quinta" na fonte vale para "quinta-feira" no texto
+        if not re.search(rf"\b{_weekday_root(day)}\b", src):
             problems.append(f"dia da semana '{day}' não está na fonte")
     return problems
 
 
-def recent_results(days: int = 3, fetch=None) -> list:
-    """Jogos do Vasco encerrados nos últimos dias, na agenda da ESPN: [{'placar': (menor, maior), ...}].
+def _goals(team: dict) -> int:
+    score = team.get("score")
+    # o site lê displayValue (lib/competitions.ts, num); value fica de reserva
+    value = (score.get("displayValue") or score.get("value")) if isinstance(score, dict) else score
+    return int(float(value))
 
-    Qualquer falha devolve None: sem agenda, a checagem do placar de resultado não roda.
+
+def recent_results(days: int = 3, fetch=None) -> list | None:
+    """O jogo mais recente do Vasco na agenda da ESPN, encerrado ou em andamento, dos últimos dias.
+
+    Devolve [{"placar": (menor, maior), "vasco": gols, "adversario": gols, "estado": "post"|"in"}] ou [].
+    Em andamento conta porque a ESPN leva alguns minutos para marcar o fim do jogo. Qualquer falha
+    devolve None: sem agenda, a checagem do placar de resultado não roda.
     """
     fetch = fetch or _fetch_json
     cutoff = datetime.now(timezone.utc) - timedelta(days=days)
-    results, ok = [], False
+    games, ok = [], False
     for league in LEAGUES:
         data = fetch(f"{ESPN}/{league}/teams/{VASCO_ID}/schedule")
         if data is None:
@@ -131,38 +181,53 @@ def recent_results(days: int = 3, fetch=None) -> list:
         for ev in data.get("events", []):
             try:
                 comp = ev["competitions"][0]
-                if comp["status"]["type"]["state"] != "post":
+                state = comp["status"]["type"]["state"]
+                if state not in ("post", "in"):
                     continue
                 when = datetime.fromisoformat(ev["date"].replace("Z", "+00:00"))
                 if when < cutoff:
                     continue
-                goals = []
+                vasco = other = None
                 for team in comp["competitors"]:
-                    score = team.get("score")
-                    # same reading as the site (lib/competitions.ts): displayValue first
-                    value = (score.get("displayValue") or score.get("value")) if isinstance(score, dict) else score
-                    goals.append(int(float(value)))
-                if len(goals) == 2:
-                    results.append({"placar": tuple(sorted(goals)), "data": when.isoformat()})
-            except (KeyError, IndexError, ValueError, TypeError):
+                    if str(team.get("team", {}).get("id", team.get("id"))) == VASCO_ID:
+                        vasco = _goals(team)
+                    else:
+                        other = _goals(team)
+                if vasco is None or other is None:
+                    continue
+                games.append({"placar": tuple(sorted((vasco, other))), "vasco": vasco, "adversario": other,
+                              "estado": state, "data": when})
+            except (KeyError, IndexError, ValueError, TypeError, AttributeError):
                 continue
-    return results if ok else None
+    if not ok:
+        return None
+    games.sort(key=lambda g: g["data"])
+    return games[-1:]
 
 
 def check_result(generated: list, results: list | None) -> list:
-    """Matéria de resultado: algum placar citado tem de ser o placar final de um jogo recente do Vasco."""
+    """Matéria de resultado: o placar citado e quem ganhou têm de bater com o último jogo do Vasco na ESPN."""
     if not results:
         return []
-    text = "\n".join(t for t in generated if isinstance(t, str))
+    game = results[-1]
+    texts = [t for t in generated if isinstance(t, str)]
+    text = "\n".join(texts)
+    problems = []
     cited = scores(text)
-    if not cited:
-        return []
-    real = {r["placar"] for r in results}
-    if cited & real:
-        return []
-    shown = ", ".join(f"{b} a {a}" for a, b in sorted(cited))
-    finals = ", ".join(f"{b} a {a}" for a, b in sorted(real))
-    return [f"placar {shown} não bate com o resultado final na agenda da ESPN ({finals})"]
+    real = game["placar"]
+    final = f"{real[1]} a {real[0]}"
+    if cited and real not in cited:
+        shown = ", ".join(f"{b} a {a}" for a, b in sorted(cited))
+        problems.append(f"placar {shown} não bate com o resultado na agenda da ESPN ({final})")
+    title = texts[0] if texts else ""
+    v, o = game["vasco"], game["adversario"]
+    if VASCO_LOST.search(title) and v >= o:
+        problems.append(f"o título diz que o Vasco perdeu, mas a ESPN dá {v} a {o} para o Vasco")
+    elif VASCO_WON.search(title) and v <= o:
+        problems.append(f"o título diz que o Vasco venceu, mas a ESPN dá {v} a {o} para o Vasco")
+    elif VASCO_DREW.search(title) and v != o:
+        problems.append(f"o título diz que o Vasco empatou, mas a ESPN dá {v} a {o} para o Vasco")
+    return problems
 
 
 def _fetch_json(url: str):

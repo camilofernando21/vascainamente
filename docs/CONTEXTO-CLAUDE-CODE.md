@@ -116,6 +116,16 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 - Canal do WhatsApp (modelo Lance! Vasco) é a opção recomendada para distribuir notícia, no lugar de um grupo. Decisão de criar ainda pendente.
 - Afiliados de produtos do Vasco: Mercado Livre, Shopee, Amazon Associados, Netshoes (Awin) e Nike (Lomadee, programa aparecia como inativo). Em 2026 a Nike é a fornecedora do Vasco (distribuidora Fisia); onde os produtos serão vendidos ainda precisa ser confirmado. Obrigatório avisar "link de afiliado" nas ofertas, e só divulgar produto original.
 
+### Checagem de fatos do robô (21/10/2026)
+- Causa dos erros: o robô recebe só o título e o resumo da fonte e escrevia 3 a 4 parágrafos, completando com detalhe inventado. Em 20/10 publicou "Vasco perde por 2 a 0" (foi 3 a 1) a partir de uma coluna; a revisão das 243 matérias achou ainda ano 2025, técnico errado (Ramón Díaz, Pedro Miguel), dia do jogo errado e agregado errado. Tudo corrigido em 21/10; a matéria do 2 a 0 saiu e redireciona para a do 3 a 1.
+- Agora o prompt proíbe acrescentar o que não está na fonte e aceita matéria curta (1 a 3 parágrafos). Fatos fixos (técnico, temporada, nome do site) ficam em `content/contexto-robo.json`: atualizar quando mudar o técnico ou virar a temporada.
+- `scripts/fact_guard.py` confere o texto gerado: número, placar, ano e dia da semana fora da fonte barram. Matéria de resultado tem placar e vencedor do título conferidos com o último jogo do Vasco na agenda da ESPN. Uma nova tentativa com a lista de problemas; se falhar, a matéria não sai e o motivo fica no log do GitHub Actions ("BARRADA"). Se só a ESPN discorda e o jogo ainda aparece ao vivo nela, o item tenta de novo na rodada seguinte.
+- Testes: `python3 -m unittest scripts/test_fact_guard.py` (28 casos, com os erros reais).
+- Acompanhar nos primeiros dias quantas matérias são barradas: se muitas notícias boas caírem, afrouxar a regra que pegou.
+
+### Central de mercado (rascunho, ramo `mercado`)
+- `content/jogadores.json` (cadastro com apelidos) e `content/mercado.json` (casos com linha do tempo, cada fato ligado à matéria). Marcado como rascunho; nenhuma página lê ainda. Desenho aprovado em 21/10: escada de status por tipo, "Esfriou" após 30 dias, selo "Desmentido", cartão de compartilhamento por caso, lançamento perto da próxima janela.
+
 ### Acessibilidade
 - 19/10/2026: o vermelho da marca (`--red`, #c8003c) tinha contraste de cerca de 3,2 para 1 sobre o fundo escuro, abaixo dos 4,5 para 1 que o WCAG AA pede para texto pequeno. Criada a variável `--red-text` (#ff4d5e, cerca de 6 para 1) em `app/globals.css`, usada em todas as letras vermelhas (45 regras). `--red` continua em fundos, bordas, sublinhados e na Cruz de Malta. Os elementos decorativos `.vm-resp-cross` e `.vm-play-mark` ficaram com `--red`. Quem criar texto vermelho novo deve usar `--red-text`.
 - Pendente: medir o contraste das artes do Instagram e do X (texto vermelho sobre fundo escuro) e rever o cinza dos textos mudos (`--text-muted`, 50% de opacidade).

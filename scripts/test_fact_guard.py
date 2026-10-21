@@ -71,28 +71,82 @@ class PassaQuandoEstaNaFonte(unittest.TestCase):
         self.assertEqual(fg.check([None, ""], "qualquer fonte", CTX), [])
 
 
+class FalsosPositivosDaRevisao(unittest.TestCase):
+    def test_meia_risca_na_fonte(self):
+        self.assertEqual(fg.check(["Vasco 2-1 Remo"], "Vasco 2–1 Remo", CTX), [])
+
+    def test_formacao_nao_e_placar(self):
+        self.assertEqual(fg.check(["O Vasco joga no 4-3-3"], "Pedro Emanuel usa o 4–3–3", CTX), [])
+
+    def test_extenso_na_fonte(self):
+        fonte = "Bruno Duarte marca dois gols no segundo tempo"
+        self.assertEqual(fg.check(["Bruno Duarte fez 2 gols no 2º tempo"], fonte, CTX), [])
+
+    def test_zona_da_tabela(self):
+        self.assertEqual(fg.check(["O Vasco deixa o Z-4"], "O Vasco deixa a zona de rebaixamento", CTX), [])
+
+    def test_faixa_de_datas_nao_e_placar(self):
+        fonte = "Venda de ingressos de 18 a 20 de outubro"
+        self.assertEqual(fg.check(["Ingressos à venda de 18 a 20 de outubro"], fonte, CTX), [])
+
+    def test_domingos_nao_e_domingo(self):
+        self.assertEqual(fg.check(["Domingos marcou"], "Domingos marcou", CTX), [])
+
+    def test_quinta_sem_feira_na_fonte(self):
+        self.assertEqual(fg.check(["O jogo é na quinta-feira"], "O jogo é na quinta", CTX), [])
+
+    def test_data_de_hoje(self):
+        gerado = ["O Vasco enfrenta o Corinthians nesta quarta-feira (21)"]
+        self.assertEqual(fg.check(gerado, "Vasco enfrenta o Corinthians", CTX, today="quarta-feira", today_numbers=(21, 10)), [])
+
+    def test_placar_por_extenso_inventado(self):
+        problemas = fg.check(["Vasco perde por dois a zero"], "Coluna sobre a eliminação do Vasco", CTX)
+        self.assertTrue(any("placar 2 a 0" in p for p in problemas))
+
+
 class Resultado(unittest.TestCase):
-    RESULTADOS = [{"placar": (1, 3), "data": "2026-10-21T00:30:00+00:00"}]
+    # Vasco 1 x 3 Boca (20/10)
+    ULTIMO = [{"placar": (1, 3), "vasco": 1, "adversario": 3, "estado": "post"}]
 
     def test_placar_que_nao_bate_com_a_espn(self):
-        problemas = fg.check_result(["Vasco perde por 2 a 0 para o Boca"], self.RESULTADOS)
+        problemas = fg.check_result(["Vasco perde por 2 a 0 para o Boca"], self.ULTIMO)
         self.assertTrue(problemas and "3 a 1" in problemas[0])
 
     def test_placar_certo(self):
-        self.assertEqual(fg.check_result(["Boca vence por 3 a 1"], self.RESULTADOS), [])
+        self.assertEqual(fg.check_result(["Boca vence o Vasco por 3 a 1"], self.ULTIMO), [])
+        self.assertEqual(fg.check_result(["Vasco perde por 3 a 1 e é eliminado"], self.ULTIMO), [])
+
+    def test_vencedor_invertido(self):
+        problemas = fg.check_result(["Vasco vence por 3 a 1 no Maracanã"], self.ULTIMO)
+        self.assertTrue(any("venceu" in p for p in problemas))
+
+    def test_sofre_derrota(self):
+        vitoria = [{"placar": (0, 2), "vasco": 2, "adversario": 0, "estado": "post"}]
+        self.assertTrue(fg.check_result(["Vasco sofre derrota por 2 a 0"], vitoria))
 
     def test_sem_agenda_nao_barra(self):
         self.assertEqual(fg.check_result(["Vasco perde por 2 a 0"], None), [])
+        self.assertEqual(fg.check_result(["Vasco perde por 2 a 0"], []), [])
 
-    def test_leitura_da_agenda(self):
-        agenda = {"events": [
-            {"date": "2099-01-01T00:30Z", "competitions": [{"status": {"type": {"state": "post"}},
-             "competitors": [{"score": {"value": 1.0}}, {"score": {"value": 3.0}}]}]},
-            {"date": "2099-01-05T00:30Z", "competitions": [{"status": {"type": {"state": "pre"}},
-             "competitors": [{"score": "0"}, {"score": "0"}]}]},
-        ]}
-        res = fg.recent_results(fetch=lambda url: agenda if url.endswith("bra.1/teams/3454/schedule") else None)
-        self.assertEqual([r["placar"] for r in res], [(1, 3)])
+    def agenda(self, state, date, vasco, outro):
+        return {"events": [{"date": date, "competitions": [{"status": {"type": {"state": state}}, "competitors": [
+            {"team": {"id": "3454"}, "score": {"value": float(vasco), "displayValue": str(vasco)}},
+            {"team": {"id": "1"}, "score": {"value": float(outro), "displayValue": str(outro)}},
+        ]}]}]}
+
+    def test_leitura_da_agenda_com_lado_do_vasco(self):
+        dados = self.agenda("post", "2099-01-01T00:30Z", 1, 3)
+        res = fg.recent_results(fetch=lambda url: dados if "conmebol.sudamericana" in url else {"events": []})
+        self.assertEqual(res[0]["vasco"], 1)
+        self.assertEqual(res[0]["placar"], (1, 3))
+
+    def test_jogo_ao_vivo_conta_e_so_o_mais_recente(self):
+        velho = self.agenda("post", "2099-01-01T00:30Z", 2, 0)
+        vivo = self.agenda("in", "2099-01-04T00:30Z", 1, 1)
+        res = fg.recent_results(fetch=lambda url: velho if "bra.1" in url else vivo if "sudamericana" in url else {"events": []})
+        self.assertEqual(len(res), 1)
+        self.assertEqual(res[0]["estado"], "in")
+        self.assertEqual(res[0]["placar"], (1, 1))
 
     def test_agenda_fora_do_ar(self):
         self.assertIsNone(fg.recent_results(fetch=lambda url: None))
