@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O Vasco recebe o Boca Juniors nesta terça-feira, no Maracanã, pelo jogo de volta da semifinal da Copa Sul-Americana. O Cruzmaltino venceu por 1 a 0 na Bombonera e joga por um empate para chegar à final. Confira as prováveis escalações e onde assistir ao jogo."
 seoTitle: "Vasco x Boca Juniors: escalações e onde assistir"
 seoDescription: "Vasco enfrenta o Boca Juniors no Maracanã pela semifinal da Sul-Americana. Veja prováveis escalações, onde assistir e tudo sobre o jogo."
-updated: "2026-10-20T07:45:52-03:00"
+updated: "2026-10-20T23:31:02-03:00"
 ---
 
 O momento é de decisão. O Vasco enfrenta o Boca Juniors nesta terça-feira, no Maracanã, pelo jogo de volta da semifinal da Copa Sul-Americana. Com a vantagem construída na Argentina, onde o Cruzmaltino venceu por 1 a 0 na Bombonera, o time de Pedro Emanuel precisa apenas de um empate para garantir vaga na grande final do torneio continental.
@@ -24,3 +24,5 @@ O confronto promete ser tenso e equilibrado. O Vasco tem a vantagem do resultado
 **Atualização em 20/10 às 02:16:** Paulo Henrique lesionou a costela contra o São Paulo, não completou o treino desta segunda e passará por testes horas antes do jogo para saber se joga. Leandro Paredes tratou lesão muscular grau 2 com método de plaquetas e pode entrar por alguns minutos pelo Boca. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/20/vasco-x-boca-juniors-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml))
 
 **Atualização em 20/10 às 07:45:** O Maracanã tem ingressos esgotados para o jogo desta terça-feira. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/agencia/2026/10/20/vasco-defende-vantagem-contra-o-boca-em-maracana-lotado-para-voltar-a-uma-final-apos-26-anos.htm))
+
+**Atualização em 20/10 às 23:31:** Vasco perdeu por 2 a 0 para o Boca Juniors no Maracanã e está eliminado da Copa Sul-Americana. ([leia a matéria](/2026-10-20-vasco-perde-por-2-a-0-para-o-boca-juniors-no-maracana-e-e-eliminado-da))
