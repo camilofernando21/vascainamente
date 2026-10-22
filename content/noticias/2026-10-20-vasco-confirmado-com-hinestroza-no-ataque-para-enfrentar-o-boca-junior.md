@@ -11,7 +11,7 @@ imageUrl: ""
 excerpt: "Pedro Emanuel divulgou o time titular do Vasco para a semifinal de volta da Copa Sul-Americana. Com Andrés Gómez suspenso, Marino Hinestroza entra no ataque. O Cruzmaltino precisa apenas do empate para avançar à final."
 seoTitle: "Vasco escalado para semifinal contra o Boca Juniors"
 seoDescription: "Pedro Emanuel confirma o time do Vasco para enfrentar o Boca Juniors no Maracanã pela semifinal de volta da Copa Sul-Americana. Hinestroza entra no ataque."
-updated: "2026-10-20T20:46:13-03:00"
+updated: "2026-10-21T22:25:40-03:00"
 ---
 
 O Vasco está escalado para o duelo decisivo desta terça-feira contra o Boca Juniors, no Maracanã, pela semifinal de volta da Copa Sul-Americana. Pedro Emanuel confirmou a formação titular com a principal mudança no setor ofensivo: a entrada de Marino Hinestroza no lugar de Andrés Gómez, que cumpre suspensão automática.
@@ -23,3 +23,5 @@ Com o resultado do jogo de ida, o Vasco entra em campo precisando apenas de um e
 O Maracanã promete estar em festa. Os ingressos foram esgotados, a torcida está mobilizada e a semifinal contra um dos clubes mais tradicionais da América do Sul representa um dos momentos mais importantes do Vasco na última década. A bola rola nesta terça-feira, e o Cruz-Maltino está escalado para fazer história.
 
 **Atualização em 20/10 às 20:46:** Paulo Henrique está confirmado como titular. Leandro Paredes começa no banco para o Boca Juniors. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/20/vasco-boca-juniors-escalacao-semifinal-sul-americana-20-out.ghtm))
+
+**Atualização em 21/10 às 22:25:** Pedro Emanuel optou por Bruno Duarte no ataque no lugar de Marino Hinestroza, que vai ao banco, e Thiago Mendes lidera o time como capitão. ([leia a matéria](/2026-10-21-vasco-confirmado-com-leo-jardim-thiago-mendes-capitao-e-bruno-duarte-p))
