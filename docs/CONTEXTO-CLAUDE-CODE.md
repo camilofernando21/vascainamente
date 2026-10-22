@@ -18,6 +18,7 @@ Antes de começar: rode `git pull` e leia o `CLAUDE.md`. Responda em português 
 - `scripts/x_source.py` lê o perfil oficial @VascodaGama (conta como fato confirmado, com leitura das imagens da escalação e do placar) e 4 setoristas: pabloramadas, gustavotutinha, pedrosa, leolacerdantv.
 - Cobrança por uso: cerca de US$ 0,005 por post lido. O token é o secret `X_BEARER_TOKEN` no GitHub: nunca mostrar o valor nem commitar.
 - Teto mensal de leitura: 2.000 posts (`X_MONTHLY_POST_LIMIT`). O estado fica em `.x_state.json`. Limite de gasto no console do X: US$ 10 por ciclo, recarga automática desligada.
+- 16 a 21/10/2026: o X recusou o token (HTTP 401) porque o Bearer Token foi regenerado no console em 15/10; o robô ficou 5 dias sem ler o X sem ninguém perceber. Token novo gerado em 21/10. Agora o 401 ou 403 deixa a rodada vermelha uma vez por dia (passo "Check X token" nos dois workflows, arquivo `.x_auth_error`), e post do X com mais de 6 horas é ignorado (`MAX_POST_AGE_HOURS`), para a fila acumulada de uma pane não virar notícia velha. Regenerar o Bearer Token exige atualizar o secret `X_BEARER_TOKEN` no GitHub na hora.
 
 ### Site (home, de cima para baixo)
 - Abertura com o loader da Cruz de Malta: 4 marcos (1898, 1974, 1998 e a cruz), cerca de 4 s, só na primeira visita da sessão, com botão "Pular" e tecla Esc (`components/effects/Loader.tsx`). Depois vêm o hero, a faixa de manchetes, "A notícia do dia" (prioriza as de hoje), as 4 últimas e "Tudo o que saiu hoje".

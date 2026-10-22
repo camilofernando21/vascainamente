@@ -1,7 +1,7 @@
 ---
 title: "Vasco confirmado com Léo Jardim, Thiago Mendes capitão e Bruno Duarte para enfrentar o Boca Juniors"
-slug: "2026-10-21-vasco-confirmado-com-leo-jardim-thiago-mendes-capitao-e-bruno-duarte-p"
-date: "2026-10-21T22:25:40-03:00"
+slug: "2026-10-20-vasco-confirmado-com-leo-jardim-thiago-mendes-capitao-e-bruno-duarte-p"
+date: "2026-10-20T20:30:01-03:00"
 category: "elenco"
 importance: 4
 matchEvent: "escalacao"

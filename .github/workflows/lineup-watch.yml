@@ -56,3 +56,12 @@ jobs:
           git config user.name  "vascainamente-bot"
           git config user.email "bot@vascainamente.com.br"
           bash scripts/commit-news.sh
+
+      # same alarm as fetch-news.yml: red run (and GitHub e-mail) at most once a day while X refuses the token
+      - name: Check X token
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          if [ -f .x_auth_error ]; then
+            echo "A API do X recusou o token (HTTP $(cat .x_auth_error)). Gere um Bearer Token novo no console.x.com e atualize o secret X_BEARER_TOKEN."
+            exit 1
+          fi

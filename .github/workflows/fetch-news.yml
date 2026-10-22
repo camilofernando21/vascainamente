@@ -54,3 +54,12 @@ jobs:
           git config user.email "bot@vascainamente.com.br"
           # commits, rebases on whatever was pushed meanwhile (merging the control files) and pushes
           bash scripts/commit-news.sh
+
+      # after the commit, so the news of this run are never lost: turns the run red (and GitHub e-mails)
+      # at most once a day while X refuses the token (scripts/x_source.py writes the flag)
+      - name: Check X token
+        run: |
+          if [ -f .x_auth_error ]; then
+            echo "A API do X recusou o token (HTTP $(cat .x_auth_error)). Gere um Bearer Token novo no console.x.com e atualize o secret X_BEARER_TOKEN."
+            exit 1
+          fi

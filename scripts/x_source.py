@@ -24,6 +24,9 @@ ACCOUNTS = ["vascodagama", "pabloramadas", "gustavotutinha", "pedrosa", "leolace
 OFFICIAL = {"vascodagama"}
 # na primeira leitura de um perfil, posts mais novos que isso ainda viram notícia
 FIRST_READ_HOURS = 3
+# post mais velho que isso não vira notícia: depois de uma pane (token recusado entre 16 e 21/10/2026),
+# a fila acumulada trouxe a escalação de um jogo já disputado, publicada como se fosse do dia
+MAX_POST_AGE_HOURS = 6
 
 # a cerca de US$ 0,005 por post, 2.000 posts dão uns US$ 10 por mês
 DEFAULT_MONTHLY_LIMIT = 2000
@@ -114,7 +117,14 @@ def fetch_x_items(only: list | None = None) -> list:
                 ]
 
             media = {m["media_key"]: m for m in body.get("includes", {}).get("media", [])}
-            for post in reversed(posts):  # do mais antigo para o mais novo
+            too_old = datetime.now(SP_TZ) - timedelta(hours=MAX_POST_AGE_HOURS)
+            fresh = [
+                p for p in posts
+                if not p.get("created_at") or datetime.fromisoformat(p["created_at"].replace("Z", "+00:00")) >= too_old
+            ]
+            if len(fresh) < len(posts):
+                print(f"  X: @{handle}: {len(posts) - len(fresh)} post(s) com mais de {MAX_POST_AGE_HOURS}h ignorado(s)")
+            for post in reversed(fresh):  # do mais antigo para o mais novo
                 text = " ".join(post.get("text", "").split())
                 keys = post.get("attachments", {}).get("media_keys", [])
                 photos = [media[k]["url"] for k in keys if k in media and media[k].get("type") == "photo" and media[k].get("url")]
@@ -133,6 +143,15 @@ def fetch_x_items(only: list | None = None) -> list:
                 })
     except requests.RequestException as e:
         print(f"  ERRO X: {e}")
+        status = getattr(getattr(e, "response", None), "status_code", None)
+        if status in (401, 403):
+            # aviso visível no resumo do GitHub Actions: token recusado não pode passar calado de novo
+            print(f"::error title=X recusou o token::A API do X respondeu {status}. Gere um Bearer Token novo no console.x.com e atualize o secret X_BEARER_TOKEN.")
+            # uma vez por dia o workflow fica vermelho (e o GitHub manda e-mail): o último passo lê este arquivo
+            today = datetime.now(SP_TZ).strftime("%Y-%m-%d")
+            if state.get("auth_alert") != today:
+                state["auth_alert"] = today
+                Path(".x_auth_error").write_text(f"{status}\n", encoding="utf-8")
     finally:
         _save_state(state)
 
