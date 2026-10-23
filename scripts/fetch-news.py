@@ -17,6 +17,7 @@ import anthropic
 
 from x_source import fetch_x_items
 import fact_guard
+import triage
 
 RSS_SOURCES = [
     {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/"},
@@ -289,7 +290,7 @@ DUPLICATE_FIELD = (
 )
 
 X_NOTE = (
-    "\nATENÇÃO: o texto acima é um post de um setorista no X, não uma matéria pronta. "
+    "\nATENÇÃO: o texto da notícia é um post de um setorista no X, não uma matéria pronta. "
     "Se ele não trouxer uma informação concreta e nova sobre o Vasco (contratação, saída, lesão, escalação, "
     "bastidor apurado, data ou local de jogo), responda SOMENTE {\"skip\": true}. "
     "Opinião, piada, enquete, palpite, divulgação de live ou de outro conteúdo também são skip. "
@@ -307,7 +308,7 @@ LINEUP_FIELD = (
 )
 
 OFFICIAL_NOTE = (
-    "\nATENÇÃO: o texto acima é um post do perfil oficial do Vasco no X. O que ele informa é oficial e pode ser "
+    "\nATENÇÃO: o texto da notícia é um post do perfil oficial do Vasco no X. O que ele informa é oficial e pode ser "
     "afirmado como fato (\"o Vasco divulgou\", \"o clube confirmou\"). É notícia: escalação confirmada, gol, resultado "
     "final, contratação, saída, renovação, lesão, comunicado oficial, ingressos, data ou local de jogo. Se houver imagem, "
     "leia nela os nomes da escalação, o placar ou o comunicado. Marketing, produto, sócio-torcedor, meme, contagem "
@@ -329,7 +330,7 @@ def fidelity_rules(context: dict) -> str:
         fixed.append(f"a temporada é {context['temporada']}")
     fixed.append(f"o site se chama {context.get('site', 'Vascainamente')}")
     return (
-        "\nREGRA DE FIDELIDADE (a mais importante): use SOMENTE os fatos do título e do trecho acima. "
+        "\nREGRA DE FIDELIDADE (a mais importante): use SOMENTE os fatos do título e do trecho da notícia. "
         "Não acrescente placar, número, ano, data, dia da semana, horário, local, estádio, competição, rodada, "
         "valor, idade, nome de pessoa nem citação que não estejam lá. Se o trecho for curto, a matéria é curta: "
         "é melhor um parágrafo certo do que três com detalhe inventado. Se a fonte for coluna ou opinião, "
@@ -339,7 +340,40 @@ def fidelity_rules(context: dict) -> str:
     )
 
 
-def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None, feedback: list | None = None, context: dict | None = None) -> dict:
+USAGE = {}  # tokens por modelo nesta execução, para estimar o custo no fim
+PRICES = {  # US$ por milhão de tokens: entrada, saída, escrita de cache, leitura de cache (tabela pública de 2026)
+    "claude-sonnet-4-6": (3.00, 15.00, 3.75, 0.30),
+    "claude-haiku-4-5": (1.00, 5.00, 1.25, 0.10),
+}
+
+
+def track_usage(model: str, response) -> None:
+    u = getattr(response, "usage", None)
+    if u is None:
+        return
+    row = USAGE.setdefault(model, {"calls": 0, "in": 0, "out": 0, "write": 0, "read": 0})
+    row["calls"] += 1
+    row["in"] += getattr(u, "input_tokens", 0) or 0
+    row["out"] += getattr(u, "output_tokens", 0) or 0
+    row["write"] += getattr(u, "cache_creation_input_tokens", 0) or 0
+    row["read"] += getattr(u, "cache_read_input_tokens", 0) or 0
+
+
+def usage_summary() -> str:
+    """Uma linha por modelo com chamadas, tokens e custo estimado. Estimativa: a fatura da Anthropic é a que vale."""
+    lines, total = [], 0.0
+    for model, r in USAGE.items():
+        pin, pout, pwrite, pread = PRICES.get(model, PRICES["claude-sonnet-4-6"])
+        cost = (r["in"] * pin + r["out"] * pout + r["write"] * pwrite + r["read"] * pread) / 1_000_000
+        total += cost
+        lines.append(f"  {model}: {r['calls']} chamada(s), entrada {r['in']}, saída {r['out']}, "
+                     f"cache gravado {r['write']}, cache lido {r['read']}, ~US$ {cost:.4f}")
+    if not lines:
+        return ""
+    return "Uso da API nesta execução (estimativa):\n" + "\n".join(lines) + f"\n  total ~US$ {total:.4f}"
+
+
+def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: str, videos: list, recent: list | None = None, from_x: bool = False, official: bool = False, photos: list | None = None, feedback: list | None = None, context: dict | None = None, cache: bool = False) -> dict:
     recent = recent or []
     context = context or {}
     fix_note = (
@@ -349,18 +383,15 @@ def process_with_ai(client: anthropic.Anthropic, title: str, desc: str, source: 
     video_field = VIDEO_FIELD if videos else ""
     lineup_field = LINEUP_FIELD if (official and from_x) else ""
     duplicate_field = DUPLICATE_FIELD if recent else ""
-    prompt = f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
+    # Parte que quase não muda entre um item e outro: vai no system para o cache de prompt poder reaproveitar
+    # (só liga com cache=True, quando a execução tem mais de um item; com um só, gravar o cache custaria mais).
+    fixed = f"""Você é o editor do Vascainamente, portal de notícias do Vasco da Gama.
 Escreva de forma direta, profissional e apaixonada pelo clube. NUNCA use linguagem de IA.
 Regra de pontuação: nunca use travessão (—) nem meia-risca (–), use vírgula, ponto ou dois-pontos.
-
-Artigo original:
-Título: {title}
-Trecho: {desc}
-Fonte: {source}
-{(OFFICIAL_NOTE if official else X_NOTE) if from_x else ""}{fidelity_rules(context)}{fix_note}{video_prompt(videos)}{recent_prompt(recent)}
+{fidelity_rules(context)}
 {CATEGORY_GUIDE}
 
-Retorne SOMENTE um JSON (sem markdown) com:
+Ao receber a notícia, retorne SOMENTE um JSON (sem markdown) com:
 - "title": título reescrito: direto, preciso, sem sensacionalismo
 - "excerpt": 2-3 frases naturais de resumo
 - "body": de 1 a 3 parágrafos curtos, só com o que está no título e no trecho
@@ -370,15 +401,32 @@ Retorne SOMENTE um JSON (sem markdown) com:
 - "importance": número de 1 a 5, o peso da notícia para o torcedor do Vasco hoje. 5: anúncio oficial grande (contratação ou saída de peso, título, troca de técnico, decisão que muda a temporada). 4: resultado de jogo do time principal, lesão séria de titular, negociação avançada de peso. 3: prévia de jogo importante, notícia relevante do elenco ou do clube. 2: bastidores, declarações, base, feminino. 1: curiosidade, adversário, notícia lateral
 - "matchEvent": "escalacao" se for o time titular do Vasco CONFIRMADO para o jogo de hoje (escalado, time "
 confirmado; provável escalação não conta), "gol" se for um gol do jogo em andamento, "resultado" se for o placar "
-final de um jogo do time principal, ou null{lineup_field}{video_field}{duplicate_field}"""
+final de um jogo do time principal, ou null{duplicate_field}"""
+    # muda a cada execução (vídeos do canal e matérias recentes) e a cada matéria publicada (lista recente)
+    changing = f"{video_prompt(videos)}{recent_prompt(recent)}".strip()
+    system = [{"type": "text", "text": fixed}]
+    if changing:
+        system.append({"type": "text", "text": changing})
+    if cache:
+        for block in system:
+            block["cache_control"] = {"type": "ephemeral"}
+    extra_fields = f"{lineup_field}{video_field}"
+    extras = f"\nCampos extras do JSON, além dos acima:{extra_fields}\n" if extra_fields else ""
+    prompt = f"""Notícia a escrever:
+Título: {title}
+Trecho: {desc}
+Fonte: {source}
+{(OFFICIAL_NOTE if official else X_NOTE) if from_x else ""}{fix_note}{extras}"""
     # photos from the official account carry the lineup or the score: the model reads them
     content = [{"type": "image", "source": {"type": "url", "url": u}} for u in (photos or [])]
     content.append({"type": "text", "text": prompt})
     response = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=1200,
+        system=system,
         messages=[{"role": "user", "content": content}],
     )
+    track_usage("claude-sonnet-4-6", response)
     text = response.content[0].text.strip()
     text = re.sub(r"^```(?:json)?\s*", "", text)
     text = re.sub(r"\s*```$", "", text)
@@ -417,7 +465,7 @@ MATCH_EVENTS = {"escalacao", "gol", "resultado"}
 CHECKED_FIELDS = ("title", "excerpt", "body", "seoTitle", "seoDescription")
 
 
-def write_checked(client, item: dict, videos: list, recent: list, context: dict, results_cache: dict) -> dict:
+def write_checked(client, item: dict, videos: list, recent: list, context: dict, results_cache: dict, cache: bool = False) -> dict:
     """Escreve a matéria e passa pela checagem de fatos. Uma nova tentativa com a lista de problemas;
     se ainda falhar, devolve {"blocked": [...]} e nada é publicado."""
     source = f"{item['title']}\n{item['desc']}"
@@ -428,7 +476,7 @@ def write_checked(client, item: dict, videos: list, recent: list, context: dict,
         article = process_with_ai(
             client, item["title"], item["desc"], item["name"], videos, recent,
             from_x=item["from_x"], official=item.get("official", False), photos=item.get("photos"),
-            feedback=feedback, context=context,
+            feedback=feedback, context=context, cache=cache,
         )
         if article.get("skip"):
             return article
@@ -590,6 +638,13 @@ def main():
     # beat reporters cover only Vasco, so their posts skip the title filter: the AI decides what is news
     items.extend(fetch_x_items(only_x))
 
+    # o cache de prompt só compensa quando há mais de um item na execução (gravar custa 25% a mais que ler normal)
+    pending = sum(1 for it in items if fingerprint(it["link"] if it["from_x"] else it["title"]) not in cache)
+    use_cache = pending >= 2
+    triage_mode = triage.mode()
+    triaged = {"itens": 0, "pularia": 0, "perigosas": 0, "puladas": 0}
+    print(f"{pending} item(ns) novo(s); cache de prompt {'ligado' if use_cache else 'desligado'}; triagem: {triage_mode}")
+
     for item in items:
         title, desc, link = item["title"], item["desc"], item["link"]
         fp = fingerprint(item["link"] if item["from_x"] else title)
@@ -601,7 +656,27 @@ def main():
                 videos = fetch_recent_videos()
             # re-read on every item: includes what this same run has just published
             recent = load_recent_posts()
-            article = write_checked(client, item, videos, recent, context, results_cache)
+            decision = None
+            if triage_mode != "off" and triage.applies_to(item):
+                decision = triage.decide(client, item, recent, track_usage)
+                triaged["itens"] += 1
+                if decision in triage.SKIP_DECISIONS:
+                    triaged["pularia"] += 1
+                    if triage_mode == "on":
+                        print(f"PULADA (triagem, {decision}): {title[:70]}")
+                        triaged["puladas"] += 1
+                        skipped += 1
+                        cache.add(fp)
+                        continue
+            article = write_checked(client, item, videos, recent, context, results_cache, cache=use_cache)
+            if decision in triage.SKIP_DECISIONS and triage_mode == "shadow":
+                # a triagem teria pulado: se a escrita publicou ou atualizou, foi uma notícia perdida
+                result = triage.outcome_of_writing(article)
+                if result == "escrever":
+                    triaged["perigosas"] += 1
+                    print(f"TRIAGEM DIVERGIU (perderia notícia): {title[:70]} | triagem={decision}, escrita=publica ou atualiza")
+                else:
+                    print(f"TRIAGEM CONFERE: {title[:70]} | triagem={decision}, escrita={result}")
             if article.get("blocked"):
                 # cached on purpose (retrying every 15 minutes would fail the same way), except while ESPN lags
                 print(f"BARRADA (checagem de fatos): {title[:60]}: {'; '.join(article['blocked'])}")
@@ -644,6 +719,12 @@ def main():
             print(f"  ERRO: {title[:60]}: {e}")
 
     save_cache(cache_file, cache)
+    if triaged["itens"]:
+        print(f"\nTriagem ({triage_mode}): {triaged['itens']} item(ns) avaliado(s), {triaged['pularia']} que ela pularia, "
+              f"{triaged['perigosas']} divergência(s) perigosa(s) (a escrita publicou ou atualizou), {triaged['puladas']} pulada(s) de fato.")
+    summary = usage_summary()
+    if summary:
+        print("\n" + summary)
     print(f"\n{published} noticia(s) publicada(s), {updated} atualizada(s), {skipped} pulada(s) (mesmo fato ou post sem notícia), {blocked} barrada(s) na checagem de fatos.")
 
 if __name__ == "__main__":

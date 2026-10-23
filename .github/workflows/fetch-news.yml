@@ -46,6 +46,8 @@ jobs:
           # beat reporters on X: off while the secret is empty (paid API, see scripts/x_source.py)
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           X_MONTHLY_POST_LIMIT: ${{ vars.X_MONTHLY_POST_LIMIT }}
+          # triagem barata (modelo pequeno) antes da escrita: off, shadow (só mede) ou on (pula de verdade). Ver scripts/triage.py
+          TRIAGE_MODE: shadow
         run: python scripts/fetch-news.py
 
       - name: Commit new articles

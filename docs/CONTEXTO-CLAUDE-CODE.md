@@ -145,3 +145,13 @@ Motivo: a política do AdSense trata texto reescrito com pouca mudança como có
 
 ### Arquivos de prompt
 - Os antigos `PROMPT-*.md` estão em `_prompts/`, fora do git (ignorados por `.git/info/exclude`).
+
+## Redução do custo da API (22/10/2026, ramo `custo-api`, ainda não enviado)
+
+Problema: ~US$ 1,40 por dia na Anthropic. Cerca de 8 em cada 10 itens processados não viram matéria nova (mesmo fato, post sem notícia), e cada um custava uma escrita completa do Sonnet.
+
+- **Cache de prompt** (`process_with_ai`): instruções fixas e lista de matérias recentes vão no `system`, a notícia vai na mensagem. Só liga quando a execução tem 2 ou mais itens novos (com um só, gravar o cache custa mais que não usar).
+- **Triagem** (`scripts/triage.py`): modelo pequeno (`claude-haiku-4-5`, troca por `TRIAGE_MODEL`) lê o item e os títulos recentes e responde `escrever`, `mesmo_fato` ou `sem_noticia` (este só para post de setorista). Na dúvida, escrever. O perfil oficial do Vasco nunca passa pela triagem. Modo pela variável `TRIAGE_MODE`: `off`, `shadow` (mede, não pula) e `on` (pula). Está em `shadow` em `fetch-news.yml`.
+- **Como decidir ligar**: no log de cada execução, procurar `TRIAGEM DIVERGIU` (a triagem pularia, mas a escrita publicou ou atualizou: notícia que seria perdida) e a linha `Triagem (shadow): ...`. Só trocar para `on` com poucas divergências em 1 a 2 dias de dados.
+- **Medição**: toda execução imprime `Uso da API nesta execução (estimativa)` com tokens e custo por modelo. A fatura do Console é a que vale.
+- Testes: `python3 -m unittest scripts/test_triage.py scripts/test_fact_guard.py` (44 casos, sem rede).
