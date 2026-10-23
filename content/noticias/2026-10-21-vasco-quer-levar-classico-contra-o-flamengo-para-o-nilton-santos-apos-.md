@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/2RFZPfof_tNX6bUIGGMHp8i4sXM=/i.s3.glbimg.com
 excerpt: "O Vasco estuda transferir o clássico contra o Flamengo, marcado para a próxima quinta-feira, para o Estádio Nilton Santos. A decisão parte do desgaste acumulado com a diretoria rubro-negra em torno do acordo de uso do Maracanã, que o Cruzmaltino entende não ter sido cumprido. O Botafogo já foi avisado da possibilidade."
 seoTitle: "Vasco quer levar clássico vs Flamengo ao Nilton Santos"
 seoDescription: "Após desgaste com o acordo do Maracanã, Vasco estuda transferir o clássico contra o Flamengo para o Estádio Nilton Santos na próxima quinta-feira."
-updated: "2026-10-22T14:15:58-03:00"
+updated: "2026-10-23T12:01:02-03:00"
 ---
 
 O Vasco tem um acordo com Flamengo e Fluminense para mandar jogos do Brasileirão no Maracanã. O problema é que, na avaliação da diretoria cruzmaltina, esse acordo foi desrespeitado repetidas vezes: o Flamengo negou os pedidos do Vasco para sediar partidas contra o Vitória na Copa do Brasil e contra Santa Fé e Boca Juniors na Sul-Americana. A conclusão interna é simples: se o acordo não vale para o Vasco quando precisa, não deve valer para favorecer o Flamengo agora.
@@ -24,3 +24,5 @@ O clássico contra o Flamengo, previsto para a próxima quinta-feira, é mais um
 **Atualização em 22/10 às 07:45:** O Vasco não quer o Maracanã para o clássico e avalia usar os próprios argumentos dos rivais como trunfo na disputa pelo local da partida. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/10/22/vasco-nao-quer-maracana-contra-fla-e-ve-argumentos-do-rival-virarem-a-favor.htm))
 
 **Atualização em 22/10 às 14:15:** O Vasco já acionou formalmente o Botafogo via e-mail e o contrato, válido até 2028 com valor fixo corrigido pela inflação, prevê que o rival só precisa dar o aceite por e-mail para o acordo estar fechado. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/22/contrato-assinado-com-john-textor-facilita-mudanca-de-vasco-x-flamengo-para-nilton-santos.ghtml))
+
+**Atualização em 23/10 às 12:01:** Alan Belaciano confirmou oficialmente o Nilton Santos para o clássico e revelou que São Januário foi vetado pela CBF e pela polícia, que ainda não autorizaram a capacidade ampliada de 25 mil lugares. ([leia a matéria](/2026-10-23-vasco-confirma-classico-contra-o-flamengo-no-nilton-santos-e-ironiza-c))
