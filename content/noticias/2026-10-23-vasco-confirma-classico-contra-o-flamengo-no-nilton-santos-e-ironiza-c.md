@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/93QyU7Rc_iMd2uWcVDLImZvZPYA=/i.s3.glbimg.com
 excerpt: "O dirigente Alan Belaciano confirmou que o Vasco mandará o clássico contra o Flamengo no Nilton Santos. O clube tentou levar a partida para São Januário, mas não obteve autorização da polícia e da CBF. Belaciano ainda ironizou o consórcio do Maracanã, dizendo que o Vasco está 'preocupado com o gramado' do estádio."
 seoTitle: "Vasco confirma clássico contra Flamengo no Nilton Santos"
 seoDescription: "Dirigente Alan Belaciano confirmou o Nilton Santos para o clássico e ironizou o consórcio do Maracanã ao citar preocupação com o gramado do estádio."
-updated: "2026-10-24T14:31:03-03:00"
+updated: "2026-10-24T15:46:00-03:00"
 ---
 
 O Vasco confirmou que o clássico contra o Flamengo pelo Campeonato Brasileiro será disputado no Nilton Santos. O presidente da Assembleia Geral, Alan Belaciano, explicou que o clube tentou levar a partida para São Januário, mas a CBF e a polícia não autorizaram o jogo no estádio cruzmaltino.
@@ -20,3 +20,5 @@ Belaciano não poupou ironia ao justificar a escolha pelo Engenhão. Disse que o
 O dirigente ainda revelou que São Januário ampliou sua capacidade de 21 mil para 25 mil lugares e que o clube está em fase final de regularização junto à polícia, com expectativa de avanços em 2027. A declaração foi dada durante a assembleia geral realizada na Sede Náutica da Lagoa.
 
 **Atualização em 24/10 às 14:31:** A CBF confirmou oficialmente o Nilton Santos como palco do clássico, e a venda de ingressos para sócios do Vasco começa neste sábado às 15h. ([Ramadas (X)](https://x.com/pabloramadas/status/2114046394264858917))
+
+**Atualização em 24/10 às 15:46:** O Vasco abriu neste sábado a venda de ingressos para o clássico contra o Flamengo no Nilton Santos, com divisão de público 90/10: setores Norte, Oeste e Leste para o torcedor cruzmaltino e Setor Sul para o rubro-negro. ([leia a matéria](/2026-10-24-vasco-abre-venda-de-ingressos-para-o-classico-contra-o-flamengo-no-nil))
