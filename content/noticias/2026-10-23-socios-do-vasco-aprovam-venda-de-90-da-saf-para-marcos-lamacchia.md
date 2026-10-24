@@ -12,7 +12,7 @@ seoTitle: "Sócios do Vasco aprovam venda da SAF a Lamacchia"
 seoDescription: "Com 90% dos votos favoráveis, a AGE do Vasco aprovou a venda de 90% da SAF para a Almirante Participações, de Marcos Lamacchia. Placar: 4.675 a 437."
 videoId: "KgOHqW_cVl8"
 videoSource: "Vasco TV"
-updated: "2026-10-23T20:46:09-03:00"
+updated: "2026-10-24T00:01:02-03:00"
 ---
 
 Os sócios do Vasco aprovaram nesta sexta-feira a venda de 90% da SAF do clube para a Almirante Participações, empresa ligada a Marcos Lamacchia. A votação foi realizada em formato híbrido, com participação presencial e eletrônica, e resultou em 4.675 votos favoráveis, 437 contrários e 48 abstenções.
@@ -20,3 +20,5 @@ Os sócios do Vasco aprovaram nesta sexta-feira a venda de 90% da SAF do clube p
 Com 90% dos votos a favor, a aprovação na AGE representa o último rito interno necessário para autorizar a operação. O negócio segue agora para o cumprimento das condições contratuais e as aprovações dos órgãos fiscalizadores competentes para a conclusão da venda.
 
 **Atualização em 23/10 às 20:46:** Após a aprovação na AGE, Lamacchia se pronunciou pela primeira vez como novo sócio majoritário da SAF do Vasco. ([Ramadas (X)](https://x.com/pabloramadas/status/2113777013794247148))
+
+**Atualização em 24/10 às 00:01:** O Vasco tem até segunda-feira, dia 26 de outubro, para responder ao Cade sobre informações financeiras da relação com a Almirante Participações, sob pena de multa diária de R$ 5 mil, podendo chegar a R$ 100 mil. A Anresf ainda precisa dar parecer sobre possível conflito de interesses antes de Lamacchia assumir. ([leia a matéria](/2026-10-24-proximos-passos-da-saf-do-vasco-apos-aprovacao-da-venda-para-lamacchia))
