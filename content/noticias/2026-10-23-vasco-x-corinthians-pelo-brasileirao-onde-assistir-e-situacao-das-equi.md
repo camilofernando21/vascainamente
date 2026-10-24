@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Campeonato Brasileiro. A partida é importante para ambos os lados na tabela."
 seoTitle: "Vasco x Corinthians: onde assistir pelo Brasileirão"
 seoDescription: "Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileirão. Saiba onde assistir e a situação das equipes."
-updated: "2026-10-24T09:15:51-03:00"
+updated: "2026-10-24T12:00:56-03:00"
 ---
 
 Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileirão. O duelo tem peso direto para o Cruzmaltino, que precisa dos pontos para se afastar da zona de rebaixamento.
@@ -22,3 +22,5 @@ Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileir
 **Atualização em 24/10 às 05:45:** O jogo acontece neste sábado, às 18h30 de Brasília, em São Januário, com transmissão ao vivo confirmada. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/2026/10/24/vasco-x-corinthians-horario-e-onde-assistir-ao-jogo-do-brasileirao.ghtm))
 
 **Atualização em 24/10 às 09:15:** O Vasco tem aproveitamento de apenas 33,3% contra times da parte baixa da tabela no Brasileirão, com duas vitórias, quatro empates e quatro derrotas em dez jogos. No returno, o número sobe para 55,6%, com três partidas sem derrota. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/confronto-direto-vasco-tenta-melhorar-desempenho-contra-times-que-lutam-contra-o-z-4.ghtml))
+
+**Atualização em 24/10 às 12:00:** Puma Rodríguez está confirmado como titular por opção técnica de Pedro Emanuel, e Marino Hinestroza foi testado no lugar de Bruno Duarte nos treinos, com Colidio como centroavante. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/escalacao-do-vasco-puma-sera-titular-contra-o-corinthians-e-marino-pode-ganhar-chance.ghtml))
