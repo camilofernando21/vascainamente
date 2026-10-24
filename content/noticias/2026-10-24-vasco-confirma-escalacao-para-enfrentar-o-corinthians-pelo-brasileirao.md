@@ -12,8 +12,11 @@ imageUrl: "https://pbs.twimg.com/media/HVbDfwxXYAAnN9N.jpg"
 excerpt: "O clube divulgou o time titular para o duelo contra o Corinthians em São Januário pelo Campeonato Brasileiro. Pedro Emanuel manda a campo Léo Jardim no gol e Thiago Mendes como capitão. A partida tem transmissão pelo Premiere, CazéTV e Record TV."
 seoTitle: "Escalação do Vasco x Corinthians pelo Brasileirão"
 seoDescription: "Vasco confirma os 11 titulares para enfrentar o Corinthians em São Januário pelo Brasileirão. Veja a escalação de Pedro Emanuel."
+updated: "2026-10-24T18:00:53-03:00"
 ---
 
 O Vasco confirmou a escalação para o jogo contra o Corinthians em São Januário pelo Campeonato Brasileiro, com bola rolando às 18h30. Pedro Emanuel escolheu: Léo Jardim; Puma Rodríguez, Saldivia, Robert Renan e Cuiabano; Sosa, Lescano e Thiago Mendes (C); Colidio, Andrés Gómez e Bruno Duarte.
 
 No banco ficam Fuzato, Paulo Henrique, Gabriel, Lucas Freitas, Lucas Piton, Jair, Ramon Rique, Tchê Tchê, Nuno Moreira, Marino, David e Brenner. A partida tem transmissão pelo Premiere, CazéTV e Record TV.
+
+**Atualização em 24/10 às 18:00:** Segundo Léo Lacerda, do NTV, a única mudança no time titular é a entrada do Puma no lugar de PH. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2114096426225721420))
