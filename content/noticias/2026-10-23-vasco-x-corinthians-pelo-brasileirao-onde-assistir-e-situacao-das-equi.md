@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Campeonato Brasileiro. A partida é importante para ambos os lados na tabela."
 seoTitle: "Vasco x Corinthians: onde assistir pelo Brasileirão"
 seoDescription: "Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileirão. Saiba onde assistir e a situação das equipes."
-updated: "2026-10-24T12:45:46-03:00"
+updated: "2026-10-24T15:30:42-03:00"
 ---
 
 Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileirão. O duelo tem peso direto para o Cruzmaltino, que precisa dos pontos para se afastar da zona de rebaixamento.
@@ -26,3 +26,5 @@ Vasco e Corinthians se enfrentam em São Januário pela 32ª rodada do Brasileir
 **Atualização em 24/10 às 12:00:** Puma Rodríguez está confirmado como titular por opção técnica de Pedro Emanuel, e Marino Hinestroza foi testado no lugar de Bruno Duarte nos treinos, com Colidio como centroavante. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/10/24/escalacao-do-vasco-puma-sera-titular-contra-o-corinthians-e-marino-pode-ganhar-chance.ghtml))
 
 **Atualização em 24/10 às 12:45:** A partida acontece neste sábado, às 18h30 (horário de Brasília), em São Januário, no Rio de Janeiro, com transmissão ao vivo confirmada. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/2026/10/24/onde-vai-passar-vasco-x-corinthians-pelo-brasileirao-como-assistir-ao-vivo.ghtm))
+
+**Atualização em 24/10 às 15:30:** O Vasco divulgou os 26 relacionados para o jogo contra o Corinthians: Andrés Gómez, Brenner, Bruno Duarte, Colidio, Cuiabano, David, Fuzato, Gabriel, Jair, Léo Jardim, Lescano, Lucas Freitas, Lucas Piton, Marino, Nuno Moreira, Paulo Henrique, Phillipe Gabriel, Puma Rodriguez, Ramon Rique, Robert Renan, Saldivia, Sosa, Tchê Tchê, Thiago Mendes. ([Vasco da Gama (X)](https://x.com/vascodagama/status/2114061865076637932))
