@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/CfGkHFou6NHM5FoFhxZ_AS16UGk=/i.s3.glbimg.com
 excerpt: "O zagueiro Robert Renan sofreu um acidente de carro na manhã desta segunda-feira, mas não se machucou. O defensor vai treinar normalmente com o restante do elenco no CT Moacyr Barbosa. Nas redes sociais, ele agradeceu pelo livramento."
 seoTitle: "Robert Renan sofre acidente de carro, mas passa bem"
 seoDescription: "Zagueiro do Vasco sofreu acidente de carro nesta segunda-feira, mas não se machucou e vai treinar normalmente no CT Moacyr Barbosa."
+updated: "2026-10-26T15:30:50-03:00"
 ---
 
 O zagueiro Robert Renan sofreu um acidente de carro na manhã desta segunda-feira, mas passa bem e não se machucou. A informação foi divulgada inicialmente pelo Podcast Cruzmaltino e confirmada pelo ge. O defensor vai treinar normalmente com o restante do elenco no CT Moacyr Barbosa.
@@ -17,3 +18,5 @@ O zagueiro Robert Renan sofreu um acidente de carro na manhã desta segunda-feir
 Nas redes sociais, o jogador se pronunciou sobre o ocorrido: 'Obrigado, meu Deus, pelo livramento. Agradeço de coração a todos que estão me mandando mensagens e se preocupando comigo. Graças a Deus, está tudo bem.'
 
 É o segundo acidente envolvendo um jogador do Vasco no mês. Cauan Barros também teve uma batida de carro e sofreu um corte no pé esquerdo.
+
+**Atualização em 26/10 às 15:30:** Um vídeo divulgado nas redes sociais mostra o momento em que Robert Renan é retirado do carro após o veículo capotar. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2114784657665315096))
