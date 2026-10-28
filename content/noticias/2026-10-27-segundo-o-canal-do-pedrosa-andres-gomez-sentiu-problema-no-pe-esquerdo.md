@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "O setorista Canal do Pedrosa informou que Andrés Gomez deixou o jogo contra o Corinthians sentindo um problema antigo no pé esquerdo. O jogador faz tratamento intensivo e foi reavaliado, mas ainda é dúvida para o próximo compromisso."
 seoTitle: "Andrés Gomez é dúvida no Vasco após sentir pé esquerdo"
 seoDescription: "Canal do Pedrosa apurou que Andrés Gomez deixou o jogo com dores no pé esquerdo e faz tratamento intensivo. Jogador é dúvida."
+updated: "2026-10-28T09:15:54-03:00"
 ---
 
 Segundo o Canal do Pedrosa, Andrés Gomez saiu do jogo contra o Corinthians com dores no pé esquerdo, uma dificuldade já conhecida que o fez jogar no sacrifício em outras ocasiões. O atleta tem realizado tratamento intensivo para tentar estar à disposição de Pedro Emanuel.
 
 O setorista informou que Andrés Gomez foi reavaliado e, por ora, segue como dúvida.
+
+**Atualização em 28/10 às 09:15:** O departamento médico e a comissão técnica estudam poupar Gómez contra o Flamengo, ao menos iniciando do banco, com a semifinal da Copa do Brasil contra o Palmeiras no horizonte. Ele treinou normalmente no Nilton Santos e está à disposição, mas não está 100% fisicamente apto. ([leia a matéria](/2026-10-28-andres-gomez-sente-dores-no-pe-e-e-duvida-no-vasco-para-o-classico-con))
