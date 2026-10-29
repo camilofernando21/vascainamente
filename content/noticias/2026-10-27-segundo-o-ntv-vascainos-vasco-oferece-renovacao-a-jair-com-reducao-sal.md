@@ -10,7 +10,7 @@ imageUrl: "https://pbs.twimg.com/media/HVnbaK6W8AAppFw.jpg"
 excerpt: "O canal NTV Vascaínos apurou, com exclusividade, que o Vasco apresentou proposta de renovação ao volante Jair com corte de 50% no salário atual. A oferta prevê contrato de um ano, com possibilidade de extensão."
 seoTitle: "Vasco oferece renovação a Jair com corte de 50% no salário"
 seoDescription: "Segundo o NTV Vascaínos, o Vasco propôs renovação ao volante Jair com redução salarial de 50% e contrato de um ano com possibilidade de extensão."
-updated: "2026-10-28T20:45:47-03:00"
+updated: "2026-10-29T10:15:56-03:00"
 ---
 
 Segundo apuração do canal NTV Vascaínos, o Vasco apresentou ao volante Jair uma proposta de renovação contratual que inclui redução de 50% em relação aos vencimentos mensais do jogador. A oferta prevê vínculo de um ano, com possibilidade de extensão por mais tempo.
@@ -22,3 +22,5 @@ A informação é do setorista Léo Lacerda e ainda não foi confirmada oficialm
 **Atualização em 28/10 às 12:46:** O staff de Jair ainda não respondeu à proposta do Vasco, e a situação segue indefinida. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2115467102047928532))
 
 **Atualização em 28/10 às 20:45:** Jair recebe R$ 900 mil por mês há quase dois anos: o Vasco já tentou propor redução salarial no ano passado, mas uma lesão do volante forçou a renovação do contrato sem o corte. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2115590114294341869))
+
+**Atualização em 29/10 às 10:15:** O estafe de Jair recusou a proposta do Vasco com corte de 50% no salário, e a renovação segue travada a pouco mais de dois meses do fim do contrato. O jogador quer ficar, mas há sondagens de clubes brasileiros e uma cláusula de renovação automática não foi atingida pela sequência de lesões. ([leia a matéria](/2026-10-29-renovacao-de-jair-com-o-vasco-segue-travada-mas-volante-quer-ficar))
