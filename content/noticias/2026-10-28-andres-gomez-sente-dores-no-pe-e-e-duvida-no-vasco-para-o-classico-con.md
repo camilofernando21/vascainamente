@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/-BB-h54eW9kCswbjxfR_hh9fngw=/i.s3.glbimg.com
 excerpt: "O colombiano deixou o jogo contra o Corinthians ainda no primeiro tempo com dores no pé esquerdo e foi substituído por Marino Hinestroza. O problema não é novidade: Gómez convive com o incômodo há semanas e tem atuado no sacrifício. Pedro Emanuel estuda poupar o atacante contra o Flamengo, com o confronto pela Copa do Brasil contra o Palmeiras no horizonte."
 seoTitle: "Andrés Gómez é dúvida no Vasco para o clássico"
 seoDescription: "Colombiano saiu machucado contra o Corinthians e acumula jogos com dores no pé. Pedro Emanuel estuda poupar o atacante no clássico contra o Flamengo."
-updated: "2026-10-29T00:00:52-03:00"
+updated: "2026-10-29T14:01:03-03:00"
 ---
 
 Andrés Gómez saiu precocemente da partida contra o Corinthians com dores no pé esquerdo, substituído por Marino Hinestroza aos 33 minutos do primeiro tempo. O problema não é novo: o colombiano convive com o incômodo há semanas e não conseguiu descansar na Data Fifa por ter sido convocado pela seleção colombiana, acumulando jogos no sacrifício desde então. Mesmo assim, o atacante treinou normalmente no Estádio Nilton Santos na terça-feira e está à disposição para o clássico.
@@ -18,3 +18,5 @@ Andrés Gómez saiu precocemente da partida contra o Corinthians com dores no p�
 Não há lesão grave, e o próprio jogador insiste em permanecer em campo mesmo com dores. O departamento médico e a comissão técnica, porém, estudam poupar Gómez contra o Flamengo, ao menos iniciando a partida do banco. A decisão final cabe a Pedro Emanuel, que precisará dosear o elenco pensando também no confronto pela semifinal da Copa do Brasil contra o Palmeiras.
 
 **Atualização em 29/10 às 00:00:** Segundo o Canal do Pedrosa, Gómez dificilmente joga contra o Flamengo e deve ser preservado para o duelo com o Palmeiras pela Copa do Brasil. ([Canal do Pedrosa (X)](https://x.com/pedrosa/status/2115638308038455760))
+
+**Atualização em 29/10 às 14:01:** Léo Jardim contraiu virose na quarta-feira, não treinou, mas está confirmado como titular no clássico. Andrés Gómez não deve ser utilizado. ([leia a matéria](/2026-10-29-leo-jardim-pega-virose-mas-sera-titular-no-classico-contra-o-flamengo))
