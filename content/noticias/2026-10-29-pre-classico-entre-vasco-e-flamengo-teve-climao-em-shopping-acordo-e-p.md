@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "O clássico entre Vasco e Flamengo no Nilton Santos foi precedido por uma série de episódios curiosos e tensos. Os dias que antecederam a partida incluíram um acordo pontual entre os clubes, a Polícia Militar em alerta e até um climão em um shopping."
 seoTitle: "Pré-clássico Vasco x Flamengo: climão, acordo e PM em alerta"
 seoDescription: "Bastidores do clássico no Nilton Santos tiveram episódios curiosos: acordo entre clubes, Polícia Militar em alerta e climão em shopping antes do jogo."
+updated: "2026-10-29T19:45:54-03:00"
 ---
 
 Os bastidores do clássico entre Vasco e Flamengo no Nilton Santos foram tão agitados quanto a própria rivalidade entre os clubes. Nos dias que antecederam o jogo, a relação entre as duas agremiações, descrita como pra lá de conflituosa, passou por um acordo pontual, atenção reforçada da Polícia Militar e um episódio de climão em um shopping.
 
 O confronto está marcado para hoje, às 20h, válido pela 33ª rodada do Campeonato Brasileiro.
+
+**Atualização em 29/10 às 19:45:** Um torcedor identificado como Leonardo Ribeiro Silva, 42 anos, foi baleado no pescoço em Duque de Caxias e está internado em estado grave após cirurgia, em traqueostomia. O caso é investigado como tentativa de homicídio pela 59ª DP. ([leia a matéria](/2026-10-29-torcedor-e-baleado-no-pescoco-em-confronto-de-organizadas-antes-de-vas))
