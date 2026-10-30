@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "O setorista Ramadas mudou de opinião sobre a escalação inicial do Vasco após novas informações. Segundo ele, Robert Renan recebeu indicação para cumprir protocolo de concussão por conta de um acidente sofrido nesta semana. Sosa também é dúvida após se queixar de problemas físicos."
 seoTitle: "Robert Renan e Sosa são dúvidas no Vasco, diz Ramadas"
 seoDescription: "Segundo o setorista Ramadas, Robert Renan cumpre protocolo de concussão após acidente e Sosa se queixou de problemas físicos, gerando dúvidas na escalação do Vasco."
+updated: "2026-10-30T14:30:59-03:00"
 ---
 
 O setorista Ramadas revisou sua avaliação sobre a escalação inicial do Vasco comandada por Pedro Emanuel após novas informações apuradas por Gabriel Vieira. Segundo ele, Robert Renan recebeu indicação para cumprir protocolo de concussão em razão de um grave acidente sofrido nesta semana, o que coloca sua participação em dúvida.
 
 Sosa também aparece como dúvida, segundo Ramadas, pois o jogador vinha se queixando de problemas físicos.
+
+**Atualização em 30/10 às 14:30:** Segundo o Canal do Pedrosa, não houve choque de cabeça no acidente de Robert Renan e nenhum protocolo de concussão foi ativado, o que contraria a versão de que o zagueiro seria desfalque por esse motivo. ([leia a matéria](/2026-10-30-segundo-canal-do-pedrosa-robert-renan-nao-cumpriu-protocolo-de-concuss))
