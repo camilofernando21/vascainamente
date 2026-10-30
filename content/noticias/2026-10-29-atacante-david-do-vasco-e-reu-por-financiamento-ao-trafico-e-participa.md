@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "O atacante David Corrêa foi denunciado pelo Ministério Público do Espírito Santo por suspeita de financiamento ao tráfico de drogas e participação em organização criminosa. A Justiça recebeu a denúncia e determinou medidas cautelares contra o jogador, entre elas a entrega do passaporte. A medida impede que David deixe o país sem autorização judicial."
 seoTitle: "David, do Vasco, é réu por tráfico e organização criminosa"
 seoDescription: "O atacante David Corrêa foi denunciado pelo MP-ES por financiamento ao tráfico e organização criminosa. Justiça determinou entrega do passaporte."
+updated: "2026-10-30T10:31:08-03:00"
 ---
 
 O atacante David Corrêa, do Vasco, foi denunciado pelo Ministério Público do Espírito Santo por suspeita de financiamento ao tráfico de drogas e participação em organização criminosa. A Justiça recebeu a denúncia e o jogador passou à condição de réu.
 
 Como parte das medidas cautelares determinadas pela Justiça, David foi obrigado a entregar o passaporte, o que impede que ele deixe o país sem autorização judicial.
+
+**Atualização em 30/10 às 10:31:** A Polícia Civil do Rio de Janeiro intimou David a comparecer à 14ª DP, no Leblon, nesta sexta-feira para entregar o passaporte e cumprir medidas cautelares determinadas pela Justiça do Espírito Santo. ([leia a matéria](/2026-10-30-david-do-vasco-e-intimado-a-entregar-passaporte-em-investigacao-sobre-))
