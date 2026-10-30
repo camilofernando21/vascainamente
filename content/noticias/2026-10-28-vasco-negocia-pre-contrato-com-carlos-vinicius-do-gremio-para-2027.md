@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/n4WjW0WIyNjA3er3lZlA6ThffcY=/i.s3.glbimg.com
 excerpt: "O Vasco tenta a contratação de Carlos Vinícius para a temporada 2027. O centroavante está em fim de vínculo com o Grêmio e chegaria ao clube carioca sem custos de transferência. Há otimismo nos bastidores de São Januário, mas o atacante só deve assinar qualquer acordo após o Campeonato Brasileiro."
 seoTitle: "Vasco negocia pré-contrato com Carlos Vinícius para 2027"
 seoDescription: "Vasco tenta contratar Carlos Vinícius, do Grêmio, para 2027. Centroavante em fim de contrato chegaria sem custos de transferência. Há otimismo em São Januário."
-updated: "2026-10-28T15:01:17-03:00"
+updated: "2026-10-29T21:30:56-03:00"
 ---
 
 O Vasco negocia um pré-contrato com Carlos Vinícius, centroavante do Grêmio, com foco na temporada 2027. O jogador está em fim de vínculo com o clube gaúcho e chegaria ao Rio de Janeiro sem custos de transferência. Apesar do custo zero de transferência, a negociação prevê luvas e premiações por metas, e o salário oferecido pelo Vasco seria superior ao atual.
@@ -20,3 +20,5 @@ Há otimismo nos bastidores de São Januário para um desfecho positivo. As conv
 A informação foi divulgada primeiro por Duda Garbi e confirmada pelo ge.
 
 **Atualização em 28/10 às 15:01:** Ramadas aponta que o acerto com Carlos Vinícius está fechado, não mais em negociação, e que o Vasco também exerceu o direito de compra de Robert Renan. ([leia a matéria](/2026-10-28-segundo-ramadas-vasco-acerta-contratacao-de-carlos-vinicius-e-exerce-o))
+
+**Atualização em 29/10 às 21:30:** Carlos Vinícius confirmou em entrevista que está livre para assinar pré-contrato e que conversas com o Grêmio sobre renovação esfriaram com a luta contra o rebaixamento. ([GE.Globo](https://ge.globo.com/rs/futebol/times/gremio/noticia/2026/10/29/alvo-do-vasco-carlos-vinicius-garante-foco-no-gremio-ate-o-fim-da-temporada.ghtml))
