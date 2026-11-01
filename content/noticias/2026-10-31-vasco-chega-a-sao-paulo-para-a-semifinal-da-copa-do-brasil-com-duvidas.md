@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/cirJnc-gMR9bvvpIn6PmfYZudOA=/i.s3.glbimg.com
 excerpt: "O Vasco desembarcou em São Paulo neste sábado para o jogo de ida da semifinal da Copa do Brasil contra o Palmeiras. Andrés Gómez está fora por lesão, e Pedro Emanuel tem dúvidas na lateral esquerda e na ponta direita. A provável escalação inclui Léo Jardim, Saldívia, Robert Renan, Piton ou Cuiabano, e Adson ou Marino na ponta."
 seoTitle: "Vasco em SP: escalação provável para semifinal da Copa do Brasil"
 seoDescription: "Vasco chegou a São Paulo para a semifinal da Copa do Brasil contra o Palmeiras. Andrés Gómez é desfalque e Pedro Emanuel tem dúvidas na escalação."
+updated: "2026-11-01T09:15:45-03:00"
 ---
 
 O Vasco chegou a São Paulo neste sábado para enfrentar o Palmeiras no jogo de ida da semifinal da Copa do Brasil. Andrés Gómez, lesionado no pé esquerdo, é desfalque confirmado. A delegação foi recebida por torcedores no hotel, que tiraram fotos com os jogadores.
@@ -17,3 +18,5 @@ O Vasco chegou a São Paulo neste sábado para enfrentar o Palmeiras no jogo de 
 Pedro Emanuel testou mudanças na equipe antes da viagem. As principais dúvidas estão na lateral esquerda, entre Piton e Cuiabano, e na ponta direita, onde Adson e Marino Hinestroza disputam a vaga. A comissão técnica avalia que Adson fez um bom jogo no Nubank Parque no segundo turno do Brasileirão. A ideia do treinador é escalar o time mais fresco possível, já que alguns jogadores chegam ao confronto com problemas físicos.
 
 A provável escalação do Vasco tem: Léo Jardim, Paulo Henrique, Saldívia, Robert Renan, Piton ou Cuiabano; Sosa, Thiago Mendes, Lescano; Adson ou Marino, Bruno Duarte e Colidio.
+
+**Atualização em 01/11 às 09:15:** A partida começa às 16h (de Brasília), no Nubank Parque, em São Paulo. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/2026/11/01/jogo-do-vasco-hoje-pela-copa-do-brasil-que-horas-comeca-e-onde-assistir.ghtm))
