@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "Marcos Lamacchia, enteado da presidente do Palmeiras, Leila Pereira, atuou nos bastidores do Vasco antes mesmo de formalizar a compra da SAF. O tema ganha destaque às vésperas do confronto entre os dois clubes pela semifinal da Copa do Brasil."
 seoTitle: "Lamacchia ajudou Vasco com reforços antes de oficializar SAF"
 seoDescription: "Enteado de Leila Pereira, Marcos Lamacchia atuou nos bastidores do Vasco com reforços antes mesmo de formalizar a compra da SAF, segundo o UOL Esporte."
+updated: "2026-11-01T04:15:48-03:00"
 ---
 
 Marcos Lamacchia, enteado de Leila Pereira, foi um dos personagens centrais dos bastidores do Vasco antes mesmo de oficializar a aquisição da SAF do clube. Segundo o UOL Esporte, ele já participava de decisões relacionadas a reforços nesse período.
 
 O tema volta à tona com o confronto entre Vasco e Palmeiras marcado para este domingo, no Nubank Parque, pelo jogo de ida das semifinais da Copa do Brasil.
+
+**Atualização em 01/11 às 04:15:** Anresf e Cade investigam possível conflito de interesses na venda da SAF do Vasco para Lamacchia ([leia a matéria](/2026-11-01-anresf-e-cade-investigam-possivel-conflito-de-interesses-na-venda-da-s))
