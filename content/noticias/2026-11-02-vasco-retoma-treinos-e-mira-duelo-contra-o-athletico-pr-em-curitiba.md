@@ -12,6 +12,9 @@ seoTitle: "Vasco treina e foca no jogo contra o Athletico-PR"
 seoDescription: "Sem tempo para descanso, o elenco do Vasco retomou os treinos e já mira o duelo contra o Athletico-PR em Curitiba."
 videoId: "77DXY9kY1Gs"
 videoSource: "Vasco TV"
+updated: "2026-11-03T14:01:01-03:00"
 ---
 
 O Vasco não deu trégua ao calendário e retomou os treinos com foco no próximo desafio: enfrentar o Athletico-PR em Curitiba. O tempo curto entre os jogos exige atenção redobrada da comissão técnica de Pedro Emanuel na preparação do elenco.
+
+**Atualização em 03/11 às 14:01:** Andrés Gómez está de volta aos relacionados para o jogo contra o Athletico-PR, enquanto Marino é desfalque confirmado. ([leia a matéria](/2026-11-03-andres-gomez-volta-e-marino-e-desfalque-nos-relacionados-do-vasco-para))
