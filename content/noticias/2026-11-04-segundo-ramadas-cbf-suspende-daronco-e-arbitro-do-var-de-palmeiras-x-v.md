@@ -10,7 +10,7 @@ imageUrl: "https://pbs.twimg.com/media/HWSbg3IWQAA8dun.jpg"
 excerpt: "O setorista Ramadas informou que Anderson Daronco e Rodrigo D'Alonso, responsável pelo VAR no jogo entre Palmeiras e Vasco, foram suspensos pela CBF. A punição vem após a atuação dos dois na partida da semifinal da Copa do Brasil."
 seoTitle: "CBF suspende Daronco e árbitro do VAR de Palmeiras x Vasco"
 seoDescription: "Segundo o setorista Ramadas, Anderson Daronco e Rodrigo D'Alonso, do VAR, foram suspensos pela CBF após a semifinal da Copa do Brasil."
-updated: "2026-11-04T12:30:58-03:00"
+updated: "2026-11-04T13:46:17-03:00"
 ---
 
 Segundo o setorista Ramadas, a CBF suspendeu Anderson Daronco e Rodrigo D'Alonso, árbitro responsável pelo VAR no confronto entre Palmeiras e Vasco. A informação foi divulgada pelo jornalista no X.
@@ -18,3 +18,5 @@ Segundo o setorista Ramadas, a CBF suspendeu Anderson Daronco e Rodrigo D'Alonso
 A atuação de Daronco no jogo já havia gerado forte reação do clube. O diretor de futebol do Vasco criticou publicamente o árbitro e o VAR após a derrota na ida da semifinal da Copa do Brasil.
 
 **Atualização em 04/11 às 12:30:** Alan Belaciano, representante jurídico do Vasco, foi visto na sede da CBF acompanhado do presidente e vice-presidente da FERJ nos bastidores das suspensões dos árbitros. ([leia a matéria](/2026-11-04-segundo-canal-do-pedrosa-representante-juridico-do-vasco-foi-a-cbf-nos))
+
+**Atualização em 04/11 às 13:46:** A CBF negou o afastamento de Daronco e D'Alonso Ferreira, contrariando o que havia comunicado ao Vasco e à Ferj na reunião de terça, e confirmou que ambos seguem à disposição para as próximas escalas do futebol nacional. ([leia a matéria](/2026-11-04-cbf-nega-afastamento-de-daronco-e-var-um-dia-apos-reuniao-com-vasco-e-))
