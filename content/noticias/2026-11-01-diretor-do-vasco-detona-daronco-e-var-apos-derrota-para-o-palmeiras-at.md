@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/HosK_m8T2GVjJlX-nkyXXhJuQNI=/i.s3.glbimg.com
 excerpt: "Admar Lopes, diretor de futebol do Vasco, criticou duramente o árbitro Anderson Daronco e o VAR após a derrota por 1 a 0 para o Palmeiras na ida da semifinal da Copa do Brasil. O dirigente reclamou do segundo amarelo de Saldívia e do toque de mão de Barboza não punido. Admar afirmou que os erros 'podem ter decidido um dos finalistas'."
 seoTitle: "Diretor do Vasco detona Daronco e VAR após derrota"
 seoDescription: "Admar Lopes critica árbitro e VAR após Palmeiras 1 x 0 Vasco: 'Atuação completamente vergonhosa. Pode ter decidido um dos finalistas'."
-updated: "2026-11-01T22:00:56-03:00"
+updated: "2026-11-04T11:46:01-03:00"
 ---
 
 Admar Lopes, diretor de futebol do Vasco, não poupou críticas ao árbitro Anderson Daronco e aos membros do VAR após a derrota por 1 a 0 para o Palmeiras na ida da semifinal da Copa do Brasil. O dirigente apontou três lances: a falta de Marlon Freitas em Colidio sem cartão no início do jogo, o segundo amarelo de Saldívia e o toque de mão de Barboza dentro da área. 'Atuação completamente vergonhosa. Pode ter decidido um dos finalistas por um desses erros grotescos', disse Admar.
@@ -22,3 +22,5 @@ A semifinal será decidida no jogo de volta, marcado para São Januário no dia 
 **Atualização em 01/11 às 21:30:** Léo Lacerda acrescenta que Daronco também expulsou Alan Saldívia em lance considerado contestável, além do pênalti não marcado já relatado pelo diretor Admar Lopes. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2117050310388858964))
 
 **Atualização em 01/11 às 22:00:** Daronco registrou na súmula o motivo da expulsão de Saldívia e o tom das reclamações do Vasco ao fim do jogo. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/01/daronco-relata-reclamacao-do-vasco-e-explica-expulsao-contra-o-palmeiras.ghtm))
+
+**Atualização em 04/11 às 11:46:** Segundo Ramadas, a CBF suspendeu Anderson Daronco e Rodrigo D'Alonso, árbitro do VAR, após a atuação dos dois no jogo entre Palmeiras e Vasco. ([leia a matéria](/2026-11-04-segundo-ramadas-cbf-suspende-daronco-e-arbitro-do-var-de-palmeiras-x-v))
