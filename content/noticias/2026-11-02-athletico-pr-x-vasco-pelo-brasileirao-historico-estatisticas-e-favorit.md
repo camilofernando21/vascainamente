@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/irUaSUhfaqYUM9ekBB_n7YH3M_w=/i.s3.glbimg.com
 excerpt: "O Vasco não vence o Athletico-PR como visitante pelo Brasileirão desde 1998. A partida acontece em meio de semana, com o time carioca de olho no segundo jogo da semifinal da Copa do Brasil no domingo seguinte. As estatísticas de mando e desempenho fora de casa pintam um cenário desafiador para o Cruz-Maltino."
 seoTitle: "Athletico-PR x Vasco: histórico e estatísticas"
 seoDescription: "Vasco não vence o Athletico-PR fora de casa desde 1998. Veja histórico, estatísticas e favoritismos para o duelo pelo Brasileirão."
-updated: "2026-11-04T03:15:45-03:00"
+updated: "2026-11-04T05:45:38-03:00"
 ---
 
 O Vasco não derrota o Athletico-PR como visitante pelo Brasileirão desde 1998, quando venceu por 2 a 1. Nos 17 confrontos seguintes com esse mando, foram 13 vitórias do Furacão e quatro empates. A situação se agrava pelo fato de o time carioca ter o segundo jogo da semifinal da Copa do Brasil no domingo, o que pode levar Pedro Emanuel a poupar titulares neste meio de semana. Na Série A, o Vasco conquistou apenas duas vitórias em 15 jogos como visitante.
@@ -24,3 +24,5 @@ Do lado atleticano, o Athletico foi o terceiro melhor mandante do turno, mas cai
 **Atualização em 03/11 às 21:31:** O Athletico deve ter Dantas na zaga e Kerwin Vargas no ataque, com Jadson voltando de suspensão para o meio de campo. ([GE.Globo](https://ge.globo.com/pr/futebol/times/athletico-pr/noticia/2026/11/03/escalacao-athletico-deve-ter-novidades-na-defesa-e-no-ataque-contra-o-vasco-veja.ghtml))
 
 **Atualização em 04/11 às 03:15:** A partida acontece às 19h30 na Arena da Baixada, com transmissão pelo Premiere, Record e Cazé TV. A arbitragem fica com Ramon Abatti Abel, assistido pelo VAR Daniel Nobre Bins. Marino (pé esquerdo) e Cuesta (quadril) são os desfalques confirmados do Vasco. ([GE.Globo](https://ge.globo.com/pr/futebol/brasileirao-serie-a/noticia/2026/11/04/athletico-x-vasco-onde-assistir-ao-vivo-horario-e-escalacoes.ghtml))
+
+**Atualização em 04/11 às 05:45:** A partida acontece nesta quarta-feira, às 19h30 (de Brasília), na Arena da Baixada, em Curitiba, com transmissão ao vivo. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/2026/11/04/athletico-pr-x-vasco-horario-e-onde-assistir-ao-jogo-do-brasileirao.ghtm))
