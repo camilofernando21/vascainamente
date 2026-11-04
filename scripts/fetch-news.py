@@ -70,7 +70,11 @@ def is_vasco(title: str, desc: str = "") -> bool:
 
     # A palavra "vasco" TEM que estar no TÍTULO
     # Não basta estar só na descrição
-    title_has_vasco = any(term in title_lower for term in VASCO_TERMS)
+    # Palavra inteira: "Vasconcelos" e "Vasconcellos" não são Vasco.
+    def has_term(term: str, text: str) -> bool:
+        return re.search(rf"(?<!\w){re.escape(term)}(?!\w)", text) is not None
+
+    title_has_vasco = any(has_term(term, title_lower) for term in VASCO_TERMS)
     if not title_has_vasco:
         return False
 
@@ -85,7 +89,7 @@ def is_vasco(title: str, desc: str = "") -> bool:
     for rival in RIVALS:
         if rival in title_lower:
             rival_pos = title_lower.find(rival)
-            vasco_pos = min([title_lower.find(t) for t in VASCO_TERMS if t in title_lower], default=999)
+            vasco_pos = min([title_lower.find(t) for t in VASCO_TERMS if has_term(t, title_lower)], default=999)
             if rival_pos < vasco_pos:
                 return False
 

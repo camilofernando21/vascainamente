@@ -20,10 +20,15 @@ const nextConfig = {
     // Histórico moved from a news list to its own page
     return [
       { source: "/categoria/historico/:path*", destination: "/historia", permanent: true },
-      ...Object.entries(mergedNews).flatMap(([from, to]) => [
-        { source: `/${from}`, destination: `/${to}`, permanent: true },
-        { source: `/${from}/:rest+`, destination: `/${to}/:rest+`, permanent: true },
-      ]),
+      // an empty target means "removed, not related to the Vasco": goes to the home page
+      ...Object.entries(mergedNews).flatMap(([from, to]) =>
+        to === ""
+          ? [{ source: `/${from}/:rest*`, destination: "/", permanent: true }]
+          : [
+              { source: `/${from}`, destination: `/${to}`, permanent: true },
+              { source: `/${from}/:rest+`, destination: `/${to}/:rest+`, permanent: true },
+            ],
+      ),
     ];
   },
   experimental: {
