@@ -18,6 +18,7 @@ import anthropic
 from x_source import fetch_x_items
 import fact_guard
 import triage
+import panorama
 
 RSS_SOURCES = [
     {"name": "GE.Globo",           "url": "https://ge.globo.com/rss/ge/"},
@@ -511,6 +512,28 @@ def write_checked(client, item: dict, videos: list, recent: list, context: dict,
 FORMATION = re.compile(r"^\d(?:-\d){2,4}$")
 
 
+def ask_panorama(client, prompt: str) -> dict:
+    response = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=1500,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    track_usage("claude-sonnet-4-6", response)
+    text = response.content[0].text.strip()
+    text = re.sub(r"^```(?:json)?\s*", "", text)
+    text = re.sub(r"\s*```$", "", text)
+    return json.loads(text)
+
+
+def panorama_facts(texts: list, reference: str) -> list:
+    """A mesma checagem de fatos das matérias, com as matérias já publicadas como fonte."""
+    now = datetime.now(SP_TZ)
+    return fact_guard.check(
+        texts, reference, fact_guard.load_context(),
+        today=WEEKDAY_NAMES[now.weekday()], today_numbers=(now.day, now.month),
+    )
+
+
 def clean_lineup(raw):
     """The official lineup as the site's match page reads it: exactly 11 starters, or nothing at all."""
     if not isinstance(raw, dict):
@@ -621,14 +644,18 @@ def main():
 
     # every source becomes the same kind of item: RSS news and the beat reporters' posts on X
     items = []
+    feeds_seen = []  # (fonte, entradas, entradas do Vasco) de cada feed, para o log de saúde das fontes
     for src in ([] if only_x else RSS_SOURCES):
         try:
             feed = feedparser.parse(src["url"])
-            for entry in feed.entries[:15]:
+            entries = feed.entries[:15]
+            matched = 0
+            for entry in entries:
                 title = entry.get("title", "").strip()
                 desc = entry.get("summary", "").strip()
                 if not title or not is_vasco(title, desc):
                     continue
+                matched += 1
                 items.append({
                     "name": src["name"],
                     "title": title,
@@ -637,8 +664,15 @@ def main():
                     "image": extract_image(entry),
                     "from_x": False,
                 })
+            feeds_seen.append((src["name"], len(entries), matched))
         except Exception as e:
+            feeds_seen.append((src["name"], 0, 0))
             print(f"  ERRO RSS {src['name']}: {e}")
+    if not only_x:
+        # o robô tem de dizer, no log, quando uma fonte para de trazer notícia: antes isso passava em silêncio
+        print("Fontes RSS: " + "; ".join(f"{name} {total} entrada(s), {hits} do Vasco" for name, total, hits in feeds_seen))
+        if feeds_seen and all(total == 0 for _, total, _ in feeds_seen):
+            print("ALERTA FONTES: nenhum feed RSS devolveu entradas nesta execução")
     # beat reporters cover only Vasco, so their posts skip the title filter: the AI decides what is news
     items.extend(fetch_x_items(only_x))
 
@@ -721,6 +755,19 @@ def main():
                 print(f"ERRO FATAL na API da Anthropic (autenticação, chave ou créditos): {e}")
                 sys.exit(1)
             print(f"  ERRO: {title[:60]}: {e}")
+
+    if not only_x:
+        # o site nunca amanhece parado: sem matéria nova do dia, o robô escreve o panorama do dia
+        try:
+            slug = panorama.run(
+                client, datetime.now(SP_TZ), context, ask_panorama, panorama_facts, strip_dashes,
+                publish, usage=track_usage,
+            )
+            if slug:
+                print(f"PANORAMA publicado: {slug}")
+                published += 1
+        except Exception as e:  # nunca derruba o robô
+            print(f"Panorama: ERRO inesperado: {type(e).__name__}: {str(e)[:120]}")
 
     save_cache(cache_file, cache)
     if triaged["itens"]:

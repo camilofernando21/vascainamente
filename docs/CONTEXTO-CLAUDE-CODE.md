@@ -155,3 +155,15 @@ Problema: ~US$ 1,40 por dia na Anthropic. Cerca de 8 em cada 10 itens processado
 - **Como decidir ligar**: no log de cada execução, procurar `TRIAGEM DIVERGIU` (a triagem pularia, mas a escrita publicou ou atualizou: notícia que seria perdida) e a linha `Triagem (shadow): ...`. Só trocar para `on` com poucas divergências em 1 a 2 dias de dados.
 - **Medição**: toda execução imprime `Uso da API nesta execução (estimativa)` com tokens e custo por modelo. A fatura do Console é a que vale.
 - Testes: `python3 -m unittest scripts/test_triage.py scripts/test_fact_guard.py` (44 casos, sem rede).
+
+## Panorama do dia e saúde das fontes (05/11/2026)
+
+Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia nova e a página inicial amanhecia com as matérias de ontem.
+
+- `scripts/panorama.py`: a partir das 7h, se o site ainda não publicou NADA no dia, o robô escreve uma matéria "Vasco hoje: ..." com o que já está publicado nas últimas 48 horas. Cada fato é citado pelo dia certo ("ontem", "hoje"), com rótulo calculado pelo código. Fontes: só as matérias do próprio site (nunca escalação ou gol, que só valem na hora do jogo). Importância 3, categoria clube, fonte "Vascainamente", no máximo uma por dia (depois dela o site já tem matéria do dia). Links "Leia também" montados pelo código.
+- Segurança, porque sai sem revisão humana: checagem de fatos do robô (número, placar, dia da semana) com as matérias como referência, duas tentativas; depois segunda leitura com o modelo pequeno (`triage.MODEL`), que confere fatos, dias e português; na dúvida, ou se a segunda leitura falhar, não publica (aparece no log como "Panorama NA FILA" ou "barrado").
+- Não entra no lote do Cobalt para o X e o Instagram (nota 3, e o lote só usa nota 4 ou mais).
+- Log de saúde das fontes: cada execução imprime "Fontes RSS: nome N entrada(s), M do Vasco" e "ALERTA FONTES" se nenhum feed trouxe entradas. Antes, uma fonte quebrada passava em silêncio.
+- Testes: `python3 -m unittest scripts/test_panorama.py`.
+- Para desligar o panorama: retirar a chamada `panorama.run` no fim de `main()` em `scripts/fetch-news.py`.
+- Causa de "Vasconcelos" ter virado matéria: o filtro `is_vasco` achava "vasco" como pedaço de texto; agora exige palavra inteira (`scripts/test_is_vasco.py`).
