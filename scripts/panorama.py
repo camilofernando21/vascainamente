@@ -153,7 +153,7 @@ def parse_review(text: str) -> tuple:
     if verdicts:
         verdict = verdicts[-1].split(":", 1)[1].strip()
         return (verdict.upper().startswith("OK"), verdict[:400])
-    return (clean.upper().startswith("OK"), clean[:400])
+    return (clean.upper().startswith("OK"), clean[-400:])
 
 
 def see_also(sources: list) -> str:
@@ -197,7 +197,7 @@ def run(client, now: datetime, context: dict, ask_model, check_facts, strip_dash
             continue
         try:
             response = client.messages.create(
-                model=REVIEW_MODEL, max_tokens=1200,
+                model=REVIEW_MODEL, max_tokens=3000,
                 messages=[{"role": "user", "content": review_prompt(candidate, sources, now)}],
             )
             if usage is not None:
