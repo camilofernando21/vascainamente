@@ -152,9 +152,23 @@ class Fluxo(unittest.TestCase):
         self.assertIn("Hoje é quinta-feira, 5/11/2026", prompts[0])
 
     def test_segunda_leitura_com_duvida_nao_publica(self):
-        slug, _ = self.rodar(FakeClient("DUVIDA: o placar não está nas matérias"))
+        client = FakeClient("DUVIDA: o placar não está nas matérias")
+        slug, prompts = self.rodar(client)
         self.assertIsNone(slug)
         self.assertEqual(self.publicadas, [])
+        self.assertEqual(len(prompts), 2)  # escreve de novo uma vez, com a dúvida como aviso
+        self.assertIn("o placar não está nas matérias", prompts[1])
+        self.assertTrue(all(c["model"] == panorama.REVIEW_MODEL for c in client.calls))
+
+    def test_duvida_na_primeira_e_ok_na_segunda_publica(self):
+        class Alternado(FakeClient):
+            def create(self, **kw):
+                self.review = "DUVIDA: frase tal" if not self.calls else "OK"
+                return super().create(**kw)
+
+        slug, prompts = self.rodar(Alternado())
+        self.assertEqual(slug, "slug-do-panorama")
+        self.assertEqual(len(prompts), 2)
 
     def test_checagem_de_fatos_barra_depois_de_duas_tentativas(self):
         slug, prompts = self.rodar(FakeClient("OK"), problemas=["placar 5 a 0 não está nas fontes"])

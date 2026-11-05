@@ -26,6 +26,7 @@ NEWS_DIR = Path("content/noticias")
 START_HOUR = 7          # antes disso a madrugada é normal: não há o que cobrar do robô
 WINDOW_HOURS = 48       # matérias que servem de fonte
 MAX_SOURCES = 10
+REVIEW_MODEL = "claude-sonnet-4-6"  # a segunda leitura é só uma por dia: vale o modelo que erra menos
 MIN_SOURCES = 3         # com menos matéria que isso, não há panorama a escrever
 BODY_CHARS = 500
 SOURCE_NAME = "Vascainamente"
@@ -126,12 +127,15 @@ Matérias publicadas:
 
 
 def review_prompt(article: dict, sources: list, now: datetime) -> str:
-    return f"""Você revisa matérias do portal Vascainamente antes de publicar. Compare o TEXTO com as MATÉRIAS e confira:
-1. todo fato, nome, número e placar do texto existe nas matérias;
-2. o dia de cada fato bate com o rótulo da matéria de onde veio (um fato de ontem não pode estar como de hoje);
-3. português do Brasil sem erro de ortografia, acento, concordância ou modo verbal.
+    return f"""Você revisa matérias do portal Vascainamente antes de publicar. Compare o TEXTO com as MATÉRIAS.
 
-Responda só "OK" se estiver tudo certo. Se houver qualquer dúvida, responda "DUVIDA:" e o motivo em uma frase.
+Procure só erro CONCRETO:
+1. fato, nome, número ou placar do texto que NÃO existe nas matérias, ou que as contradiz;
+2. dia errado: um fato de ontem escrito como de hoje, ou o contrário, conforme o rótulo entre colchetes de cada matéria;
+3. erro de português: ortografia, acento, concordância, modo verbal.
+
+Resumir, juntar fatos de matérias diferentes e reescrever com outras palavras NÃO é erro.
+Responda só "OK" se não achar erro concreto. Se achar, responda "DUVIDA:" seguido da frase exata do texto com erro e da matéria que a contradiz. Se não conseguir apontar a frase e a matéria, responda "OK".
 
 TEXTO:
 {article['title']}
@@ -170,39 +174,40 @@ def run(client, now: datetime, context: dict, ask_model, check_facts, strip_dash
     article = None
     for attempt in (1, 2):
         try:
-            article = ask_model(client, build_prompt(sources, now, context, feedback))
+            candidate = ask_model(client, build_prompt(sources, now, context, feedback))
         except Exception as e:
             print(f"Panorama: ERRO ao escrever: {type(e).__name__}: {str(e)[:120]}")
             return None
         for key in ("title", "excerpt", "body", "seoTitle", "seoDescription"):
-            if isinstance(article.get(key), str):
-                article[key] = strip_dashes(article[key])
-        if not all(isinstance(article.get(k), str) and article[k].strip() for k in ("title", "excerpt", "body")):
+            if isinstance(candidate.get(key), str):
+                candidate[key] = strip_dashes(candidate[key])
+        if not all(isinstance(candidate.get(k), str) and candidate[k].strip() for k in ("title", "excerpt", "body")):
             print("Panorama: resposta incompleta, nada publicado")
             return None
-        problems = check_facts([article.get(k) for k in ("title", "excerpt", "body", "seoTitle", "seoDescription")], reference)
-        if not problems:
+        problems = check_facts([candidate.get(k) for k in ("title", "excerpt", "body", "seoTitle", "seoDescription")], reference)
+        if problems:
+            print(f"Panorama CHECAGEM ({attempt}/2): {'; '.join(problems)}")
+            feedback = problems
+            continue
+        try:
+            response = client.messages.create(
+                model=REVIEW_MODEL, max_tokens=300,
+                messages=[{"role": "user", "content": review_prompt(candidate, sources, now)}],
+            )
+            if usage is not None:
+                usage(REVIEW_MODEL, response)
+            ok, note = parse_review(response.content[0].text)
+        except Exception as e:  # sem segunda leitura não se publica: o texto sai sem revisão humana
+            print(f"Panorama: segunda leitura falhou ({type(e).__name__}), nada publicado")
+            return None
+        if ok:
+            article = candidate
             break
-        print(f"Panorama CHECAGEM ({attempt}/2): {'; '.join(problems)}")
-        feedback = problems
-        article = None
+        print(f"Panorama SEGUNDA LEITURA ({attempt}/2) com dúvida: {note}")
+        print(f"  texto barrado: {candidate['title']} | {candidate['body'][:300]}")
+        feedback = [note]
     if article is None:
-        print("Panorama: barrado na checagem de fatos, nada publicado")
-        return None
-
-    try:
-        response = client.messages.create(
-            model=triage.MODEL, max_tokens=120,
-            messages=[{"role": "user", "content": review_prompt(article, sources, now)}],
-        )
-        if usage is not None:
-            usage(triage.MODEL, response)
-        ok, note = parse_review(response.content[0].text)
-    except Exception as e:  # sem segunda leitura não se publica: o texto sai sem revisão humana
-        print(f"Panorama: segunda leitura falhou ({type(e).__name__}), nada publicado")
-        return None
-    if not ok:
-        print(f"Panorama NA FILA (segunda leitura com dúvida): {note}")
+        print("Panorama: não passou na checagem, nada publicado")
         return None
 
     article["body"] = article["body"].rstrip() + see_also(sources)
