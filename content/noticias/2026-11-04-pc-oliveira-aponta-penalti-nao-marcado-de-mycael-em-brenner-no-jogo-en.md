@@ -10,8 +10,11 @@ imageUrl: "https://s2-ge.glbimg.com/dufap0cphXdqMQX7hNT-BOiRLZY=/i.s3.glbimg.com
 excerpt: "O comentarista de arbitragem do Grupo Globo, PC Oliveira, avaliou que o árbitro Ramon Abatti Abel errou ao não marcar pênalti para o Vasco. Para o especialista, houve falta do goleiro Mycael em Brenner dentro da pequena área. Apesar da reclamação dos jogadores do Cruz-Maltino, o lance foi ignorado pela arbitragem."
 seoTitle: "PC Oliveira: pênalti de Mycael em Brenner não marcado"
 seoDescription: "Comentarista do Grupo Globo aponta erro do árbitro Abatti Abel ao não marcar pênalti de Mycael em Brenner no jogo entre Athletico-PR e Vasco pelo Brasileirão."
+updated: "2026-11-04T22:30:57-03:00"
 ---
 
 Para PC Oliveira, comentarista de arbitragem do Grupo Globo, o árbitro Ramon Abatti Abel cometeu um erro ao deixar o jogo seguir em um lance entre Mycael e Brenner dentro da pequena área do Athletico-PR. O especialista entende que houve falta do goleiro no atacante vascaíno, o que deveria ter resultado em pênalti.
 
 O lance aconteceu aos 25 minutos do primeiro tempo. Puma Rodríguez finalizou de fora da área, Mycael espalmou e Brenner apareceu na sobra para finalizar. O goleiro se recuperou e disputou a bola com o atacante na pequena área. Os jogadores do Vasco reclamaram, mas Abatti Abel mandou o jogo seguir.
+
+**Atualização em 04/11 às 22:30:** O diretor de futebol Admar Lopes confirmou que membros da diretoria foram à CBF cobrar respostas sobre os erros de arbitragem e pediu atenção redobrada para o jogo de volta contra o Palmeiras. ([leia a matéria](/2026-11-04-admar-lopes-critica-arbitragem-apos-vitoria-sobre-o-athletico-pr-mais-))
