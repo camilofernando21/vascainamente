@@ -10,8 +10,11 @@ imageUrl: ""
 excerpt: "O Canal do Pedrosa informou que Alan Belaciano, presidente da Assembleia Geral e representante jurídico do Vasco, foi visto na sede da CBF. Ele estava acompanhado de Rubens Lopes e Leonardo Ferraz, presidente e vice-presidente da FERJ. A visita ocorre nos bastidores das suspensões dos árbitros Anderson Daronco e Rodrigo D'Alonso."
 seoTitle: "Representante do Vasco foi à CBF nos bastidores das suspensões"
 seoDescription: "Canal do Pedrosa informa que Alan Belaciano, representante jurídico do Vasco, foi à sede da CBF acompanhado dos líderes da FERJ após suspensões de Daronco e D'Alonso."
+updated: "2026-11-05T19:01:02-03:00"
 ---
 
 O Canal do Pedrosa revelou um bastidor relevante envolvendo as suspensões dos árbitros Anderson Daronco e Rodrigo D'Alonso: Alan Belaciano, presidente da Assembleia Geral e representante jurídico do Vasco, foi visto na sede da CBF. Acompanhavam Belaciano o presidente da FERJ, Rubens Lopes, e o vice-presidente da entidade, Leonardo Ferraz.
 
 A visita ao escritório da entidade máxima do futebol brasileiro acontece em meio ao episódio que envolve a atuação dos árbitros no jogo entre Palmeiras e Vasco, o que já gerou reações públicas da diretoria vascaína.
+
+**Atualização em 05/11 às 19:01:** Segundo Ramadas, Alan Belaciano está neste momento na CBF em nova cobrança, desta vez pela arbitragem de Ramon Abatti Abel e do VAR Daniel Nobre Bins no jogo contra o Athletico-PR. ([leia a matéria](/2026-11-05-segundo-ramadas-diretoria-do-vasco-vai-a-cbf-cobrar-arbitragem-do-jogo))
