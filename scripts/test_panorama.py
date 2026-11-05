@@ -140,6 +140,10 @@ class Fluxo(unittest.TestCase):
         slug = panorama.run(client, now, CONTEXT, ask, facts, lambda t: t, publish, news_dir=self.dir)
         return slug, prompts
 
+    def test_prompt_proibe_exagero(self):
+        _, prompts = self.rodar(FakeClient("VEREDITO: OK"))
+        self.assertIn("goleou", prompts[0])
+
     def test_publica_com_fonte_do_site_e_links(self):
         slug, prompts = self.rodar(FakeClient("OK"))
         self.assertEqual(slug, "slug-do-panorama")

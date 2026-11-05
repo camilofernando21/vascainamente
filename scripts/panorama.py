@@ -113,6 +113,7 @@ Escreva o "Panorama do dia": uma matéria curta que situa o torcedor no que impo
 Regras:
 - Use apenas fatos que estejam nas matérias. Não acrescente placar, número, nome, data, horário, local ou citação que não estejam lá.
 - Cada matéria vem com o rótulo do dia do fato entre colchetes. Cite o dia SEMPRE pelo rótulo: um fato de "ontem" é de ontem, nunca "hoje". Não troque os dias.
+- Tom factual: sem exagero nem opinião. Não use "goleou", "atropelou", "massacrou" nem adjetivo que as matérias não usem; um 3 a 1 é uma vitória, não uma goleada. Não escreva frases de efeito sobre o que o time "precisa" ou "mostrou". Dê o nome do cargo de cada pessoa só se a matéria disser.
 - Comece pelo fato mais importante e termine com o que vem pela frente, se alguma matéria disser.
 - De 3 a 4 parágrafos curtos, direto, profissional, apaixonado pelo clube. Nunca use linguagem de IA.
 - Nunca use travessão (—) nem meia-risca (–): use vírgula, ponto ou dois-pontos.
@@ -132,6 +133,7 @@ def review_prompt(article: dict, sources: list, now: datetime) -> str:
 Passo 1. Para cada frase do TEXTO que afirma um fato, escreva uma linha: a frase resumida, seta, e o rótulo da matéria que a sustenta (ou NENHUMA). Juntar fatos de matérias diferentes e reescrever com outras palavras é permitido.
 Passo 2. Confira o dia de cada fato: um fato de ontem não pode estar escrito como de hoje, nem o contrário, conforme o rótulo entre colchetes.
 Passo 3. Confira o português: ortografia, acento, concordância, modo verbal.
+Passo 4. Confira o exagero: palavra que infla o fato (por exemplo "goleou" para uma vitória de 3 a 1, ou "atropelou") e frase de efeito sobre o que o time "precisa" ou "mostrou" são erro concreto.
 
 Por fim, escreva a última linha:
 VEREDITO: OK
