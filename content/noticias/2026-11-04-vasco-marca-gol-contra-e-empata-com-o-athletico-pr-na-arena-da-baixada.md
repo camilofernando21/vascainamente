@@ -11,6 +11,9 @@ imageUrl: ""
 excerpt: "O Vasco igualou o placar na Arena da Baixada com um gol contra. O clube confirmou o empate pelo perfil oficial no X."
 seoTitle: "Vasco empata com Athletico-PR na Arena da Baixada"
 seoDescription: "O Vasco igualou o placar diante do Athletico-PR na Arena da Baixada com um gol contra. Clube confirmou pelo perfil oficial no X."
+updated: "2026-11-04T21:30:57-03:00"
 ---
 
 O Vasco empatou o jogo contra o Athletico-PR na Arena da Baixada. O gol que deixou tudo igual saiu em gol contra, conforme confirmado pelo clube nas redes sociais oficiais.
+
+**Atualização em 04/11 às 21:30:** O Vasco venceu o Athletico-PR de virada, por 3 a 1, na Arena da Baixada, pela 34ª rodada do Brasileirão. ([leia a matéria](/2026-11-04-vasco-vence-o-athletico-pr-de-virada-por-3-a-1-na-arena-da-baixada))
