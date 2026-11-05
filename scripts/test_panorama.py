@@ -217,6 +217,11 @@ class Revisao(unittest.TestCase):
         self.assertTrue(panorama.parse_review("ok.")[0])
         self.assertFalse(panorama.parse_review("DUVIDA: dia errado")[0])
         self.assertFalse(panorama.parse_review("")[0])
+        analise = "frase 1 => [ontem] ok\nfrase 2 => NENHUMA\nVEREDITO: DUVIDA: frase 2 sem apoio"
+        self.assertFalse(panorama.parse_review(analise)[0])
+        self.assertTrue(panorama.parse_review("frase 1 => ok\nVEREDITO: OK")[0])
+        # a análise pode falar em "dúvida" sem que o veredito seja dúvida: vale só a última linha de veredito
+        self.assertTrue(panorama.parse_review("sem dúvida tudo certo\nVEREDITO: OK")[0])
 
 
 if __name__ == "__main__":

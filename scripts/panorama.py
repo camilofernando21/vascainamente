@@ -129,13 +129,14 @@ Matérias publicadas:
 def review_prompt(article: dict, sources: list, now: datetime) -> str:
     return f"""Você revisa matérias do portal Vascainamente antes de publicar. Compare o TEXTO com as MATÉRIAS.
 
-Procure só erro CONCRETO:
-1. fato, nome, número ou placar do texto que NÃO existe nas matérias, ou que as contradiz;
-2. dia errado: um fato de ontem escrito como de hoje, ou o contrário, conforme o rótulo entre colchetes de cada matéria;
-3. erro de português: ortografia, acento, concordância, modo verbal.
+Passo 1. Para cada frase do TEXTO que afirma um fato, escreva uma linha: a frase resumida, seta, e o rótulo da matéria que a sustenta (ou NENHUMA). Juntar fatos de matérias diferentes e reescrever com outras palavras é permitido.
+Passo 2. Confira o dia de cada fato: um fato de ontem não pode estar escrito como de hoje, nem o contrário, conforme o rótulo entre colchetes.
+Passo 3. Confira o português: ortografia, acento, concordância, modo verbal.
 
-Resumir, juntar fatos de matérias diferentes e reescrever com outras palavras NÃO é erro.
-Responda só "OK" se não achar erro concreto. Se achar, responda "DUVIDA:" seguido da frase exata do texto com erro e da matéria que a contradiz. Se não conseguir apontar a frase e a matéria, responda "OK".
+Por fim, escreva a última linha:
+VEREDITO: OK
+se toda frase tem apoio e não há erro de dia nem de português. Se houver erro concreto, escreva
+VEREDITO: DUVIDA: e o motivo, citando a frase do texto e a matéria. Só use DUVIDA com erro concreto que você consiga apontar.
 
 TEXTO:
 {article['title']}
@@ -146,8 +147,13 @@ MATÉRIAS:
 
 
 def parse_review(text: str) -> tuple:
+    """(passou, nota). Vale a última linha 'VEREDITO:'; sem ela, só uma resposta que comece com OK passa."""
     clean = (text or "").strip()
-    return (clean.upper().startswith("OK"), clean[:200])
+    verdicts = [line for line in clean.splitlines() if line.strip().upper().startswith("VEREDITO:")]
+    if verdicts:
+        verdict = verdicts[-1].split(":", 1)[1].strip()
+        return (verdict.upper().startswith("OK"), verdict[:400])
+    return (clean.upper().startswith("OK"), clean[:400])
 
 
 def see_also(sources: list) -> str:
@@ -191,7 +197,7 @@ def run(client, now: datetime, context: dict, ask_model, check_facts, strip_dash
             continue
         try:
             response = client.messages.create(
-                model=REVIEW_MODEL, max_tokens=300,
+                model=REVIEW_MODEL, max_tokens=1200,
                 messages=[{"role": "user", "content": review_prompt(candidate, sources, now)}],
             )
             if usage is not None:
