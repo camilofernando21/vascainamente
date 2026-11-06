@@ -10,6 +10,9 @@ imageUrl: "https://pbs.twimg.com/media/HWYABmaXAAA_AG9.jpg"
 excerpt: "O BEPE e o Corpo de Bombeiros realizam nesta quinta-feira a última vistoria em São Januário. Segundo os setoristas Pablo Ramadas e Gustavo Tutinha, a definição sobre a ampliação de capacidade do estádio pode sair nas próximas horas, caso todos os requisitos sejam atendidos."
 seoTitle: "Ampliação de São Januário pode ser definida nesta quinta"
 seoDescription: "BEPE e Corpo de Bombeiros fazem última vistoria em São Januário nesta quinta. Segundo Ramadas e Tutinha, definição sobre ampliação de capacidade pode sair hoje."
+updated: "2026-11-06T00:00:51-03:00"
 ---
 
 Segundo os setoristas Pablo Ramadas e Gustavo Tutinha, o BEPE e o Corpo de Bombeiros estarão em São Januário nesta quinta-feira para realizar a última vistoria do estádio. A informação indica que a definição sobre a ampliação de capacidade pode sair ainda hoje, caso todos os requisitos exigidos sejam cumpridos.
+
+**Atualização em 06/11 às 00:00:** O Corpo de Bombeiros e o Governo do Estado já emitiram o LPCIP de São Januário; a definição sobre a nova capacidade depende agora exclusivamente do BEPE. ([leia a matéria](/2026-11-06-segundo-canal-avascainos-nova-capacidade-de-sao-januario-depende-agora))
