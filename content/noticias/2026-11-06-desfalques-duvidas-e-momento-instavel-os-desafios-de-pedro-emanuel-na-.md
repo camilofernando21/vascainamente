@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/MKq2ej_TyDF1dU2rgpfOm50VS1k=/i.s3.glbimg.com
 excerpt: "Com Saldivia suspenso e Cuesta fora da temporada, Gabriel Pereira deve ser o titular na zaga ao lado de Robert Renan. Paulo Henrique deve retornar ao time e Léo Jardim terá pela frente o melhor ataque da Copa do Brasil. A defesa vascaína chega ao jogo decisivo em momento de instabilidade, com 12 gols sofridos nos últimos seis jogos."
 seoTitle: "Desafios de Pedro Emanuel na defesa do Vasco contra o Palmeiras"
 seoDescription: "Saldivia suspenso, Cuesta fora e 12 gols sofridos nos últimos seis jogos: veja os pontos de atenção na defesa do Vasco para o duelo decisivo contra o Palmeiras."
+updated: "2026-11-07T14:30:49-03:00"
 ---
 
 Para chegar à final da Copa do Brasil, o Vasco terá de superar uma série de problemas defensivos diante do Palmeiras, o melhor ataque da competição, com 16 gols em sete jogos. Pedro Emanuel já sabe de uma mudança obrigatória: Saldivia está suspenso após ser expulso no jogo de ida e não joga. Gabriel Pereira desponta como favorito para assumir a titularidade na zaga ao lado de Robert Renan, posição em que foi titular em apenas três oportunidades desde que chegou ao clube.
@@ -17,3 +18,5 @@ Para chegar à final da Copa do Brasil, o Vasco terá de superar uma série de p
 Uma boa notícia é o retorno de Paulo Henrique, lateral direito que começou no banco no jogo anterior e é esperado de volta ao time titular. Outra dúvida cerca o lado esquerdo da defesa, onde Lucas Piton foi titular na ida mas cedeu lugar a Cuiabano no intervalo daquela partida. Apesar do sistema com três zagueiros ter funcionado na vitória sobre o Athletico-PR, o clube deve retornar à linha de quatro para o duelo decisivo em São Januário.
 
 Léo Jardim também é apontado como ponto de atenção: o goleiro falhou no gol que selou a eliminação diante do Boca Juniors e agora precisará de uma grande resposta. O momento da defesa como um todo é de instabilidade, com 12 gols sofridos nos últimos seis jogos, média de dois por partida. Reencontrar o equilíbrio defensivo é parte fundamental do caminho para a final.
+
+**Atualização em 07/11 às 14:30:** Bruno Duarte treinou entre os titulares no ataque, e Paulo Henrique deve assumir a lateral direita no lugar de Puma Rodríguez. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/11/07/escalacao-do-vasco-cuiabano-e-andres-gomez-devem-ser-titulares-contra-palmeiras.ghtml))
