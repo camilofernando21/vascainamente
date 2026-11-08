@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/U7606q63xWyIyF9aM2mg3Kd7JyI=/i.s3.glbimg.com
 excerpt: "O goleiro vive momento de instabilidade na temporada, mas tem histórico de protagonismo na Copa do Brasil pelo Vasco. Contra o Palmeiras, Jardim pode voltar a ser herói e garantir o clube na final e na Libertadores. Em entrevista ao Globo Esporte, ele revelou que conquistar um título pelo Vasco é o maior objetivo da carreira."
 seoTitle: "Léo Jardim busca redenção contra o Palmeiras na Copa do Brasil"
 seoDescription: "Goleiro vive instabilidade em 2026, mas tem histórico decisivo na Copa do Brasil. Contra o Palmeiras, Jardim busca redenção e sonha com título pelo Vasco."
+updated: "2026-11-08T09:15:46-03:00"
 ---
 
 O Vasco chega à terceira semifinal seguida de Copa do Brasil com Léo Jardim como um dos pilares dessa trajetória. O goleiro foi decisivo em disputas de pênaltis e em partidas mata-mata ao longo das últimas campanhas, mas vive um momento de irregularidade em 2026, com falhas apontadas em jogos do Brasileirão e na eliminação da Sul-Americana, quando levou um frango de Paredes do Boca Juniors.
@@ -17,3 +18,5 @@ O Vasco chega à terceira semifinal seguida de Copa do Brasil com Léo Jardim co
 Contra o Palmeiras, Jardim tem a chance de reabilitação. Classificação à final significaria também vaga na Libertadores e manteria viva a esperança de título, que o próprio goleiro apontou ao Globo Esporte como o maior objetivo da carreira. 'O que falta na minha carreira é conquistar títulos pelo Vasco. Hoje, mais do que Seleção', afirmou. 'Realmente, quero colocar meu nome na história do Vasco e poder dar alegria para o torcedor.'
 
 O histórico do goleiro nas disputas de pênaltis pela Copa do Brasil é extenso: foram sete classificações, com defesas decisivas em fases do torneio desde 2024. Sem precisar dos pênaltis, Jardim também foi destaque nas quartas de final desta temporada, não sofrendo gols nos duelos contra o Vitória e o Santa Fe.
+
+**Atualização em 08/11 às 09:15:** O jogo de volta da semifinal contra o Palmeiras começa às 17h (de Brasília), em São Januário. ([UOL Esporte](https://www.uol.com.br/esporte/ultimas-noticias/2026/11/08/jogo-do-vasco-hoje-pela-copa-do-brasil-que-horas-comeca-e-onde-assistir.ghtm))
