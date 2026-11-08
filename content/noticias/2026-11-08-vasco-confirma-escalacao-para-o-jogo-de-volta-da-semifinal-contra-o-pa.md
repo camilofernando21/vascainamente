@@ -12,8 +12,11 @@ imageUrl: "https://pbs.twimg.com/media/HWn9WCVWQAA8y8g.jpg"
 excerpt: "O clube divulgou oficialmente o time titular para o duelo decisivo da Copa do Brasil. Pedro Emanuel manda a campo Léo Jardim, Paulo Henrique, Gabriel, Robert Renan, Cuiabano, Sosa, Thiago Mendes, Lescano, Andrés Gómez, Colidio e Bruno Duarte."
 seoTitle: "Vasco escalado para semifinal contra o Palmeiras"
 seoDescription: "Pedro Emanuel confirma time do Vasco para o jogo de volta da semifinal da Copa do Brasil contra o Palmeiras. Veja os 11 titulares."
+updated: "2026-11-08T16:15:49-03:00"
 ---
 
 O Vasco da Gama confirmou a escalação para o jogo de volta da semifinal da Copa do Brasil contra o Palmeiras. Pedro Emanuel escolheu: Léo Jardim, Paulo Henrique, Gabriel, Robert Renan, Cuiabano, Sosa, Thiago Mendes (capitão), Lescano, Andrés Gómez, Colidio e Bruno Duarte.
 
 No banco ficam Fuzato, Puma Rodríguez, Lucas Freitas, Lucas Piton, Jair, Ramon Rique, Tchê Tchê, Nuno Moreira, Adson, Marino, David e Brenner.
+
+**Atualização em 08/11 às 16:15:** No Palmeiras, Andreas começa no banco de reservas, assim como fez no jogo de ida. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/08/escalacao-vasco-palmeiras-semifinal-copa-do-brasil-volta.ghtm))
