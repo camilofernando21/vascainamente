@@ -11,6 +11,9 @@ imageUrl: ""
 excerpt: "O Vasco marcou e abriu o placar diante do Palmeiras em São Januário. O clube confirmou o gol em publicação oficial no X. A partida é o jogo de volta da semifinal da Copa do Brasil."
 seoTitle: "Vasco marca contra o Palmeiras na semifinal"
 seoDescription: "O Vasco abriu o placar contra o Palmeiras na semifinal de volta da Copa do Brasil, em São Januário. Gol confirmado pelo clube no X."
+updated: "2026-11-08T17:45:57-03:00"
 ---
 
 O Vasco balançou as redes contra o Palmeiras na semifinal de volta da Copa do Brasil, em São Januário. O clube confirmou o gol em publicação oficial no X, com direito a toda a euforia da torcida cruz-maltina.
+
+**Atualização em 08/11 às 17:45:** Facundo Colidio é o autor do gol que abriu o placar para o Vasco diante do Palmeiras. ([UOL Esporte](https://www.uol.com.br/esporte/videos/gols/2026/11/08/vasco-1-x-0-palmeiras-gol-facundo-colidio-copa-do-brasil-2026.htm))
