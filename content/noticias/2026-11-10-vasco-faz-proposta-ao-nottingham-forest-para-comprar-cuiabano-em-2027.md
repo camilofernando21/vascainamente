@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/aa4lU1jLlqEmo0BXuF0SlodIB4c=/i.s3.glbimg.com
 excerpt: "O clube formalizou uma oferta entre 6 e 7 milhões de euros pelo lateral-esquerdo, abaixo da opção de compra fixada em 10 milhões de euros. Todas as partes envolvem expectativa de acordo, mas o Nottingham Forest ainda não respondeu. O próprio jogador prefere permanecer e quer assinar um contrato longo com valorização financeira."
 seoTitle: "Vasco faz proposta para comprar Cuiabano em 2027"
 seoDescription: "Clube carioca ofereceu entre 6 e 7 milhões de euros ao Nottingham Forest pelo lateral-esquerdo, que prefere ficar e quer contrato longo."
+updated: "2026-11-10T13:15:52-03:00"
 ---
 
 O Vasco quer Cuiabano em 2027 e já formalizou uma proposta ao Nottingham Forest, clube inglês dono dos direitos econômicos do lateral-esquerdo. A oferta apresentada pelo clube carioca fica entre 6 e 7 milhões de euros, valor abaixo da opção de compra fixada em 10 milhões de euros. Os ingleses ainda não retornaram, mas todas as partes envolvidas têm expectativa de um desfecho positivo.
@@ -17,3 +18,5 @@ O Vasco quer Cuiabano em 2027 e já formalizou uma proposta ao Nottingham Forest
 Do lado do jogador, a continuidade é vista como algo natural. Cuiabano está satisfeito com o projeto e dá preferência a ficar, mesmo diante de sondagens de clubes europeus. A intenção é assinar um contrato de longa duração com valorização financeira, e neste mês a diretoria do Vasco terá uma reunião com os representantes do atleta para debater os próximos passos.
 
 Cuiabano soma 36 jogos pelo Vasco na temporada, com um gol e seis assistências. O lateral tem o desejo de entrar no radar da Seleção Brasileira e acredita que o espaço conquistado no clube é o caminho certo para isso. A chegada de Marcos Lamacchia como investidor da SAF é vista como fator de evolução técnica e financeira que pode facilitar toda a negociação.
+
+**Atualização em 10/11 às 13:15:** Além da compra de Cuiabano, o Vasco prepara uma oferta de 3,5 milhões de euros para contratar o goleiro John junto ao Nottingham Forest, segundo Léo Lacerda, tornando as duas operações parte de um mesmo pacote com o clube inglês. ([leia a matéria](/2026-11-10-segundo-leo-lacerda-vasco-prepara-oferta-para-contratar-goleiro-john-j))
