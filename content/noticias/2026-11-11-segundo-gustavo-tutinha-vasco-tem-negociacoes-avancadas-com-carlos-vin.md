@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O setorista Gustavo Tutinha apurou que o Vasco mantém conversas abertas com dois jogadores neste momento. As negociações com Carlos Vinicius e Lucas Rodrigues estão em estágio avançado."
 seoTitle: "Vasco negocia com Carlos Vinicius e Lucas Rodrigues"
 seoDescription: "Segundo o setorista Gustavo Tutinha, o Vasco tem negociações avançadas com Carlos Vinicius e Lucas Rodrigues neste momento."
-updated: "2026-11-11T20:30:54-03:00"
+updated: "2026-11-12T03:15:47-03:00"
 ---
 
 O setorista Gustavo Tutinha, do X, apurou que o Vasco tem atualmente negociações abertas com dois jogadores: Carlos Vinicius e Lucas Rodrigues. Segundo ele, ambas as tratativas estão em estágio avançado.
@@ -22,3 +22,5 @@ O setorista Gustavo Tutinha, do X, apurou que o Vasco tem atualmente negociaçõ
 **Atualização em 11/11 às 13:01:** Léo Lacerda apurou que o Vasco venceu a concorrência de Cruzeiro e Grêmio por Lucas Rodrigues e está muito próximo de fechar a contratação. ([LÉO LACERDA NTV (X)](https://x.com/leolacerdantv/status/2120546597356392462))
 
 **Atualização em 11/11 às 20:30:** O Goiás aguarda uma proposta oficial de 6 milhões de euros e já recebeu uma oferta inicial de aproximadamente 3,5 milhões de euros, considerada insuficiente pelo clube. O diretor Admar Lopes viajou a Goiânia para negociar diretamente com a diretoria esmeraldina. ([leia a matéria](/2026-11-11-goias-aguarda-proposta-de-6-milhoes-de-euros-do-vasco-pelo-volante-luc))
+
+**Atualização em 12/11 às 03:15:** Carlos Vinícius tem 23 gols na temporada, superando sozinho os 21 marcados pelos cinco atacantes contratados pelo Vasco em 2026. O jogador só vai assinar qualquer acordo após o Campeonato Brasileiro, e o Grêmio também mantém conversas pela renovação. ([leia a matéria](/2026-11-12-carlos-vinicius-tem-mais-gols-do-que-todos-os-atacantes-contratados-pe))
