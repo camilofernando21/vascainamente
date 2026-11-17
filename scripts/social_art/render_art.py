@@ -2,7 +2,7 @@
 
     python scripts/social_art/render_art.py <slug> <saida.png> [feed|x]
 
-feed = 1080x1350 (Instagram), x = 1600x900 (X). O escudo vem sempre de public/images/escudo-1-cruz.png.
+feed = 1080x1350 (Instagram), x = 1600x900 (X). Saída .jpg ou .png. O escudo vem sempre de public/images/escudo-1-cruz.png.
 Também usável como módulo: render(dados, formato, caminho).
 """
 
@@ -35,7 +35,10 @@ def render(dados: dict, formato: str, saida: Path, escala: int = 2) -> None:
         pg.wait_for_timeout(400)
         pg.evaluate("d => fill(d)", {**dados, "fmt": formato})  # refaz o ajuste com as fontes já carregadas
         pg.wait_for_timeout(200)
-        pg.screenshot(path=str(saida))
+        if saida.suffix.lower() in (".jpg", ".jpeg"):
+            pg.screenshot(path=str(saida), type="jpeg", quality=90)  # bem mais leve que PNG com grão (limite do X: 5 MB)
+        else:
+            pg.screenshot(path=str(saida))
         b.close()
 
 

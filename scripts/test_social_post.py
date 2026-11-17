@@ -168,6 +168,68 @@ class Modos(unittest.TestCase):
             os.environ.pop("SOCIAL_MODE")
 
 
+class Imagem(unittest.TestCase):
+    def setUp(self):
+        sys.path.insert(0, str(Path(__file__).resolve().parent / "social_art"))
+        import render_art
+        self.ra = render_art
+
+    def test_placar_fica_junto(self):
+        self.assertEqual(self.ra.juntar_placar("vence por 2 a 0 e 1 x 1"), "vence por 2\u00a0a\u00a00 e 1\u00a0x\u00a01")
+
+    def test_nao_mexe_em_texto_sem_placar(self):
+        self.assertEqual(self.ra.juntar_placar("Vasco treina a 2 dias do jogo"), "Vasco treina a 2 dias do jogo")
+
+    def test_dados_da_materia(self):
+        d = self.ra.dados_da_materia({"title": "Vasco  vence", "category": "resultado", "source": "GE.Globo", "_date": AGORA})
+        self.assertEqual(d["title"], "Vasco vence")
+        self.assertEqual(d["cat"], "Resultado")
+        self.assertEqual(d["date"], "17 nov. 2026")
+
+    def test_categoria_desconhecida(self):
+        d = self.ra.dados_da_materia({"title": "x", "category": "outra", "source": "s", "_date": AGORA})
+        self.assertEqual(d["cat"], "Notícia")
+
+
+class PostComImagem(unittest.TestCase):
+    def test_post_leva_o_id_da_midia(self):
+        from unittest import mock
+        creds = {"api_key": "a", "api_secret": "b", "access_token": "c", "access_secret": "d"}
+        fake = mock.Mock(status_code=201)
+        fake.json.return_value = {"data": {"id": "99"}}
+        with mock.patch.object(sp.requests, "post", return_value=fake) as post:
+            self.assertEqual(sp.post_to_x("oi", creds, media_id="777"), ("ok", "99"))
+        self.assertEqual(post.call_args.kwargs["json"], {"text": "oi", "media": {"media_ids": ["777"]}})
+
+    def test_post_sem_imagem_nao_leva_midia(self):
+        from unittest import mock
+        creds = {"api_key": "a", "api_secret": "b", "access_token": "c", "access_secret": "d"}
+        fake = mock.Mock(status_code=201)
+        fake.json.return_value = {"data": {"id": "1"}}
+        with mock.patch.object(sp.requests, "post", return_value=fake) as post:
+            sp.post_to_x("oi", creds)
+        self.assertEqual(post.call_args.kwargs["json"], {"text": "oi"})
+
+    def test_envio_de_imagem_recusado_por_acesso(self):
+        from unittest import mock
+        creds = {"api_key": "a", "api_secret": "b", "access_token": "c", "access_secret": "d"}
+        fake = mock.Mock(status_code=403, text="forbidden")
+        img = sp.ROOT / "scripts" / "social_art" / "grain.png"
+        with mock.patch.object(sp.requests, "post", return_value=fake):
+            with self.assertRaises(sp.XAuthError):
+                sp.upload_media(img, creds)
+
+    def test_envio_de_imagem_devolve_id(self):
+        from unittest import mock
+        creds = {"api_key": "a", "api_secret": "b", "access_token": "c", "access_secret": "d"}
+        fake = mock.Mock(status_code=200)
+        fake.json.return_value = {"data": {"id": "555"}}
+        img = sp.ROOT / "scripts" / "social_art" / "grain.png"
+        with mock.patch.object(sp.requests, "post", return_value=fake) as post:
+            self.assertEqual(sp.upload_media(img, creds), "555")
+        self.assertEqual(post.call_args.kwargs["data"], {"media_category": "tweet_image"})
+
+
 class Cabecalho(unittest.TestCase):
     def test_le_matéria_real(self):
         arts = sp.load_articles()

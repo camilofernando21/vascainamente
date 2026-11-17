@@ -33,10 +33,10 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'
-          cache-dependency-path: scripts/requirements.txt
+          cache-dependency-path: scripts/requirements-social.txt
 
       - name: Install dependencies
-        run: pip install -r scripts/requirements.txt
+        run: pip install -r scripts/requirements-social.txt
 
       - name: Post
         env:
@@ -46,6 +46,16 @@ jobs:
           X_POST_ACCESS_TOKEN: ${{ secrets.X_POST_ACCESS_TOKEN }}
           X_POST_ACCESS_SECRET: ${{ secrets.X_POST_ACCESS_SECRET }}
         run: python scripts/social_post.py
+
+      # a arte do ensaio fica guardada por 7 dias para você conferir o visual antes de ligar o automático
+      - name: Save art
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: social-art
+          path: .social_out/
+          if-no-files-found: ignore
+          retention-days: 7
 
       # o estado (o que já foi publicado) é guardado mesmo se a etapa acima falhar depois de postar
       - name: Save state

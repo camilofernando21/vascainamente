@@ -34,6 +34,8 @@ from zoneinfo import ZoneInfo
 import requests
 
 ROOT = Path(__file__).resolve().parent.parent
+OUT_DIR = ROOT / ".social_out"  # artes geradas (não vai para o GitHub; o workflow guarda como anexo do ensaio)
+MAX_IMAGE_BYTES = 5 * 1024 * 1024  # limite do X para imagem de post
 NEWS_DIR = ROOT / "content" / "noticias"
 STATE_FILE = ROOT / ".social_state.json"
 TZ = ZoneInfo("America/Sao_Paulo")
@@ -215,12 +217,15 @@ class XAuthError(Exception):
     pass
 
 
-def post_to_x(text: str, creds: dict) -> tuple[str, str]:
+def post_to_x(text: str, creds: dict, media_id: str | None = None) -> tuple[str, str]:
     """Publica. Devolve ("ok", id) | ("duplicado", "") | ("tentar_depois", motivo). Erro de acesso levanta XAuthError."""
     url = "https://api.x.com/2/tweets"
+    payload: dict = {"text": text}
+    if media_id:
+        payload["media"] = {"media_ids": [media_id]}
     resp = requests.post(
         url,
-        json={"text": text},
+        json=payload,
         headers={"Authorization": oauth1_header("POST", url, creds), "Content-Type": "application/json"},
         timeout=30,
     )
@@ -232,6 +237,53 @@ def post_to_x(text: str, creds: dict) -> tuple[str, str]:
     if resp.status_code in (401, 403):
         raise XAuthError(f"HTTP {resp.status_code}: {body}")
     return "tentar_depois", f"HTTP {resp.status_code}: {body}"
+
+
+def render_image(article: dict) -> Path | None:
+    """Gera a arte da matéria (formato do X). Se algo falhar, devolve None e o post sai só com o link."""
+    try:
+        sys.path.insert(0, str(ROOT / "scripts" / "social_art"))
+        import render_art  # noqa: PLC0415 (só carrega o navegador quando precisa)
+
+        OUT_DIR.mkdir(exist_ok=True)
+        path = OUT_DIR / f"{article['slug'][:80]}_x.jpg"
+        dados = render_art.dados_da_materia(article)
+        try:
+            render_art.render(dados, "x", path)
+        except Exception as exc:  # noqa: BLE001
+            if "Executable doesn't exist" not in str(exc):
+                raise
+            # navegador ainda não instalado nesta máquina: instala só agora, quando há o que postar
+            import subprocess  # noqa: PLC0415
+
+            subprocess.run([sys.executable, "-m", "playwright", "install", "--with-deps", "chromium"], check=True)
+            render_art.render(dados, "x", path)
+        if not path.exists() or path.stat().st_size > MAX_IMAGE_BYTES:
+            summary("- arte descartada: arquivo ausente ou acima de 5 MB")
+            return None
+        return path
+    except Exception as exc:  # noqa: BLE001
+        summary(f"- arte não gerada ({type(exc).__name__}: {str(exc)[:120]}); o post sai só com o link")
+        return None
+
+
+def upload_media(path: Path, creds: dict) -> str | None:
+    """Envia a imagem ao X. Devolve o id da mídia, ou None se falhar por motivo temporário. Erro de acesso levanta XAuthError."""
+    url = "https://api.x.com/2/media/upload"
+    with path.open("rb") as fh:
+        resp = requests.post(
+            url,
+            files={"media": (path.name, fh, "image/jpeg")},
+            data={"media_category": "tweet_image"},
+            headers={"Authorization": oauth1_header("POST", url, creds)},
+            timeout=60,
+        )
+    if resp.status_code in (200, 201):
+        return resp.json()["data"]["id"]
+    if resp.status_code in (401, 403):
+        raise XAuthError(f"envio da imagem, HTTP {resp.status_code}: {resp.text[:200]}")
+    summary(f"- imagem não enviada (HTTP {resp.status_code}): {resp.text[:160]}")
+    return None
 
 
 def check_x(creds: dict) -> tuple[bool, str]:
@@ -301,7 +353,9 @@ def run(now: datetime | None = None) -> int:
         return 0
 
     if mode == "dry-run":
-        summary(f"### Ensaio: isto seria publicado no X\n\n```\n{text}\n```\n({tweet_length(text)} de {TWEET_LIMIT} caracteres)")
+        img = render_image(article)
+        anexo = f"com a arte {img.name}" if img else "só com o link"
+        summary(f"### Ensaio: isto seria publicado no X ({anexo})\n\n```\n{text}\n```\n({tweet_length(text)} de {TWEET_LIMIT} caracteres)")
         state["seen_dry"][article["slug"]] = now.isoformat()
         save_state(state)
         return 0
@@ -311,7 +365,12 @@ def run(now: datetime | None = None) -> int:
         summary("Faltam os segredos do X (X_POST_API_KEY, X_POST_API_SECRET, X_POST_ACCESS_TOKEN, X_POST_ACCESS_SECRET).")
         return 1
     try:
-        status, info = post_to_x(text, creds)
+        media_id = None
+        if os.environ.get("SOCIAL_IMAGES", "on").lower() != "off":
+            img = render_image(article)
+            if img:
+                media_id = upload_media(img, creds)
+        status, info = post_to_x(text, creds, media_id)
     except XAuthError as exc:
         summary(f"O X recusou as chaves de postagem ({exc}). Gere as chaves de novo no console e atualize os secrets.")
         return 1

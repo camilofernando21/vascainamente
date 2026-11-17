@@ -44,3 +44,6 @@ __pycache__/
 
 # referencia de design (nao publicar)
 _referencia/
+
+# artes geradas pelo postador social
+/.social_out/
