@@ -1,0 +1,65 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+@font-face{font-family:IS;src:url(fonts/InstrumentSerif-Regular.ttf)}
+@font-face{font-family:DM;src:url(fonts/DMMono-Medium.ttf)}
+@font-face{font-family:an;src:url(fonts/anton-latin-400-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--cr:#F0EBE1;--redt:#FF4D5E;--mut:rgba(240,235,225,.72)}
+body{background:var(--bg);position:relative;overflow:hidden;color:var(--cr);font-family:IS,serif}
+body.feed{width:1080px;height:1350px}
+body.x{width:1600px;height:900px}
+.grain{position:absolute;inset:0;background:url(grain.png);opacity:.22;mix-blend-mode:screen;z-index:30;pointer-events:none}
+.mono{font-family:DM,monospace;text-transform:uppercase;letter-spacing:5px}
+#head{position:absolute;display:flex;align-items:center;justify-content:space-between}
+#head .l{display:flex;align-items:center;gap:18px;color:var(--mut)}
+#head img{display:block}
+#cat{color:var(--redt)}
+#panel{position:absolute;border:6px solid var(--cr);box-shadow:12px 12px 0 var(--cr);background:var(--bg);display:flex;align-items:center}
+#title{font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1.24;width:100%;overflow-wrap:break-word}
+#info{position:absolute;display:flex;justify-content:space-between;align-items:center;border-top:6px solid var(--cr)}
+#info .mono{color:var(--mut)}
+#foot{position:absolute;display:flex;justify-content:space-between;color:rgba(240,235,225,.6)}
+/* feed 1080x1350 */
+.feed #head{left:56px;right:56px;top:54px}
+.feed #head img{height:46px} .feed #head .mono{font-size:24px}
+.feed #panel{left:56px;top:150px;width:968px;height:880px;padding:56px}
+.feed #info{left:56px;top:1090px;width:968px;padding-top:22px}
+.feed #info .mono{font-size:26px}
+.feed #foot{left:56px;right:56px;bottom:46px;font-size:22px}
+/* x 1600x900 */
+.x #head{left:64px;right:64px;top:50px}
+.x #head img{height:52px} .x #head .mono{font-size:26px}
+.x #panel{left:64px;top:140px;width:1472px;height:520px;padding:44px 56px}
+.x #info{left:64px;top:720px;width:1472px;padding-top:20px}
+.x #info .mono{font-size:26px}
+.x #foot{left:64px;right:64px;bottom:34px;font-size:22px}
+</style></head><body>
+<div id="head" class="mono"><div class="l"><img src="../../public/images/escudo-1-cruz.png" alt=""><span>Vascainamente</span></div><span id="cat"></span></div>
+<div id="panel"><h1 id="title"></h1></div>
+<div id="info"><span class="mono" id="src"></span><span class="mono">Leia no site</span></div>
+<div id="foot" class="mono"><span>vascainamente.com.br</span><span id="date"></span></div>
+<div class="grain"></div>
+<script>
+function fill(d){
+  document.body.className=d.fmt;
+  document.getElementById('cat').textContent=d.cat;
+  document.getElementById('src').textContent='Fonte · '+d.source;
+  document.getElementById('date').textContent=d.date;
+  const t=document.getElementById('title'), p=document.getElementById('panel');
+  t.textContent=d.title;
+  const cs=getComputedStyle(p);
+  const maxH=p.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom)-12;
+  let lo=40,hi=d.fmt==='feed'?150:130;
+  while(lo<hi){const m=Math.ceil((lo+hi)/2);t.style.fontSize=m+'px';if(t.scrollHeight<=maxH)lo=m;else hi=m-1;}
+  t.style.fontSize=lo+'px';
+  if(d.fmt==='feed'){ // quadro justo ao texto e o conjunto centralizado entre o topo e o rodapé
+    const pad=parseFloat(cs.paddingTop)+parseFloat(cs.paddingBottom);
+    const h=Math.min(880,Math.max(720,Math.ceil(t.scrollHeight+pad+12)));
+    p.style.height=h+'px';
+    const info=document.getElementById('info'), foot=document.getElementById('foot'), head=document.getElementById('head');
+    const top0=head.getBoundingClientRect().bottom, bot0=foot.getBoundingClientRect().top;
+    const block=h+12+60+info.offsetHeight;
+    const y=top0+Math.max(30,(bot0-top0-block)/2);
+    p.style.top=y+'px'; info.style.top=(y+h+60)+'px';
+  }
+}
+</script></body></html>

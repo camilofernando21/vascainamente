@@ -2,7 +2,7 @@
 title: "Vasco vence a Chapecoense por 2 a 0 com dois gols de Bruno Duarte"
 slug: "2026-11-14-vasco-vence-a-chapecoense-por-2-a-0-com-dois-gols-de-bruno-duarte"
 date: "2026-11-14T22:40:00-03:00"
-category: "elenco"
+category: "resultado"
 importance: 4
 source: "Gazeta Esportiva"
 sourceUrl: "https://www.gazetaesportiva.com/times/vasco/com-dois-de-bruno-duarte-vasco-vence-a-chape-e-se-afasta-do-z4-do-brasileirao/"
