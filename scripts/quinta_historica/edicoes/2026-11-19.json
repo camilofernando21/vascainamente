@@ -1,0 +1,79 @@
+{
+  "data": "2026-11-19",
+  "ano": "1923",
+  "capa": [
+    "Camisas",
+    "Negras"
+  ],
+  "subtitulo": "O time que o Rio tentou barrar.",
+  "credito": "Foto: Revista da Semana, 1923. Acervo da Biblioteca Nacional",
+  "foto": "scripts/quinta_historica/fotos/2026-11-19-time-1923.jpg",
+  "slides": [
+    {
+      "h": [
+        "1922:",
+        "o acesso"
+      ],
+      "k": "O contexto",
+      "p": [
+        "O Vasco foi campeão da Série B e ganhou o direito de disputar a primeira divisão da Liga Metropolitana.",
+        "Flamengo, Fluminense, Botafogo e America tentaram barrar a entrada do clube. Não conseguiram."
+      ]
+    },
+    {
+      "h": [
+        "A elite",
+        "reage"
+      ],
+      "k": "A exigência",
+      "p": [
+        "Os clubes tradicionais fundaram uma nova liga, a AMEA.",
+        "Ela retirou algumas exigências, mas manteve a que excluía 12 jogadores do Vasco da competição."
+      ]
+    },
+    {
+      "foto": true,
+      "h": [
+        "O time",
+        "do Vasco"
+      ],
+      "k": "Quem jogou",
+      "p": [
+        "Um time de negros, operários e suburbanos, sob o comando do uruguaio Ramón Platero."
+      ]
+    },
+    {
+      "h": [
+        "3 a 2",
+        "e campeão"
+      ],
+      "k": "12 de agosto de 1923",
+      "p": [
+        "Vitória sobre o São Cristóvão e o primeiro título Carioca da história do Vasco.",
+        "Na campanha, foram 14 vitórias, 1 empate e 1 derrota, para o Flamengo."
+      ]
+    },
+    {
+      "h": [
+        "1924:",
+        "a resposta"
+      ],
+      "k": "O presidente recusa",
+      "p": [
+        "José Augusto Prestes recusou as exigências e publicou a Resposta Histórica, exaltando as tradições do clube e dos jogadores.",
+        "Naquele ano, o Vasco foi campeão invicto: 14 vitórias em 14 jogos."
+      ]
+    },
+    {
+      "h": [
+        "1925:",
+        "aceito"
+      ],
+      "k": "O desfecho",
+      "p": [
+        "A AMEA aceitou o clube, que lotava os estádios.",
+        "Na próxima quinta: a Resposta Histórica."
+      ]
+    }
+  ]
+}
