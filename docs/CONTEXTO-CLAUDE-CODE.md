@@ -188,3 +188,10 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Ordem de ativação: criar o app e os segredos, rodar em `dry-run` por alguns dias conferindo os textos, depois `auto`.
 - Fase 2 (pendente): Instagram pela API oficial da Meta (precisa de arte gerada, conta profissional ligada à página do Facebook e renovação automática do token). Fase 3 opcional: aprovação prévia por Telegram para tipos menos seguros.
 - Arte automática (17/11, em aprovação, ainda não ligada ao postador): `scripts/social_art/` (`template.html`, `render_art.py`, fontes Anton, Instrument Serif e DM Mono, grão). Gera PNG da matéria no estilo da marca, em dois formatos: `feed` 1080x1350 (Instagram) e `x` 1600x900 (X). Escudo sempre de `public/images/escudo-1-cruz.png`. Título ajustado sozinho ao quadro, placar nunca quebra no meio (`2 a 0` com espaço sem quebra), contraste creme sobre preto. Uso: `python scripts/social_art/render_art.py <slug> <saida.png> feed|x`. O postador do X já anexa a arte (formato `x`, JPEG qualidade 90, limite do X 5 MB): envia por `POST /2/media/upload` (`media_category=tweet_image`) e põe o id em `media.media_ids`. Se a arte falhar, o post sai só com o link. `SOCIAL_IMAGES=off` desliga a imagem. O Chromium do Playwright é instalado sob demanda (só quando há post). Em `dry-run`, a arte fica como anexo `social-art` da execução (7 dias). Falta: postador do Instagram.
+
+## Quinta Histórica (17/11/2026)
+
+- Série semanal aprovada pelo Camilo: toda quinta, carrossel de 7 slides no Instagram com foto de época. Fila de 8 temas, regras e fontes em `docs/quinta-historica.md`.
+- Primeira edição (19/11, Camisas Negras 1923) entregue e aprovada. Próxima: 26/11, Resposta Histórica.
+- Preparo na quarta de manhã por tarefa agendada; texto sempre passa por revisão independente de português antes de ir ao Camilo.
+- Pendências: foto em alta resolução do time de 1923; versão curta para o X; página da série no site.
