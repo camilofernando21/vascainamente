@@ -174,3 +174,16 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Correção em `lib/time.ts`: as datas das matérias usavam o fuso do servidor (UTC). Matéria publicada depois das 21h saía com o dia seguinte (ex.: "Ontem em destaque" mostrando 17 nov para matéria de 16/11). Agora `formatDateFull`, `formatDateShort` e `isSameDay` usam America/Sao_Paulo.
 - Artes de Instagram no estilo "neobrutalismo editorial do Vascainamente" (fundo #0d0d0d com grão, creme #F0EBE1, vermelho só em detalhes, nunca fundo vermelho; título em Anton, hora em Instrument Serif, rótulos em DM Mono, foto recortada tipo adesivo, painel com borda creme e sombra dura, faixa do Premiere). Feeds e stories da escalação, dos relacionados, do jogo e da vitória foram feitos em 14/11, fora do repositório.
 - Pendências: conferir na súmula se os dois gols de Bruno Duarte foram aos 35 ou 36 minutos (a arte da vitória diz 36); Cobalt/Joaquim (login do X e Instagram, token longo); feed RSS da ESPN Brasil morto; o robô não lê escalação publicada em imagem.
+
+## Postador automático no X (17/11/2026, fase 1)
+
+- Motivo: o fluxo do Cobalt com o Composio nunca foi conectado (faltava login do X e do Instagram e token longo). Decisão: postar pelo próprio projeto, com as APIs oficiais, sem terceiros.
+- Arquivos: `scripts/social_post.py` (seleção, texto, validação, estado, cliente do X), `scripts/test_social_post.py` (20 testes, inclui a assinatura OAuth do exemplo oficial do X), `.github/workflows/social-post.yml`, `.social_state.json`.
+- Quando roda: ao fim de cada execução bem-sucedida do "Fetch Vasco News" (e manualmente por `workflow_dispatch`).
+- Chave de desligar: variável do repositório `SOCIAL_MODE` = `off` (padrão, sem a variável), `dry-run` (só mostra no resumo da execução o que seria postado, não chama o X) ou `auto` (publica).
+- Regras: só nota 4 ou 5, com fonte; nunca `transferencia` (rumor); só matérias das últimas 3 horas; um post por rodada; no máximo 6 por dia; 30 minutos entre posts; silêncio de 0h às 7h de Brasília; cada matéria sai uma vez.
+- Texto: modelo fixo (título da matéria, linha em branco, link do site, linha em branco, `#Vasco`). Nenhuma frase nova de IA. Bloqueia travessão, meia-risca, campo vazio, título vazio, matéria sem fonte e texto acima de 280 caracteres (link vale 23).
+- Segredos do GitHub (criar um app do X separado do de leitura, com permissão de escrita): `X_POST_API_KEY`, `X_POST_API_SECRET`, `X_POST_ACCESS_TOKEN`, `X_POST_ACCESS_SECRET`. Nunca no código.
+- Erro 401 ou 403 do X deixa a execução vermelha (GitHub avisa por e-mail). Erro temporário tenta de novo na rodada seguinte. Texto repetido o X recusa, e o postador conta como já publicado.
+- Ordem de ativação: criar o app e os segredos, rodar em `dry-run` por alguns dias conferindo os textos, depois `auto`.
+- Fase 2 (pendente): Instagram pela API oficial da Meta (precisa de arte gerada, conta profissional ligada à página do Facebook e renovação automática do token). Fase 3 opcional: aprovação prévia por Telegram para tipos menos seguros.
