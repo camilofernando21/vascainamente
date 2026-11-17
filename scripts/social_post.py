@@ -4,10 +4,11 @@ Escolhe as matérias do site que merecem divulgação, monta o texto com um mode
 (nenhuma frase nova é escrita por IA), valida e publica pela API oficial do X.
 
     python scripts/social_post.py            # usa SOCIAL_MODE
-    SOCIAL_MODE = off | dry-run | auto       # padrão: off (não faz nada)
+    SOCIAL_MODE = off | check | dry-run | auto   # padrão: off (não faz nada)
 
 Segurança:
   * nenhum segredo no código: tudo por variável de ambiente (secrets do GitHub);
+  * check só pergunta ao X de quem são as chaves (GET /2/users/me), sem publicar nada;
   * dry-run só mostra o que seria publicado (resumo da execução), não chama o X;
   * chave de desligar: SOCIAL_MODE=off (variável do repositório, sem mexer em código);
   * cada matéria sai no máximo uma vez, com limite diário e horário de silêncio;
@@ -233,6 +234,15 @@ def post_to_x(text: str, creds: dict) -> tuple[str, str]:
     return "tentar_depois", f"HTTP {resp.status_code}: {body}"
 
 
+def check_x(creds: dict) -> tuple[bool, str]:
+    """Confere as chaves sem publicar: pergunta ao X de quem elas são."""
+    url = "https://api.x.com/2/users/me"
+    resp = requests.get(url, headers={"Authorization": oauth1_header("GET", url, creds)}, timeout=30)
+    if resp.status_code == 200:
+        return True, "@" + resp.json()["data"]["username"]
+    return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
+
+
 def x_credentials() -> dict | None:
     creds = {
         "api_key": os.environ.get("X_POST_API_KEY", ""),
@@ -255,12 +265,21 @@ def summary(line: str) -> None:
 
 def run(now: datetime | None = None) -> int:
     mode = os.environ.get("SOCIAL_MODE", "off").strip().lower()
-    if mode not in ("off", "dry-run", "auto"):
-        summary(f"SOCIAL_MODE inválido: {mode!r}. Use off, dry-run ou auto.")
+    if mode not in ("off", "check", "dry-run", "auto"):
+        summary(f"SOCIAL_MODE inválido: {mode!r}. Use off, check, dry-run ou auto.")
         return 1
     if mode == "off":
         summary("Postador desligado (SOCIAL_MODE=off).")
         return 0
+
+    if mode == "check":
+        creds = x_credentials()
+        if not creds:
+            summary("Faltam os segredos do X (X_POST_API_KEY, X_POST_API_SECRET, X_POST_ACCESS_TOKEN, X_POST_ACCESS_SECRET).")
+            return 1
+        ok, info = check_x(creds)
+        summary(f"Chaves do X válidas, conta {info}." if ok else f"O X recusou as chaves: {info}")
+        return 0 if ok else 1
 
     now = now or datetime.now(TZ)
     state = load_state()

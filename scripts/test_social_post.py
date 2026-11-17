@@ -140,6 +140,34 @@ class Escolha(unittest.TestCase):
         self.assertEqual(out, [])
 
 
+class Modos(unittest.TestCase):
+    def test_modo_invalido_falha(self):
+        import os
+        os.environ["SOCIAL_MODE"] = "qualquer"
+        try:
+            self.assertEqual(sp.run(AGORA), 1)
+        finally:
+            os.environ.pop("SOCIAL_MODE")
+
+    def test_off_nao_faz_nada(self):
+        import os
+        os.environ["SOCIAL_MODE"] = "off"
+        try:
+            self.assertEqual(sp.run(AGORA), 0)
+        finally:
+            os.environ.pop("SOCIAL_MODE")
+
+    def test_check_sem_segredos_falha(self):
+        import os
+        os.environ["SOCIAL_MODE"] = "check"
+        for k in ("X_POST_API_KEY", "X_POST_API_SECRET", "X_POST_ACCESS_TOKEN", "X_POST_ACCESS_SECRET"):
+            os.environ.pop(k, None)
+        try:
+            self.assertEqual(sp.run(AGORA), 1)
+        finally:
+            os.environ.pop("SOCIAL_MODE")
+
+
 class Cabecalho(unittest.TestCase):
     def test_le_matéria_real(self):
         arts = sp.load_articles()

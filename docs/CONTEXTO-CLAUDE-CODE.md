@@ -180,7 +180,7 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Motivo: o fluxo do Cobalt com o Composio nunca foi conectado (faltava login do X e do Instagram e token longo). Decisão: postar pelo próprio projeto, com as APIs oficiais, sem terceiros.
 - Arquivos: `scripts/social_post.py` (seleção, texto, validação, estado, cliente do X), `scripts/test_social_post.py` (20 testes, inclui a assinatura OAuth do exemplo oficial do X), `.github/workflows/social-post.yml`, `.social_state.json`.
 - Quando roda: ao fim de cada execução bem-sucedida do "Fetch Vasco News" (e manualmente por `workflow_dispatch`).
-- Chave de desligar: variável do repositório `SOCIAL_MODE` = `off` (padrão, sem a variável), `dry-run` (só mostra no resumo da execução o que seria postado, não chama o X) ou `auto` (publica).
+- Chave de desligar: variável do repositório `SOCIAL_MODE` = `off` (padrão, sem a variável), `check` (só confere as chaves perguntando ao X de quem são, sem publicar), `dry-run` (só mostra no resumo da execução o que seria postado, não chama o X) ou `auto` (publica).
 - Regras: só nota 4 ou 5, com fonte; nunca `transferencia` (rumor); só matérias das últimas 3 horas; um post por rodada; no máximo 6 por dia; 30 minutos entre posts; silêncio de 0h às 7h de Brasília; cada matéria sai uma vez.
 - Texto: modelo fixo (título da matéria, linha em branco, link do site, linha em branco, `#Vasco`). Nenhuma frase nova de IA. Bloqueia travessão, meia-risca, campo vazio, título vazio, matéria sem fonte e texto acima de 280 caracteres (link vale 23).
 - Segredos do GitHub (criar um app do X separado do de leitura, com permissão de escrita): `X_POST_API_KEY`, `X_POST_API_SECRET`, `X_POST_ACCESS_TOKEN`, `X_POST_ACCESS_SECRET`. Nunca no código.

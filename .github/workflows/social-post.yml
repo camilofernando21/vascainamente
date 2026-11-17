@@ -1,7 +1,7 @@
 name: Social Post (X)
 
 # Depois de cada rodada do robô de notícias, divulga no X a matéria que merece (nota 4 ou 5, saiu há pouco).
-# Chave de desligar: variável do repositório SOCIAL_MODE = off | dry-run | auto (sem a variável, fica off).
+# Chave de desligar: variável do repositório SOCIAL_MODE = off | check | dry-run | auto (sem a variável, fica off).
 on:
   workflow_run:
     workflows: ["Fetch Vasco News"]
