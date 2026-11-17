@@ -46,25 +46,42 @@ export function timeAgoCompact(dateStr: string): string {
   return `${days}d`;
 }
 
+// Tudo no horário de Brasília. O servidor da Vercel roda em UTC, e uma matéria das 23h30 de
+// 16/11 (02h30 de 17/11 em UTC) saía com a data do dia seguinte.
+const SP_PARTS = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/Sao_Paulo",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+  weekday: "short",
+});
+
+const WEEKDAY_INDEX: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+
+function spParts(d: Date) {
+  const parts = Object.fromEntries(SP_PARTS.formatToParts(d).map((p) => [p.type, p.value]));
+  return {
+    year: Number(parts.year),
+    month: Number(parts.month) - 1,
+    day: Number(parts.day),
+    weekday: WEEKDAY_INDEX[parts.weekday] ?? 0,
+  };
+}
+
 export function formatDateFull(dateStr: string): string {
-  const d = new Date(dateStr);
-  return `${WEEKDAYS[d.getDay()]}, ${String(d.getDate()).padStart(2, "0")} ${
-    MONTHS_SHORT[d.getMonth()]
-  } ${d.getFullYear()}`;
+  const p = spParts(new Date(dateStr));
+  return `${WEEKDAYS[p.weekday]}, ${String(p.day).padStart(2, "0")} ${MONTHS_SHORT[p.month]} ${p.year}`;
 }
 
 export function formatDateShort(dateStr: string): string {
-  const d = new Date(dateStr);
-  return `${String(d.getDate()).padStart(2, "0")} ${MONTHS_SHORT[d.getMonth()]} ${d.getFullYear()}`;
+  const p = spParts(new Date(dateStr));
+  return `${String(p.day).padStart(2, "0")} ${MONTHS_SHORT[p.month]} ${p.year}`;
 }
 
 export function isSameDay(dateStr: string, ref: Date = new Date()): boolean {
-  const d = new Date(dateStr);
-  return (
-    d.getFullYear() === ref.getFullYear() &&
-    d.getMonth() === ref.getMonth() &&
-    d.getDate() === ref.getDate()
-  );
+  const a = spParts(new Date(dateStr));
+  const b = spParts(ref);
+  return a.year === b.year && a.month === b.month && a.day === b.day;
 }
 
 export function readingTime(content: string): number {

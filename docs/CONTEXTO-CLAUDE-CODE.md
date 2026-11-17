@@ -167,3 +167,10 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Testes: `python3 -m unittest scripts/test_panorama.py`.
 - Para desligar o panorama: retirar a chamada `panorama.run` no fim de `main()` em `scripts/fetch-news.py`.
 - Causa de "Vasconcelos" ter virado matéria: o filtro `is_vasco` achava "vasco" como pedaço de texto; agora exige palavra inteira (`scripts/test_is_vasco.py`).
+
+## Fim de semana de 13 a 17/11/2026 (crédito da API e artes)
+- O robô ficou parado de 13/11 (14h45) a 17/11 (cerca de 2h30 UTC) por falta de crédito da API da Anthropic. Voltou a rodar com sucesso em 17/11.
+- Durante a pausa, 12 matérias foram escritas à mão (13 a 16/11), com revisão de português por segunda leitura, publicadas com autorização: justiça e reconhecimento facial na eleição, desfalques, prévia e relacionados contra a Chapecoense, eleição (dia e resultado, Pedrinho reeleito), vitória por 2 a 0, declarações de Pedro Emanuel, elenco 2027, retorno de Thiago Mendes, Sosa e Nuno Moreira, prévia contra o Internacional.
+- Correção em `lib/time.ts`: as datas das matérias usavam o fuso do servidor (UTC). Matéria publicada depois das 21h saía com o dia seguinte (ex.: "Ontem em destaque" mostrando 17 nov para matéria de 16/11). Agora `formatDateFull`, `formatDateShort` e `isSameDay` usam America/Sao_Paulo.
+- Artes de Instagram no estilo "neobrutalismo editorial do Vascainamente" (fundo #0d0d0d com grão, creme #F0EBE1, vermelho só em detalhes, nunca fundo vermelho; título em Anton, hora em Instrument Serif, rótulos em DM Mono, foto recortada tipo adesivo, painel com borda creme e sombra dura, faixa do Premiere). Feeds e stories da escalação, dos relacionados, do jogo e da vitória foram feitos em 14/11, fora do repositório.
+- Pendências: conferir na súmula se os dois gols de Bruno Duarte foram aos 35 ou 36 minutos (a arte da vitória diz 36); Cobalt/Joaquim (login do X e Instagram, token longo); feed RSS da ESPN Brasil morto; o robô não lê escalação publicada em imagem.
