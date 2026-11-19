@@ -250,10 +250,10 @@ def _is_auth_error(resp: requests.Response) -> bool:
 
 def check_instagram(creds: dict) -> tuple[bool, str]:
     """Confere o token sem publicar: pergunta ao Instagram de quem ele é."""
-    resp = _call("GET", f"{api_base(creds)}/{creds['user_id']}", creds, params={"fields": "username,account_type"})
+    resp = _call("GET", f"{api_base(creds)}/{creds['user_id']}", creds, params={"fields": "username"})
     if resp.status_code == 200:
         data = resp.json()
-        return True, f"@{data.get('username', '?')} ({data.get('account_type', '?')})"
+        return True, f"@{data.get('username', '?')}"
     return False, f"HTTP {resp.status_code}: {resp.text[:200]}. {describe_token(creds['token'])}"
 
 
