@@ -199,8 +199,8 @@ def wait_for_image(url: str, tries: int = 12, pause: int = 5) -> bool:
 
 def credentials() -> dict | None:
     creds = {
-        "token": os.environ.get("INSTAGRAM_ACCESS_TOKEN", ""),
-        "user_id": os.environ.get("INSTAGRAM_USER_ID", ""),
+        "token": "".join(os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").split()),  # tira espaço e quebra de linha colados junto
+        "user_id": "".join(os.environ.get("INSTAGRAM_USER_ID", "").split()),
     }
     return creds if all(creds.values()) else None
 
@@ -209,12 +209,28 @@ def _headers(creds: dict) -> dict:
     return {"Authorization": f"Bearer {creds['token']}"}
 
 
-def _call(method: str, url: str, creds: dict, **kw) -> requests.Response:
-    """Chamada sem vazar endereço ou token em caso de erro de rede."""
+def _send(method: str, url: str, creds: dict, bearer: bool, **kw) -> requests.Response:
+    """Uma chamada sem vazar endereço ou token em caso de erro de rede."""
+    kw = dict(kw)
+    if bearer:
+        headers = _headers(creds)
+    else:
+        headers = {}
+        key = "params" if method == "GET" else "data"
+        kw[key] = {**kw.get(key, {}), "access_token": creds["token"]}
     try:
-        return requests.request(method, url, headers=_headers(creds), timeout=60, **kw)
+        return requests.request(method, url, headers=headers, timeout=60, **kw)
     except requests.RequestException as exc:
         raise ConnectionError(f"falha de rede ({type(exc).__name__})") from None
+
+
+def _call(method: str, url: str, creds: dict, **kw) -> requests.Response:
+    """Tenta o token no cabeçalho; se o Instagram disser que não consegue ler, tenta como parâmetro."""
+    resp = _send(method, url, creds, creds.get("bearer", True), **kw)
+    if resp.status_code == 401 and "Cannot parse access token" in resp.text and "bearer" not in creds:
+        creds["bearer"] = False
+        resp = _send(method, url, creds, False, **kw)
+    return resp
 
 
 def _is_auth_error(resp: requests.Response) -> bool:

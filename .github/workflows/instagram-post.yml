@@ -98,6 +98,7 @@ jobs:
         run: |
           git config user.name  "vascainamente-bot"
           git config user.email "bot@vascainamente.com.br"
+          [ -f .instagram_state.json ] || exit 0
           git add .instagram_state.json
           git diff --staged --quiet && exit 0
           git commit -q -m "chore(social): estado do postador do Instagram $(date +'%d/%m %H:%M')"
