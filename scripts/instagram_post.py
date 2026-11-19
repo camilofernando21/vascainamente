@@ -41,7 +41,8 @@ PENDING = OUT_DIR / "pending.json"
 STATE_FILE = ROOT / ".instagram_state.json"
 TZ = sp.TZ
 
-API = "https://graph.instagram.com/v23.0"
+API_INSTAGRAM = "https://graph.instagram.com/v23.0"  # token do login do Instagram (começa com IG)
+API_FACEBOOK = "https://graph.facebook.com/v23.0"    # token do login da Meta/portfólio (começa com EAA)
 IMAGE_BRANCH = "social-img"
 MAX_IMAGE_BYTES = 8 * 1024 * 1024  # limite do Instagram para JPEG
 
@@ -205,6 +206,11 @@ def credentials() -> dict | None:
     return creds if all(creds.values()) else None
 
 
+def api_base(creds: dict) -> str:
+    """O endereço certo depende do tipo do token: EAA... vale no graph.facebook.com, IG... no graph.instagram.com."""
+    return API_FACEBOOK if creds["token"].startswith("EAA") else API_INSTAGRAM
+
+
 def _headers(creds: dict) -> dict:
     return {"Authorization": f"Bearer {creds['token']}"}
 
@@ -244,7 +250,7 @@ def _is_auth_error(resp: requests.Response) -> bool:
 
 def check_instagram(creds: dict) -> tuple[bool, str]:
     """Confere o token sem publicar: pergunta ao Instagram de quem ele é."""
-    resp = _call("GET", f"{API}/{creds['user_id']}", creds, params={"fields": "username,account_type"})
+    resp = _call("GET", f"{api_base(creds)}/{creds['user_id']}", creds, params={"fields": "username,account_type"})
     if resp.status_code == 200:
         data = resp.json()
         return True, f"@{data.get('username', '?')} ({data.get('account_type', '?')})"
@@ -259,7 +265,7 @@ def describe_token(token: str) -> str:
 
 def publish_image(url: str, caption: str, creds: dict) -> tuple[str, str]:
     """Devolve ("ok", id) | ("tentar_depois", motivo). Erro de acesso levanta InstaAuthError."""
-    resp = _call("POST", f"{API}/{creds['user_id']}/media", creds, data={"image_url": url, "caption": caption})
+    resp = _call("POST", f"{api_base(creds)}/{creds['user_id']}/media", creds, data={"image_url": url, "caption": caption})
     if _is_auth_error(resp):
         raise InstaAuthError(f"HTTP {resp.status_code}: {resp.text[:200]}")
     if resp.status_code != 200:
@@ -267,7 +273,7 @@ def publish_image(url: str, caption: str, creds: dict) -> tuple[str, str]:
     container = resp.json()["id"]
 
     for _ in range(12):  # até 1 minuto para o Instagram baixar e processar a imagem
-        st = _call("GET", f"{API}/{container}", creds, params={"fields": "status_code"})
+        st = _call("GET", f"{api_base(creds)}/{container}", creds, params={"fields": "status_code"})
         code = st.json().get("status_code") if st.status_code == 200 else None
         if code == "FINISHED":
             break
@@ -277,7 +283,7 @@ def publish_image(url: str, caption: str, creds: dict) -> tuple[str, str]:
     else:
         return "tentar_depois", "o Instagram não terminou de processar a imagem a tempo"
 
-    resp = _call("POST", f"{API}/{creds['user_id']}/media_publish", creds, data={"creation_id": container})
+    resp = _call("POST", f"{api_base(creds)}/{creds['user_id']}/media_publish", creds, data={"creation_id": container})
     if _is_auth_error(resp):
         raise InstaAuthError(f"HTTP {resp.status_code}: {resp.text[:200]}")
     if resp.status_code != 200:
