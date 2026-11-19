@@ -248,7 +248,13 @@ def check_instagram(creds: dict) -> tuple[bool, str]:
     if resp.status_code == 200:
         data = resp.json()
         return True, f"@{data.get('username', '?')} ({data.get('account_type', '?')})"
-    return False, f"HTTP {resp.status_code}: {resp.text[:200]}"
+    return False, f"HTTP {resp.status_code}: {resp.text[:200]}. {describe_token(creds['token'])}"
+
+
+def describe_token(token: str) -> str:
+    """Pista para achar erro de colagem sem revelar o token: só tamanho, 4 primeiras letras e caracteres estranhos."""
+    odd = sum(1 for c in token if not (c.isascii() and (c.isalnum() or c in "_-.")))
+    return f"Pista do segredo: {len(token)} caracteres, começa com {token[:4]!r}, {odd} caractere(s) fora do padrão."
 
 
 def publish_image(url: str, caption: str, creds: dict) -> tuple[str, str]:
