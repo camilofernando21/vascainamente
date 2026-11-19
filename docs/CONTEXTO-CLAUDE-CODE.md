@@ -195,3 +195,13 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Primeira edição (19/11, Camisas Negras 1923) entregue e aprovada. Próxima: 26/11, Resposta Histórica.
 - Preparo na quarta de manhã por tarefa agendada; texto sempre passa por revisão independente de português antes de ir ao Camilo.
 - Pendências: foto em alta resolução do time de 1923; versão curta para o X; página da série no site.
+
+## Postador do Instagram (19/11/2026)
+
+- Código: `scripts/instagram_post.py` (fases `prepare` e `publish`), testes em `scripts/test_instagram_post.py`, workflow `.github/workflows/instagram-post.yml` (roda depois do "Fetch Vasco News", como o do X). Estado em `.instagram_state.json`.
+- Chave de desligar: variável do repositório `INSTAGRAM_MODE` = off | check | dry-run | auto (sem a variável, fica off). Ordem recomendada: check (confere o token), dry-run (mostra legenda e arte no resumo, sem postar), auto.
+- Regras: mesma nota mínima (4), mesma idade máxima (3 h), sem `transferencia`, silêncio de 0h às 7h; no Instagram, no máximo 3 por dia e 60 min de intervalo. Legenda de modelo fixo (título, "Matéria completa no link da bio.", fonte, #Vasco #VascodaGama). Arte no formato `feed` 1080x1350, sem arte não há post.
+- Publicação: API do Instagram com login do Instagram (`graph.instagram.com`), token de usuário do sistema que não expira. A API só baixa imagem por endereço público: o workflow envia a arte para o ramo `social-img` (só imagens, guarda 14 dias) e o `publish` espera o endereço `raw.githubusercontent.com` responder.
+- Secrets do GitHub (criados pelo Camilo, eu nunca vejo os valores): `INSTAGRAM_ACCESS_TOKEN` e `INSTAGRAM_USER_ID`.
+- Meta: app "Vascainamente Posts" (portfólio CATETOAOCUBO MKT), conta `_vascainamente_` com função de Testador do Instagram. App em modo de desenvolvimento: publica na própria conta sem análise do app.
+- Pendências: ligar `INSTAGRAM_MODE=check`, depois `dry-run` por alguns dias, depois `auto`; o X segue pelo Composio (postador próprio do X em dry-run).

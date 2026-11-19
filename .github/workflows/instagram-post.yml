@@ -1,0 +1,109 @@
+name: Social Post (Instagram)
+
+# Depois de cada rodada do robô de notícias, divulga no Instagram a matéria que merece (nota 4 ou 5, saiu há pouco).
+# Chave de desligar: variável do repositório INSTAGRAM_MODE = off | check | dry-run | auto (sem a variável, fica off).
+on:
+  workflow_run:
+    workflows: ["Fetch Vasco News"]
+    types: [completed]
+  workflow_dispatch:
+
+# nunca duas rodadas ao mesmo tempo (evita post em dobro)
+concurrency:
+  group: instagram-post
+  cancel-in-progress: false
+
+jobs:
+  post:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+
+    env:
+      INSTAGRAM_MODE: ${{ vars.INSTAGRAM_MODE || 'off' }}
+      INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: master
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements-social.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-social.txt
+
+      # escolhe a matéria, valida e gera a arte (no modo auto deixa pending.json pronto)
+      - name: Prepare
+        run: python scripts/instagram_post.py prepare
+
+      # o Instagram só baixa imagem por endereço público: a arte vai para o ramo social-img (só imagens)
+      - name: Publish art to image branch
+        run: |
+          [ -f .social_out/ig/pending.json ] || { echo "Nada a enviar."; exit 0; }
+          git config user.name  "vascainamente-bot"
+          git config user.email "bot@vascainamente.com.br"
+          if git ls-remote --exit-code --heads origin social-img >/dev/null 2>&1; then
+            git fetch -q origin social-img
+            git worktree add -q -B social-img ../img origin/social-img
+          else
+            git worktree add -q --detach ../img
+            git -C ../img checkout -q --orphan social-img
+            git -C ../img rm -rfq . || true
+          fi
+          mkdir -p ../img/ig
+          cp .social_out/ig/*.jpg ../img/ig/
+          # só guarda as artes dos últimos 14 dias (o nome do arquivo começa com a data)
+          limite=$(date -d '14 days ago' +%Y-%m-%d)
+          for f in ../img/ig/*.jpg; do
+            [ "$(basename "$f" | cut -c1-10)" \< "$limite" ] && git -C ../img rm -qf "ig/$(basename "$f")" || true
+          done
+          git -C ../img add ig
+          git -C ../img diff --staged --quiet && exit 0
+          git -C ../img commit -q -m "chore(social): arte do Instagram $(date +'%d/%m %H:%M')"
+          for attempt in 1 2 3 4 5; do
+            git -C ../img push -q origin social-img && exit 0
+            git -C ../img pull --rebase -q origin social-img || true
+            sleep $((attempt * 3))
+          done
+          echo "ERRO: não foi possível enviar a arte"
+          exit 1
+
+      - name: Publish
+        run: python scripts/instagram_post.py publish
+
+      # a arte do ensaio fica guardada por 7 dias para conferir o visual antes de ligar o automático
+      - name: Save art
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: instagram-art
+          path: .social_out/ig/
+          if-no-files-found: ignore
+          retention-days: 7
+
+      # o estado (o que já foi publicado) é guardado mesmo se a etapa acima falhar depois de postar
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name  "vascainamente-bot"
+          git config user.email "bot@vascainamente.com.br"
+          git add .instagram_state.json
+          git diff --staged --quiet && exit 0
+          git commit -q -m "chore(social): estado do postador do Instagram $(date +'%d/%m %H:%M')"
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase -q && git push -q && exit 0
+            sleep $((attempt * 3))
+          done
+          echo "ERRO: não foi possível salvar o estado do postador do Instagram"
+          exit 1
