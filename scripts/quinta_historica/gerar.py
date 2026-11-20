@@ -71,7 +71,7 @@ def montar(ed: dict, i: int, s: dict, total: int, foto: str | None) -> str:
             corpo += f'<div id="foto" style="top:600px"><img src="file://{foto}" alt=""></div>'
             corpo += f'<div id="sub2">{esc(ed["subtitulo"])}</div>' + cred
         else:
-            corpo += f'<div id="panel"><span class="k">Esta quinta</span><p style="font-size:84px;line-height:1.1;font-style:italic">{esc(ed["subtitulo"])}</p></div>'
+            corpo += f'<div id="panel"><span class="k">{esc(ed.get("chamada", "Esta quinta"))}</span><p style="font-size:84px;line-height:1.1;font-style:italic">{esc(ed["subtitulo"])}</p></div>'
         rod = "Deslize"
     elif s.get("foto") and foto:
         a, b = s["h"]
@@ -85,7 +85,7 @@ def montar(ed: dict, i: int, s: dict, total: int, foto: str | None) -> str:
         corpo = titulo(s["h"], "h2") + f'<div id="panel"><span class="k">{esc(s["k"])}</span>' + "".join(f"<p>{esc(x)}</p>" for x in s["p"]) + "</div>"
         rod = f"{n}/{total}"
     return (f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>{CSS}</style></head><body>'
-            f'<div id="head" class="mono"><img src="file://{CRUZ}" alt=""><span>Quinta Histórica · {esc(ed["ano"])}</span></div>'
+            f'<div id="head" class="mono"><img src="file://{CRUZ}" alt=""><span>{esc(ed.get("serie", "Quinta Histórica"))} · {esc(ed["ano"])}</span></div>'
             f'{corpo}<div id="foot" class="mono"><span>vascainamente.com.br</span><span>{rod}</span></div><div class="grain"></div></body></html>')
 
 
