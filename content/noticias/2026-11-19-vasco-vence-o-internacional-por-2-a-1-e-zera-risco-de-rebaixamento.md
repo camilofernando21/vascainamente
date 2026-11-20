@@ -11,7 +11,7 @@ imageUrl: ""
 excerpt: "O Vasco derrotou o Internacional por 2 a 1 em São Januário, pela 35ª rodada do Brasileirão, e chegou ao terceiro triunfo seguido no torneio. Com o resultado, o Cruzmaltino elimina qualquer chance de queda e ainda complica a vida do rival, que perdeu a chance de sair da zona de rebaixamento."
 seoTitle: "Vasco 2x1 Inter: vitória zera risco de queda no Brasileirão"
 seoDescription: "Vasco vence o Internacional por 2 a 1 em São Januário pela 35ª rodada do Brasileirão e elimina qualquer risco de rebaixamento com terceiro triunfo seguido."
-updated: "2026-11-19T21:46:17-03:00"
+updated: "2026-11-20T01:30:51-03:00"
 ---
 
 O Vasco encerrou a partida desta quinta-feira em São Januário com uma vitória de 2 a 1 sobre o Internacional, válida pela 35ª rodada do Campeonato Brasileiro. O resultado coloca o Cruzmaltino no terceiro triunfo consecutivo na competição e, de uma vez por todas, zera as chances de rebaixamento do clube.
@@ -23,3 +23,5 @@ Do outro lado, o Colorado deixou o campo ainda na zona de rebaixamento, desperdi
 **Atualização em 19/11 às 21:31:** Os gols da vitória foram marcados por Thiago Mendes e Colidio. ([Vasco da Gama (X)](https://x.com/vascodagama/status/2123574302608093654))
 
 **Atualização em 19/11 às 21:46:** Facundo Colidio marcou o segundo gol do Vasco, fechando o placar em 2 a 1 sobre o Internacional. ([UOL Esporte](https://www.uol.com.br/esporte/videos/gols/2026/11/19/vasco-2-x-1-internacional-gol-facundo-colidio.htm))
+
+**Atualização em 20/11 às 01:30:** A vitória também empurrou o Internacional de volta à zona de rebaixamento e manteve o Corinthians fora do G4. ([ESPN Brasil](https://www.espn.com.br/futebol/brasileirao/artigo/_/id/17535933/vasco-vence-empurra-inter-volta-zona-de-rebaixamento-corinthians-segue-fora))
