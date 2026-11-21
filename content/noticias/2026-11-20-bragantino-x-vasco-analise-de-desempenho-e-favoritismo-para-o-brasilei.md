@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/TVaOrwZ_9uLBuONq4Yr6b4FP3Q0=/i.s3.glbimg.com
 excerpt: "O Bragantino é o mandante, mas o Vasco chega embalado por quatro vitórias nos últimos cinco jogos fora de casa. A análise do Gato Mestre aponta um confronto equilibrado, com as duas equipes entre as que menos acumulam cartões amarelos no returno."
 seoTitle: "Bragantino x Vasco: análise e favoritismo"
 seoDescription: "Gato Mestre analisa Bragantino x Vasco pelo Brasileirão: desempenho, estatísticas e favoritismo para a 36ª rodada."
-updated: "2026-11-21T06:15:43-03:00"
+updated: "2026-11-21T17:45:49-03:00"
 ---
 
 O Bragantino tem desempenho caseiro mediano no returno, com três vitórias seguidas em casa e aproveitamento de 72% nos últimos seis jogos como mandante. O time ataca bastante, com média de 20,3 finalizações por jogo no returno, mas sofre com a eficiência baixa, convertendo um gol a cada 16,2 tentativas. A defesa vem sofrendo um gol a cada 10 conclusões em casa.
@@ -18,3 +18,5 @@ O Bragantino tem desempenho caseiro mediano no returno, com três vitórias segu
 Do outro lado, o Vasco melhorou muito fora de casa e chega com quatro vitórias nos últimos cinco jogos como visitante. O time cruz-maltino é um dos que menos permitem finalizações adversárias no returno e tem produção ofensiva acima da média. Os dados são do modelo estatístico do Gato Mestre, publicado pelo GE.
 
 **Atualização em 21/11 às 06:15:** Matheus Fernandes e o atacante Fernando estão suspensos por acúmulo de cartões e são baixas confirmadas do Bragantino para o duelo deste domingo. Isidro Pitta é dúvida por sintomas gripais. ([leia a matéria](/2026-11-21-bragantino-tem-dois-desfalques-por-suspensao-e-duvida-para-enfrentar-o))
+
+**Atualização em 21/11 às 17:45:** O Vasco já viajou e está concentrado em Atibaia para o jogo de amanhã contra o Bragantino, às 19h30. ([Vasco da Gama (X)](https://x.com/vascodagama/status/2124242217048977416))
