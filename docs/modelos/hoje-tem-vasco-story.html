@@ -1,0 +1,30 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>
+@font-face{font-family:IS;src:url(fonts/InstrumentSerif-Regular.ttf)}
+@font-face{font-family:DM;src:url(fonts/DMMono-Medium.ttf)}
+@font-face{font-family:an;src:url(fonts/anton-latin-400-normal.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0d0d0d;--cr:#F0EBE1;--redt:#FF4D5E;--mut:rgba(240,235,225,.78)}
+body{width:1080px;height:1920px;background:var(--bg);position:relative;overflow:hidden;color:var(--cr);font-family:IS,serif}
+.grain{position:absolute;inset:0;background:url(grain.png);opacity:.22;mix-blend-mode:screen;pointer-events:none}
+.mono{font-family:DM,monospace;text-transform:uppercase;letter-spacing:5px}
+#head{position:absolute;left:64px;right:64px;top:200px;display:flex;align-items:center;gap:26px;font-size:34px;color:var(--mut)}
+#head img{height:96px}
+h1{position:absolute;left:60px;top:330px;font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1}
+h1 .a{display:block;font-size:170px;color:var(--cr)}
+h1 .b{display:block;font-size:230px;color:var(--redt);margin-top:10px}
+#panel{position:absolute;left:64px;top:800px;width:952px;border:6px solid var(--cr);box-shadow:12px 12px 0 var(--cr);background:var(--bg);padding:38px 48px}
+.row+.row{margin-top:30px}
+.row .k{font-size:30px;color:var(--redt)}
+.row .v{font-size:58px;line-height:1.1;margin-top:10px}
+#foot{position:absolute;left:64px;right:64px;top:1590px;font-size:32px;color:var(--mut);line-height:1.6}
+</style></head><body>
+<div id="head" class="mono"><img src="vasco.png" alt=""><span>Brasileirão · 36ª rodada</span></div>
+<h1><span class="a">Hoje tem</span><span class="b">Vasco</span></h1>
+<div id="panel">
+ <div class="row"><div class="k mono">Jogo</div><div class="v">Bragantino x Vasco</div></div>
+ <div class="row"><div class="k mono">Quando</div><div class="v">Hoje, às 19h30</div></div>
+ <div class="row"><div class="k mono">Onde</div><div class="v">Cícero de Souza Marques<br>Bragança Paulista</div></div>
+ <div class="row"><div class="k mono">Assistir</div><div class="v">Premiere (pay-per-view)<br>e SporTV</div></div>
+</div>
+<div id="foot" class="mono">vascainamente.com.br<br>@_vascainamente_</div>
+<div class="grain"></div></body></html>
