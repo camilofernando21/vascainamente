@@ -4,7 +4,7 @@
 
 Saída: story.png e feed.png. O JSON tem: rotulo, titulo (duas linhas) e blocos (de 1 a 4, cada um com
 "k" e "v", onde "v" é uma lista de linhas, e, se quiser, "logos": lista com nomes de scripts/social_art/logos/,
-"vasco" (escudo atual, de public/images) ou "x"). O escudo do cabeçalho vem de public/images. Os textos precisam de revisão
+"vasco" (escudo atual, de public/images) ou "x"). O escudo do cabeçalho vem de public/images. "escudos" (opcional, no topo do JSON) são os dois escudos ao lado do título: o primeiro é o mandante e fica por cima do segundo. Os textos precisam de revisão
 de português antes de ir ao Camilo.
 """
 from __future__ import annotations
@@ -25,10 +25,10 @@ PLACA = {"sportv"}
 
 # medidas de cada formato (px). A coluna começa em "topo" e os blocos vão um abaixo do outro, com os espaços abaixo.
 FORMATOS = {
-    "story": dict(h=1920, topo=170, a=150, b=200, gap_b=8, head_h1=30, h1_painel=56, painel_foot=44,
-                  pad="34px 48px", entre=26, v=54, escudo=132, logo_h=60, limite=1670),
+    "story": dict(h=1920, topo=170, a=140, b=200, gap_b=8, head_h1=30, h1_painel=56, painel_foot=44,
+                  pad="34px 48px", entre=26, v=54, escudo=132, escudo_g=215, sobra=44, logo_h=52, limite=1670),
     "feed": dict(h=1350, topo=48, a=110, b=160, gap_b=6, head_h1=26, h1_painel=36, painel_foot=34,
-                 pad="26px 48px", entre=16, v=48, escudo=92, logo_h=44, limite=1350),
+                 pad="26px 48px", entre=16, v=48, escudo=92, escudo_g=250, sobra=44, logo_h=44, limite=1350),
 }
 
 CSS = """
@@ -43,13 +43,18 @@ body{width:1080px;height:%(h)spx;background:var(--bg);position:relative;overflow
 #col{position:absolute;left:64px;right:64px;top:%(topo)spx}
 #head{display:flex;align-items:center;gap:26px;font-size:34px;color:var(--mut)}
 #head img{height:96px}
-h1{margin-top:%(head_h1)spx;margin-left:-4px;font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1}
+#topo{position:relative;margin-top:%(head_h1)spx}
+h1{margin-left:-4px;font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1}
 h1 .a{display:block;font-size:%(a)spx;color:var(--cr)}
 h1 .b{display:block;font-size:%(b)spx;color:var(--redt);margin-top:%(gap_b)spx}
 #panel{margin-top:%(h1_painel)spx;width:952px;border:6px solid var(--cr);box-shadow:12px 12px 0 var(--cr);background:var(--bg);padding:%(pad)s}
 .row+.row{margin-top:%(entre)spx}
 .row .k{font-size:30px;color:var(--redt)}
 .row .v{font-size:%(v)spx;line-height:1.1;margin-top:10px}
+.escudos{position:absolute;right:0;top:50%%;transform:translateY(-50%%);display:flex;align-items:center}
+.escudos img{height:%(escudo_g)spx;width:auto;display:block}
+.escudos img+img{margin-left:-%(sobra)spx;position:relative;z-index:0}
+.escudos img:first-child{position:relative;z-index:2}
 .row.com-logos{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .logos{display:flex;align-items:center;gap:20px;flex:none}
 .logos.coluna{flex-direction:column;align-items:flex-end;gap:14px}
@@ -72,6 +77,9 @@ def validar(d: dict) -> None:
         raise ValueError("o título tem de ter duas linhas")
     if not 1 <= len(d["blocos"]) <= 4:
         raise ValueError("o painel aceita de 1 a 4 blocos")
+    for nome in d.get("escudos", []):
+        if nome != "vasco" and not (LOGOS / f"{nome}.png").exists():
+            raise ValueError(f"escudo não encontrado em scripts/social_art/logos/: {nome}")
     for b in d["blocos"]:
         for nome in b.get("logos", []):
             if nome not in ("x", "vasco") and not (LOGOS / f"{nome}.png").exists():
@@ -98,6 +106,15 @@ def html_logos(nomes: list[str]) -> str:
     return f'<div class="logos{coluna}">{"".join(itens)}</div>'
 
 
+def html_escudos(nomes: list[str]) -> str:
+    """Escudos ao lado do título. O primeiro (mandante) fica por cima do segundo."""
+    if not nomes:
+        return ""
+    arq = {"vasco": ESCUDO}
+    imgs = "".join(f'<img src="file://{arq.get(n, LOGOS / (n + ".png"))}" alt="">' for n in nomes)
+    return f'<div class="escudos">{imgs}</div>'
+
+
 def montar(d: dict, fmt: dict) -> str:
     def bloco(b: dict) -> str:
         texto = (f'<div><div class="k mono">{esc(b["k"])}</div>'
@@ -111,7 +128,7 @@ def montar(d: dict, fmt: dict) -> str:
                    logo_h_placa=int(fmt["logo_h"] * 0.78), xis=int(fmt["escudo"] * 0.5))
     return (f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>{CSS % medidas}</style></head><body>'
             f'<div id="col"><div id="head" class="mono"><img src="file://{ESCUDO}" alt=""><span>{esc(d["rotulo"])}</span></div>'
-            f'<h1><span class="a">{esc(d["titulo"][0])}</span><span class="b">{esc(d["titulo"][1])}</span></h1>'
+            f'<div id="topo"><h1><span class="a">{esc(d["titulo"][0])}</span><span class="b">{esc(d["titulo"][1])}</span></h1>{html_escudos(d.get("escudos", []))}</div>'
             f'<div id="panel">{linhas}</div>'
             f'<div id="foot" class="mono">vascainamente.com.br<br>@_vascainamente_</div></div><div class="grain"></div></body></html>')
 

@@ -9,11 +9,6 @@
       "k": "Jogo",
       "v": [
         "Bragantino x Vasco"
-      ],
-      "logos": [
-        "bragantino",
-        "x",
-        "vasco"
       ]
     },
     {
@@ -40,5 +35,9 @@
         "sportv"
       ]
     }
+  ],
+  "escudos": [
+    "bragantino",
+    "vasco"
   ]
 }

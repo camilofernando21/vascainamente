@@ -59,6 +59,17 @@ class Conferencia(unittest.TestCase):
 
 
 class Logos(unittest.TestCase):
+    def test_escudo_inexistente_bloqueia(self):
+        d = base()
+        d["escudos"] = ["time-que-nao-existe", "vasco"]
+        with self.assertRaises(ValueError):
+            ai.validar(d)
+
+    def test_escudos_do_topo_passam(self):
+        d = base()
+        d["escudos"] = ["bragantino", "vasco"]
+        ai.validar(d)
+
     def test_logo_inexistente_bloqueia(self):
         d = base()
         d["blocos"][0]["logos"] = ["time-que-nao-existe"]

@@ -21,6 +21,7 @@ O que segue vale para as artes de informação. Os modelos prontos (PNG para ver
 
 ## Estrutura (de cima para baixo)
 1. Cabeçalho: escudo + rótulo (ex.: "Brasileirão · 36ª rodada").
+   Em jogo do dia, os dois escudos grandes ficam fora do painel, ao lado do título, com o do mandante por cima do outro, sobrepondo de leve (campo `escudos` do JSON, mandante primeiro). Logos de canais (Premiere, SporTV) ficam à direita do bloco Assistir; logo escura precisa de placa clara.
 2. Título em duas linhas: "Hoje tem" em creme e "Vasco" em vermelho, bem grandes.
 3. Painel com borda creme de 6px e sombra dura de 12px. Dentro, um bloco por informação: rótulo em vermelho (DM Mono) e o texto embaixo em letra grande (Instrument Serif, 52 a 58px).
 4. Rodapé: vascainamente.com.br e @_vascainamente_.
