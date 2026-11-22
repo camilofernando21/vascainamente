@@ -1,6 +1,11 @@
 # Padrão das artes do Vascainamente (a partir de 22/11/2026)
 
-Este é o layout padrão de toda arte nova de story e de feed. Os modelos prontos estão em `docs/modelos/` (PNG para ver, HTML para copiar). Para qualquer arte nova, copie o HTML e troque só os textos.
+Este é o layout padrão das artes de informação (jogo do dia, onde assistir, escalação, Quinta Histórica) em story e feed.
+
+## Onde NÃO se aplica
+As artes de notícia (Transferências, Resultados e demais categorias do robô de notícias) continuam no modelo atual, o do cartão com a Cruz de Malta pequena e o rótulo da categoria no topo, a manchete em Instrument Serif no meio e "vascainamente" com a data no rodapé. Decisão do Camilo em 22/11/2026: não mexer nesse modelo.
+
+O que segue vale para as artes de informação. Os modelos prontos estão em `docs/modelos/` (PNG para ver, HTML para copiar). Para qualquer arte nova, copie o HTML e troque só os textos.
 
 ## Formatos
 - Story: 1080x1920. Feed: 1080x1350. Renderizar com Chromium (Playwright) em escala 2.
