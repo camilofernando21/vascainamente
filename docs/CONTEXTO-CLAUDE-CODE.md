@@ -205,3 +205,10 @@ Motivo: depois de um jogo ou de uma manhã parada, o robô não achava notícia 
 - Secrets do GitHub (criados pelo Camilo, eu nunca vejo os valores): `INSTAGRAM_ACCESS_TOKEN` e `INSTAGRAM_USER_ID`.
 - Meta: app "Vascainamente Posts" (portfólio CATETOAOCUBO MKT), conta `_vascainamente_` com função de Testador do Instagram. App em modo de desenvolvimento: publica na própria conta sem análise do app.
 - Pendências: ligar `INSTAGRAM_MODE=check`, depois `dry-run` por alguns dias, depois `auto`; o X segue pelo Composio (postador próprio do X em dry-run).
+
+## Padrão das artes de informação (22/11/2026)
+
+- Camilo reprovou o modelo antigo do story "Hoje tem Vasco" (texto colado, difícil de ler). O novo padrão está em `docs/PADRAO-ARTES.md`, com modelos em `docs/modelos/` (story 1080x1920 e feed 1080x1350, PNG e HTML).
+- Vale para artes de informação: jogo do dia, onde assistir, escalação, Quinta Histórica. As artes de notícia (Transferências, Resultados etc.) seguem no modelo atual, por decisão dele.
+- Pendências: levar o modelo novo para o gerador do repositório (o postador do Instagram ainda usa o modelo antigo no feed); pedir ao Camilo os logos de Bragantino e Premiere se quiser nas artes.
+- O Cobalt deve ler `docs/PADRAO-ARTES.md` antes de criar qualquer arte de informação.
