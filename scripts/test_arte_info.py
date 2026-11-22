@@ -45,13 +45,30 @@ class Validacao(unittest.TestCase):
 
 
 class Conferencia(unittest.TestCase):
-    def test_painel_colado_no_titulo(self):
-        c = {"h1": [300, 700], "#panel": [710, 1400], "#foot": [1500, 1600]}
+    def test_conteudo_que_passa_da_tela_avisa(self):
+        c = {"h1": [330, 740], "#panel": [800, 1557], "#foot": [1590, 1800]}
         self.assertTrue(ai.conferir("story", c, ai.FORMATOS["story"]))
 
     def test_layout_folgado_passa(self):
-        c = {"h1": [330, 740], "#panel": [800, 1557], "#foot": [1590, 1692]}
+        c = {"h1": [330, 740], "#panel": [800, 1557], "#foot": [1590, 1660]}
         self.assertEqual(ai.conferir("story", c, ai.FORMATOS["story"]), [])
+
+    def test_rodape_colado_no_painel_avisa(self):
+        c = {"h1": [330, 740], "#panel": [800, 1590], "#foot": [1595, 1660]}
+        self.assertTrue(ai.conferir("story", c, ai.FORMATOS["story"]))
+
+
+class Logos(unittest.TestCase):
+    def test_logo_inexistente_bloqueia(self):
+        d = base()
+        d["blocos"][0]["logos"] = ["time-que-nao-existe"]
+        with self.assertRaises(ValueError):
+            ai.validar(d)
+
+    def test_logos_do_repositorio_passam(self):
+        d = base()
+        d["blocos"][0]["logos"] = ["bragantino", "x", "vasco", "premiere", "sportv"]
+        ai.validar(d)
 
 
 if __name__ == "__main__":

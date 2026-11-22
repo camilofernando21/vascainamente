@@ -3,7 +3,8 @@
     python scripts/social_art/arte_info.py scripts/social_art/exemplos/hoje-tem-vasco.json <pasta_saida>
 
 Saída: story.png e feed.png. O JSON tem: rotulo, titulo (duas linhas) e blocos (de 1 a 4, cada um com
-"k" e "v", onde "v" é uma lista de linhas). O escudo vem de public/images. Os textos precisam de revisão
+"k" e "v", onde "v" é uma lista de linhas, e, se quiser, "logos": lista com nomes de scripts/social_art/logos/,
+"vasco" (escudo atual, de public/images) ou "x"). O escudo do cabeçalho vem de public/images. Os textos precisam de revisão
 de português antes de ir ao Camilo.
 """
 from __future__ import annotations
@@ -18,13 +19,16 @@ from playwright.sync_api import sync_playwright
 RAIZ = Path(__file__).resolve().parents[2]
 AQUI = Path(__file__).resolve().parent
 ESCUDO = RAIZ / "public" / "images" / "escudo-5-atual.png"
+LOGOS = AQUI / "logos"
+# logos escuras precisam de placa clara para ter contraste no fundo preto
+PLACA = {"sportv"}
 
-# medidas de cada formato (px)
+# medidas de cada formato (px). A coluna começa em "topo" e os blocos vão um abaixo do outro, com os espaços abaixo.
 FORMATOS = {
-    "story": dict(h=1920, head=200, h1=330, a=170, b=230, gap_b=10, painel=800, pad="38px 48px",
-                  entre=30, v=58, foot=1590, foot_lh=1.6, limite_baixo=1700),
-    "feed": dict(h=1350, head=48, h1=176, a=120, b=176, gap_b=6, painel=510, pad="30px 48px",
-                 entre=20, v=52, foot=1226, foot_lh=1.4, limite_baixo=1350),
+    "story": dict(h=1920, topo=170, a=150, b=200, gap_b=8, head_h1=30, h1_painel=56, painel_foot=44,
+                  pad="34px 48px", entre=26, v=54, escudo=132, logo_h=60, limite=1670),
+    "feed": dict(h=1350, topo=48, a=110, b=160, gap_b=6, head_h1=26, h1_painel=36, painel_foot=34,
+                 pad="26px 48px", entre=16, v=48, escudo=92, logo_h=44, limite=1350),
 }
 
 CSS = """
@@ -36,16 +40,25 @@ CSS = """
 body{width:1080px;height:%(h)spx;background:var(--bg);position:relative;overflow:hidden;color:var(--cr);font-family:IS,serif}
 .grain{position:absolute;inset:0;background:url(file://%(g)s);opacity:.22;mix-blend-mode:screen;pointer-events:none}
 .mono{font-family:DM,monospace;text-transform:uppercase;letter-spacing:5px}
-#head{position:absolute;left:64px;right:64px;top:%(head)spx;display:flex;align-items:center;gap:26px;font-size:34px;color:var(--mut)}
+#col{position:absolute;left:64px;right:64px;top:%(topo)spx}
+#head{display:flex;align-items:center;gap:26px;font-size:34px;color:var(--mut)}
 #head img{height:96px}
-h1{position:absolute;left:60px;top:%(h1)spx;font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1}
+h1{margin-top:%(head_h1)spx;margin-left:-4px;font-family:an,Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:1}
 h1 .a{display:block;font-size:%(a)spx;color:var(--cr)}
 h1 .b{display:block;font-size:%(b)spx;color:var(--redt);margin-top:%(gap_b)spx}
-#panel{position:absolute;left:64px;top:%(painel)spx;width:952px;border:6px solid var(--cr);box-shadow:12px 12px 0 var(--cr);background:var(--bg);padding:%(pad)s}
+#panel{margin-top:%(h1_painel)spx;width:952px;border:6px solid var(--cr);box-shadow:12px 12px 0 var(--cr);background:var(--bg);padding:%(pad)s}
 .row+.row{margin-top:%(entre)spx}
 .row .k{font-size:30px;color:var(--redt)}
 .row .v{font-size:%(v)spx;line-height:1.1;margin-top:10px}
-#foot{position:absolute;left:64px;right:64px;top:%(foot)spx;font-size:32px;color:var(--mut);line-height:%(foot_lh)s}
+.row.com-logos{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logos{display:flex;align-items:center;gap:20px;flex:none}
+.logos.coluna{flex-direction:column;align-items:flex-end;gap:14px}
+.logos .escudo{height:%(escudo)spx;width:auto}
+.logos .canal{height:%(logo_h)spx;width:auto;display:block}
+.logos .placa{background:var(--cr);border-radius:10px;padding:8px 16px;display:flex;align-items:center}
+.logos .placa .canal{height:%(logo_h_placa)spx}
+.logos .xis{font-family:an,Impact,sans-serif;font-size:%(xis)spx;color:var(--redt);line-height:1}
+#foot{margin-top:%(painel_foot)spx;font-size:32px;color:var(--mut);line-height:1.4}
 """
 
 
@@ -59,21 +72,48 @@ def validar(d: dict) -> None:
         raise ValueError("o título tem de ter duas linhas")
     if not 1 <= len(d["blocos"]) <= 4:
         raise ValueError("o painel aceita de 1 a 4 blocos")
+    for b in d["blocos"]:
+        for nome in b.get("logos", []):
+            if nome not in ("x", "vasco") and not (LOGOS / f"{nome}.png").exists():
+                raise ValueError(f"logo não encontrada em scripts/social_art/logos/: {nome}")
     for t in textos:
         if "—" in t or "–" in t:
             raise ValueError(f"travessão ou meia-risca não é permitido: {t!r}")
 
 
+def html_logos(nomes: list[str]) -> str:
+    itens = []
+    for n in nomes:
+        if n == "x":
+            itens.append('<span class="xis">x</span>')
+        elif n == "vasco":
+            itens.append(f'<img class="escudo" src="file://{ESCUDO}" alt="">')
+        elif n in PLACA:
+            itens.append(f'<span class="placa"><img class="canal" src="file://{LOGOS / (n + ".png")}" alt=""></span>')
+        elif n == "bragantino":
+            itens.append(f'<img class="escudo" src="file://{LOGOS / (n + ".png")}" alt="">')
+        else:
+            itens.append(f'<img class="canal" src="file://{LOGOS / (n + ".png")}" alt="">')
+    coluna = " coluna" if any(n not in ("x", "vasco", "bragantino") for n in nomes) else ""
+    return f'<div class="logos{coluna}">{"".join(itens)}</div>'
+
+
 def montar(d: dict, fmt: dict) -> str:
-    linhas = "".join(
-        f'<div class="row"><div class="k mono">{esc(b["k"])}</div><div class="v">{"<br>".join(esc(x) for x in b["v"])}</div></div>'
-        for b in d["blocos"])
-    medidas = dict(fmt, f=AQUI / "fonts", g=AQUI / "grain.png")
+    def bloco(b: dict) -> str:
+        texto = (f'<div><div class="k mono">{esc(b["k"])}</div>'
+                 f'<div class="v">{"<br>".join(esc(x) for x in b["v"])}</div></div>')
+        if b.get("logos"):
+            return f'<div class="row com-logos">{texto}{html_logos(b["logos"])}</div>'
+        return f'<div class="row">{texto}</div>'
+
+    linhas = "".join(bloco(b) for b in d["blocos"])
+    medidas = dict(fmt, f=AQUI / "fonts", g=AQUI / "grain.png",
+                   logo_h_placa=int(fmt["logo_h"] * 0.78), xis=int(fmt["escudo"] * 0.5))
     return (f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><style>{CSS % medidas}</style></head><body>'
-            f'<div id="head" class="mono"><img src="file://{ESCUDO}" alt=""><span>{esc(d["rotulo"])}</span></div>'
+            f'<div id="col"><div id="head" class="mono"><img src="file://{ESCUDO}" alt=""><span>{esc(d["rotulo"])}</span></div>'
             f'<h1><span class="a">{esc(d["titulo"][0])}</span><span class="b">{esc(d["titulo"][1])}</span></h1>'
             f'<div id="panel">{linhas}</div>'
-            f'<div id="foot" class="mono">vascainamente.com.br<br>@_vascainamente_</div><div class="grain"></div></body></html>')
+            f'<div id="foot" class="mono">vascainamente.com.br<br>@_vascainamente_</div></div><div class="grain"></div></body></html>')
 
 
 def caixas(pg) -> dict:
@@ -82,14 +122,12 @@ def caixas(pg) -> dict:
 
 
 def conferir(nome: str, c: dict, fmt: dict) -> list[str]:
-    """Nada pode encostar em outro bloco nem sair da tela (a margem do title é a do próprio texto)."""
+    """Os blocos andam em fluxo (nunca se sobrepõem); aqui se confere se o conteúdo cabe na tela."""
     erros = []
-    if c["h1"][1] > c["#panel"][0] - 20:
-        erros.append(f"{nome}: o painel está colado no título")
-    if c["#panel"][1] + 12 > c["#foot"][0] - 10:
+    if c["#foot"][1] > fmt["limite"]:
+        erros.append(f"{nome}: o conteúdo passa do limite da tela ({c['#foot'][1]:.0f} de {fmt['limite']}); reduza textos ou blocos")
+    if c["#panel"][1] + 12 > c["#foot"][0]:
         erros.append(f"{nome}: o rodapé está colado no painel")
-    if c["#foot"][1] > fmt["limite_baixo"] + 40:
-        erros.append(f"{nome}: o rodapé passa do limite da tela")
     return erros
 
 
