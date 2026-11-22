@@ -1,0 +1,10 @@
+{
+  "rotulo": "Brasileirão · 36ª rodada",
+  "titulo": ["Hoje tem", "Vasco"],
+  "blocos": [
+    {"k": "Jogo", "v": ["Bragantino x Vasco"]},
+    {"k": "Quando", "v": ["Hoje, às 19h30"]},
+    {"k": "Onde", "v": ["Cícero de Souza Marques", "Bragança Paulista"]},
+    {"k": "Assistir", "v": ["Premiere (pay-per-view)", "e SporTV"]}
+  ]
+}

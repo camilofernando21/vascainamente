@@ -5,7 +5,10 @@ Este é o layout padrão das artes de informação (jogo do dia, onde assistir, 
 ## Onde NÃO se aplica
 As artes de notícia (Transferências, Resultados e demais categorias do robô de notícias) continuam no modelo atual, o do cartão com a Cruz de Malta pequena e o rótulo da categoria no topo, a manchete em Instrument Serif no meio e "vascainamente" com a data no rodapé. Decisão do Camilo em 22/11/2026: não mexer nesse modelo.
 
-O que segue vale para as artes de informação. Os modelos prontos estão em `docs/modelos/` (PNG para ver, HTML para copiar). Para qualquer arte nova, copie o HTML e troque só os textos.
+O que segue vale para as artes de informação. Os modelos prontos (PNG para ver) estão em `docs/modelos/`. Para gerar uma arte nova, não desenhe na mão: use o gerador.
+
+## Como gerar
+`python scripts/social_art/arte_info.py <arquivo.json> <pasta_saida>` cria `story.png` e `feed.png` juntos. O JSON tem `rotulo`, `titulo` (duas linhas) e `blocos` (de 1 a 4, cada um com `k` e `v`). Exemplo pronto: `scripts/social_art/exemplos/hoje-tem-vasco.json`. O gerador recusa travessão e avisa se algum bloco ficar colado ou sair da tela. Testes: `python3 -m unittest scripts/test_arte_info.py`.
 
 ## Formatos
 - Story: 1080x1920. Feed: 1080x1350. Renderizar com Chromium (Playwright) em escala 2.
