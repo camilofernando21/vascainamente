@@ -10,7 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/Tlcsa6Hq7dWOt2Go5wL2eBdL2OI=/i.s3.glbimg.com
 excerpt: "Bragantino e Vasco se enfrentam neste domingo, às 19h30, pela 36ª rodada do Brasileirão, no estádio Cícero de Souza Marques, em Bragança Paulista. Premiere e SporTV transmitem ao vivo. O Vasco chega embalado com quatro vitórias consecutivas, enquanto o Bragantino tenta se recuperar de derrota na rodada anterior."
 seoTitle: "Bragantino x Vasco: onde assistir, horário e escalações"
 seoDescription: "Bragantino x Vasco pela 36ª rodada do Brasileirão: horário, transmissão, prováveis escalações, desfalques e arbitragem do duelo deste domingo."
-updated: "2026-11-22T12:01:04-03:00"
+updated: "2026-11-22T21:30:58-03:00"
 ---
 
 Bragantino e Vasco se enfrentam neste domingo, às 19h30, pela 36ª rodada do Campeonato Brasileiro, no estádio Cícero de Souza Marques, em Bragança Paulista. Premiere e SporTV transmitem ao vivo. Os times chegam empatados na tabela: o Bragantino vem de derrota por 2 a 1 para o Vitória e ocupa a nona colocação, com 47 pontos, buscando se reencontrar com a vitória para seguir na briga por uma vaga na Pré-Libertadores.
@@ -20,3 +20,5 @@ O Vasco de Pedro Emanuel chega com quatro vitórias consecutivas, três delas pe
 A arbitragem fica por conta de Bráulio da Silva Machado, de Santa Catarina, com VAR de Marco Aurélio Augusto Fazekas Ferreira, de Minas Gerais.
 
 **Atualização em 22/11 às 12:01:** As duas equipes chegam ao duelo empatadas em 47 pontos, com o Bragantino à frente por ter mais vitórias. Para alcançar a média histórica do oitavo colocado (54 pontos), o Vasco precisa vencer dois e empatar um nos três jogos restantes. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/11/22/libertadores-vasco-tem-jogo-de-seis-pontos-por-sonho-continental-veja-as-contas.ghtml))
+
+**Atualização em 22/11 às 21:30:** Bragantino venceu o Vasco por 1 a 0, com gol de Eduardo Sasha, pela 36ª rodada do Brasileirão em Bragança Paulista. ([leia a matéria](/2026-11-22-bragantino-vence-o-vasco-por-1-a-0-com-gol-de-eduardo-sasha))
