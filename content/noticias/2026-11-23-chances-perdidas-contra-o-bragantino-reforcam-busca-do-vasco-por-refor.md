@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/M0Vo4ARF4qnpwzKcLS3DYDJgL9Y=/i.s3.glbimg.com
 excerpt: "A derrota para o Bragantino voltou a expor a baixa eficácia ofensiva do Vasco em 2026. O clube já tem Carlos Vinícius, do Grêmio, com pré-contrato assinado, e estuda ao menos mais uma contratação para o setor. O orçamento pode crescer com a classificação para a Libertadores, que ficou mais distante com o resultado deste domingo."
 seoTitle: "Vasco busca reforços no ataque para 2027 após derrota"
 seoDescription: "Chances perdidas contra o Bragantino aceleram planejamento do Vasco. Carlos Vinícius já tem pré-contrato, e clube estuda mais reforços ofensivos para 2027."
+updated: "2026-11-23T11:31:10-03:00"
 ---
 
 A derrota para o Bragantino voltou a escancarar o principal problema do Vasco em 2026: a falta de eficácia no ataque. No duelo em Bragança Paulista, Andrés Gómez perdeu chance cara a cara com o goleiro aos 13 minutos do primeiro tempo, e Bruno Duarte desperdiçou oportunidade clara na pequena área nos acréscimos da etapa inicial, finalizando no travessão. O próprio Bruno Duarte pediu desculpas à torcida na saída do estádio.
@@ -17,3 +18,5 @@ A derrota para o Bragantino voltou a escancarar o principal problema do Vasco em
 Os números explicam o drama: o Vasco é o segundo time que mais finaliza no Brasileirão, com 572 arremates, mas precisa de 12,1 chutes para marcar um gol, a quarta pior eficiência entre os 20 clubes. O reflexo aparece na artilharia: o lateral Puma Rodríguez e o volante Thiago Mendes lideram os gols do time na temporada, à frente dos atacantes contratados.
 
 Para resolver o problema em 2027, o Vasco já tem pré-contrato assinado com Carlos Vinícius, do Grêmio, por dois anos com opção de extensão. O centroavante marcou 23 gols em 2026, mais do que todos os reforços ofensivos contratados pelo clube na temporada somados. Além dele, o clube estuda ao menos mais uma contratação para o setor, buscando um ponta com velocidade e boa capacidade de finalização. O orçamento ainda não está 100% definido e pode ser maior em caso de classificação para a Libertadores.
+
+**Atualização em 23/11 às 11:31:** O pré-contrato com o Vasco já afeta o emocional de Carlos Vinícius, que tomou uma decisão sobre sua participação nos jogos restantes pelo Grêmio, segundo a ESPN Brasil. ([leia a matéria](/2026-11-23-pre-contrato-com-o-vasco-afeta-emocional-de-carlos-vinicius-que-toma-d))
