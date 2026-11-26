@@ -10,8 +10,11 @@ imageUrl: "https://s2-ge.glbimg.com/lOcnLQYDGdjzOeH-qHAx1GYMFKs=/i.s3.glbimg.com
 excerpt: "A CBF divulgou o vídeo da revisão do VAR no lance que resultou na expulsão de Robert Renan contra o Bragantino. As imagens mostram que o árbitro Bráulio da Silva Machado deixou o monitor antes de o árbitro de vídeo terminar de apresentar os ângulos. Para a Comissão de Arbitragem da CBF, o cartão vermelho foi corretamente aplicado."
 seoTitle: "CBF revela árbitro saiu do VAR antes de ver imagens de Robert Renan"
 seoDescription: "Vídeo da CBF mostra árbitro Bráulio deixando monitor do VAR antes de ver todos os ângulos na expulsão de Robert Renan contra o Bragantino."
+updated: "2026-11-26T00:30:50-03:00"
 ---
 
 A CBF divulgou o vídeo da revisão do VAR no lance que culminou na expulsão de Robert Renan, zagueiro do Vasco, na partida contra o Bragantino. As imagens mostram que o árbitro de vídeo Marco Aurélio Fazekas afirmou não haver contato e pediu ao árbitro de campo para aguardar a exibição dos dois ângulos. O árbitro Bráulio da Silva Machado, porém, deixou o monitor antes de ver todas as imagens, enquanto o colega da cabine ainda falava. Uma segunda pessoa na cabine do VAR chegou a registrar: 'Ele já saiu de lá'.
 
 Apesar disso, a Comissão de Arbitragem da CBF concluiu que o cartão vermelho foi corretamente aplicado por impedir uma oportunidade clara de gol. A entidade classificou a situação como uma revisão incorreta do VAR, mas manteve a punição ao zagueiro. Com a expulsão, Robert Renan será desfalque do Vasco no próximo compromisso pelo Brasileirão, contra o Atlético-MG, na Arena MRV, às 19h30.
+
+**Atualização em 26/11 às 00:30:** Robert Renan será julgado amanhã, de forma on-line em São Paulo, pela expulsão contra o Bragantino, segundo o setorista Ramadas. ([leia a matéria](/2026-11-26-robert-renan-sera-julgado-amanha-pela-expulsao-contra-o-bragantino-seg))
