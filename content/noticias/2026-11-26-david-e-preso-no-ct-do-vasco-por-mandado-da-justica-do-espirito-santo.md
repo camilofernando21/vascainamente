@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O atacante David foi preso nesta quinta-feira no CT do Vasco por policiais da 14ª DP (Leblon), que cumpriram mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES). A investigação apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro. David havia sido alvo da Operação A Tropa, deflagrada em setembro pela Polícia Civil do Espírito Santo, com possíveis conexões com o Comando Vermelho."
 seoTitle: "David é preso no CT do Vasco por mandado do ES"
 seoDescription: "Atacante David foi preso nesta quinta no CT do Vasco. Mandado da 5ª Vara Criminal de Serra (ES) apura organização criminosa, tráfico e lavagem de dinheiro."
-updated: "2026-11-26T12:30:58-03:00"
+updated: "2026-11-26T13:31:00-03:00"
 ---
 
 O atacante David, do Vasco, foi preso nesta quinta-feira no CT do clube. Policiais da 14ª DP (Leblon) cumpriram o mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES), no âmbito de uma investigação da Polícia Civil do Espírito Santo que apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro.
@@ -30,3 +30,5 @@ No fim de outubro, David já havia sido intimado a comparecer à delegacia para 
 **Atualização em 26/11 às 12:15:** O Vasco informou em comunicado que colocou o Departamento Jurídico à disposição de David e aguardará os desdobramentos legais; juridicamente, a prisão preventiva não autoriza rescisão por justa causa, sendo a suspensão do contrato após 90 dias o caminho mais seguro previsto em lei. ([leia a matéria](/2026-11-26-prisao-de-david-nao-autoriza-rescisao-imediata-entenda-o-que-o-vasco-p))
 
 **Atualização em 26/11 às 12:30:** David estava no gramado no início do treino quando os policiais chegaram em duas viaturas. Os agentes foram recebidos pelo diretor técnico Felipe Maestro e pelo gerente Clauber Rocha, apreenderam o celular do atacante e negaram o pedido dele para tomar banho antes de ser levado. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/11/26/bastidores-david-estava-no-campo-quando-policiais-entraram-no-ct-do-vasco.ghtml))
+
+**Atualização em 26/11 às 13:31:** O Vasco colocou o departamento jurídico à disposição do atacante David. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/26/vasco-departamento-juridico-david-preso.ghtm))
