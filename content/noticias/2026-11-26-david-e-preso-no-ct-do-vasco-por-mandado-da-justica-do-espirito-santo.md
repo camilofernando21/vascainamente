@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O atacante David foi preso nesta quinta-feira no CT do Vasco por policiais da 14ª DP (Leblon), que cumpriram mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES). A investigação apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro. David havia sido alvo da Operação A Tropa, deflagrada em setembro pela Polícia Civil do Espírito Santo, com possíveis conexões com o Comando Vermelho."
 seoTitle: "David é preso no CT do Vasco por mandado do ES"
 seoDescription: "Atacante David foi preso nesta quinta no CT do Vasco. Mandado da 5ª Vara Criminal de Serra (ES) apura organização criminosa, tráfico e lavagem de dinheiro."
-updated: "2026-11-26T15:31:02-03:00"
+updated: "2026-11-26T15:45:45-03:00"
 ---
 
 O atacante David, do Vasco, foi preso nesta quinta-feira no CT do clube. Policiais da 14ª DP (Leblon) cumpriram o mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES), no âmbito de uma investigação da Polícia Civil do Espírito Santo que apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro.
@@ -34,3 +34,5 @@ No fim de outubro, David já havia sido intimado a comparecer à delegacia para 
 **Atualização em 26/11 às 13:31:** O Vasco colocou o departamento jurídico à disposição do atacante David. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/26/vasco-departamento-juridico-david-preso.ghtm))
 
 **Atualização em 26/11 às 15:31:** A decisão judicial detalha que David reconheceu em áudio ter oferecido dinheiro a uma testemunha e que o Ministério Público aditou a denúncia para incluir o crime de obstrução à investigação envolvendo organização criminosa. ([leia a matéria](/2026-11-26-audio-revela-que-david-ofereceu-r-5-mil-para-testemunha-mudar-depoimen))
+
+**Atualização em 26/11 às 15:45:** A defesa de David impetrou habeas corpus para tentar revogar a prisão preventiva, classificando a medida como 'extrema e desnecessária' e afirmando que o atleta cumpria todas as cautelares impostas. ([leia a matéria](/2026-11-26-defesa-de-david-classifica-prisao-como-extrema-e-desnecessaria-e-entra))
