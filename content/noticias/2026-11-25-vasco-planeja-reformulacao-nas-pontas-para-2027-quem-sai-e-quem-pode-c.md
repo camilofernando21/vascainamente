@@ -10,6 +10,7 @@ imageUrl: "https://s2-ge.glbimg.com/xdmHjHUiZ5oO972IU5W-tAyWZx8=/i.s3.glbimg.com
 excerpt: "O Vasco quer contratar de dois a três atacantes de lado para a próxima temporada. Loide Augusto não fica, e Nuno Moreira, Adson e David são vistos como negociáveis. Um dos nomes no radar para reforçar o setor é Kaio César, do Al-Hilal, em empréstimo ao Corinthians."
 seoTitle: "Vasco planeja reformulação nas pontas para 2027"
 seoDescription: "Vasco quer de dois a três reforços nas pontas para 2027. Loide Augusto sai; Nuno Moreira, Adson e David são negociáveis. Kaio César está no radar."
+updated: "2026-11-26T10:15:59-03:00"
 ---
 
 O Vasco planeja uma reformulação significativa nas pontas do ataque para 2027. Colidio e Andrés Gómez foram os destaques do setor em 2026, mas o banco de reservas não respondeu à altura, e a diretoria quer mudar esse cenário com a chegada de dois a três reforços.
@@ -17,3 +18,5 @@ O Vasco planeja uma reformulação significativa nas pontas do ataque para 2027.
 Entre as saídas, Loide Augusto não continuará no clube. Nuno Moreira, Adson e David são vistos como jogadores negociáveis: o português caiu de 18 participações em gols para apenas cinco de um ano para o outro, enquanto Adson sofreu com lesões e limitações físicas, e David oscila demais e tem salário considerado alto pelo clube.
 
 Para as chegadas, o Vasco busca jogadores com condições de ser titulares, além de aumentar as opções de Pedro Emanuel no banco. Kaio César, do Al-Hilal e atualmente no Corinthians, está no perfil desejado. O clube chegou perto de contratá-lo no início da temporada, mas perdeu a disputa pelo salário. Marino Hinestroza, por sua vez, ganhou a confiança da comissão técnica após superar dificuldades de adaptação e se tornar peça confiável no elenco.
+
+**Atualização em 26/11 às 10:15:** Nuno Moreira não entra em campo desde a goleada sofrida para o Flamengo no dia 29 de outubro e ficou fora dos relacionados das últimas quatro partidas por um incômodo no adutor da coxa esquerda. ([leia a matéria](/2026-11-26-nuno-moreira-virou-negociavel-como-o-portugues-perdeu-espaco-e-ve-futu))
