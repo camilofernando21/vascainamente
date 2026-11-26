@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O atacante David foi preso nesta quinta-feira no CT do Vasco por policiais da 14ª DP (Leblon), que cumpriram mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES). A investigação apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro. David havia sido alvo da Operação A Tropa, deflagrada em setembro pela Polícia Civil do Espírito Santo, com possíveis conexões com o Comando Vermelho."
 seoTitle: "David é preso no CT do Vasco por mandado do ES"
 seoDescription: "Atacante David foi preso nesta quinta no CT do Vasco. Mandado da 5ª Vara Criminal de Serra (ES) apura organização criminosa, tráfico e lavagem de dinheiro."
-updated: "2026-11-26T11:01:12-03:00"
+updated: "2026-11-26T11:15:55-03:00"
 ---
 
 O atacante David, do Vasco, foi preso nesta quinta-feira no CT do clube. Policiais da 14ª DP (Leblon) cumpriram o mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES), no âmbito de uma investigação da Polícia Civil do Espírito Santo que apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro.
@@ -20,3 +20,7 @@ David havia sido alvo da Operação A Tropa, deflagrada em setembro pela políci
 No fim de outubro, David já havia sido intimado a comparecer à delegacia para entregar o passaporte e tomar ciência de medidas cautelares: estava proibido de deixar o país e de entrar em contato com outros investigados. Até o momento, não há informações sobre qual fato específico levou ao pedido e à concessão da prisão preventiva.
 
 **Atualização em 26/11 às 11:01:** O UOL Esporte aponta que a suspeita de tentativa de interferência em depoimentos motivou a prisão de David. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/26/justica-decreta-prisao-de-david-do-vasco-e-hayner-do-vila-nova.ghtm))
+
+**Atualização em 26/11 às 11:15:** A ESPN Brasil detalha que a prisão de David ocorreu em operação da Polícia Civil contra o tráfico de drogas. ([ESPN Brasil](https://www.espn.com.br/futebol/vasco/artigo/_/id/17565173/david-vasco-preso-clube-policia-civil-operacao-trafico))
+
+**Atualização em 26/11 às 11:15:** A prisão de David está ligada à suspeita de tentativa de interferir em depoimentos, detalhe que complementa o mandado expedido pela Justiça do Espírito Santo. ([UOL Esporte](https://www.uol.com.br/esporte/futebol/ultimas-noticias/2026/11/26/justica-decreta-prisao-de-david-do-vasco-e-hayner-do-vila-nova.ghtm))
