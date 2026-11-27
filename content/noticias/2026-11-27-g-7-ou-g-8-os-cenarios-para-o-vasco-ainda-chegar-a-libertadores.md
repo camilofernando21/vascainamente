@@ -10,8 +10,11 @@ imageUrl: "https://s2-ge.glbimg.com/BKkhLeQ0TcD0ODa3_YvztFT8JDM=/i.s3.glbimg.com
 excerpt: "Com 47 pontos, o Vasco não alcança o G-6 e depende de combinações de resultados para brigar por uma vaga na Libertadores. O resultado da final entre Palmeiras e Estudiantes, neste sábado, define quantas vagas o Brasileirão vai distribuir. A vitória contra o Atlético-MG é obrigatória para o clube manter qualquer chance."
 seoTitle: "Cenários para o Vasco chegar à Libertadores"
 seoDescription: "Com 47 pontos, o Vasco depende de combinações para chegar ao G-7 ou G-8 e garantir vaga na Libertadores. Veja os cenários."
+updated: "2026-11-27T15:01:05-03:00"
 ---
 
 O Vasco volta a campo contra o Atlético-MG pela 37ª rodada do Brasileirão com o sonho da Libertadores ainda vivo, mas dependente de uma série de combinações. Com 47 pontos, o clube não tem condições de alcançar o Bahia, que fecha o atual G-6 com 54 pontos. Para que uma vaga extra apareça, o Palmeiras precisa conquistar a final da Libertadores contra o Estudiantes, neste sábado, em Montevidéu. Um eventual título argentino abre caminho para o G-7 apenas se o Grêmio, finalista da Copa do Brasil, for rebaixado no Brasileirão, já que a Conmebol não permite que um clube dispute a competição fora da elite nacional. O G-8 se forma se os dois cenários se concretizarem.
 
 Para alcançar o G-7, o Vasco precisa vencer os dois jogos restantes, o Atlético-MG tem de perder para o Cruz-Maltino e somar no máximo um empate na última rodada, enquanto Bragantino e Santos precisam pontuar pouco nas duas rodadas finais. Em caso de empate ou derrota na Arena MRV, o clube perde qualquer chance de terminar em sétimo. As possibilidades de G-8 são um pouco mais amplas, com cenários que incluem uma vitória e um empate, dependendo dos tropeços de Bragantino e Santos.
+
+**Atualização em 27/11 às 15:01:** A torcida esgotou os ingressos para Vasco x Vitória, em São Januário, último jogo do Brasileirão, marcado para a próxima quarta-feira às 21h30. ([leia a matéria](/2026-11-27-torcida-do-vasco-esgota-ingressos-para-o-ultimo-jogo-do-ano-contra-o-v))
