@@ -10,7 +10,7 @@ imageUrl: ""
 excerpt: "O atacante David foi preso nesta quinta-feira no CT do Vasco por policiais da 14ª DP (Leblon), que cumpriram mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES). A investigação apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro. David havia sido alvo da Operação A Tropa, deflagrada em setembro pela Polícia Civil do Espírito Santo, com possíveis conexões com o Comando Vermelho."
 seoTitle: "David é preso no CT do Vasco por mandado do ES"
 seoDescription: "Atacante David foi preso nesta quinta no CT do Vasco. Mandado da 5ª Vara Criminal de Serra (ES) apura organização criminosa, tráfico e lavagem de dinheiro."
-updated: "2026-11-26T17:15:51-03:00"
+updated: "2026-11-27T06:45:39-03:00"
 ---
 
 O atacante David, do Vasco, foi preso nesta quinta-feira no CT do clube. Policiais da 14ª DP (Leblon) cumpriram o mandado de prisão preventiva expedido pela 5ª Vara Criminal de Serra (ES), no âmbito de uma investigação da Polícia Civil do Espírito Santo que apura crimes de organização criminosa, tráfico interestadual de drogas e armas e lavagem de dinheiro.
@@ -38,3 +38,5 @@ No fim de outubro, David já havia sido intimado a comparecer à delegacia para 
 **Atualização em 26/11 às 15:45:** A defesa de David impetrou habeas corpus para tentar revogar a prisão preventiva, classificando a medida como 'extrema e desnecessária' e afirmando que o atleta cumpria todas as cautelares impostas. ([leia a matéria](/2026-11-26-defesa-de-david-classifica-prisao-como-extrema-e-desnecessaria-e-entra))
 
 **Atualização em 26/11 às 17:15:** David deixou a 14ª DP do Leblon na tarde desta quinta-feira e será transferido para o presídio de Benfica, na Zona Norte do Rio. ([GE.Globo](https://ge.globo.com/futebol/times/vasco/noticia/2026/11/26/david-do-vasco-sera-transferido-para-cadeia-em-benfica.ghtml))
+
+**Atualização em 27/11 às 06:45:** O relatório final da Polícia Civil do Espírito Santo afirma que David sabia de um suposto plano, articulado por seu amigo de infância, para matar o ex-assessor Raphael Marim de Lima. ([leia a matéria](/2026-11-27-policia-aponta-que-david-sabia-de-plano-para-matar-ex-assessor))
